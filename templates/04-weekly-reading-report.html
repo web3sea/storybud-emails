@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Weekly Reading Report</title>
+    <title>Weekly Reading Report - The Lasting Impact of Regular Reading</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -28,7 +28,6 @@
             font-size: 28px;
             color: #2c3e50;
             margin-bottom: 10px;
-            font-family: Arial, sans-serif;
         }
         .section {
             margin-bottom: 25px;
@@ -50,17 +49,107 @@
             color: #007bff;
             font-weight: bold;
         }
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
     <div class="email-container">
         <div class="header">
-            <h1 class="welcome-heading">📊 Your Weekly Reading Report</h1>
+            <h1 class="welcome-heading">📊 Weekly Reading Report</h1>
+            <p><strong>Subject: The Lasting Impact of Regular Reading for Children</strong></p>
         </div>
 
         <div class="section">
-            <p>Hi <span class="personalized-name">{{user_name}}</span>!</p>
-            <p>Here's your weekly reading summary and progress report.</p>
+            <p>Dear Parents,</p>
+            
+            <p>We are excited to share your child's weekly reading summary and progress report! As you follow their journey, we want to highlight how impactful regular reading is for growing minds.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Consistent reading habits are proven to enrich vocabulary, strengthen comprehension, and spark creativity.</strong> More than academic gains, children who read regularly develop a lifelong love for learning, build confidence, and nurture empathy by connecting with stories and characters.</p>
+            </div>
+            
+            <p>Your encouragement in making reading a daily activity gives your child powerful tools for success, both in and out of the classroom. Thank you for being an essential part of this transformative habit—your support truly makes a difference!</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">📈 This Week's Reading Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">{{stories_read}}</div>
+                    <div class="stat-label">Stories Read</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{reading_time}}</div>
+                    <div class="stat-label">Minutes Read</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{new_words}}</div>
+                    <div class="stat-label">New Words</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{days_active}}</div>
+                    <div class="stat-label">Active Days</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">🎯 Reading Goals & Achievements</h2>
+            <p>Your child is making excellent progress toward their reading goals! Here are some highlights from this week:</p>
+            <ul>
+                <li><strong>Vocabulary Growth:</strong> {{vocabulary_improvement}} new words learned</li>
+                <li><strong>Reading Stamina:</strong> {{stamina_improvement}} minutes longer reading sessions</li>
+                <li><strong>Comprehension:</strong> {{comprehension_score}}% accuracy on story questions</li>
+                <li><strong>Creativity:</strong> {{creative_responses}} imaginative story responses</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">💡 Tips for This Week</h2>
+            <p>Keep the reading momentum going with these simple strategies:</p>
+            <ol>
+                <li><strong>Set a daily reading time</strong> - Even 15 minutes makes a difference</li>
+                <li><strong>Ask questions about the story</strong> - "What do you think will happen next?"</li>
+                <li><strong>Connect stories to real life</strong> - "This reminds me of when we..."</li>
+                <li><strong>Celebrate reading milestones</strong> - Every book finished is an achievement!</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">🚀 Ready for Next Week?</h2>
+            <p>Your child has {{credits_remaining}} credits remaining to continue their storytelling adventure. New stories are waiting to be discovered!</p>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="{{create_story_link}}" style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 15px 30px; text-decoration: none; border-radius: 10px; font-weight: bold; display: inline-block;">Create New Story</a>
+            </div>
         </div>
 
         <div class="footer">
@@ -68,7 +157,7 @@
             <p><em>The StoryBud Team</em></p>
             
             <div class="footer-content">
-                <p class="unsubscribe-text">You are receiving this e-mail because you signed up for StoryBud. If you do not want to receive this type of news in the future, please <a href="{{unsubscribe_link}}" style="color: #007bff;">click to unsubscribe</a>.</p>
+                <p class="unsubscribe-text">You are receiving this e-mail because you signed up for StoryBud. If you do not want to receive email from us in the future, please <a href="{{unsubscribe_link}}" style="color: #007bff;">click to unsubscribe</a>.</p>
                 
                 <div class="footer-links">
                     <a href="https://storybud.com/about" style="color: #007bff; text-decoration: none; margin: 0 10px;">About StoryBud</a> | 
