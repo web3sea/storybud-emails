@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✨ A New Adventure Awaits!</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, sans-serif;
+        line-height: 1.6;
+        color: rgb(31, 41, 55);
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-image: linear-gradient(rgb(243, 244, 246), rgb(168, 85, 247));
+      }
+      .email-container {
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: rgba(124, 58, 237, 0.15) 0px 4px 6px -1px;
+        padding: 30px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .welcome-heading {
+        font-family: Quicksand, sans-serif;
+        font-size: 28px;
+        color: rgb(99, 102, 241);
+        margin-bottom: 10px;
+      }
+      .section {
+        margin-bottom: 25px;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgb(238, 238, 238);
+        color: rgb(102, 102, 102);
+      }
+      .personalized-name {
+        color: rgb(139, 92, 246);
+        font-weight: bold;
+      }
+      .footer-content a {
+        color: rgb(99, 102, 241);
+        text-decoration: none;
+        margin: 0 10px;
+      }
+      .footer-content a:hover {
+        text-decoration: underline;
+      }
+      .address,
+      .copyright,
+      .unsubscribe-text {
+        font-size: 12px;
+        color: rgb(71, 85, 105);
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: rgb(124, 58, 237);
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+      }
+      .cta-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .story-image {
+        color: black;
+        width: 148px;
+        height: 190px;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <div class="header">
+        <h1 class="welcome-heading">✨ A New Adventure Awaits!</h1>
+      </div>
+      <div class="section">
+        <p>
+          Hi <span class="personalized-name">{{user_name}}</span>, are you ready to
+          spark some magic tonight?
+        </p>
+        <p>
+          With StoryBud, every story is more than just words on a page — it's a
+          gateway into imagination, laughter, and meaningful connection. Reading
+          together creates moments that your child will carry with them forever.
+        </p>
+        <p>
+          Your next personalized tale is waiting for you. Whether it's before bed,
+          during quiet time, or just a cozy evening at home — this story will light
+          up your child's world in just a few minutes.
+        </p>
+        <div class="cta-container">
+          <a href="#" class="cta-button">🌟 Read Tonight's Story</a>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Here's to magical storytelling,</p>
+        <p><em>The StoryBud Team</em></p>
+        <div class="footer-content">
+          <p class="unsubscribe-text">
+            You're receiving this email because you joined StoryBud. If you'd
+            prefer not to get these updates, you can
+            <a href="{{unsubscribe_link}}">unsubscribe here</a>.
+          </p>
+          <div class="footer-links">
+            <a href="https://storybud.com/about">About StoryBud</a> |
+            <a href="https://storybud.com/privacy-policy">Privacy Policy</a> |
+            <a href="mailto:support@storybud.com">Support Team</a>
+          </div>
+          <p class="address">
+            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+          </p>
+          <p class="copyright">
+            Copyright © 2025 StoryBud. All Rights Reserved
+          </p>
+        </div>
+      </div>
+      <img
+        class="story-image"
+        src="https://wapojdqxgvfkjyyukhlq.supabase.co/storage/v1/object/public/img/mek88daqk207ii"
+      />
+    </div>
+  </body>
+</html>

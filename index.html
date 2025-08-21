@@ -765,6 +765,18 @@
                         <button class="preview-btn" onclick="openPreview('credits-low', 'Credits Running Low')">Preview</button>
                     </div>
                 </div>
+                
+                <div class="template-card">
+                    <div class="template-header">
+                        <div class="template-icon">🌟</div>
+                        <h3 class="template-title">A New Adventure Awaits</h3>
+                    </div>
+                    <div class="template-description">Spark excitement for story time with a magical invitation that reminds families of the joy and connection that reading together brings.</div>
+                    <div class="template-actions">
+                        <a href="templates/025-lets-read-story.html" class="template-link">View Template</a>
+                        <button class="preview-btn" onclick="openPreview('new-adventure', 'A New Adventure Awaits')">Preview</button>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -888,6 +900,19 @@
                         </div>
                     `;
                     break;
+                    
+                case 'new-adventure':
+                    previewContent = `
+                        <div class="preview-placeholder">
+                            <h3>🌟 A New Adventure Awaits!</h3>
+                            <p>This email sparks excitement for story time with a magical invitation that reminds families of the joy and connection that reading together brings.</p>
+                            <div class="preview-actions">
+                                <a href="templates/025-lets-read-story.html" class="preview-action-btn preview-primary">View Full Template</a>
+                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
+                            </div>
+                        </div>
+                    `;
+                    break;
             }
             
             modalBody.innerHTML = previewContent;
@@ -919,7 +944,7 @@
             let allTemplates = `# StoryBud Email Templates - Complete Collection
 
 ## Template Overview
-This collection contains all 5 email templates for the StoryBud adoption sequence.
+This collection contains all 6 email templates for the StoryBud adoption sequence.
 
 ## Template List
 1. 🎉 Onboarding Foundation - Welcome new users with subscription details
@@ -927,6 +952,7 @@ This collection contains all 5 email templates for the StoryBud adoption sequenc
 3. ✨ First Story Created - Celebrate when users create their first story
 4. 📊 Weekly Reading Report - Highlight reading progress with fun stats
 5. ⚠️ Credits Running Low - Gently remind users about low credits
+6. 🌟 A New Adventure Awaits - Spark excitement for story time with magical invitations
 
 ## Template URLs
 - Onboarding: https://web3sea.github.io/storybud-emails/templates/01-onboarding-foundation.html
@@ -934,6 +960,7 @@ This collection contains all 5 email templates for the StoryBud adoption sequenc
 - First Story: https://web3sea.github.io/storybud-emails/templates/03-first-story-created.html
 - Weekly Report: https://web3sea.github.io/storybud-emails/templates/04-weekly-reading-report.html
 - Credits Low: https://web3sea.github.io/storybud-emails/templates/05-credits-running-low.html
+- New Adventure: https://web3sea.github.io/storybud-emails/templates/025-lets-read-story.html
 
 ## Implementation Notes
 - All templates use responsive design
