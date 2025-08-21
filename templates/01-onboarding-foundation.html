@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to StoryBud!</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #F3F4F6;
+        }
+        .email-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .welcome-heading {
+            font-size: 32px;
+            color: #8B5CF6;
+            margin-bottom: 10px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-heading {
+            font-size: 24px;
+            color: #6366F1;
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+        .emoji {
+            font-size: 28px;
+            margin-right: 8px;
+        }
+        .highlight-box {
+            background-color: #FCD34D;
+            border-left: 4px solid #8B5CF6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        .steps-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 500;
+        }
+        .steps-list li::before {
+            content: counter(step-counter);
+            background-color: #8B5CF6;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #8B5CF6;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #6366F1;
+        }
+        .support-links {
+            background-color: #F9A8D4;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .support-links a {
+            color: #8B5CF6;
+            text-decoration: none;
+        }
+        .support-links a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        .personalized-name {
+            color: #8B5CF6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1 class="welcome-heading">📚✨ Welcome to StoryBud!</h1>
+        </div>
+
+        <div class="section">
+            <p>Hi <span class="personalized-name">{{user_name}}</span>!</p>
+            <p>We're thrilled to have you join our community of storytellers! StoryBud makes it easy to create personalized, illustrated children's stories that captivate and delight.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">🎁 Your {{subscription_name}} account is ready!</h2>
+            <div class="highlight-box">
+                <p> <strong>The {{subscription_name}} tier includes {{credit_allowance}} credits</strong> per month. Credits are used to:</p>
+                <ul>
+                    <li>Generate a complete story with illustrations</li>
+                    <li>Add voice narration</li>
+                    <li>Create character portraits</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">🚀 Ready to Create Your First Story?</h2>
+            <p>Here's how to get started:</p>
+            <ol class="steps-list">
+                <li><strong> Choose your theme.</strong> Adventure, fantasy, learning, or everyday fun</li>
+                <li><strong> Add characters.</strong> - Include your child's name and photo for personalization</li>
+                <li><strong> Select an art style.</strong> - From watercolor to anime, pick what your child loves</li>
+                <li><strong> Generate & enjoy.</strong> - Watch the magic happen in minutes!</li>
+            </ol>
+            
+            <div style="text-align: center;">
+                <a href="{{create_story_link}}" class="cta-button">Create Your First Story</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-heading">❓ Need help?</h2>
+            <div class="support-links">
+                <p>We're here for you!</p>
+                <ul>
+                    <li>Check out our <a href="{{features_guide_link}}">Features Guide</a></li>
+                    <li>Contact us at <a href="mailto:support@storybud.com">support@storybud.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Happy storytelling! 📚</p>
+            <p><em>The StoryBud Team</em></p>
+            
+            <div class="footer-content">
+                <p class="unsubscribe-text">You are receiving this e-mail because you signed up for StoryBud. If you do not want to receive email from us in the future, please <a href="{{unsubscribe_link}}" style="color: #8B5CF6;">click to unsubscribe</a>.</p>
+                
+                <div class="footer-links">
+                    <a href="https://storybud.com/about" style="color: #8B5CF6; text-decoration: none; margin: 0 10px;">About StoryBud</a> | 
+                    <a href="https://storybud.com/privacy-policy" style="color: #8B5CF6; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
+                    <a href="mailto:support@storybud.com" style="color: #8B5CF6; text-decoration: none; margin: 0 10px;">Support Team</a>
+                </div>
+                
+                <p class="address">1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <p class="copyright">Copyright © 2025 StoryBud All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
