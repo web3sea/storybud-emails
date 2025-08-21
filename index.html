@@ -415,6 +415,155 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
         }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .modal-body {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .preview-iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            background: #F9FAFB;
+        }
+        
+        .preview-placeholder {
+            background: linear-gradient(135deg, #F3F4F6, #E8F4FD);
+            border: 2px dashed #8B5CF6;
+            border-radius: 12px;
+            padding: 60px 20px;
+            text-align: center;
+            color: #6B7280;
+        }
+        
+        .preview-placeholder h3 {
+            color: #8B5CF6;
+            margin-bottom: 15px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .preview-placeholder p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .preview-action-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .preview-primary {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .preview-primary:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .preview-secondary {
+            background: #F3F4F6;
+            color: #6B7280;
+            border: 2px solid #E5E7EB;
+        }
+        
+        .preview-secondary:hover {
+            background: #E5E7EB;
+            color: #374151;
+            border-color: #8B5CF6;
+        }
     </style>
 </head>
 <body>
@@ -498,7 +647,7 @@
                     <div class="template-description">Give new users a magical welcome with subscription details, helpful tips, and a clear path to their first story adventure.</div>
                     <div class="template-actions">
                         <a href="templates/01-onboarding-foundation.html" class="template-link">View Template</a>
-                        <a href="#" class="preview-btn">Preview</a>
+                        <button class="preview-btn" onclick="openPreview('onboarding', 'Onboarding Foundation')">Preview</button>
                     </div>
                 </div>
                 
@@ -510,7 +659,7 @@
                     <div class="template-description">Inspire families to dive back in and enjoy their next personalized tale, making reading time exciting and effortless.</div>
                     <div class="template-actions">
                         <a href="templates/02-lets-read-story.html" class="template-link">View Template</a>
-                        <a href="#" class="preview-btn">Preview</a>
+                        <button class="preview-btn" onclick="openPreview('lets-read', 'Let\'s Read a Story')">Preview</button>
                     </div>
                 </div>
                 
@@ -522,7 +671,7 @@
                     <div class="template-description">Celebrate the joy of creation! Congratulate users when they craft their very first story and encourage them to keep imagining.</div>
                     <div class="template-actions">
                         <a href="templates/03-first-story-created.html" class="template-link">View Template</a>
-                        <a href="#" class="preview-btn">Preview</a>
+                        <button class="preview-btn" onclick="openPreview('first-story', 'First Story Created')">Preview</button>
                     </div>
                 </div>
                 
@@ -534,7 +683,7 @@
                     <div class="template-description">Highlight reading progress with fun, visual stats that motivate parents and kids to keep building their storytelling habit.</div>
                     <div class="template-actions">
                         <a href="templates/04-weekly-reading-report.html" class="template-link">View Template</a>
-                        <a href="#" class="preview-btn">Preview</a>
+                        <button class="preview-btn" onclick="openPreview('weekly-report', 'Weekly Reading Report')">Preview</button>
                     </div>
                 </div>
                 
@@ -546,7 +695,7 @@
                     <div class="template-description">Gently remind users when their credits are running low and guide them toward topping up, so the stories never have to stop.</div>
                     <div class="template-actions">
                         <a href="templates/05-credits-running-low.html" class="template-link">View Template</a>
-                        <a href="#" class="preview-btn">Preview</a>
+                        <button class="preview-btn" onclick="openPreview('credits-low', 'Credits Running Low')">Preview</button>
                     </div>
                 </div>
             </div>
@@ -580,6 +729,122 @@
                 </p>
             </div>
         </div>
+        
+        <!-- Preview Modal -->
+        <div id="previewModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalTitle">Template Preview</h2>
+                    <button class="close" onclick="closePreview()">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <script>
+        // Preview functionality
+        function openPreview(templateId, templateName) {
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = templateName;
+            
+            // Create preview content based on template
+            let previewContent = '';
+            
+            switch(templateId) {
+                case 'onboarding':
+                    previewContent = `
+                        <div class="preview-placeholder">
+                            <h3>🎉 Welcome to StoryBud!</h3>
+                            <p>This onboarding email welcomes new users with subscription details, helpful tips, and a clear path to their first story adventure.</p>
+                            <div class="preview-actions">
+                                <a href="templates/01-onboarding-foundation.html" class="preview-action-btn preview-primary">View Full Template</a>
+                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'lets-read':
+                    previewContent = `
+                        <div class="preview-placeholder">
+                            <h3>📚 Let's Read a Story!</h3>
+                            <p>This email inspires families to dive back in and enjoy their next personalized tale, making reading time exciting and effortless.</p>
+                            <div class="preview-actions">
+                                <a href="templates/02-lets-read-story.html" class="preview-action-btn preview-primary">View Full Template</a>
+                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'first-story':
+                    previewContent = `
+                        <div class="preview-placeholder">
+                            <h3>✨ First Story Created!</h3>
+                            <p>This email celebrates the joy of creation and congratulates users when they craft their very first story.</p>
+                            <div class="preview-actions">
+                                <a href="templates/03-first-story-created.html" class="preview-action-btn preview-primary">View Full Template</a>
+                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'weekly-report':
+                    previewContent = `
+                        <div class="preview-placeholder">
+                            <h3>📊 Weekly Reading Report</h3>
+                            <p>This email highlights reading progress with fun, visual stats that motivate parents and kids to keep building their storytelling habit.</p>
+                            <div class="preview-actions">
+                                <a href="templates/04-weekly-reading-report.html" class="preview-action-btn preview-primary">View Full Template</a>
+                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'credits-low':
+                    previewContent = `
+                        <div class="preview-placeholder">
+                            <h3>⚠️ Credits Running Low</h3>
+                            <p>This email gently reminds users when their credits are running low and guides them toward topping up.</p>
+                            <div class="preview-actions">
+                                <a href="templates/05-credits-running-low.html" class="preview-action-btn preview-primary">View Full Template</a>
+                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
+                            </div>
+                        </div>
+                    `;
+                    break;
+            }
+            
+            modalBody.innerHTML = previewContent;
+            modal.style.display = 'block';
+            
+            // Close modal when clicking outside
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    closePreview();
+                }
+            };
+        }
+        
+        function closePreview() {
+            const modal = document.getElementById('previewModal');
+            modal.style.display = 'none';
+        }
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePreview();
+            }
+        });
+    </script>
 </body>
 </html>
