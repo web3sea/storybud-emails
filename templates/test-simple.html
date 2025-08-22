@@ -41,6 +41,12 @@
             p {
                 color: #D1D5DB !important;
             }
+            img.logo-dark {
+                display: block !important;
+            }
+            img.logo-light {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -50,6 +56,11 @@
         <p>If you can see this, the basic HTML is working!</p>
         <p>This is a simple test to check if the issue is with complex CSS or HTML structure.</p>
         <p><strong>Current time:</strong> <span id="time"></span></p>
+        
+        <div class="logo-container" style="text-align: center; margin-top: 30px;">
+            <img src="assets/images/StoryBud logo.png" alt="StoryBud Logo" class="logo-light" style="max-width: 150px; height: auto;">
+            <img src="assets/images/generated-image.png" alt="StoryBud Logo" class="logo-dark" style="max-width: 150px; height: auto; display: none;">
+        </div>
     </div>
     
     <script>
