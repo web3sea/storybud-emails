@@ -330,23 +330,43 @@
                 text-align: center;
                 justify-content: center;
             }
+            
+            .download-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .download-left,
+            .download-right {
+                justify-content: center;
+            }
         }
         
         /* Sequence Navigation */
         .sequence-navigation {
             background: white;
             border-radius: 24px;
-            padding: 40px;
+            padding: 50px 40px 40px 40px;
             margin-bottom: 40px;
             box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+            position: relative;
         }
         
         .sequence-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             color: #8B5CF6;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-shadow: 2px 2px 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .sequence-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #6B7280;
+            margin-bottom: 40px;
+            font-weight: 500;
         }
         
         .sequence-tabs {
@@ -576,6 +596,47 @@
             background: linear-gradient(135deg, #059669, #10B981);
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .download-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .download-left {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .download-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .test-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .test-btn:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
         }
         
         /* Notification Styles */
@@ -933,6 +994,10 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
         }
         
+        body.dark-mode .sequence-subtitle {
+            color: #D1D5DB !important;
+        }
+        
         body.dark-mode .sequence-tab {
             background: linear-gradient(135deg, #374151, #4B5563) !important;
             border-color: #6B7280 !important;
@@ -984,16 +1049,11 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
-        <div class="header-section">
-            <h1 class="main-title">📧 StoryBud Email Templates</h1>
-            <p class="subtitle">Adoption Sequence Email Templates – Overview</p>
-            <button class="theme-toggle" id="themeToggle">🌓</button>
-        </div>
-        
-        <!-- Sequence Navigation -->
+        <!-- Email Sequences Hero Section -->
         <div class="sequence-navigation">
-            <h2 class="sequence-title">📚 Email Sequences</h2>
+            <h1 class="sequence-title">📚 StoryBud Email Templates</h1>
+            <p class="sequence-subtitle">Adoption Sequence Email Templates – Overview</p>
+            <button class="theme-toggle" id="themeToggle">🌓</button>
             <div class="sequence-tabs">
                 <button class="sequence-tab active" onclick="showSequence('onboarding', event)">
                     <span class="tab-icon">🎯</span>
@@ -1084,10 +1144,9 @@
                         <h3 class="template-title">Onboarding Foundation</h3>
                     </div>
                     <div class="template-description">Give new users a magical welcome with subscription details, helpful tips, and a clear path to their first story adventure.</div>
-                    <div class="template-actions">
-                        <a href="templates/01-onboarding-foundation.html" class="template-link">View Template</a>
-                        <button class="preview-btn" onclick="openPreview('onboarding', 'Onboarding Foundation')">Preview</button>
-                    </div>
+                                            <div class="template-actions">
+                            <a href="templates/01-onboarding-foundation.html" class="template-link">View Email</a>
+                        </div>
                 </div>
                 
                 <div class="template-card">
@@ -1096,10 +1155,9 @@
                         <h3 class="template-title">Let's Read a Story</h3>
                     </div>
                     <div class="template-description">Inspire families to dive back in and enjoy their next personalized tale, making reading time exciting and effortless.</div>
-                    <div class="template-actions">
-                        <a href="templates/02-lets-read-story.html" class="template-link">View Template</a>
-                        <button class="preview-btn" onclick="openPreview('lets-read', 'Let\'s Read a Story')">Preview</button>
-                    </div>
+                                            <div class="template-actions">
+                            <a href="templates/02-lets-read-story.html" class="template-link">View Email</a>
+                        </div>
                 </div>
                 
                 <div class="template-card">
@@ -1108,10 +1166,9 @@
                         <h3 class="template-title">First Story Created</h3>
                     </div>
                     <div class="template-description">Celebrate the joy of creation! Congratulate users when they craft their very first story and encourage them to keep imagining.</div>
-                    <div class="template-actions">
-                        <a href="templates/03-first-story-created.html" class="template-link">View Template</a>
-                        <button class="preview-btn" onclick="openPreview('first-story', 'First Story Created')">Preview</button>
-                    </div>
+                                            <div class="template-actions">
+                            <a href="templates/03-first-story-created.html" class="template-link">View Email</a>
+                        </div>
                 </div>
                 
                 <div class="template-card">
@@ -1121,7 +1178,7 @@
                     </div>
                     <div class="template-description">Highlight reading progress with fun, visual stats that motivate parents and kids to keep building their storytelling habit.</div>
                     <div class="template-actions">
-                        <a href="templates/04-weekly-reading-report.html" class="template-link">View Template</a>
+                        <a href="templates/04-weekly-reading-report.html" class="template-link">View Email</a>
                         <button class="preview-btn" onclick="openPreview('weekly-report', 'Weekly Reading Report')">Preview</button>
                     </div>
                 </div>
@@ -1133,7 +1190,7 @@
                     </div>
                     <div class="template-description">Gently remind users when their credits are running low and guide them toward topping up, so the stories never have to stop.</div>
                     <div class="template-actions">
-                        <a href="templates/05-credits-running-low.html" class="template-link">View Template</a>
+                        <a href="templates/05-credits-running-low.html" class="template-link">View Email</a>
                         <button class="preview-btn" onclick="openPreview('credits-low', 'Credits Running Low')">Preview</button>
                     </div>
                 </div>
@@ -1145,7 +1202,7 @@
                     </div>
                     <div class="template-description">Spark excitement for story time with a magical invitation that reminds families of the joy and connection that reading together brings.</div>
                     <div class="template-actions">
-                        <a href="templates/025-lets-read-story.html" class="template-link">View Template</a>
+                        <a href="templates/025-lets-read-story.html" class="template-link">View Email</a>
                         <button class="preview-btn" onclick="openPreview('new-adventure', 'A New Adventure Awaits')">Preview</button>
                     </div>
                 </div>
@@ -1208,7 +1265,7 @@
                         </div>
                         <div class="template-description">First day storytime email to kick off the 7-day story adventure journey.</div>
                         <div class="template-actions">
-                            <a href="templates/storytime_email_day1.html" class="template-link">View Template</a>
+                            <a href="templates/storytime_email_day1.html" class="template-link">View Email</a>
                             <button class="preview-btn" onclick="openPreview('storytime-day1', 'Storytime Email - Day 1')">Preview</button>
                         </div>
                     </div>
@@ -1219,7 +1276,7 @@
                         </div>
                         <div class="template-description">Second day storytime email continuing the adventure with new story elements.</div>
                         <div class="template-actions">
-                            <a href="templates/storytime_email_day2.html" class="template-link">View Template</a>
+                            <a href="templates/storytime_email_day2.html" class="template-link">View Email</a>
                             <button class="preview-btn" onclick="openPreview('storytime-day2', 'Storytime Email - Day 2')">Preview</button>
                         </div>
                     </div>
@@ -1230,7 +1287,7 @@
                         </div>
                         <div class="template-description">Third day storytime email building momentum in the story adventure.</div>
                         <div class="template-actions">
-                            <a href="templates/storytime_email_day3.html" class="template-link">View Template</a>
+                            <a href="templates/storytime_email_day3.html" class="template-link">View Email</a>
                             <button class="preview-btn" onclick="openPreview('storytime-day3', 'Storytime Email - Day 3')">Preview</button>
                         </div>
                     </div>
@@ -1242,7 +1299,7 @@
                         </div>
                         <div class="template-description">Fourth day brings a plot twist that keeps readers engaged and excited for what's next.</div>
                         <div class="template-actions">
-                            <a href="templates/storytime_email_day4.html" class="template-link">View Template</a>
+                            <a href="templates/storytime_email_day4.html" class="template-link">View Email</a>
                             <button class="preview-btn" onclick="openPreview('storytime-day4', 'Storytime Email - Day 4')">Preview</button>
                         </div>
                     </div>
@@ -1254,7 +1311,7 @@
                         </div>
                         <div class="template-description">Friday's climactic story moment delivers the peak excitement of the 7-day adventure.</div>
                         <div class="template-actions">
-                            <a href="templates/storytime_email_day5.html" class="template-link">View Template</a>
+                            <a href="templates/storytime_email_day5.html" class="template-link">View Email</a>
                             <button class="preview-btn" onclick="openPreview('storytime-day5', 'Storytime Email - Day 5')">Preview</button>
                         </div>
                     </div>
@@ -1266,7 +1323,7 @@
                         </div>
                         <div class="template-description">Saturday brings resolution as the story adventure reaches its satisfying conclusion.</div>
                         <div class="template-actions">
-                            <a href="templates/storytime_email_day6.html" class="template-link">View Template</a>
+                            <a href="templates/storytime_email_day6.html" class="template-link">View Email</a>
                             <button class="preview-btn" onclick="openPreview('storytime-day6', 'Storytime Email - Day 6')">Preview</button>
                         </div>
                     </div>
@@ -1278,7 +1335,7 @@
                         </div>
                         <div class="template-description">Sunday celebrates the completed story adventure and encourages starting a new journey.</div>
                         <div class="template-actions">
-                            <a href="templates/storytime_email_day7.html" class="template-link">View Template</a>
+                            <a href="templates/storytime_email_day7.html" class="template-link">View Email</a>
                             <button class="preview-btn" onclick="openPreview('storytime-day7', 'Storytime Email - Day 7')">Preview</button>
                         </div>
                     </div>
@@ -1364,8 +1421,12 @@
             <h2 class="download-title">📥 Get All Templates</h2>
             <p class="download-description">Download the complete email sequence or copy the entire campaign for your marketing platform.</p>
             <div class="download-buttons">
-                <button class="download-btn" onclick="downloadAllTemplates()">Download All Templates</button>
-                <button class="test-btn" onclick="testPersonalization()">🧪 Test Personalization</button>
+                <div class="download-left">
+                    <button class="download-btn" onclick="downloadAllTemplates()">Download All Templates</button>
+                </div>
+                <div class="download-right">
+                    <button class="test-btn" onclick="testPersonalization()">🧪 Test Personalization</button>
+                </div>
             </div>
         </div>
         
