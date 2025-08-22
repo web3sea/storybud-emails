@@ -466,6 +466,20 @@
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
         }
         
+        .timeline-day.current-day {
+            background: linear-gradient(135deg, #FCD34D, #F59E0B);
+            color: #1F2937;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+        }
+        
+        .timeline-day.current-day .day-number,
+        .timeline-day.current-day .day-name,
+        .timeline-day.current-day .day-activity {
+            color: #1F2937;
+            font-weight: 600;
+        }
+        
         .day-number {
             font-size: 1.5rem;
             font-weight: bold;
@@ -1026,6 +1040,19 @@
             box-shadow: 0 8px 25px rgba(167, 139, 250, 0.15) !important;
         }
         
+        body.dark-mode .timeline-day.current-day {
+            background: linear-gradient(135deg, #FCD34D, #F59E0B) !important;
+            color: #1F2937 !important;
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4) !important;
+        }
+        
+        body.dark-mode .timeline-day.current-day .day-number,
+        body.dark-mode .timeline-day.current-day .day-name,
+        body.dark-mode .timeline-day.current-day .day-activity {
+            color: #1F2937 !important;
+            font-weight: 600 !important;
+        }
+        
         body.dark-mode .day-number {
             color: #A78BFA !important;
         }
@@ -1408,6 +1435,18 @@
             </div>
         </div>
         
+        <!-- Download Section -->
+        <div class="download-section">
+            <h2 class="download-title">Test and Ship</h2>
+            <div class="download-buttons">
+                <div class="download-left">
+                    <button class="download-btn" onclick="downloadAllTemplates()">Download All Templates</button>
+                </div>
+                <div class="download-right">
+                    <button class="test-btn" onclick="testPersonalization()">🧪 Test Personalization</button>
+                </div>
+            </div>
+        </div>        
         <!-- Download Section -->
         <div class="download-section">
             <h2 class="download-title">Test and Ship</h2>
@@ -1819,6 +1858,30 @@ StoryBud Team`;
             showNotification('Personalization testing guide downloaded! 🧪', 'success');
         }
 
+        // Auto-select Engagement tab on Sunday and highlight current day
+        function autoSelectEngagementOnSunday() {
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            
+            // If it's Sunday (day 0), automatically show Engagement tab
+            if (dayOfWeek === 0) {
+                // Show engagement sequence
+                showSequence('engagement');
+                
+                // Update tab states
+                document.querySelectorAll('.sequence-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.querySelector('.sequence-tab[onclick*="engagement"]').classList.add('active');
+                
+                // Highlight Sunday as current day
+                const sundayDay = document.querySelector('.timeline-day .day-name');
+                if (sundayDay && sundayDay.textContent === 'Sunday') {
+                    sundayDay.closest('.timeline-day').classList.add('current-day');
+                }
+            }
+        }
+        
         // Theme toggle functionality
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
@@ -1838,6 +1901,11 @@ StoryBud Team`;
                 themeToggle.textContent = '🌓';
                 localStorage.removeItem('theme');
             }
+        });
+        
+        // Auto-select Engagement tab on Sunday when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            autoSelectEngagementOnSunday();
         });
     </script>
 </body>
