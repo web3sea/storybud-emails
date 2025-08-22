@@ -1028,15 +1028,15 @@
         <div class="sequence-navigation">
             <h2 class="sequence-title">📚 Email Sequences</h2>
             <div class="sequence-tabs">
-                <button class="sequence-tab active" onclick="showSequence('onboarding')">
+                <button class="sequence-tab active" onclick="showSequence('onboarding', event)">
                     <span class="tab-icon">🎯</span>
                     <span class="tab-text">Onboarding</span>
                 </button>
-                <button class="sequence-tab" onclick="showSequence('engagement')">
+                <button class="sequence-tab" onclick="showSequence('engagement', event)">
                     <span class="tab-icon">💫</span>
                     <span class="tab-text">Engagement</span>
                 </button>
-                <button class="sequence-tab" onclick="showSequence('retention')">
+                <button class="sequence-tab" onclick="showSequence('retention', event)">
                     <span class="tab-icon">🌟</span>
                     <span class="tab-text">Retention</span>
                 </button>
@@ -1527,7 +1527,7 @@ StoryBud Team`;
         }
         
         // Sequence Navigation
-        function showSequence(sequenceType) {
+        function showSequence(sequenceType, event) {
             // Hide all sequence containers
             const containers = document.querySelectorAll('.sequence-container');
             containers.forEach(container => {
@@ -1547,9 +1547,11 @@ StoryBud Team`;
             }
             
             // Add active class to the clicked tab
-            const clickedTab = event.target.closest('.sequence-tab');
-            if (clickedTab) {
-                clickedTab.classList.add('active');
+            if (event) {
+                const clickedTab = event.target.closest('.sequence-tab');
+                if (clickedTab) {
+                    clickedTab.classList.add('active');
+                }
             }
         }
         
