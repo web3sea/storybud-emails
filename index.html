@@ -1553,7 +1553,16 @@
             
             // Create iframe to display the actual email
             const iframe = document.createElement('iframe');
-            iframe.src = emailUrl;
+            
+            // Handle both local files and external URLs
+            if (emailUrl.startsWith('http')) {
+                // External URL - use as is
+                iframe.src = emailUrl;
+            } else {
+                // Local file - construct full path
+                iframe.src = window.location.origin + '/' + emailUrl;
+            }
+            
             iframe.className = 'preview-iframe';
             iframe.style.width = '100%';
             iframe.style.height = '600px';
