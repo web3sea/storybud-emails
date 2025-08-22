@@ -332,6 +332,73 @@
             }
         }
         
+        /* Sequence Navigation */
+        .sequence-navigation {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+        }
+        
+        .sequence-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B5CF6;
+            margin-bottom: 40px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .sequence-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .sequence-tab {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            border: 2px solid #E5E7EB;
+            color: #6B7280;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .sequence-tab:hover {
+            background: linear-gradient(135deg, #E5E7EB, #D1D5DB);
+            color: #374151;
+            border-color: #8B5CF6;
+            transform: translateY(-2px);
+        }
+        
+        .sequence-tab.active {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            border-color: #8B5CF6;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+        
+        .sequence-tab.active:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(139, 92, 246, 0.4);
+        }
+        
+        .tab-icon {
+            font-size: 1.3rem;
+        }
+        
+        .tab-text {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
         /* Progress Indicator */
         .progress-section {
             background: white;
@@ -791,6 +858,28 @@
             background: #374151;
             color: #D1D5DB;
         }
+        
+        body.dark-mode .sequence-navigation {
+            background: #1F2937 !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        body.dark-mode .sequence-tab {
+            background: linear-gradient(135deg, #374151, #4B5563) !important;
+            border-color: #6B7280 !important;
+            color: #D1D5DB !important;
+        }
+        
+        body.dark-mode .sequence-tab:hover {
+            background: linear-gradient(135deg, #4B5563, #6B7280) !important;
+            color: #E0E0E0 !important;
+        }
+        
+        body.dark-mode .sequence-tab.active {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6) !important;
+            border-color: #8B5CF6 !important;
+            color: white !important;
+        }
     </style>
 </head>
 <body>
@@ -835,6 +924,25 @@
             </div>
         </div>
         
+        <!-- Sequence Navigation -->
+        <div class="sequence-navigation">
+            <h2 class="sequence-title">📚 Email Sequences</h2>
+            <div class="sequence-tabs">
+                <button class="sequence-tab active" onclick="showSequence('onboarding')">
+                    <span class="tab-icon">🎯</span>
+                    <span class="tab-text">Onboarding</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('engagement')">
+                    <span class="tab-icon">💫</span>
+                    <span class="tab-text">Engagement</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('retention')">
+                    <span class="tab-icon">🌟</span>
+                    <span class="tab-text">Retention</span>
+                </button>
+            </div>
+        </div>
+        
         <!-- Progress Section -->
         <div class="progress-section">
             <h2 class="progress-title">📋 Email Sequence Timeline</h2>
@@ -864,8 +972,8 @@
         </div>
         
         <!-- Templates Section -->
-        <div class="templates-section">
-            <h2 class="section-title">🎨 Email Templates</h2>
+        <div class="templates-section" id="onboarding-sequence">
+            <h2 class="section-title">🎯 Onboarding Sequence</h2>
             <div class="template-grid">
                 <div class="template-card">
                     <div class="template-header">
@@ -945,7 +1053,10 @@
         <div class="download-section">
             <h2 class="download-title">📥 Get All Templates</h2>
             <p class="download-description">Download the complete email sequence or copy the entire campaign for your marketing platform.</p>
-            <button class="download-btn" onclick="downloadAllTemplates()">Download All Templates</button>
+            <div class="download-buttons">
+                <button class="download-btn" onclick="downloadAllTemplates()">Download All Templates</button>
+                <button class="test-btn" onclick="testPersonalization()">🧪 Test Personalization</button>
+            </div>
         </div>
         
         <!-- Footer -->
@@ -1176,6 +1287,129 @@ StoryBud Team`;
                     notification.remove();
                 }
             }, 5000);
+        }
+
+        // Personalization testing functionality
+        function testPersonalization() {
+            const testScenarios = [
+                {
+                    name: 'Short Name',
+                    data: {
+                        user_name: 'Alex',
+                        child_name: 'Sam',
+                        subscription_name: 'Starter',
+                        credit_allowance: '10',
+                        stories_read: '3',
+                        reading_time: '20',
+                        new_words: '8',
+                        days_active: '2',
+                        vocabulary_improvement: '5',
+                        stamina_improvement: '10',
+                        comprehension_score: '85',
+                        creative_responses: '4',
+                        credits_remaining: '15',
+                        create_story_link: '#',
+                        features_guide_link: '#',
+                        unsubscribe_link: '#'
+                    }
+                },
+                {
+                    name: 'Long Name',
+                    data: {
+                        user_name: 'Alexandria Rodriguez-Williams',
+                        child_name: 'Isabella Rodriguez-Williams',
+                        subscription_name: 'Premium Family Plan',
+                        credit_allowance: 'unlimited',
+                        stories_read: '12',
+                        reading_time: '120',
+                        new_words: '25',
+                        days_active: '7',
+                        vocabulary_improvement: '18',
+                        stamina_improvement: '45',
+                        comprehension_score: '98',
+                        creative_responses: '15',
+                        credits_remaining: '150',
+                        create_story_link: '#',
+                        features_guide_link: '#',
+                        unsubscribe_link: '#'
+                    }
+                },
+                {
+                    name: 'Missing Data (Fallbacks)',
+                    data: {
+                        user_name: '',
+                        child_name: '',
+                        subscription_name: '',
+                        credit_allowance: '',
+                        stories_read: '',
+                        reading_time: '',
+                        new_words: '',
+                        days_active: '',
+                        vocabulary_improvement: '',
+                        stamina_improvement: '',
+                        comprehension_score: '',
+                        creative_responses: '',
+                        credits_remaining: '',
+                        create_story_link: '',
+                        features_guide_link: '',
+                        unsubscribe_link: ''
+                    }
+                }
+            ];
+
+            let testResults = '## Personalization Testing Results\n\n';
+            
+            testScenarios.forEach(scenario => {
+                testResults += `### ${scenario.name}\n`;
+                testResults += '**Test Data:**\n';
+                Object.entries(scenario.data).forEach(([key, value]) => {
+                    testResults += `- ${key}: ${value || '(empty - will use fallback)'}\n`;
+                });
+                testResults += '\n**Expected Behavior:**\n';
+                testResults += '- All personalization tags should display fallback values when data is missing\n';
+                testResults += '- Long names should not break layout\n';
+                testResults += '- Numbers should display properly\n';
+                testResults += '- Links should have fallback URLs\n\n';
+            });
+
+            testResults += '## Fallback Values Implemented\n';
+            testResults += '- `{{user_name|default:"there"}}` - Shows "Hi there!" when name is missing\n';
+            testResults += '- `{{child_name|default:"your child"}}` - Shows "your child" when child name is missing\n';
+            testResults += '- `{{subscription_name|default:"StoryBud"}}` - Shows "StoryBud" when subscription is missing\n';
+            testResults += '- `{{credit_allowance|default:"unlimited"}}` - Shows "unlimited" when credits are missing\n';
+            testResults += '- `{{stories_read|default:"5"}}` - Shows "5" when data is missing\n';
+            testResults += '- `{{reading_time|default:"45"}}` - Shows "45" when data is missing\n';
+            testResults += '- `{{new_words|default:"12"}}` - Shows "12" when data is missing\n';
+            testResults += '- `{{days_active|default:"4"}}` - Shows "4" when data is missing\n';
+            testResults += '- `{{vocabulary_improvement|default:"8"}}` - Shows "8" when data is missing\n';
+            testResults += '- `{{stamina_improvement|default:"15"}}` - Shows "15" when data is missing\n';
+            testResults += '- `{{comprehension_score|default:"92"}}` - Shows "92" when data is missing\n';
+            testResults += '- `{{creative_responses|default:"6"}}` - Shows "6" when data is missing\n';
+            testResults += '- `{{credits_remaining|default:"25"}}` - Shows "25" when data is missing\n';
+            testResults += '- `{{create_story_link|default:"#"}}` - Shows "#" when link is missing\n';
+            testResults += '- `{{features_guide_link|default:"#"}}` - Shows "#" when link is missing\n';
+            testResults += '- `{{unsubscribe_link|default:"#"}}` - Shows "#" when link is missing\n\n';
+            testResults += '## Testing Instructions\n';
+            testResults += '1. Open each email template\n';
+            testResults += '2. Test with the scenarios above\n';
+            testResults += '3. Verify fallbacks work correctly\n';
+            testResults += '4. Check layout with long names\n';
+            testResults += '5. Ensure all personalization tags have fallbacks\n\n';
+            testResults += `Generated on: ${new Date().toLocaleDateString()}`;
+
+            // Create and download the test results
+            const blob = new Blob([testResults], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Personalization-Testing-Results.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+            
+            // Show success message
+            showNotification('Personalization testing guide downloaded! 🧪', 'success');
         }
 
         // Theme toggle functionality

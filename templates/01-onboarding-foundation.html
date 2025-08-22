@@ -176,14 +176,14 @@
         </div>
 
         <div class="section">
-            <p>Hi <span class="personalized-name">{{user_name}}</span>!</p>
+            <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
             <p>We're thrilled to have you join our community of storytellers! StoryBud makes it easy to create personalized, illustrated children's stories that captivate and delight.</p>
         </div>
 
         <div class="section">
-            <h2 class="section-heading">🎁 Your {{subscription_name}} account is ready!</h2>
+            <h2 class="section-heading">🎁 Your {{subscription_name|default:"StoryBud"}} account is ready!</h2>
             <div class="highlight-box">
-                <p> <strong>The {{subscription_name}} tier includes {{credit_allowance}} credits</strong> per month. Credits are used to:</p>
+                <p> <strong>The {{subscription_name|default:"StoryBud"}} tier includes {{credit_allowance|default:"unlimited"}} credits</strong> per month. Credits are used to:</p>
                 <ul>
                     <li>Generate a complete story with illustrations</li>
                     <li>Add voice narration</li>
@@ -203,7 +203,7 @@
             </ol>
             
             <div style="text-align: center;">
-                <a href="{{create_story_link}}" class="cta-button">Create Your First Story</a>
+                <a href="{{create_story_link|default:'#'}}" class="cta-button">Create Your First Story</a>
             </div>
         </div>
 
@@ -212,7 +212,7 @@
             <div class="support-links">
                 <p>We're here for you!</p>
                 <ul>
-                    <li>Check out our <a href="{{features_guide_link}}">Features Guide</a></li>
+                    <li>Check out our <a href="{{features_guide_link|default:'#'}}">Features Guide</a></li>
                     <li>Contact us at <a href="mailto:support@storybud.com">support@storybud.com</a></li>
                 </ul>
             </div>

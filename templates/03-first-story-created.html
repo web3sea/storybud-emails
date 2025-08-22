@@ -152,9 +152,9 @@
         <h1 class="welcome-heading">🎉 Your First Story is Ready!</h1>
       </div>
       <div class="section">
-        <p>Hi <span class="personalized-name">{{user_name}}</span>!</p>
+        <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
         <p id="itboh">
-          Congratulations! {{child_name}}'s very first StoryBud adventure is
+          Congratulations! {{child_name|default:"your child"}}'s very first StoryBud adventure is
           ready, marking the beginning of many magical stories you’ll share
           together.
         </p>
