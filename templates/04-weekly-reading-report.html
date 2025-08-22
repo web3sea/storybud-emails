@@ -78,6 +78,49 @@
             font-size: 0.9rem;
             opacity: 0.9;
         }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212 !important;
+                color: #E0E0E0 !important;
+            }
+            .email-container {
+                background-color: #1F2937 !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+            }
+            .welcome-heading {
+                color: #FCD34D !important;
+            }
+            .section-heading {
+                color: #FCD34D !important;
+            }
+            .personalized-name {
+                color: #FCD34D !important;
+            }
+            .highlight-box {
+                background-color: #374151 !important;
+                border-left-color: #FCD34D !important;
+            }
+            .stat-card {
+                background: linear-gradient(135deg, #FCD34D, #F59E0B) !important;
+                color: #121212 !important;
+            }
+            .footer {
+                color: #D1D5DB !important;
+                border-top-color: #4B5563 !important;
+            }
+            .footer-content a {
+                color: #FCD34D !important;
+            }
+            .unsubscribe-text, .address, .copyright {
+                color: #9CA3AF !important;
+            }
+            a[href*="create_story_link"] {
+                background: linear-gradient(135deg, #FCD34D, #F59E0B) !important;
+                color: #121212 !important;
+            }
+        }
     </style>
 </head>
 <body>

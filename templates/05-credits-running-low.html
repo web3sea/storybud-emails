@@ -81,6 +81,40 @@
       .unsubscribe-text {
         margin-bottom: 10px;
       }
+      
+      /* Dark Mode Support */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212 !important;
+          color: #E0E0E0 !important;
+        }
+        .email-container {
+          background-color: #1F2937 !important;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+        }
+        .welcome-heading {
+          color: #FCD34D !important;
+        }
+        .section-heading {
+          color: #FCD34D !important;
+        }
+        .personalized-name {
+          color: #FCD34D !important;
+        }
+        .footer {
+          color: #D1D5DB !important;
+          border-top-color: #4B5563 !important;
+        }
+        .footer-content a {
+          color: #FCD34D !important;
+        }
+        .footer-content {
+          color: #9CA3AF !important;
+        }
+        .address, .copyright, .unsubscribe-text {
+          color: #9CA3AF !important;
+        }
+      }
     </style>
   </head>
   <body>

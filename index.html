@@ -33,6 +33,32 @@
             padding: 50px 40px;
             border-radius: 24px;
             box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+            position: relative;
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            border: none;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
         }
         
         .main-title {
@@ -631,6 +657,140 @@
             color: #374151;
             border-color: #8B5CF6;
         }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1F2937, #111827);
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .header-section,
+        body.dark-mode .description-section,
+        body.dark-mode .templates-section,
+        body.dark-mode .footer,
+        body.dark-mode .progress-section,
+        body.dark-mode .download-section {
+            background: #1F2937;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode .description {
+            background: #374151;
+            border-color: #4B5563;
+        }
+        
+        body.dark-mode .description h3 {
+            color: #FCD34D;
+        }
+        
+        body.dark-mode .description p,
+        body.dark-mode .description ol,
+        body.dark-mode .description ul,
+        body.dark-mode .description li {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .description strong {
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .template-card {
+            background: linear-gradient(135deg, #374151, #4B5563);
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .template-title {
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .template-description {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .preview-btn {
+            background: #4B5563;
+            color: #D1D5DB;
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .preview-btn:hover {
+            background: #6B7280;
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .subtitle {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .step-label {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .progress-line {
+            background: #6B7280;
+        }
+        
+        body.dark-mode .download-description {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .footer-content {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .address,
+        body.dark-mode .copyright,
+        body.dark-mode .unsubscribe-text {
+            color: #9CA3AF;
+        }
+        
+        body.dark-mode .modal-content {
+            background-color: #1F2937;
+        }
+        
+        body.dark-mode .modal-header {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+        }
+        
+        body.dark-mode .preview-iframe {
+            background: #374151;
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .preview-placeholder {
+            background: linear-gradient(135deg, #374151, #4B5563);
+            border-color: #8B5CF6;
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .preview-placeholder h3 {
+            color: #FCD34D;
+        }
+        
+        body.dark-mode .preview-secondary {
+            background: #4B5563;
+            color: #D1D5DB;
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .preview-secondary:hover {
+            background: #6B7280;
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .notification-content {
+            background: #1F2937;
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .notification-message {
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .notification-close:hover {
+            background: #374151;
+            color: #D1D5DB;
+        }
     </style>
 </head>
 <body>
@@ -639,6 +799,7 @@
         <div class="header-section">
             <h1 class="main-title">📧 StoryBud Email Templates</h1>
             <p class="subtitle">Adoption Sequence Email Templates – Overview</p>
+            <button class="theme-toggle" id="themeToggle">🌓</button>
         </div>
         
         <!-- Description Section -->
@@ -1016,6 +1177,27 @@ StoryBud Team`;
                 }
             }, 5000);
         }
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '🌙'; // Change to moon icon for dark mode
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌓';
+                localStorage.removeItem('theme');
+            }
+        });
     </script>
 </body>
 </html>

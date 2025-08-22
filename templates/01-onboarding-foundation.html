@@ -119,6 +119,48 @@
             color: #8B5CF6;
             font-weight: bold;
         }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212 !important;
+                color: #E0E0E0 !important;
+            }
+            .email-container {
+                background-color: #1F2937 !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+            }
+            .welcome-heading {
+                color: #FCD34D !important;
+            }
+            .section-heading {
+                color: #FCD34D !important;
+            }
+            .highlight-box {
+                background-color: #374151 !important;
+                border-left-color: #FCD34D !important;
+            }
+            .cta-button {
+                background-color: #FCD34D !important;
+                color: #121212 !important;
+            }
+            .cta-button:hover {
+                background-color: #F59E0B !important;
+            }
+            .support-links {
+                background-color: #374151 !important;
+            }
+            .support-links a {
+                color: #FCD34D !important;
+            }
+            .footer {
+                color: #D1D5DB !important;
+                border-top-color: #4B5563 !important;
+            }
+            .personalized-name {
+                color: #FCD34D !important;
+            }
+        }
     </style>
 </head>
 <body>
