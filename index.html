@@ -399,6 +399,75 @@
             font-family: 'Comic Sans MS', cursive, sans-serif;
         }
         
+        /* Sequence Containers */
+        .sequence-container {
+            display: none;
+        }
+        
+        .sequence-container.active {
+            display: block;
+        }
+        
+        /* Timeline Styles */
+        .timeline-container {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+        }
+        
+        .timeline-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #8B5CF6;
+            margin-bottom: 30px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .timeline-days {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline-day {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-day:hover {
+            border-color: #8B5CF6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+        
+        .day-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8B5CF6;
+            margin-bottom: 8px;
+        }
+        
+        .day-name {
+            font-size: 0.9rem;
+            color: #6B7280;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .day-activity {
+            font-size: 0.8rem;
+            color: #374151;
+            line-height: 1.3;
+        }
+        
         /* Progress Indicator */
         .progress-section {
             background: white;
@@ -880,6 +949,37 @@
             border-color: #8B5CF6 !important;
             color: white !important;
         }
+        
+        body.dark-mode .timeline-container {
+            background: #1F2937 !important;
+            border: 1px solid #374151 !important;
+        }
+        
+        body.dark-mode .timeline-title {
+            color: #A78BFA !important;
+        }
+        
+        body.dark-mode .timeline-day {
+            background: linear-gradient(135deg, #374151, #4B5563) !important;
+            border-color: #6B7280 !important;
+        }
+        
+        body.dark-mode .timeline-day:hover {
+            border-color: #A78BFA !important;
+            box-shadow: 0 8px 25px rgba(167, 139, 250, 0.15) !important;
+        }
+        
+        body.dark-mode .day-number {
+            color: #A78BFA !important;
+        }
+        
+        body.dark-mode .day-name {
+            color: #D1D5DB !important;
+        }
+        
+        body.dark-mode .day-activity {
+            color: #E5E7EB !important;
+        }
     </style>
 </head>
 <body>
@@ -943,7 +1043,9 @@
             </div>
         </div>
         
-        <!-- Progress Section -->
+        <!-- Onboarding Sequence Container -->
+        <div id="onboarding-sequence" class="sequence-container active">
+            <!-- Progress Section -->
         <div class="progress-section">
             <h2 class="progress-title">📋 Email Sequence Timeline</h2>
             <div class="progress-steps">
@@ -1044,6 +1146,168 @@
                     <div class="template-actions">
                         <a href="templates/025-lets-read-story.html" class="template-link">View Template</a>
                         <button class="preview-btn" onclick="openPreview('new-adventure', 'A New Adventure Awaits')">Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> <!-- End Onboarding Sequence Container -->
+        
+        <!-- Engagement Sequence Container -->
+        <div id="engagement-sequence" class="sequence-container">
+            <!-- Engagement Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">📋 Email Sequence Timeline - 7-Day Story Adventure</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day">
+                        <div class="day-number">1</div>
+                        <div class="day-name">Monday</div>
+                        <div class="day-activity">Story Discovery</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">2</div>
+                        <div class="day-name">Tuesday</div>
+                        <div class="day-activity">Character Introduction</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">3</div>
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-activity">Adventure Begins</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">4</div>
+                        <div class="day-name">Thursday</div>
+                        <div class="day-activity">Plot Twist</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">5</div>
+                        <div class="day-name">Friday</div>
+                        <div class="day-activity">Climax</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">6</div>
+                        <div class="day-name">Saturday</div>
+                        <div class="day-activity">Resolution</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">7</div>
+                        <div class="day-name">Sunday</div>
+                        <div class="day-activity">Story Complete</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Engagement Templates Section -->
+            <div class="templates-section">
+                <h2 class="section-title">💫 Engagement Sequence</h2>
+                <div class="template-grid">
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">📚</div>
+                            <h3 class="template-title">Daily Story Prompt</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Engagement</span>
+                            <span class="template-day">Day 1-7</span>
+                        </div>
+                        <p class="template-description">Engage users with daily story prompts and reading challenges throughout their 7-day adventure.</p>
+                        <button class="preview-btn" onclick="showPreview('engagement-daily-prompt')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">🏆</div>
+                            <h3 class="template-title">Progress Celebration</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Engagement</span>
+                            <span class="template-day">Mid-week</span>
+                        </div>
+                        <p class="template-description">Celebrate reading milestones and encourage continued engagement with the story adventure.</p>
+                        <button class="preview-btn" onclick="showPreview('engagement-progress')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">✨</div>
+                            <h3 class="template-title">Story Completion</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Engagement</span>
+                            <span class="template-day">Day 7</span>
+                        </div>
+                        <p class="template-description">Congratulate users on completing their 7-day story adventure and encourage them to start a new one.</p>
+                        <button class="preview-btn" onclick="showPreview('engagement-completion')">📖 Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Retention Sequence Container -->
+        <div id="retention-sequence" class="sequence-container">
+            <!-- Retention Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">📋 Email Sequence Timeline - Long-term Engagement</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day">
+                        <div class="day-number">1W</div>
+                        <div class="day-name">Week 1</div>
+                        <div class="day-activity">Check-in</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">2W</div>
+                        <div class="day-name">Week 2</div>
+                        <div class="day-activity">Tips & Tricks</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">1M</div>
+                        <div class="day-name">Month 1</div>
+                        <div class="day-activity">Monthly Report</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">3M</div>
+                        <div class="day-name">Month 3</div>
+                        <div class="day-activity">Feature Updates</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Retention Templates Section -->
+            <div class="templates-section">
+                <h2 class="section-title">🌟 Retention Sequence</h2>
+                <div class="template-grid">
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">💌</div>
+                            <h3 class="template-title">Weekly Check-in</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Retention</span>
+                            <span class="template-day">Weekly</span>
+                        </div>
+                        <p class="template-description">Regular check-ins to maintain engagement and gather feedback on the user's story reading experience.</p>
+                        <button class="preview-btn" onclick="showPreview('retention-checkin')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">📊</div>
+                            <h3 class="template-title">Monthly Report</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Retention</span>
+                            <span class="template-day">Monthly</span>
+                        </div>
+                        <p class="template-description">Comprehensive monthly reading reports showcasing progress, achievements, and reading statistics.</p>
+                        <button class="preview-btn" onclick="showPreview('retention-report')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">🎁</div>
+                            <h3 class="template-title">Special Offers</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Retention</span>
+                            <span class="template-day">Seasonal</span>
+                        </div>
+                        <p class="template-description">Exclusive offers and bonuses for long-term users to maintain engagement and loyalty.</p>
+                        <button class="preview-btn" onclick="showPreview('retention-offers')">📖 Preview</button>
                     </div>
                 </div>
             </div>
@@ -1260,6 +1524,33 @@ StoryBud Team`;
             
             // Show success message
             showNotification('Templates downloaded successfully! 📧', 'success');
+        }
+        
+        // Sequence Navigation
+        function showSequence(sequenceType) {
+            // Hide all sequence containers
+            const containers = document.querySelectorAll('.sequence-container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.sequence-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show the selected sequence container
+            const selectedContainer = document.getElementById(sequenceType + '-sequence');
+            if (selectedContainer) {
+                selectedContainer.classList.add('active');
+            }
+            
+            // Add active class to the clicked tab
+            const clickedTab = event.target.closest('.sequence-tab');
+            if (clickedTab) {
+                clickedTab.classList.add('active');
+            }
         }
         
         // Notification system
