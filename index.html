@@ -1208,7 +1208,7 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">📋 Adoption Email Sequence Timeline - 7-Day Story Adventure</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day" onclick="openPreview('storytime-day1', 'Storytime Email - Day 1')" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day1.html', 'Storytime Email - Day 1')" style="cursor: pointer;">
                         <div class="day-number">1</div>
                         <div class="day-name">Sunday</div>
                         <div class="day-activity">Story Discovery</div>
@@ -1541,6 +1541,35 @@
         function closePreview() {
             const modal = document.getElementById('previewModal');
             modal.style.display = 'none';
+        }
+        
+        // Email modal functionality for timeline cards
+        function openEmailModal(emailUrl, emailTitle) {
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = emailTitle;
+            
+            // Create iframe to display the actual email
+            const iframe = document.createElement('iframe');
+            iframe.src = emailUrl;
+            iframe.className = 'preview-iframe';
+            iframe.style.width = '100%';
+            iframe.style.height = '600px';
+            iframe.style.border = '1px solid #E5E7EB';
+            iframe.style.borderRadius = '12px';
+            
+            modalBody.innerHTML = '';
+            modalBody.appendChild(iframe);
+            modal.style.display = 'block';
+            
+            // Close modal when clicking outside
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    closePreview();
+                }
+            };
         }
         
         // Close modal with Escape key
