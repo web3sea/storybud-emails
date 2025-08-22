@@ -331,15 +331,7 @@
                 justify-content: center;
             }
             
-            .download-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .download-left,
-            .download-right {
-                justify-content: center;
-            }
+
         }
         
         /* Sequence Navigation */
@@ -466,6 +458,12 @@
             border-color: #8B5CF6;
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+            cursor: pointer;
+        }
+        
+        .timeline-day:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
         }
         
         .day-number {
@@ -600,21 +598,15 @@
         
         .download-buttons {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             gap: 20px;
         }
         
-        .download-left {
-            flex: 1;
-            display: flex;
-            justify-content: flex-start;
-        }
-        
+        .download-left,
         .download-right {
-            flex: 1;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
         }
         
         .test-btn {
@@ -1216,39 +1208,39 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">📋 Adoption Email Sequence Timeline - 7-Day Story Adventure</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="openPreview('storytime-day1', 'Storytime Email - Day 1')" style="cursor: pointer;">
                         <div class="day-number">1</div>
-                        <div class="day-name">Monday</div>
+                        <div class="day-name">Sunday</div>
                         <div class="day-activity">Story Discovery</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="openPreview('storytime-day2', 'Storytime Email - Day 2')" style="cursor: pointer;">
                         <div class="day-number">2</div>
-                        <div class="day-name">Tuesday</div>
+                        <div class="day-name">Monday</div>
                         <div class="day-activity">Character Introduction</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="openPreview('storytime-day3', 'Storytime Email - Day 3')" style="cursor: pointer;">
                         <div class="day-number">3</div>
-                        <div class="day-name">Wednesday</div>
+                        <div class="day-name">Tuesday</div>
                         <div class="day-activity">Adventure Begins</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="openPreview('storytime-day4', 'Storytime Email - Day 4')" style="cursor: pointer;">
                         <div class="day-number">4</div>
-                        <div class="day-name">Thursday</div>
+                        <div class="day-name">Wednesday</div>
                         <div class="day-activity">Plot Twist</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="openPreview('storytime-day5', 'Storytime Email - Day 5')" style="cursor: pointer;">
                         <div class="day-number">5</div>
-                        <div class="day-name">Friday</div>
+                        <div class="day-name">Thursday</div>
                         <div class="day-activity">Climax</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="openPreview('storytime-day6', 'Storytime Email - Day 6')" style="cursor: pointer;">
                         <div class="day-number">6</div>
-                        <div class="day-name">Saturday</div>
+                        <div class="day-name">Friday</div>
                         <div class="day-activity">Resolution</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="openPreview('storytime-day7', 'Storytime Email - Day 7')" style="cursor: pointer;">
                         <div class="day-number">7</div>
-                        <div class="day-name">Sunday</div>
+                        <div class="day-name">Saturday</div>
                         <div class="day-activity">Story Complete</div>
                     </div>
                 </div>
