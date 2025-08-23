@@ -1036,6 +1036,10 @@
                     <span class="tab-icon">🌟</span>
                     <span class="tab-text">Retention</span>
                 </button>
+                <button class="sequence-tab" onclick="showSequence('churn-recovery', event)">
+                    <span class="tab-icon">🔄</span>
+                    <span class="tab-text">Churn Recovery</span>
+                </button>
             </div>
         </div>
         
@@ -1382,6 +1386,146 @@
                         </div>
                         <p class="template-description">Exclusive offers and bonuses for long-term users to maintain engagement and loyalty.</p>
                         <button class="preview-btn" onclick="showPreview('retention-offers')">📖 Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Churn Recovery Sequence Container -->
+        <div id="churn-recovery-sequence" class="sequence-container">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview: Churn Recovery Sequence</h2>
+                    <p>The Churn Recovery Sequence is a strategic email campaign designed to re-engage users who have become inactive or disengaged from the platform. This sequence uses a combination of emotional reconnection, value reinforcement, and strategic incentives to win back users and restore their engagement with the bedtime story service.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Re-engagement</strong> – Reconnect with inactive users through personalized messaging that addresses their specific situation.</li>
+                        <li><strong>Value Reminder</strong> – Remind users of the benefits and positive experiences they had with the platform.</li>
+                        <li><strong>Barrier Removal</strong> – Identify and address any obstacles that may have prevented continued usage.</li>
+                        <li><strong>Fresh Start</strong> – Provide an easy path back to engagement with new content and features.</li>
+                        <li><strong>Long-term Retention</strong> – Convert recovered users into active, engaged community members.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Day 1:</strong> Reconnection Email – Warm, non-pushy message acknowledging their absence and expressing genuine care.</li>
+                        <li><strong>Day 3:</strong> Value Reminder – Highlight specific benefits and positive memories from their previous usage.</li>
+                        <li><strong>Day 5:</strong> Barrier Identification – Ask for feedback and offer solutions to common obstacles.</li>
+                        <li><strong>Day 7:</strong> Fresh Start Offer – Provide an incentive or new feature to encourage return engagement.</li>
+                        <li><strong>Day 10:</strong> Final Appeal – Last chance message with strongest incentive and clear call-to-action.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Recovers valuable users who may have churned due to temporary circumstances or minor issues.</li>
+                        <li>Provides insights into common churn reasons through feedback collection and engagement patterns.</li>
+                        <li>Demonstrates customer care and commitment to user success, strengthening brand perception.</li>
+                        <li>Creates opportunities for upselling and cross-selling to recovered users.</li>
+                        <li>Builds a more resilient user base through proactive re-engagement strategies.</li>
+                        <li>Reduces overall churn rates and increases customer lifetime value.</li>
+                    </ul>
+                    
+                    <p><strong>Recovery Strategy:</strong> This sequence employs a gentle, understanding approach that focuses on rebuilding trust and providing value rather than aggressive sales tactics. Each email is designed to make users feel valued and supported in their return journey.</p>
+                </div>
+            </div>
+            
+            <!-- Churn Recovery Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">📋 Churn Recovery Email Sequence Timeline</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day">
+                        <div class="day-number">1</div>
+                        <div class="day-name">Day 1</div>
+                        <div class="day-activity">Reconnection</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">3</div>
+                        <div class="day-name">Day 3</div>
+                        <div class="day-activity">Value Reminder</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">5</div>
+                        <div class="day-name">Day 5</div>
+                        <div class="day-activity">Barrier ID</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">7</div>
+                        <div class="day-name">Day 7</div>
+                        <div class="day-activity">Fresh Start</div>
+                    </div>
+                    <div class="timeline-day">
+                        <div class="day-number">10</div>
+                        <div class="day-name">Day 10</div>
+                        <div class="day-activity">Final Appeal</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Churn Recovery Templates Section -->
+            <div class="templates-section">
+                <h2 class="section-title">🔄 Churn Recovery Sequence</h2>
+                <div class="template-grid">
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">💌</div>
+                            <h3 class="template-title">Reconnection Email</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Recovery</span>
+                            <span class="template-day">Day 1</span>
+                        </div>
+                        <p class="template-description">Warm, caring message to reconnect with inactive users and express genuine concern for their absence.</p>
+                        <button class="preview-btn" onclick="showPreview('recovery-reconnect')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">💎</div>
+                            <h3 class="template-title">Value Reminder</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Recovery</span>
+                            <span class="template-day">Day 3</span>
+                        </div>
+                        <p class="template-description">Reminds users of the specific benefits and positive experiences they enjoyed with the platform.</p>
+                        <button class="preview-btn" onclick="showPreview('recovery-value')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">🔍</div>
+                            <h3 class="template-title">Barrier Identification</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Recovery</span>
+                            <span class="template-day">Day 5</span>
+                        </div>
+                        <p class="template-description">Asks for feedback and offers solutions to common obstacles that may have prevented continued usage.</p>
+                        <button class="preview-btn" onclick="showPreview('recovery-barrier')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">🎁</div>
+                            <h3 class="template-title">Fresh Start Offer</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Recovery</span>
+                            <span class="template-day">Day 7</span>
+                        </div>
+                        <p class="template-description">Provides an incentive or new feature to encourage return engagement and make re-entry easy.</p>
+                        <button class="preview-btn" onclick="showPreview('recovery-fresh')">📖 Preview</button>
+                    </div>
+                    <div class="template-card">
+                        <div class="template-header">
+                            <div class="template-icon">🚀</div>
+                            <h3 class="template-title">Final Appeal</h3>
+                        </div>
+                        <div class="template-meta">
+                            <span class="template-type">Recovery</span>
+                            <span class="template-day">Day 10</span>
+                        </div>
+                        <p class="template-description">Last chance message with strongest incentive and clear call-to-action for user return.</p>
+                        <a href="#" class="template-link">View Email</a>
                     </div>
                 </div>
             </div>
