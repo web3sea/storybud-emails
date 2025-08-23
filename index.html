@@ -1194,7 +1194,7 @@
             color: #A78BFA !important;
         }
         
-        /* Qualified Lead specific styles */
+        /* Qualified specific styles */
         .placeholder-content {
             text-align: center;
             padding: 60px 20px;
@@ -1295,7 +1295,7 @@
                 <h2 class="progress-title">🔗 Email Sequence Timeline</h2>
                 <div class="progress-steps">
                     <div class="progress-line"></div>
-                    <div class="progress-step active-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-welcome.html', 'Welcome', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-welcome.html', 'Welcome', this)" style="cursor: pointer;">
                         <div class="step-number">1</div>
                         <div class="step-label">Welcome</div>
                     </div>
@@ -1325,11 +1325,11 @@
                 </div>
                 <div class="preview-content">
                     <div class="placeholder-content">
-                        <p>Qualified Lead email templates coming soon...</p>
+                        <p>Qualified email templates coming soon...</p>
                     </div>
                 </div>
             </div>
-        </div> <!-- End Qualified Lead Sequence Container -->
+        </div> <!-- End Qualified Sequence Container -->
         
         <!-- Adoption Sequence Container -->
         <div id="onboarding-sequence" class="sequence-container">
@@ -1832,7 +1832,7 @@ StoryBud Team`;
             showNotification('Email template download started! 📧', 'success');
         }
         
-        // Qualified Lead Preview functionality
+        // Qualified Preview functionality
         function showQualifiedLeadPreview(emailUrl, emailTitle, clickedElement) {
             // Update the preview title
             const previewTitle = document.querySelector('#qualified-lead-sequence .preview-title');
@@ -2178,12 +2178,12 @@ StoryBud Team`;
             }
         });
         
-        // Auto-select Qualified Lead tab on page load (default behavior)
+        // Auto-select Qualified tab on page load (default behavior)
         document.addEventListener('DOMContentLoaded', function() {
-            // Default to Qualified Lead section on new page load
+            // Default to Qualified section on new page load
             showSequence('qualified-lead');
             
-            // Update tab states to show Qualified Lead as active
+            // Update tab states to show Qualified as active
             document.querySelectorAll('.sequence-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
