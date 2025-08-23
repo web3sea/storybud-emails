@@ -1446,26 +1446,40 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">📋 Adoption Email Sequence Timeline - Long-term Engagement</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day">
+                    <div class="timeline-day active-day" onclick="showRetentionPreview('retention_email_week1.html', 'Weekly Check-in', this)" style="cursor: pointer;">
                         <div class="day-number">1W</div>
                         <div class="day-name">Week 1</div>
                         <div class="day-activity">Check-in</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="showRetentionPreview('retention_email_week2.html', 'Tips & Tricks', this)" style="cursor: pointer;">
                         <div class="day-number">2W</div>
                         <div class="day-name">Week 2</div>
                         <div class="day-activity">Tips & Tricks</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="showRetentionPreview('retention_email_month1.html', 'Monthly Report', this)" style="cursor: pointer;">
                         <div class="day-number">1M</div>
                         <div class="day-name">Month 1</div>
                         <div class="day-activity">Monthly Report</div>
                     </div>
-                    <div class="timeline-day">
+                    <div class="timeline-day" onclick="showRetentionPreview('retention_email_month3.html', 'Feature Updates', this)" style="cursor: pointer;">
                         <div class="day-number">3M</div>
                         <div class="day-name">Month 3</div>
                         <div class="day-activity">Feature Updates</div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Weekly Check-in</h3>
+                    <div class="preview-actions">
+                        <a href="retention_email_week1.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('retention_email_week1.html')">Download</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="retentionPreviewFrame" src="retention_email_week1.html" class="email-preview-iframe"></iframe>
                 </div>
             </div>
             
@@ -1847,6 +1861,49 @@ StoryBud Team`;
             
             if (clickedElement) {
                 clickedElement.classList.add('active-step');
+            }
+        }
+        
+        // Retention Preview functionality
+        function showRetentionPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#retention-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('retentionPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#retention-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#retention-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update active day styling
+            document.querySelectorAll('#retention-sequence .timeline-day').forEach(day => {
+                day.classList.remove('active-day');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-day');
             }
         }
         
