@@ -1,208 +1,482 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your First Story is Ready!</title>
     <style>
-              * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-      }
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-        line-height: 1.6;
-        color: rgb(31, 41, 55);
-        max-width: 600px;
-        margin-top: 0px;
-        margin-right: auto;
-        margin-bottom: 0px;
-        margin-left: auto;
-        padding-top: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
-        background-color: rgb(243, 244, 246);
-      }
-      .email-container {
-        background-color: white;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
-        border-bottom-right-radius: 16px;
-        border-bottom-left-radius: 16px;
-        box-shadow: rgba(139, 92, 246, 0.1) 0px 4px 6px -1px;
-        padding-top: 30px;
-        padding-right: 30px;
-        padding-bottom: 30px;
-        padding-left: 30px;
-      }
-      .header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .welcome-heading {
-        font-family: 'Comic Sans MS', cursive, sans-serif;
-        font-size: 28px;
-        color: rgb(139, 92, 246);
-        margin-bottom: 10px;
-      }
-      .section {
-        margin-bottom: 25px;
-      }
-      .footer {
-        text-align: center;
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top-width: 1px;
-        border-top-style: solid;
-        border-top-color: rgb(238, 238, 238);
-        color: rgb(102, 102, 102);
-      }
-      .personalized-name {
-        color: rgb(99, 102, 241);
-        font-weight: bold;
-      }
-      .footer-content a {
-        color: rgb(139, 92, 246);
-        text-decoration-line: none;
-        text-decoration-thickness: initial;
-        text-decoration-style: initial;
-        text-decoration-color: initial;
-        margin-top: 0px;
-        margin-right: 10px;
-        margin-bottom: 0px;
-        margin-left: 10px;
-      }
-      .footer-content a:hover {
-        text-decoration-line: underline;
-        text-decoration-thickness: initial;
-        text-decoration-style: initial;
-        text-decoration-color: initial;
-      }
-      .address {
-        font-size: 12px;
-        color: rgb(71, 85, 105);
-      }
-      .copyright {
-        font-size: 12px;
-        color: rgb(71, 85, 105);
-      }
-      .unsubscribe-text {
-        font-size: 12px;
-        color: rgb(71, 85, 105);
-      }
-      #iabuj {
-        color: black;
-        width: 138px;
-        height: 100px;
-        display: block;
-        margin: 0 auto;
-      }
-      
-      /* Dark Mode Support */
-      @media (prefers-color-scheme: dark) {
         body {
-          background-color: #121212 !important;
-          color: #E0E0E0 !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
         }
+        
         .email-container {
-          background-color: #1F2937 !important;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E2E8F0;
         }
+        
+        .header {
+            padding: 40px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+        
+        .celebration-emoji {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
         .welcome-heading {
-          color: #FCD34D !important;
+            font-size: 32px;
+            color: white;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        
+        .welcome-subheading {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .content {
+            padding: 36px 30px;
+        }
+        
+        .greeting {
+            margin-bottom: 28px;
+        }
+        
+        .greeting p {
+            margin: 0 0 16px 0;
+            font-size: 16px;
+        }
+        
         .personalized-name {
-          color: #FCD34D !important;
+            color: #10B981;
+            font-weight: 600;
         }
+        
+        .child-name {
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+        
+        .celebration-card {
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+            border: 1px solid #A7F3D0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .celebration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981, #059669, #047857);
+        }
+        
+        .celebration-card h3 {
+            margin: 0 0 12px 0;
+            color: #065F46;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .celebration-message {
+            color: #047857;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .story-preview {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 28px 0;
+            border: 2px solid #F3F4F6;
+            text-align: center;
+        }
+        
+        .story-image {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%);
+            border-radius: 12px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            border: 2px solid #E0E7FF;
+        }
+        
+        .story-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 8px;
+        }
+        
+        .story-description {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 20px;
+        }
+        
+        .reading-benefits {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border: 1px solid #F59E0B;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .reading-benefits h4 {
+            margin: 0 0 16px 0;
+            color: #92400E;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 8px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #92400E;
+        }
+        
+        .benefit-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 32px 24px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            color: #374151;
+            margin: 0 0 20px 0;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .next-steps {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border: 1px solid #BAE6FD;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+        }
+        
+        .next-steps h4 {
+            margin: 0 0 16px 0;
+            color: #0F172A;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #E0F2FE;
+        }
+        
+        .step-number {
+            background: #0EA5E9;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        .step-text {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 500;
+        }
+        
+        .closing-message {
+            text-align: center;
+            margin: 32px 0;
+            font-size: 16px;
+            color: #6B7280;
+            font-style: italic;
+        }
+        
         .footer {
-          color: #D1D5DB !important;
-          border-top-color: #4B5563 !important;
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            padding: 30px;
+            text-align: center;
         }
-        .footer-content a {
-          color: #FCD34D !important;
+        
+        .footer-message {
+            margin: 0 0 8px 0;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
         }
-        .address, .copyright, .unsubscribe-text {
-          color: #9CA3AF !important;
+        
+        .footer-team {
+            margin: 0 0 24px 0;
+            color: #D1D5DB;
+            font-style: italic;
         }
-        #iabuj {
-          color: #E0E0E0 !important;
+        
+        .footer-links {
+            margin: 20px 0;
         }
-        img.logo-dark {
-          display: block !important;
+        
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+            transition: color 0.2s ease;
         }
-        img.logo-light {
-          display: none !important;
+        
+        .footer-links a:hover {
+            color: #E5E7EB;
         }
-      }
+        
+        .footer-legal {
+            font-size: 12px;
+            color: #6B7280;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        
+        .footer-legal a {
+            color: #8B5CF6;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header, .content, .footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .welcome-heading {
+                font-size: 26px;
+            }
+            
+            .celebration-emoji {
+                font-size: 40px;
+            }
+            
+            .story-image {
+                width: 150px;
+                height: 150px;
+                font-size: 36px;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <meta charset="UTF-8" /><meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    /><title>Your First Story is Ready!</title><meta charset="UTF-8" /><meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    /><title>Your First Story is Ready!</title>
+</head>
+<body>
     <div class="email-container">
-      <div class="header">
-        <h1 class="welcome-heading">🎉 Your First Story is Ready!</h1>
-      </div>
-      <div class="section">
-        <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
-        <p id="itboh">
-          Congratulations! {{child_name|default:"your child"}}'s very first StoryBud adventure is
-          ready, marking the beginning of many magical stories you’ll share
-          together.
-        </p>
-        <img
-  src="https://i.imgur.com/4L4giau.png"
-  alt="Welcome illustration"
-  style="display:block; margin: 20px auto; max-width: 200px; border-radius: 10px;"
-/>
-        <p>
-          Reading together is more than a bedtime routine—it’s one of the most
-          powerful ways to strengthen your bond, spark imagination, and build
-          lifelong learning skills. Research shows that children who read with
-          their parents develop stronger language, focus, and creativity. But
-          most importantly, they’ll always remember these moments as time spent
-          with you.
-        </p>
-      </div>
-      <div class="footer">
-        <p>Happy storytelling! 📚</p>
-        <p><em>The StoryBud Team</em></p>
-        <div class="footer-content">
-          <p class="unsubscribe-text">
-            You are receiving this e-mail because you signed up for StoryBud. If
-            you do not want to receive email from us in the future, please
-            <a href="{{unsubscribe_link}}">click to unsubscribe</a>.
-          </p>
-          <div class="footer-links">
-            <a href="https://storybud.com/about">About StoryBud</a> |
-            <a href="https://storybud.com/privacy-policy">Privacy Policy</a> |
-            <a href="mailto:support@storybud.com">Support Team</a>
-          </div>
-          <p class="address">
-            1111B South Governors Avenue, STE 37071, Dover, DE 19904
-          </p>
-          <p class="copyright">
-            Copyright © 2025 StoryBud All Rights Reserved
-          </p>
+        <div class="header">
+            <span class="celebration-emoji">🎉</span>
+            <h1 class="welcome-heading">Your First Story is Ready!</h1>
+            <p class="welcome-subheading">A magical milestone achieved</p>
         </div>
         
-        <div class="logo-container" style="text-align: center; margin-top: 30px;">
-          <img src="assets/images/StoryBud logo.png" alt="StoryBud Logo" class="logo-light" style="max-width: 150px; height: auto;">
-          <img src="assets/images/generated-image.png" alt="StoryBud Logo" class="logo-dark" style="max-width: 150px; height: auto; display: none;">
+        <div class="content">
+            <div class="greeting">
+                <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
+                <p>Congratulations! <span class="child-name">{{child_name|default:"Your child"}}</span>'s very first StoryBud adventure is complete and ready to share.</p>
+            </div>
+            
+            <div class="celebration-card">
+                <h3>🌟 You Did It!</h3>
+                <p class="celebration-message">You've just created your first personalized story together. This marks the beginning of many magical adventures you'll share as a family.</p>
+            </div>
+            
+            <div class="story-preview">
+                <div class="story-image">📖</div>
+                <div class="story-title">{{story_title|default:"Your Personalized Adventure"}}</div>
+                <div class="story-description">A magical story created just for <span class="child-name">{{child_name|default:"your child"}}</span></div>
+            </div>
+            
+            <div class="cta-section">
+                <p class="cta-text">Ready to experience the magic?</p>
+                <a href="{{story_link|default:'#'}}" class="cta-button">Read Our Story Together</a>
+            </div>
+            
+            <div class="reading-benefits">
+                <h4>📚 Why Reading Together Matters</h4>
+                <ul class="benefits-list">
+                    <li class="benefit-item">
+                        <span class="benefit-icon">🧠</span>
+                        <span>Develops stronger language and communication skills</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">❤️</span>
+                        <span>Strengthens your emotional bond and connection</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">✨</span>
+                        <span>Sparks creativity and imagination</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">🌟</span>
+                        <span>Creates cherished memories that last a lifetime</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="next-steps">
+                <h4>🚀 What's Next?</h4>
+                <ul class="steps-list">
+                    <li class="step-item">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Find a cozy reading spot together</span>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Let your child see themselves as the hero</span>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Discuss the adventure and ask what they loved most</span>
+                    </li>
+                    <li class="step-item">
+                        <span class="step-number">4</span>
+                        <span class="step-text">Start planning your next StoryBud adventure!</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="closing-message">
+                <p>Here's to the first of many magical stories you'll create together. ✨</p>
+            </div>
         </div>
-      </div>
-      <img
-        id="iabuj"
-        src="https://wapojdqxgvfkjyyukhlq.supabase.co/storage/v1/object/public/img/mek8e3lyzbdus"
-      />
+        
+        <div class="footer">
+            <p class="footer-message">Happy storytelling! 📚</p>
+            <p class="footer-team">The StoryBud Team</p>
+            
+            <div class="footer-links">
+                <a href="https://storybud.com/about">About StoryBud</a>
+                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
+                <a href="mailto:support@storybud.com">Support Team</a>
+            </div>
+            
+            <div class="footer-legal">
+                <p>You're receiving this email because you signed up for StoryBud.<br>
+                <a href="{{unsubscribe_link}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>

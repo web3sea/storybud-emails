@@ -8,163 +8,332 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
-            color: #1F2937;
+            color: #374151;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #F3F4F6;
-        }
-        .email-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .welcome-heading {
-            font-size: 32px;
-            color: #8B5CF6;
-            margin-bottom: 10px;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-        }
-        .section {
-            margin-bottom: 25px;
-        }
-        .section-heading {
-            font-size: 24px;
-            color: #6366F1;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-family: Arial, sans-serif;
-        }
-        .emoji {
-            font-size: 28px;
-            margin-right: 8px;
-        }
-        .highlight-box {
-            background-color: #FCD34D;
-            border-left: 4px solid #8B5CF6;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-        }
-        .steps-list {
-            counter-reset: step-counter;
-            list-style: none;
-            padding: 0;
-        }
-        .steps-list li {
-            counter-increment: step-counter;
-            margin-bottom: 12px;
-            padding-left: 30px;
-            position: relative;
-            font-weight: 500;
-        }
-        .steps-list li::before {
-            content: counter(step-counter);
-            background-color: #8B5CF6;
-            color: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #8B5CF6;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 18px;
-            text-align: center;
-            margin: 20px 0;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #6366F1;
-        }
-        .support-links {
-            background-color: #F9A8D4;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-        .support-links a {
-            color: #8B5CF6;
-            text-decoration: none;
-        }
-        .support-links a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
-        }
-        .personalized-name {
-            color: #8B5CF6;
-            font-weight: bold;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
         }
         
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
+        .email-container {
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E2E8F0;
+        }
+        
+        .header {
+            padding: 40px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8B5CF6 100%);
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+        
+        .welcome-heading {
+            font-size: 32px;
+            color: white;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .welcome-subheading {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .content {
+            padding: 36px 30px;
+        }
+        
+        .greeting {
+            margin-bottom: 32px;
+        }
+        
+        .greeting p {
+            margin: 0 0 16px 0;
+            font-size: 16px;
+        }
+        
+        .personalized-name {
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+        
+        .section {
+            margin-bottom: 36px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1F2937;
+            margin: 0 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .account-card {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border: 1px solid #BAE6FD;
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .account-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8B5CF6, #3B82F6, #06B6D4);
+        }
+        
+        .account-card h4 {
+            margin: 0 0 12px 0;
+            color: #0F172A;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .credits-highlight {
+            color: #0891B2;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+
+        
+        .steps-container {
+            background: #FAFBFC;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #8B5CF6;
+        }
+        
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 16px;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .step-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            color: white;
+            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 16px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+        }
+        
+        .step-content h4 {
+            margin: 0 0 4px 0;
+            color: #1F2937;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .step-content p {
+            margin: 0;
+            color: #6B7280;
+            font-size: 14px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 32px 24px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            color: #374151;
+            margin: 0 0 20px 0;
+            font-weight: 500;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .support-section {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            border: 1px solid #F59E0B;
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+        }
+        
+
+        
+        .support-section h4 {
+            margin: 0 0 16px 0;
+            color: #92400E;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .support-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .support-links a {
+            color: #B45309;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .support-links a:hover {
+            color: #92400E;
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer-message {
+            margin: 0 0 8px 0;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .footer-team {
+            margin: 0 0 24px 0;
+            color: #D1D5DB;
+            font-style: italic;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #E5E7EB;
+        }
+        
+        .footer-legal {
+            font-size: 12px;
+            color: #6B7280;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        
+        .footer-legal a {
+            color: #8B5CF6;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
             body {
-                background-color: #121212 !important;
-                color: #E0E0E0 !important;
+                padding: 10px;
             }
-            .email-container {
-                background-color: #1F2937 !important;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+            
+            .header, .content, .footer {
+                padding-left: 20px;
+                padding-right: 20px;
             }
+            
             .welcome-heading {
-                color: #FCD34D !important;
+                font-size: 26px;
             }
-            .section-heading {
-                color: #FCD34D !important;
-            }
-            .highlight-box {
-                background-color: #374151 !important;
-                border-left-color: #FCD34D !important;
-            }
-            .cta-button {
-                background-color: #FCD34D !important;
-                color: #121212 !important;
-            }
-            .cta-button:hover {
-                background-color: #F59E0B !important;
-            }
+            
+
+            
             .support-links {
-                background-color: #374151 !important;
-            }
-            .support-links a {
-                color: #FCD34D !important;
-            }
-            .footer {
-                color: #D1D5DB !important;
-                border-top-color: #4B5563 !important;
-            }
-            .personalized-name {
-                color: #FCD34D !important;
-            }
-            img.logo-dark {
-                display: block !important;
-            }
-            img.logo-light {
-                display: none !important;
+                flex-direction: column;
+                gap: 12px;
             }
         }
     </style>
@@ -172,72 +341,88 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <h1 class="welcome-heading">📚✨ Welcome to StoryBud!</h1>
+            <h1 class="welcome-heading">📚 Welcome to StoryBud!</h1>
+            <p class="welcome-subheading">Where stories come to life</p>
         </div>
-
-        <div class="section">
-            <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
-            <p>We're thrilled to have you join our community of storytellers! StoryBud makes it easy to create personalized, illustrated children's stories that captivate and delight.</p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading">🎁 Your {{subscription_name|default:"StoryBud"}} account is ready!</h2>
-            <div class="highlight-box">
-                <p> <strong>The {{subscription_name|default:"StoryBud"}} tier includes {{credit_allowance|default:"unlimited"}} credits</strong> per month. Credits are used to:</p>
-                <ul>
-                    <li>Generate a complete story with illustrations</li>
-                    <li>Add voice narration</li>
-                    <li>Create character portraits</li>
-                </ul>
+        
+        <div class="content">
+            <div class="greeting">
+                <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>,</p>
+                <p>Welcome to the StoryBud family! We're thrilled you're here and can't wait to help you create magical, personalized stories that will become cherished memories.</p>
             </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading">🚀 Ready to Create Your First Story?</h2>
-            <p>Here's how to get started:</p>
-            <ol class="steps-list">
-                <li><strong> Choose your theme.</strong> Adventure, fantasy, learning, or everyday fun</li>
-                <li><strong> Add characters.</strong> - Include your child's name and photo for personalization</li>
-                <li><strong> Select an art style.</strong> - From watercolor to anime, pick what your child loves</li>
-                <li><strong> Generate & enjoy.</strong> - Watch the magic happen in minutes!</li>
-            </ol>
             
-            <div style="text-align: center;">
+            <div class="section">
+                <h3 class="section-title">🎁 Your Account is Ready</h3>
+                <div class="account-card">
+                    <h4>{{subscription_name|default:"StoryBud"}} Plan Active</h4>
+                    <p>You have <span class="credits-highlight">{{credit_allowance|default:"unlimited"}} credits</span> ready to use each month for creating personalized stories with illustrations, voice narration, and character portraits.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">🚀 Create Your First Story</h3>
+                <div class="steps-container">
+                    <ol class="steps-list">
+                        <li class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Pick Your Adventure</h4>
+                                <p>Choose from adventure, fantasy, learning, or everyday fun themes</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Add Your Little Hero</h4>
+                                <p>Include your child's name and photo to make them the star</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Choose Art Style</h4>
+                                <p>From watercolor to cartoon - pick what your child loves most</p>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Watch the Magic</h4>
+                                <p>Your personalized story will be ready in just minutes!</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <p class="cta-text">Ready to create something magical?</p>
                 <a href="{{create_story_link|default:'#'}}" class="cta-button">Create Your First Story</a>
             </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading">❓ Need help?</h2>
-            <div class="support-links">
-                <p>We're here for you!</p>
-                <ul>
-                    <li>Check out our <a href="{{features_guide_link|default:'#'}}">Features Guide</a></li>
-                    <li>Contact us at <a href="mailto:support@storybud.com">support@storybud.com</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>Happy storytelling! 📚</p>
-            <p><em>The StoryBud Team</em></p>
             
-            <div class="footer-content">
-                <p class="unsubscribe-text">You are receiving this e-mail because you signed up for StoryBud. If you do not want to receive email from us in the future, please <a href="{{unsubscribe_link}}" style="color: #8B5CF6;">click to unsubscribe</a>.</p>
-                
-                <div class="footer-links">
-                    <a href="https://storybud.com/about" style="color: #8B5CF6; text-decoration: none; margin: 0 10px;">About StoryBud</a> | 
-                    <a href="https://storybud.com/privacy-policy" style="color: #8B5CF6; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
-                    <a href="mailto:support@storybud.com" style="color: #8B5CF6; text-decoration: none; margin: 0 10px;">Support Team</a>
+            <div class="support-section">
+                <h4>Need Help Getting Started?</h4>
+                <div class="support-links">
+                    <a href="{{features_guide_link|default:'#'}}">📘 Features Guide</a>
+                    <a href="mailto:support@storybud.com">💬 Contact Support</a>
                 </div>
-                
-                <p class="address">1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
-                <p class="copyright">Copyright © 2025 StoryBud All Rights Reserved</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-message">Happy storytelling! ✨</p>
+            <p class="footer-team">The StoryBud Team</p>
+            
+            <div class="footer-links">
+                <a href="https://storybud.com/about">About StoryBud</a>
+                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
+                <a href="mailto:support@storybud.com">Support Team</a>
             </div>
             
-            <div class="logo-container" style="text-align: center; margin-top: 30px;">
-                <img src="assets/images/StoryBud logo.png" alt="StoryBud Logo" class="logo-light" style="max-width: 150px; height: auto;">
-                <img src="assets/images/generated-image.png" alt="StoryBud Logo" class="logo-dark" style="max-width: 150px; height: auto; display: none;">
+            <div class="footer-legal">
+                <p>You're receiving this email because you signed up for StoryBud.<br>
+                <a href="{{unsubscribe_link}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
             </div>
         </div>
     </div>

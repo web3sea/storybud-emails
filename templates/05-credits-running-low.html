@@ -1,155 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> • “Don’t let the story end here 📖✨” </title>
+    <title>Don't Let the Story End Here</title>
     <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-        line-height: 1.6;
-        color: #1F2937;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #F3F4F6;
-      }
-
-      .email-container {
-        background-color: white;
-        padding: 30px;
-        border-radius: 16px;
-        box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-      }
-
-      .header {
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      .welcome-heading {
-        font-size: 32px;
-        color: #8B5CF6;
-        margin-bottom: 10px;
-        font-family: Arial, sans-serif;
-      }
-
-      .section {
-        margin-bottom: 25px;
-      }
-
-      .section-heading {
-        font-size: 24px;
-        color: #8B5CF6;
-        margin-bottom: 15px;
-        font-weight: bold;
-      }
-
-      .footer {
-        text-align: center;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #eee;
-        color: #666;
-      }
-
-      .personalized-name {
-        color: #6EE7B7;
-        font-weight: bold;
-      }
-
-      .footer-content a {
-        color: #8B5CF6;
-        text-decoration: none;
-        margin: 0 10px;
-      }
-
-      .footer-content {
-        margin-top: 10px;
-        font-size: 12px;
-        color: #475569;
-      }
-
-      .footer-links {
-        margin-top: 10px;
-      }
-
-      .address {
-        margin-top: 5px;
-      }
-
-      .unsubscribe-text {
-        margin-bottom: 10px;
-      }
-      
-      /* Dark Mode Support */
-      @media (prefers-color-scheme: dark) {
         body {
-          background-color: #121212 !important;
-          color: #E0E0E0 !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
         }
+        
         .email-container {
-          background-color: #1F2937 !important;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E2E8F0;
         }
+        
+        .header {
+            padding: 40px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8B5CF6 100%);
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+        
+        .alert-emoji {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: none;
+        }
+        
         .welcome-heading {
-          color: #FCD34D !important;
+            font-size: 32px;
+            color: white;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .section-heading {
-          color: #FCD34D !important;
+        
+        .welcome-subheading {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 400;
         }
+        
+        .content {
+            padding: 36px 30px;
+        }
+        
+        .greeting {
+            margin-bottom: 28px;
+        }
+        
+        .greeting p {
+            margin: 0 0 16px 0;
+            font-size: 16px;
+        }
+        
         .personalized-name {
-          color: #FCD34D !important;
+            color: #8B5CF6;
+            font-weight: 600;
         }
+        
+        .credits-status {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            text-align: center;
+            border-left: 4px solid #8B5CF6;
+        }
+        
+        .credits-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #8B5CF6;
+            margin: 12px 0;
+            display: block;
+        }
+        
+        .credits-label {
+            font-size: 16px;
+            color: #374151;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .credits-message {
+            font-size: 14px;
+            color: #6B7280;
+        }
+        
+        .urgency-message {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            border-left: 4px solid #8B5CF6;
+        }
+        
+        .urgency-message p {
+            margin: 0 0 16px 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #374151;
+        }
+        
+        .urgency-message p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .benefits-reminder {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+        }
+        
+        .benefits-reminder h4 {
+            margin: 0 0 16px 0;
+            color: #1F2937;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .benefit-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .benefit-text {
+            font-size: 14px;
+            color: #6B7280;
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 32px 24px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            color: #374151;
+            margin: 0 0 20px 0;
+            font-weight: 500;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .cta-button-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button-primary:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            background: white;
+            color: #8B5CF6;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid #8B5CF6;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-secondary:hover {
+            background: #8B5CF6;
+            color: white;
+        }
+        
+        .reassurance {
+            text-align: center;
+            margin: 28px 0;
+            padding: 20px;
+            background: #F9FAFB;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #6B7280;
+        }
+        
+        .closing-message {
+            text-align: center;
+            margin: 32px 0;
+            font-size: 16px;
+            color: #6B7280;
+            font-style: italic;
+        }
+        
         .footer {
-          color: #D1D5DB !important;
-          border-top-color: #4B5563 !important;
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            padding: 30px;
+            text-align: center;
         }
-        .footer-content a {
-          color: #FCD34D !important;
+        
+        .footer-message {
+            margin: 0 0 8px 0;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
         }
-        .footer-content {
-          color: #9CA3AF !important;
+        
+        .footer-team {
+            margin: 0 0 24px 0;
+            color: #D1D5DB;
+            font-style: italic;
         }
-        .address, .copyright, .unsubscribe-text {
-          color: #9CA3AF !important;
+        
+        .footer-links {
+            margin: 20px 0;
         }
-        img.logo-dark {
-          display: block !important;
+        
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+            transition: color 0.2s ease;
         }
-        img.logo-light {
-          display: none !important;
+        
+        .footer-links a:hover {
+            color: #E5E7EB;
         }
-      }
+        
+        .footer-legal {
+            font-size: 12px;
+            color: #6B7280;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        
+        .footer-legal a {
+            color: #8B5CF6;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header, .content, .footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .welcome-heading {
+                font-size: 26px;
+            }
+            
+            .alert-emoji {
+                font-size: 40px;
+            }
+            
+            .credits-number {
+                font-size: 36px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button-primary,
+            .cta-button-secondary {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="email-container">
-      <div class="header">
-        <h1 class="welcome-heading">⚠️ Your Credits Are Running Low</h1>
-      </div>
-      <div class="section">
-        <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>! </p>
-        <p>Don't let your storytelling adventure end! You're running low on credits. Don't let your storytelling adventure end! Your journey is just getting started, but we noticed you’re running low on credits. Without enough credits, you won’t be able to unlock new stories, discover fresh characters, and bring magical worlds to life. Keep the creativity flowing and make sure your child’s next bedtime story, hero’s quest, or enchanted journey doesn’t get cut short. ✨ Top up your credits today and keep the magic alive. Your next adventure is only one click away!
-      <div class="footer">
-        <p>Happy storytelling! 📚</p>
-        <p>
-          <em>The StoryBud Team</em>
-        </p>
-        <div class="footer-content">
-          <p class="unsubscribe-text">You are receiving this e-mail because you signed up for StoryBud. If you do not want to receive email from us in the future, please <a href="{{unsubscribe_link}}">click to unsubscribe</a>. </p>
-          <div class="footer-links">
-            <a href="https://storybud.com/about">About StoryBud</a> | <a href="https://storybud.com/privacy-policy">Privacy Policy</a> | <a href="mailto:support@storybud.com">Support Team</a>
-          </div>
-          <p class="address">1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
-          <p class="copyright">Copyright © 2025 StoryBud All Rights Reserved</p>
+        <div class="header">
+            <h1 class="welcome-heading">📚 Story Time Continues</h1>
+            <p class="welcome-subheading">Keep the magic going</p>
         </div>
         
-        <div class="logo-container" style="text-align: center; margin-top: 30px;">
-          <img src="assets/images/StoryBud logo.png" alt="StoryBud Logo" class="logo-light" style="max-width: 150px; height: auto;">
-          <img src="assets/images/generated-image.png" alt="StoryBud Logo" class="logo-dark" style="max-width: 150px; height: auto; display: none;">
+        <div class="content">
+            <div class="greeting">
+                <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
+                <p>You've been creating wonderful stories together! We wanted to give you a friendly heads-up that you have a few credits left for this month.</p>
+            </div>
+            
+            <div class="credits-status">
+                <div class="credits-label">Credits Remaining This Month</div>
+                <span class="credits-number">{{credits_remaining|default:"3"}}</span>
+                <div class="credits-message">Perfect for a few more magical bedtime stories</div>
+            </div>
+            
+            <div class="urgency-message">
+                <p>We love seeing how much you and {{child_name|default:"your child"}} enjoy creating stories together. If you'd like to keep the adventures going beyond your remaining credits, we have options to add more anytime.</p>
+                <p>Whether it's for tonight's bedtime story or next week's creative session, we're here to keep the storytelling magic flowing. ✨</p>
+            </div>
+            
+            <div class="benefits-reminder">
+                <h4>🌟 Keep the Magic Alive With More Credits</h4>
+                <p style="margin: 0; font-size: 15px; color: #6B7280; line-height: 1.6;">More credits mean more personalized stories, custom illustrations, voice narration, and precious family memories whenever you want to create them together.</p>
+            </div>
+            
+            <div class="cta-section">
+                <p class="cta-text">Ready to add more storytelling magic?</p>
+                <div class="cta-buttons">
+                    <a href="{{upgrade_link|default:'#'}}" class="cta-button-primary">Add More Credits</a>
+                    <a href="{{explore_plans_link|default:'#'}}" class="cta-button-secondary">Explore Plans</a>
+                </div>
+            </div>
+            
+            <div class="reassurance">
+                <p>💡 <strong>Quick & Easy:</strong> Top up your credits in seconds and get right back to creating magical stories with your family.</p>
+            </div>
+            
+            <div class="closing-message">
+                <p>Thank you for making StoryBud part of your family's routine. We're here whenever you're ready for more adventures! ✨</p>
+            </div>
         </div>
-      </div>
+        
+        <div class="footer">
+            <p class="footer-message">Happy storytelling! 📚</p>
+            <p class="footer-team">The StoryBud Team</p>
+            
+            <div class="footer-links">
+                <a href="https://storybud.com/about">About StoryBud</a>
+                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
+                <a href="mailto:support@storybud.com">Support Team</a>
+            </div>
+            
+            <div class="footer-legal">
+                <p>You're receiving this email because you signed up for StoryBud.<br>
+                <a href="{{unsubscribe_link}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>

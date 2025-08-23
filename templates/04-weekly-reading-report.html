@@ -3,128 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Reading Report - The Lasting Impact of Regular Reading</title>
+    <title>Weekly Reading Report</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #374151;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .email-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .welcome-heading {
-            font-size: 28px;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .section {
-            margin-bottom: 25px;
-        }
-        .section-heading {
-            font-size: 20px;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
-        }
-        .personalized-name {
-            color: #007bff;
-            font-weight: bold;
-        }
-        .highlight-box {
-            background-color: #f8f9fa;
-            border-left: 4px solid #007bff;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .stat-card {
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
         }
         
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
+        .email-container {
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E2E8F0;
+        }
+        
+        .header {
+            padding: 40px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8B5CF6 100%);
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+        
+        .welcome-heading {
+            font-size: 32px;
+            color: white;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .welcome-subheading {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .content {
+            padding: 36px 30px;
+        }
+        
+        .greeting {
+            margin-bottom: 28px;
+        }
+        
+        .greeting p {
+            margin: 0 0 16px 0;
+            font-size: 16px;
+        }
+        
+        .personalized-name {
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+        
+        .impact-message {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .impact-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8B5CF6, #7C3AED, #6B21A8);
+        }
+        
+        .impact-message h3 {
+            margin: 0 0 12px 0;
+            color: #1F2937;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .impact-text {
+            color: #6B7280;
+            font-size: 15px;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .stats-section {
+            margin: 36px 0;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1F2937;
+            margin: 0 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.95;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .achievements-section {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            border-left: 4px solid #8B5CF6;
+        }
+        
+        .achievements-section h4 {
+            margin: 0 0 16px 0;
+            color: #1F2937;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .achievement-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .achievement-content {
+            flex: 1;
+        }
+        
+        .achievement-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .achievement-value {
+            font-size: 13px;
+            color: #6B7280;
+        }
+        
+        .tips-section {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            border-left: 4px solid #8B5CF6;
+        }
+        
+        .tips-section h4 {
+            margin: 0 0 16px 0;
+            color: #1F2937;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tips-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+        
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+        }
+        
+        .tip-number {
+            background: #8B5CF6;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        .tip-text {
+            font-size: 14px;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .tip-text strong {
+            color: #1F2937;
+        }
+        
+        .credits-card {
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 28px 0;
+            text-align: center;
+            border-left: 4px solid #8B5CF6;
+        }
+        
+        .credits-card h4 {
+            margin: 0 0 12px 0;
+            color: #1F2937;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .credits-text {
+            color: #6B7280;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .credits-remaining {
+            font-weight: 700;
+            color: #8B5CF6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 32px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .closing-message {
+            text-align: center;
+            margin: 32px 0;
+            font-size: 16px;
+            color: #6B7280;
+            font-style: italic;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer-message {
+            margin: 0 0 8px 0;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .footer-team {
+            margin: 0 0 24px 0;
+            color: #D1D5DB;
+            font-style: italic;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #E5E7EB;
+        }
+        
+        .footer-legal {
+            font-size: 12px;
+            color: #6B7280;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        
+        .footer-legal a {
+            color: #8B5CF6;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
             body {
-                background-color: #121212 !important;
-                color: #E0E0E0 !important;
+                padding: 10px;
             }
-            .email-container {
-                background-color: #1F2937 !important;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+            
+            .header, .content, .footer {
+                padding-left: 20px;
+                padding-right: 20px;
             }
+            
             .welcome-heading {
-                color: #FCD34D !important;
+                font-size: 26px;
             }
-            .section-heading {
-                color: #FCD34D !important;
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
             }
-            .personalized-name {
-                color: #FCD34D !important;
-            }
-            .highlight-box {
-                background-color: #374151 !important;
-                border-left-color: #FCD34D !important;
-            }
-            .stat-card {
-                background: linear-gradient(135deg, #FCD34D, #F59E0B) !important;
-                color: #121212 !important;
-            }
-            .footer {
-                color: #D1D5DB !important;
-                border-top-color: #4B5563 !important;
-            }
-            .footer-content a {
-                color: #FCD34D !important;
-            }
-            .unsubscribe-text, .address, .copyright {
-                color: #9CA3AF !important;
-            }
-            a[href*="create_story_link"] {
-                background: linear-gradient(135deg, #FCD34D, #F59E0B) !important;
-                color: #121212 !important;
-            }
-            img.logo-dark {
-                display: block !important;
-            }
-            img.logo-light {
-                display: none !important;
+            
+            .stat-number {
+                font-size: 2rem;
             }
         }
     </style>
@@ -133,94 +448,126 @@
     <div class="email-container">
         <div class="header">
             <h1 class="welcome-heading">📊 Weekly Reading Report</h1>
-            <p><strong>Subject: The Lasting Impact of Regular Reading for Children</strong></p>
+            <p class="welcome-subheading">Celebrating your reading journey together</p>
         </div>
-
-        <div class="section">
-            <p>Dear Parents,</p>
-            
-            <p>We are excited to share your child's weekly reading summary and progress report! As you follow their journey, we want to highlight how impactful regular reading is for growing minds.</p>
-            
-            <div class="highlight-box">
-                <p><strong>Consistent reading habits are proven to enrich vocabulary, strengthen comprehension, and spark creativity.</strong> More than academic gains, children who read regularly develop a lifelong love for learning, build confidence, and nurture empathy by connecting with stories and characters.</p>
+        
+        <div class="content">
+            <div class="greeting">
+                <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
+                <p>We're excited to share <span class="personalized-name">{{child_name|default:"your child"}}</span>'s weekly reading progress! Every story shared together is building something truly special.</p>
             </div>
             
-            <p>Your encouragement in making reading a daily activity gives your child powerful tools for success, both in and out of the classroom. Thank you for being an essential part of this transformative habit—your support truly makes a difference!</p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading">📈 This Week's Reading Stats</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">{{stories_read|default:"5"}}</div>
-                    <div class="stat-label">Stories Read</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">{{reading_time|default:"45"}}</div>
-                    <div class="stat-label">Minutes Read</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">{{new_words|default:"12"}}</div>
-                    <div class="stat-label">New Words</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">{{days_active|default:"4"}}</div>
-                    <div class="stat-label">Active Days</div>
-                </div>
+            <div class="impact-message">
+                <h3>📚 The Power of Reading Together</h3>
+                <p class="impact-text">Consistent reading habits enrich vocabulary, strengthen comprehension, and spark creativity. More than academic gains, children who read regularly develop a lifelong love for learning, build confidence, and nurture empathy through stories.</p>
             </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading">🎯 Reading Goals & Achievements</h2>
-            <p>Your child is making excellent progress toward their reading goals! Here are some highlights from this week:</p>
-            <ul>
-                <li><strong>Vocabulary Growth:</strong> {{vocabulary_improvement|default:"8"}} new words learned</li>
-                <li><strong>Reading Stamina:</strong> {{stamina_improvement|default:"15"}} minutes longer reading sessions</li>
-                <li><strong>Comprehension:</strong> {{comprehension_score|default:"92"}}% accuracy on story questions</li>
-                <li><strong>Creativity:</strong> {{creative_responses|default:"6"}} imaginative story responses</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading">💡 Tips for This Week</h2>
-            <p>Keep the reading momentum going with these simple strategies:</p>
-            <ol>
-                <li><strong>Set a daily reading time</strong> - Even 15 minutes makes a difference</li>
-                <li><strong>Ask questions about the story</strong> - "What do you think will happen next?"</li>
-                <li><strong>Connect stories to real life</strong> - "This reminds me of when we..."</li>
-                <li><strong>Celebrate reading milestones</strong> - Every book finished is an achievement!</li>
-            </ol>
-        </div>
-
-        <div class="section">
-            <h2 class="section-heading">🚀 Ready for Next Week?</h2>
-            <p>Your child has {{credits_remaining|default:"25"}} credits remaining to continue their storytelling adventure. New stories are waiting to be discovered!</p>
             
-            <div style="text-align: center; margin: 20px 0;">
-                <a href="{{create_story_link|default:'#'}}" style="background: linear-gradient(135deg, #007bff, #0056b3); color: white; padding: 15px 30px; text-decoration: none; border-radius: 10px; font-weight: bold; display: inline-block;">Create New Story</a>
+            <div class="stats-section">
+                <h3 class="section-title">📈 This Week's Reading Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">{{stories_read|default:"5"}}</div>
+                        <div class="stat-label">Stories Read</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{reading_time|default:"45"}}</div>
+                        <div class="stat-label">Minutes Read</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{new_words|default:"12"}}</div>
+                        <div class="stat-label">New Words</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{days_active|default:"4"}}</div>
+                        <div class="stat-label">Active Days</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievements-section">
+                <h4>🎯 Goals & Achievements</h4>
+                <ul class="achievements-list">
+                    <li class="achievement-item">
+                        <span class="achievement-icon">📖</span>
+                        <div class="achievement-content">
+                            <div class="achievement-label">Vocabulary Growth</div>
+                            <div class="achievement-value">{{vocabulary_improvement|default:"8"}} new words learned this week</div>
+                        </div>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">⏰</span>
+                        <div class="achievement-content">
+                            <div class="achievement-label">Reading Stamina</div>
+                            <div class="achievement-value">{{stamina_improvement|default:"15"}} minutes longer reading sessions</div>
+                        </div>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">🧠</span>
+                        <div class="achievement-content">
+                            <div class="achievement-label">Comprehension</div>
+                            <div class="achievement-value">{{comprehension_score|default:"92"}}% accuracy on story questions</div>
+                        </div>
+                    </li>
+                    <li class="achievement-item">
+                        <span class="achievement-icon">✨</span>
+                        <div class="achievement-content">
+                            <div class="achievement-label">Creativity</div>
+                            <div class="achievement-value">{{creative_responses|default:"6"}} imaginative story responses</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="tips-section">
+                <h4>💡 Tips for Next Week</h4>
+                <ul class="tips-list">
+                    <li class="tip-item">
+                        <span class="tip-number">1</span>
+                        <span class="tip-text"><strong>Set a daily reading time</strong> - Even 15 minutes makes a difference</span>
+                    </li>
+                    <li class="tip-item">
+                        <span class="tip-number">2</span>
+                        <span class="tip-text"><strong>Ask questions about the story</strong> - "What do you think will happen next?"</span>
+                    </li>
+                    <li class="tip-item">
+                        <span class="tip-number">3</span>
+                        <span class="tip-text"><strong>Connect stories to real life</strong> - "This reminds me of when we..."</span>
+                    </li>
+                    <li class="tip-item">
+                        <span class="tip-number">4</span>
+                        <span class="tip-text"><strong>Celebrate reading milestones</strong> - Every book finished is an achievement!</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="credits-card">
+                <h4>🚀 Ready for More Adventures?</h4>
+                <p class="credits-text">You have <span class="credits-remaining">{{credits_remaining|default:"25"}} credits</span> remaining to continue your storytelling journey. New adventures are waiting to be discovered!</p>
+            </div>
+            
+            <div class="cta-section">
+                <a href="{{create_story_link|default:'#'}}" class="cta-button">Create New Story</a>
+            </div>
+            
+            <div class="closing-message">
+                <p>Thank you for making reading a priority. Your support truly makes a difference! ✨</p>
             </div>
         </div>
-
+        
         <div class="footer">
-            <p>Happy storytelling! 📚</p>
-            <p><em>The StoryBud Team</em></p>
+            <p class="footer-message">Happy storytelling! 📚</p>
+            <p class="footer-team">The StoryBud Team</p>
             
-            <div class="footer-content">
-                <p class="unsubscribe-text">You are receiving this e-mail because you signed up for StoryBud. If you do not want to receive email from us in the future, please <a href="{{unsubscribe_link}}" style="color: #007bff;">click to unsubscribe</a>.</p>
-                
-                <div class="footer-links">
-                    <a href="https://storybud.com/about" style="color: #007bff; text-decoration: none; margin: 0 10px;">About StoryBud</a> | 
-                    <a href="https://storybud.com/privacy-policy" style="color: #007bff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
-                    <a href="mailto:support@storybud.com" style="color: #007bff; text-decoration: none; margin: 0 10px;">Support Team</a>
-                </div>
-                
-                <p class="address">1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
-                <p class="copyright">Copyright © 2025 StoryBud All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="https://storybud.com/about">About StoryBud</a>
+                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
+                <a href="mailto:support@storybud.com">Support Team</a>
             </div>
             
-            <div class="logo-container" style="text-align: center; margin-top: 30px;">
-                <img src="assets/images/StoryBud logo.png" alt="StoryBud Logo" class="logo-light" style="max-width: 150px; height: auto;">
-                <img src="assets/images/generated-image.png" alt="StoryBud Logo" class="logo-dark" style="max-width: 150px; height: auto; display: none;">
+            <div class="footer-legal">
+                <p>You're receiving this email because you signed up for StoryBud.<br>
+                <a href="{{unsubscribe_link}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
             </div>
         </div>
     </div>
