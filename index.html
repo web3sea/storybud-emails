@@ -1193,6 +1193,32 @@
         body.dark-mode .progress-step.active-step .step-label {
             color: #A78BFA !important;
         }
+        
+        /* Qualified Lead specific styles */
+        .placeholder-content {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6B7280;
+        }
+        
+        .placeholder-content p {
+            font-size: 18px;
+            margin: 0;
+        }
+        
+        #qualified-lead-sequence .progress-step {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #qualified-lead-sequence .progress-step:hover {
+            transform: translateY(-2px);
+        }
+        
+        #qualified-lead-sequence .progress-step.active-step {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -1203,8 +1229,12 @@
             <p class="sequence-subtitle">Lifecycle email campaigns that guide customers seamlessly from first touch to long-term loyalty.</p>
             <button class="theme-toggle" id="themeToggle">🌓</button>
             <div class="sequence-tabs">
-                <button class="sequence-tab active" onclick="showSequence('onboarding', event)">
+                <button class="sequence-tab active" onclick="showSequence('qualified-lead', event)">
                     <span class="tab-icon">🎯</span>
+                    <span class="tab-text">Qualified Lead</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('onboarding', event)">
+                    <span class="tab-icon">🚀</span>
                     <span class="tab-text">Adoption</span>
                 </button>
                 <button class="sequence-tab" onclick="showSequence('engagement', event)">
@@ -1222,8 +1252,85 @@
             </div>
         </div>
         
-        <!-- Onboarding Sequence Container -->
-        <div id="onboarding-sequence" class="sequence-container active">
+        <!-- Qualified Lead Sequence Container -->
+        <div id="qualified-lead-sequence" class="sequence-container active">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview</h2>
+                    <p>The Qualified Lead Sequence is designed to nurture prospects who have shown interest in StoryBud but haven't yet converted to active users. This sequence focuses on building trust, demonstrating value, and providing compelling reasons to take the next step in their journey.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Lead Qualification</strong> – Assess prospect readiness and segment based on engagement level and interest signals.</li>
+                        <li><strong>Value Demonstration</strong> – Showcase the unique benefits and features that make StoryBud special.</li>
+                        <li><strong>Trust Building</strong> – Share testimonials, case studies, and social proof to establish credibility.</li>
+                        <li><strong>Conversion Optimization</strong> – Guide qualified leads toward the most appropriate next action.</li>
+                        <li><strong>Relationship Nurturing</strong> – Maintain engagement with valuable content while prospects evaluate their decision.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Day 1:</strong> Welcome & Introduction – Warm greeting and overview of what StoryBud offers.</li>
+                        <li><strong>Day 3:</strong> Value Proposition – Highlight key benefits and unique features.</li>
+                        <li><strong>Day 5:</strong> Social Proof – Share success stories and testimonials.</li>
+                        <li><strong>Day 7:</strong> Call-to-Action – Clear next steps and invitation to try.</li>
+                        <li><strong>Day 10:</strong> Follow-up – Gentle reminder with additional value content.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Increases conversion rates by nurturing leads with relevant, valuable content.</li>
+                        <li>Builds brand awareness and establishes StoryBud as a trusted solution.</li>
+                        <li>Provides multiple touchpoints to guide prospects through their decision-making process.</li>
+                        <li>Creates opportunities for lead scoring and segmentation based on engagement.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <h2 class="progress-title">🔗 Email Sequence Timeline</h2>
+                <div class="progress-steps">
+                    <div class="progress-line"></div>
+                    <div class="progress-step active-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-welcome.html', 'Welcome', this)" style="cursor: pointer;">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Welcome</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-value.html', 'Value Prop', this)" style="cursor: pointer;">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Value Prop</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-social-proof.html', 'Social Proof', this)" style="cursor: pointer;">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Social Proof</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-cta.html', 'Call to Action', this)" style="cursor: pointer;">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Call to Action</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Welcome</h3>
+                    <div class="preview-actions">
+                        <a href="#" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/qualified-lead-welcome.html')">Download</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <div class="placeholder-content">
+                        <p>Qualified Lead email templates coming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Qualified Lead Sequence Container -->
+        
+        <!-- Adoption Sequence Container -->
+        <div id="onboarding-sequence" class="sequence-container">
         <!-- Description Section -->
         <div class="description-section">
             <div class="description">
@@ -1278,7 +1385,7 @@
 
                     <div class="progress-step" onclick="showOnboardingPreview('templates/05-credits-running-low.html', '⚠️ Credits Running Low', this)" style="cursor: pointer;">
                     <div class="step-number">4</div>
-                    <div class="step-label">Conversion</div>
+                    <div class="step-label">Qualified Upsell</div>
                 </div>
             </div>
         </div>
@@ -1723,6 +1830,37 @@ StoryBud Team`;
             showNotification('Email template download started! 📧', 'success');
         }
         
+        // Qualified Lead Preview functionality
+        function showQualifiedLeadPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#qualified-lead-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#qualified-lead-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#qualified-lead-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update active step styling
+            document.querySelectorAll('#qualified-lead-sequence .progress-step').forEach(step => {
+                step.classList.remove('active-step');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-step');
+            }
+        }
+        
         // Onboarding Preview functionality
         function showOnboardingPreview(emailUrl, emailTitle, clickedElement) {
             // Update the preview title
@@ -2038,16 +2176,16 @@ StoryBud Team`;
             }
         });
         
-        // Auto-select Adoption tab on page load (default behavior)
+        // Auto-select Qualified Lead tab on page load (default behavior)
         document.addEventListener('DOMContentLoaded', function() {
-            // Default to Adoption section on new page load
-            showSequence('onboarding');
+            // Default to Qualified Lead section on new page load
+            showSequence('qualified-lead');
             
-            // Update tab states to show Adoption as active
+            // Update tab states to show Qualified Lead as active
             document.querySelectorAll('.sequence-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-            document.querySelector('.sequence-tab[onclick*="onboarding"]').classList.add('active');
+            document.querySelector('.sequence-tab[onclick*="qualified-lead"]').classList.add('active');
             
             // Only auto-select Engagement tab on Sunday
             autoSelectEngagementOnSunday();
