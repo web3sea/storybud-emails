@@ -126,7 +126,7 @@
         
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             margin: 20px 0;
         }
@@ -440,6 +440,29 @@
             
             .stat-number {
                 font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            
+            .stat-card {
+                padding: 16px 12px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 11px;
             }
         }
     </style>

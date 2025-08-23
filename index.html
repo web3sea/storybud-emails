@@ -1275,12 +1275,9 @@
                     <div class="step-number">3</div>
                     <div class="step-label">Weekly Report</div>
                 </div>
-                    <div class="progress-step" onclick="showOnboardingPreview('templates/025-lets-read-story.html', '🌟 A New Adventure Awaits', this)" style="cursor: pointer;">
-                    <div class="step-number">4</div>
-                    <div class="step-label">Retention</div>
-                </div>
+
                     <div class="progress-step" onclick="showOnboardingPreview('templates/05-credits-running-low.html', '⚠️ Credits Running Low', this)" style="cursor: pointer;">
-                    <div class="step-number">5</div>
+                    <div class="step-number">4</div>
                     <div class="step-label">Conversion</div>
                 </div>
             </div>
@@ -2005,23 +2002,14 @@ StoryBud Team`;
             showNotification('Personalization testing guide downloaded! 🧪', 'success');
         }
 
-        // Auto-select Engagement tab on Sunday and highlight current day
+        // Highlight current day if it's Sunday (but don't change main section)
         function autoSelectEngagementOnSunday() {
             const today = new Date();
             const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, etc.
             
-            // If it's Sunday (day 0), automatically show Engagement tab
+            // If it's Sunday (day 0), just highlight Sunday as current day
             if (dayOfWeek === 0) {
-                // Show engagement sequence
-                showSequence('engagement');
-                
-                // Update tab states
-                document.querySelectorAll('.sequence-tab').forEach(tab => {
-                    tab.classList.remove('active');
-                });
-                document.querySelector('.sequence-tab[onclick*="engagement"]').classList.add('active');
-                
-                // Highlight Sunday as current day
+                // Highlight Sunday as current day in the Engagement timeline
                 const sundayDay = document.querySelector('.timeline-day .day-name');
                 if (sundayDay && sundayDay.textContent === 'Sunday') {
                     sundayDay.closest('.timeline-day').classList.add('current-day');
@@ -2050,8 +2038,18 @@ StoryBud Team`;
             }
         });
         
-        // Auto-select Engagement tab on Sunday when page loads
+        // Auto-select Adoption tab on page load (default behavior)
         document.addEventListener('DOMContentLoaded', function() {
+            // Default to Adoption section on new page load
+            showSequence('onboarding');
+            
+            // Update tab states to show Adoption as active
+            document.querySelectorAll('.sequence-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector('.sequence-tab[onclick*="onboarding"]').classList.add('active');
+            
+            // Only auto-select Engagement tab on Sunday
             autoSelectEngagementOnSunday();
         });
     </script>
