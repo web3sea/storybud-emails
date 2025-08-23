@@ -560,6 +560,21 @@
             line-height: 1.3;
         }
         
+        /* Active step styling for onboarding */
+        .progress-step.active-step {
+            transform: scale(1.05);
+        }
+        
+        .progress-step.active-step .step-number {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .progress-step.active-step .step-label {
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+        
         .progress-line {
             position: absolute;
             top: 25px;
@@ -1168,6 +1183,16 @@
         body.dark-mode .day-activity {
             color: #E5E7EB !important;
         }
+        
+        /* Dark mode styles for onboarding active step */
+        body.dark-mode .progress-step.active-step .step-number {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5) !important;
+        }
+        
+        body.dark-mode .progress-step.active-step .step-label {
+            color: #A78BFA !important;
+        }
     </style>
 </head>
 <body>
@@ -1238,26 +1263,40 @@
                 <h2 class="progress-title">📋 Adoption Email Sequence Timeline</h2>
                 <div class="progress-steps">
                     <div class="progress-line"></div>
-                    <div class="progress-step" onclick="openEmailModal('templates/01-onboarding-foundation.html', '🎉 Onboarding Foundation')" style="cursor: pointer;">
+                    <div class="progress-step active-step" onclick="showOnboardingPreview('templates/01-onboarding-foundation.html', '🎉 Onboarding Foundation', this)" style="cursor: pointer;">
                         <div class="step-number">1</div>
                         <div class="step-label">Welcome & Setup</div>
                     </div>
-                    <div class="progress-step" onclick="openEmailModal('templates/03-first-story-created.html', '✨ First Story Created')" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/03-first-story-created.html', '✨ First Story Created', this)" style="cursor: pointer;">
                         <div class="step-number">2</div>
                         <div class="step-label">First Story</div>
                     </div>
-                    <div class="progress-step" onclick="openEmailModal('templates/04-weekly-reading-report.html', '📊 Weekly Reading Report')" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/04-weekly-reading-report.html', '📊 Weekly Reading Report', this)" style="cursor: pointer;">
                         <div class="step-number">3</div>
                         <div class="step-label">Engagement</div>
                     </div>
-                    <div class="progress-step" onclick="openEmailModal('templates/025-lets-read-story.html', '🌟 A New Adventure Awaits')" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/025-lets-read-story.html', '🌟 A New Adventure Awaits', this)" style="cursor: pointer;">
                         <div class="step-number">4</div>
                         <div class="step-label">Retention</div>
                     </div>
-                    <div class="progress-step" onclick="openEmailModal('templates/05-credits-running-low.html', '⚠️ Credits Running Low')" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/05-credits-running-low.html', '⚠️ Credits Running Low', this)" style="cursor: pointer;">
                         <div class="step-number">5</div>
                         <div class="step-label">Conversion</div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">🎉 Onboarding Foundation</h3>
+                    <div class="preview-actions">
+                        <a href="templates/01-onboarding-foundation.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/01-onboarding-foundation.html')">Download</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="onboardingPreviewFrame" src="templates/01-onboarding-foundation.html" class="email-preview-iframe"></iframe>
                 </div>
             </div>
         
@@ -1766,6 +1805,49 @@ StoryBud Team`;
             
             // Show success notification
             showNotification('Email template download started! 📧', 'success');
+        }
+        
+        // Onboarding Preview functionality
+        function showOnboardingPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#onboarding-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('onboardingPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#onboarding-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#onboarding-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update active step styling
+            document.querySelectorAll('#onboarding-sequence .progress-step').forEach(step => {
+                step.classList.remove('active-step');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-step');
+            }
         }
         
         // Notification system
