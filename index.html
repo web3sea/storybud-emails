@@ -1706,29 +1706,64 @@
             let allTemplates = `# StoryBud Email Templates - Complete Collection
 
 ## Template Overview
-This collection contains all 6 email templates for the StoryBud adoption sequence.
+This collection contains all email templates for the StoryBud email campaign sequences.
 
-## Template List
-1. Onboarding - Welcome new users with subscription details
-2. 📚 Let's Read a Story - Inspire families to read their next story
-3. ✨ First Story - Celebrate when users create their first story
-4. 📊 Weekly Reading Report - Highlight reading progress with fun stats
-5. ⚠️ Credits Running Low - Gently remind users about low credits
-6. 🌟 A New Adventure Awaits - Spark excitement for story time with magical invitations
+## Template List by Section
 
-## Template URLs
-- Onboarding: https://web3sea.github.io/storybud-emails/templates/01-onboarding-foundation.html
-- Let's Read: https://web3sea.github.io/storybud-emails/templates/02-lets-read-story.html
-- First Story: https://web3sea.github.io/storybud-emails/templates/03-first-story-created.html
-- Weekly Report: https://web3sea.github.io/storybud-emails/templates/04-weekly-reading-report.html
-- Credits Low: https://web3sea.github.io/storybud-emails/templates/05-credits-running-low.html
-- New Adventure: https://web3sea.github.io/storybud-emails/templates/025-lets-read-story.html
+### 🎯 Qualified Section
+1. Welcome - "We're Still Here When You're Ready" - Abandoned conversion nurturing
+2. Value Prop - "Your Brand Story is Your Competitive Edge" - Competitive advantages
+3. Social Proof - Social proof and testimonials (coming soon)
+4. Call to Action - Clear next steps and invitation (coming soon)
+
+### 🚀 Adoption Section
+5. Onboarding - Welcome new users with subscription details
+6. First Story - Celebrate when users create their first story
+7. Weekly Report - Highlight reading progress with fun stats
+8. Qualified Upsell - Conversion optimization for qualified users
+
+### 💫 Engagement Section
+9. Storytime Day 1 - Welcome to the Adventure
+10. Storytime Day 2 - The Habit Builder
+11. Storytime Day 3 - The Cliffhanger Reminder
+12. Storytime Day 4 - The Parent Benefit
+13. Storytime Day 5 - The Child's Perspective
+14. Storytime Day 6 - The Upgrade Tease
+15. Storytime Day 7 - The Routine Anchor
+
+### 🌟 Retention Section
+16. Retention Week 1 - Early retention nurturing
+17. Retention Week 2 - Continued engagement
+18. Retention Month 1 - Monthly milestone celebration
+19. Retention Month 3 - Quarterly relationship building
+
+### 🔄 Churn Recovery Section
+20. Churn Recovery Day 1 - Initial re-engagement attempt
+21. Churn Recovery Day 3 - Follow-up with value proposition
+22. Churn Recovery Day 5 - Mid-sequence encouragement
+23. Churn Recovery Day 7 - Final re-engagement effort
+24. Churn Recovery Day 10 - Last chance reconnection
+
+## Template Files
+- Qualified Welcome: templates/qualified_lead_welcome.html
+- Qualified Value: templates/qualified-lead-value.html
+- Onboarding: templates/01-onboarding-foundation.html
+- First Story: templates/03-first-story-created.html
+- Weekly Report: templates/04-weekly-reading-report.html
+- Credits Low: templates/05-credits-running-low.html
+- Storytime Emails: templates/storytime_email_day1.html through day7.html
+- Retention Emails: templates/retention_email_week1.html, week2.html, month1.html, month3.html
+- Churn Recovery: templates/churn_recovery_day1.html, day3.html, day5.html, day7.html, day10.html
 
 ## Implementation Notes
 - All templates use responsive design
 - Include dynamic variables: {{user_name}}, {{subscription_name}}, {{credit_allowance}}
 - Footer contains unsubscribe links and company information
 - Templates are optimized for email clients
+- Qualified section focuses on high-intent lead nurturing
+- Engagement section creates daily reading habits
+- Retention section maintains long-term relationships
+- Churn recovery section re-engages inactive users
 
 ## Support
 For questions about these templates, contact: support@storybud.com
