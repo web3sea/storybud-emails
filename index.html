@@ -290,6 +290,35 @@
                 justify-content: center;
             }
             
+            /* Email Preview Container Responsive */
+            .email-preview-container {
+                margin: 20px 0;
+            }
+            
+            .preview-header {
+                padding: 20px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            
+            .preview-title {
+                font-size: 1.3rem;
+            }
+            
+            .preview-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .preview-content {
+                padding: 20px;
+            }
+            
+            .email-preview-iframe {
+                height: 400px;
+            }
+            
 
         }
         
@@ -439,6 +468,21 @@
             font-weight: 600;
         }
         
+        /* Active day styling for timeline */
+        .timeline-day.active-day {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+        
+        .timeline-day.active-day .day-number,
+        .timeline-day.active-day .day-name,
+        .timeline-day.active-day .day-activity {
+            color: white;
+            font-weight: 600;
+        }
+        
         .day-number {
             font-size: 1.5rem;
             font-weight: bold;
@@ -524,6 +568,85 @@
             height: 3px;
             background: #E5E7EB;
             z-index: 1;
+        }
+        
+        /* Email Preview Container */
+        .email-preview-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            overflow: hidden;
+        }
+        
+        .preview-header {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            padding: 24px 32px;
+            border-bottom: 1px solid #E5E7EB;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .preview-title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #374151;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .preview-action-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+        }
+        
+        .preview-action-btn:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+        }
+        
+        .preview-action-btn.secondary {
+            background: #F3F4F6;
+            color: #6B7280;
+            border: 2px solid #E5E7EB;
+        }
+        
+        .preview-action-btn.secondary:hover {
+            background: #E5E7EB;
+            color: #374151;
+            border-color: #8B5CF6;
+        }
+        
+        .preview-content {
+            padding: 32px;
+            background: #F9FAFB;
+        }
+        
+        .email-preview-iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            background: white;
         }
         
         /* Download Section */
@@ -1003,6 +1126,37 @@
             font-weight: 600 !important;
         }
         
+        /* Dark mode styles for email preview */
+        body.dark-mode .email-preview-container {
+            background: #1F2937;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode .preview-header {
+            background: linear-gradient(135deg, #374151, #4B5563);
+            border-bottom-color: #4B5563;
+        }
+        
+        body.dark-mode .preview-title {
+            color: #F9FAFB;
+        }
+        
+        body.dark-mode .preview-content {
+            background: #111827;
+        }
+        
+        body.dark-mode .preview-action-btn.secondary {
+            background: #374151;
+            color: #D1D5DB;
+            border-color: #4B5563;
+        }
+        
+        body.dark-mode .preview-action-btn.secondary:hover {
+            background: #4B5563;
+            color: #F9FAFB;
+            border-color: #8B5CF6;
+        }
+        
         body.dark-mode .day-number {
             color: #A78BFA !important;
         }
@@ -1153,37 +1307,37 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">📋 Email Sequence Timeline</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day1.html', 'Storytime Email - Day 1')" style="cursor: pointer;">
+                    <div class="timeline-day active-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day1.html', 'Storytime Email - Day 1', this)" style="cursor: pointer;">
                         <div class="day-number">1</div>
                         <div class="day-name">Sunday</div>
                         <div class="day-activity">Story Discovery</div>
                     </div>
-                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day2.html', 'Storytime Email - Day 2')" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day2.html', 'Storytime Email - Day 2', this)" style="cursor: pointer;">
                         <div class="day-number">2</div>
                         <div class="day-name">Monday</div>
                         <div class="day-activity">Character Introduction</div>
                     </div>
-                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day3.html', 'Storytime Email - Day 3')" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day3.html', 'Storytime Email - Day 3', this)" style="cursor: pointer;">
                         <div class="day-number">3</div>
                         <div class="day-name">Tuesday</div>
                         <div class="day-activity">Adventure Begins</div>
                     </div>
-                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day4.html', 'Storytime Email - Day 4')" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day4.html', 'Storytime Email - Day 4', this)" style="cursor: pointer;">
                         <div class="day-number">4</div>
                         <div class="day-name">Wednesday</div>
                         <div class="day-activity">Plot Twist</div>
                     </div>
-                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day5.html', 'Storytime Email - Day 5')" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day5.html', 'Storytime Email - Day 5', this)" style="cursor: pointer;">
                         <div class="day-number">5</div>
                         <div class="day-name">Thursday</div>
                         <div class="day-activity">Climax</div>
                     </div>
-                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day6.html', 'Storytime Email - Day 6')" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day6.html', 'Storytime Email - Day 6', this)" style="cursor: pointer;">
                         <div class="day-number">6</div>
                         <div class="day-name">Friday</div>
                         <div class="day-activity">Resolution</div>
                     </div>
-                    <div class="timeline-day" onclick="openEmailModal('https://storybud-emails.vercel.app/templates/storytime_email_day7.html', 'Storytime Email - Day 7')" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day7.html', 'Storytime Email - Day 7', this)" style="cursor: pointer;">
                         <div class="day-number">7</div>
                         <div class="day-name">Saturday</div>
                         <div class="day-activity">Story Complete</div>
@@ -1191,93 +1345,22 @@
                 </div>
             </div>
             
-            <!-- Engagement Templates Section -->
-            <div class="templates-section">
-                <h2 class="section-title">💫 Engagement Sequence</h2>
-                <div class="template-grid">
-                    <div class="template-card">
-                        <div class="template-header">
-                            <div class="template-icon">📚</div>
-                            <h3 class="template-title">Storytime Email - Day 1</h3>
-                        </div>
-                        <div class="template-description">First day storytime email to kick off the 7-day story adventure journey.</div>
-                        <div class="template-actions">
-                            <a href="templates/storytime_email_day1.html" class="template-link">View Email</a>
-                            <button class="preview-btn" onclick="openPreview('storytime-day1', 'Storytime Email - Day 1')">Preview</button>
-                        </div>
-                    </div>
-                    <div class="template-card">
-                        <div class="template-header">
-                            <div class="template-icon">📖</div>
-                            <h3 class="template-title">Storytime Email - Day 2</h3>
-                        </div>
-                        <div class="template-description">Second day storytime email continuing the adventure with new story elements.</div>
-                        <div class="template-actions">
-                            <a href="templates/storytime_email_day2.html" class="template-link">View Email</a>
-                            <button class="preview-btn" onclick="openPreview('storytime-day2', 'Storytime Email - Day 2')">Preview</button>
-                        </div>
-                    </div>
-                    <div class="template-card">
-                        <div class="template-header">
-                            <div class="template-icon">🌟</div>
-                            <h3 class="template-title">Storytime Email - Day 3</h3>
-                        </div>
-                        <div class="template-description">Third day storytime email building momentum in the story adventure.</div>
-                        <div class="template-actions">
-                            <a href="templates/storytime_email_day3.html" class="template-link">View Email</a>
-                            <button class="preview-btn" onclick="openPreview('storytime-day3', 'Storytime Email - Day 3')">Preview</button>
-                        </div>
-                    </div>
-                    
-                    <div class="template-card">
-                        <div class="template-header">
-                            <div class="template-icon">🎭</div>
-                            <h3 class="template-title">Storytime Email - Day 4</h3>
-                        </div>
-                        <div class="template-description">Fourth day brings a plot twist that keeps readers engaged and excited for what's next.</div>
-                        <div class="template-actions">
-                            <a href="templates/storytime_email_day4.html" class="template-link">View Email</a>
-                            <button class="preview-btn" onclick="openPreview('storytime-day4', 'Storytime Email - Day 4')">Preview</button>
-                        </div>
-                    </div>
-                    
-                    <div class="template-card">
-                        <div class="template-header">
-                            <div class="template-icon">🎪</div>
-                            <h3 class="template-title">Storytime Email - Day 5</h3>
-                        </div>
-                        <div class="template-description">Friday's climactic story moment delivers the peak excitement of the 7-day adventure.</div>
-                        <div class="template-actions">
-                            <a href="templates/storytime_email_day5.html" class="template-link">View Email</a>
-                            <button class="preview-btn" onclick="openPreview('storytime-day5', 'Storytime Email - Day 5')">Preview</button>
-                        </div>
-                    </div>
-                    
-                    <div class="template-card">
-                        <div class="template-header">
-                            <div class="template-icon">🎯</div>
-                            <h3 class="template-title">Storytime Email - Day 6</h3>
-                        </div>
-                        <div class="template-description">Saturday brings resolution as the story adventure reaches its satisfying conclusion.</div>
-                        <div class="template-actions">
-                            <a href="templates/storytime_email_day6.html" class="template-link">View Email</a>
-                            <button class="preview-btn" onclick="openPreview('storytime-day6', 'Storytime Email - Day 6')">Preview</button>
-                        </div>
-                    </div>
-                    
-                    <div class="template-card">
-                        <div class="template-header">
-                            <div class="template-icon">🏆</div>
-                            <h3 class="template-title">Storytime Email - Day 7</h3>
-                        </div>
-                        <div class="template-description">Sunday celebrates the completed story adventure and encourages starting a new journey.</div>
-                        <div class="template-actions">
-                            <a href="templates/storytime_email_day7.html" class="template-link">View Email</a>
-                            <button class="preview-btn" onclick="openPreview('storytime-day7', 'Storytime Email - Day 7')">Preview</button>
-                        </div>
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Storytime Email - Day 1</h3>
+                    <div class="preview-actions">
+                        <a href="https://storybud-emails.vercel.app/templates/storytime_email_day1.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('https://storybud-emails.vercel.app/templates/storytime_email_day1.html')">Download</button>
                     </div>
                 </div>
+                <div class="preview-content">
+                    <iframe id="emailPreviewFrame" src="https://storybud-emails.vercel.app/templates/storytime_email_day1.html" class="email-preview-iframe"></iframe>
+                </div>
             </div>
+            
+            <!-- Engagement Templates Section -->
+
         </div>
         
         <!-- Retention Sequence Container -->
@@ -1544,172 +1627,11 @@
             </div>
         </div>
         
-        <!-- Preview Modal -->
-        <div id="previewModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="modalTitle">Template Preview</h2>
-                    <button class="close" onclick="closePreview()">&times;</button>
-                </div>
-                <div class="modal-body" id="modalBody">
-                    <!-- Content will be loaded here -->
-                </div>
-            </div>
-        </div>
+
     </div>
     
     <script>
-        // Preview functionality
-        function openPreview(templateId, templateName) {
-            const modal = document.getElementById('previewModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalBody = document.getElementById('modalBody');
-            
-            modalTitle.textContent = templateName;
-            
-            // Create preview content based on template
-            let previewContent = '';
-            
-            switch(templateId) {
-                case 'onboarding':
-                    previewContent = `
-                        <div class="preview-placeholder">
-                            <h3>🎉 Welcome to StoryBud!</h3>
-                            <p>This onboarding email welcomes new users with subscription details, helpful tips, and a clear path to their first story adventure.</p>
-                            <div class="preview-actions">
-                                <a href="templates/01-onboarding-foundation.html" class="preview-action-btn preview-primary">View Full Template</a>
-                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
-                            </div>
-                        </div>
-                    `;
-                    break;
-                    
-                case 'lets-read':
-                    previewContent = `
-                        <div class="preview-placeholder">
-                            <h3>📚 Let's Read a Story!</h3>
-                            <p>This email inspires families to dive back in and enjoy their next personalized tale, making reading time exciting and effortless.</p>
-                            <div class="preview-actions">
-                                <a href="templates/02-lets-read-story.html" class="preview-action-btn preview-primary">View Full Template</a>
-                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
-                            </div>
-                        </div>
-                    `;
-                    break;
-                    
-                case 'first-story':
-                    previewContent = `
-                        <div class="preview-placeholder">
-                            <h3>✨ First Story Created!</h3>
-                            <p>This email celebrates the joy of creation and congratulates users when they craft their very first story.</p>
-                            <div class="preview-actions">
-                                <a href="templates/03-first-story-created.html" class="preview-action-btn preview-primary">View Full Template</a>
-                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
-                            </div>
-                        </div>
-                    `;
-                    break;
-                    
-                case 'weekly-report':
-                    previewContent = `
-                        <div class="preview-placeholder">
-                            <h3>📊 Weekly Reading Report</h3>
-                            <p>This email highlights reading progress with fun, visual stats that motivate parents and kids to keep building their storytelling habit.</p>
-                            <div class="preview-actions">
-                                <a href="templates/04-weekly-reading-report.html" class="preview-action-btn preview-primary">View Full Template</a>
-                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
-                            </div>
-                        </div>
-                    `;
-                    break;
-                    
-                case 'credits-low':
-                    previewContent = `
-                        <div class="preview-placeholder">
-                            <h3>⚠️ Credits Running Low</h3>
-                            <p>This email gently reminds users when their credits are running low and guides them toward topping up.</p>
-                            <div class="preview-actions">
-                                <a href="templates/05-credits-running-low.html" class="preview-action-btn preview-primary">View Full Template</a>
-                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
-                            </div>
-                        </div>
-                    `;
-                    break;
-                    
-                case 'new-adventure':
-                    previewContent = `
-                        <div class="preview-placeholder">
-                            <h3>🌟 A New Adventure Awaits!</h3>
-                            <p>This email sparks excitement for story time with a magical invitation that reminds families of the joy and connection that reading together brings.</p>
-                            <div class="preview-actions">
-                                <a href="templates/025-lets-read-story.html" class="preview-action-btn preview-primary">View Full Template</a>
-                                <button class="preview-action-btn preview-secondary" onclick="closePreview()">Close Preview</button>
-                            </div>
-                        </div>
-                    `;
-                    break;
-            }
-            
-            modalBody.innerHTML = previewContent;
-            modal.style.display = 'block';
-            
-            // Close modal when clicking outside
-            modal.onclick = function(event) {
-                if (event.target === modal) {
-                    closePreview();
-                }
-            };
-        }
-        
-        function closePreview() {
-            const modal = document.getElementById('previewModal');
-            modal.style.display = 'none';
-        }
-        
-        // Email modal functionality for timeline cards
-        function openEmailModal(emailUrl, emailTitle) {
-            const modal = document.getElementById('previewModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalBody = document.getElementById('modalBody');
-            
-            modalTitle.textContent = emailTitle;
-            
-            // Create iframe to display the actual email
-            const iframe = document.createElement('iframe');
-            
-            // Handle both local files and external URLs
-            if (emailUrl.startsWith('http')) {
-                // External URL - use as is
-                iframe.src = emailUrl;
-            } else {
-                // Local file - construct full path
-                iframe.src = window.location.origin + '/' + emailUrl;
-            }
-            
-            iframe.className = 'preview-iframe';
-            iframe.style.width = '100%';
-            iframe.style.height = '600px';
-            iframe.style.border = '1px solid #E5E7EB';
-            iframe.style.borderRadius = '12px';
-            
-            modalBody.innerHTML = '';
-            modalBody.appendChild(iframe);
-            modal.style.display = 'block';
-            
-            // Close modal when clicking outside
-            modal.onclick = function(event) {
-                if (event.target === modal) {
-                    closePreview();
-                }
-            };
-        }
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closePreview();
-            }
-        });
+
         
         // Download functionality
         function downloadAllTemplates() {
@@ -1790,6 +1712,60 @@ StoryBud Team`;
                     clickedTab.classList.add('active');
                 }
             }
+        }
+        
+        // Email Preview functionality
+        function showEmailPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('.preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('emailPreviewFrame');
+            if (previewFrame) {
+                previewFrame.src = emailUrl;
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('.preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('.preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update active day styling
+            document.querySelectorAll('.timeline-day').forEach(day => {
+                day.classList.remove('active-day');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-day');
+            }
+        }
+        
+        // Download email function
+        function downloadEmail(emailUrl) {
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = emailUrl;
+            link.download = 'email-template.html';
+            link.target = '_blank';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success notification
+            showNotification('Email template download started! 📧', 'success');
         }
         
         // Notification system
