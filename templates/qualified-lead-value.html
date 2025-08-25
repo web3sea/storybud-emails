@@ -349,6 +349,29 @@
             }
         }
 
+        /* Footer Styling */
+        .footer {
+            background: var(--light-gray);
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .footer-legal {
+            color: var(--slate);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-legal a {
+            color: var(--purple-primary);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             body { padding: 10px; }
@@ -434,12 +457,18 @@
                 <a href="#" class="cta-button">Start Your Free Trial →</a>
             </div>
             
-
-            
             <div class="ps">
                 <div class="ps-text">
                     <span class="ps-label">P.S.</span> Still on the fence? I get it. Tomorrow I'll share how [specific customer] used StoryBud to [specific result] – it might surprise you how simple it was.
                 </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-legal">
+                <p>You're receiving this email because you showed interest in StoryBud.<br>
+                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
             </div>
         </div>
     </div>

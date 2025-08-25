@@ -408,6 +408,29 @@
             font-style: normal;
         }
 
+        /* Footer Styling */
+        .footer {
+            background: var(--light-gray);
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .footer-legal {
+            color: var(--slate);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-legal a {
+            color: var(--purple-primary);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            text-decoration: underline;
+        }
+
         /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             .email-container {
@@ -574,6 +597,14 @@
                 <div class="ps-text">
                     <span class="ps-label">P.S.</span> Tomorrow I'll share our most compelling case study yet—how a startup went from 0 to 100,000 followers in just 6 months using StoryBud's content strategy framework.
                 </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-legal">
+                <p>You're receiving this email because you showed interest in StoryBud.<br>
+                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
             </div>
         </div>
     </div>

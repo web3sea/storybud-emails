@@ -2077,6 +2077,7 @@ StoryBud Team`;
                     name: 'Short Name',
                     data: {
                         user_name: 'Alex',
+                        user_email: 'alex@example.com',
                         child_name: 'Sam',
                         subscription_name: 'Starter',
                         credit_allowance: '10',
@@ -2090,14 +2091,14 @@ StoryBud Team`;
                         creative_responses: '4',
                         credits_remaining: '15',
                         create_story_link: '#',
-                        features_guide_link: '#',
-                        unsubscribe_link: '#'
+                        features_guide_link: '#'
                     }
                 },
                 {
                     name: 'Long Name',
                     data: {
                         user_name: 'Alexandria Rodriguez-Williams',
+                        user_email: 'alexandria.rodriguez-williams@example.com',
                         child_name: 'Isabella Rodriguez-Williams',
                         subscription_name: 'Premium Family Plan',
                         credit_allowance: 'unlimited',
@@ -2111,14 +2112,14 @@ StoryBud Team`;
                         creative_responses: '15',
                         credits_remaining: '150',
                         create_story_link: '#',
-                        features_guide_link: '#',
-                        unsubscribe_link: '#'
+                        features_guide_link: '#'
                     }
                 },
                 {
                     name: 'Missing Data (Fallbacks)',
                     data: {
                         user_name: '',
+                        user_email: '',
                         child_name: '',
                         subscription_name: '',
                         credit_allowance: '',
@@ -2132,8 +2133,7 @@ StoryBud Team`;
                         creative_responses: '',
                         credits_remaining: '',
                         create_story_link: '',
-                        features_guide_link: '',
-                        unsubscribe_link: ''
+                        features_guide_link: ''
                     }
                 }
             ];
@@ -2155,6 +2155,7 @@ StoryBud Team`;
 
             testResults += '## Fallback Values Implemented\n';
             testResults += '- `{{user_name|default:"there"}}` - Shows "Hi there!" when name is missing\n';
+            testResults += '- `{{user_email|default:"brad%40storybud.com"}}` - Shows "brad@storybud.com" when email is missing\n';
             testResults += '- `{{child_name|default:"your child"}}` - Shows "your child" when child name is missing\n';
             testResults += '- `{{subscription_name|default:"StoryBud"}}` - Shows "StoryBud" when subscription is missing\n';
             testResults += '- `{{credit_allowance|default:"unlimited"}}` - Shows "unlimited" when credits are missing\n';
@@ -2168,8 +2169,7 @@ StoryBud Team`;
             testResults += '- `{{creative_responses|default:"6"}}` - Shows "6" when data is missing\n';
             testResults += '- `{{credits_remaining|default:"25"}}` - Shows "25" when data is missing\n';
             testResults += '- `{{create_story_link|default:"#"}}` - Shows "#" when link is missing\n';
-            testResults += '- `{{features_guide_link|default:"#"}}` - Shows "#" when link is missing\n';
-            testResults += '- `{{unsubscribe_link|default:"#"}}` - Shows "#" when link is missing\n\n';
+            testResults += '- `{{features_guide_link|default:"#"}}` - Shows "#" when link is missing\n\n';
             testResults += '## Testing Instructions\n';
             testResults += '1. Open each email template\n';
             testResults += '2. Test with the scenarios above\n';
