@@ -421,48 +421,131 @@
         
         @media (max-width: 600px) {
             body {
-                padding: 10px;
+                padding: 10px !important;
             }
             
             .header, .content, .footer {
-                padding-left: 20px;
-                padding-right: 20px;
+                padding: 25px 20px !important;
             }
             
             .welcome-heading {
-                font-size: 26px;
+                font-size: 26px !important;
+                line-height: 1.2 !important;
             }
             
+            .section-title {
+                font-size: 20px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .greeting p {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+            }
+            
+            /* Grid Layout Optimization */
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+            }
+            
+            .stat-card {
+                padding: 20px !important;
             }
             
             .stat-number {
-                font-size: 2rem;
+                font-size: 2rem !important;
             }
             
             .stat-label {
-                font-size: 12px;
+                font-size: 12px !important;
+            }
+            
+            .achievements-section,
+            .tips-section {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .achievement-item {
+                padding: 18px !important;
+                margin: 15px 0 !important;
+            }
+            
+            .footer-links {
+                flex-direction: column !important;
+                gap: 12px !important;
+                text-align: center !important;
             }
         }
         
         @media (max-width: 480px) {
+            .header, .content, .footer {
+                padding: 20px 15px !important;
+            }
+            
+            .welcome-heading {
+                font-size: 24px !important;
+            }
+            
+            .section-title {
+                font-size: 18px !important;
+            }
+            
+            .greeting p {
+                font-size: 15px !important;
+            }
+            
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
             }
             
             .stat-card {
-                padding: 16px 12px;
+                padding: 16px 12px !important;
             }
             
             .stat-number {
-                font-size: 1.8rem;
+                font-size: 1.8rem !important;
             }
             
             .stat-label {
-                font-size: 11px;
+                font-size: 11px !important;
+            }
+            
+            .achievements-section,
+            .tips-section {
+                margin: 20px -15px !important;
+                padding: 18px !important;
+            }
+        }
+        
+        /* Extra small mobile devices */
+        @media (max-width: 360px) {
+            .header, .content, .footer {
+                padding: 18px 12px !important;
+            }
+            
+            .welcome-heading {
+                font-size: 22px !important;
+            }
+            
+            .section-title {
+                font-size: 17px !important;
+            }
+            
+            .stats-grid {
+                gap: 10px !important;
+            }
+            
+            .stat-card {
+                padding: 14px 10px !important;
+            }
+            
+            .achievements-section,
+            .tips-section {
+                margin: 18px -12px !important;
+                padding: 16px !important;
             }
         }
         
