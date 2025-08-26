@@ -220,7 +220,9 @@
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body {
+            body,
+            body[style],
+            center[style] {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #E0E0E0 !important;
             }
@@ -228,6 +230,7 @@
             .email-container {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+                border-color: #4a5568 !important;
             }
             
             .header {
@@ -245,27 +248,18 @@
                 bottom: 0;
                 background-image: 
                     radial-gradient(2px 2px at 20px 30px, #ffffff 50%, transparent 50%),
-                    radial-gradient(1px 1px at 40px 70px, #ffffff 60%, transparent 60%),
+                    radial-gradient(2px 2px at 40px 70px, #ffffff 50%, transparent 50%),
                     radial-gradient(1px 1px at 90px 40px, #ffffff 50%, transparent 50%),
-                    radial-gradient(2px 2px at 130px 80px, #ffffff 50%, transparent 50%),
-                    radial-gradient(1px 1px at 160px 30px, #ffffff 60%, transparent 60%),
-                    radial-gradient(1px 1px at 200px 90px, #ffffff 50%, transparent 50%),
-                    radial-gradient(2px 2px at 250px 50px, #ffffff 50%, transparent 50%),
-                    radial-gradient(1px 1px at 300px 20px, #ffffff 60%, transparent 60%),
-                    radial-gradient(1px 1px at 350px 70px, #ffffff 50%, transparent 50%),
-                    radial-gradient(2px 2px at 400px 40px, #ffffff 50%, transparent 50%),
-                    radial-gradient(1px 1px at 450px 85px, #ffffff 60%, transparent 60%),
-                    radial-gradient(1px 1px at 500px 25px, #ffffff 50%, transparent 50%),
-                    radial-gradient(2px 2px at 550px 65px, #ffffff 50%, transparent 50%);
+                    radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent 50%),
+                    radial-gradient(2px 2px at 160px 30px, #ffffff 50%, transparent 50%);
                 background-repeat: repeat;
-                background-size: 600px 120px;
-                animation: twinkle 2s ease-in-out infinite alternate;
-                pointer-events: none;
+                background-size: 200px 100px;
+                animation: twinkle 3s ease-in-out infinite alternate;
             }
             
             .content {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #e2e8f0 !important;
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
             }
             
             .body-text {
