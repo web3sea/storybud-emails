@@ -86,7 +86,6 @@
                 radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.4) 50%, transparent 50%),
                 radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: warm-twinkle 5s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -108,7 +107,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: gentle-bounce 3s ease-in-out infinite;
         }
         
         /* Content styles */
@@ -457,15 +455,6 @@
         }
         
         /* Animations */
-        @keyframes warm-twinkle {
-            0% { opacity: 0.4; }
-            100% { opacity: 0.8; }
-        }
-        
-        @keyframes gentle-bounce {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-3px); }
-        }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {

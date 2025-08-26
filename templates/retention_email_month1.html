@@ -87,7 +87,6 @@
                 radial-gradient(4px 4px at 45% 10%, rgba(252, 211, 77, 0.9) 50%, transparent 50%),
                 radial-gradient(2px 2px at 65% 90%, rgba(252, 211, 77, 0.7) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: celebration-sparkle 2s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -108,7 +107,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: trophy-bounce 3s ease-in-out infinite;
         }
         
         /* Achievement Banner */
@@ -134,14 +132,12 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: shine 4s ease-in-out infinite;
         }
         
         .achievement-banner .trophy {
             font-size: 28px;
             margin-right: 12px;
             display: inline-block;
-            animation: bounce 2s ease-in-out infinite;
         }
         
         /* Content styles */
@@ -201,7 +197,6 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, rgba(110, 231, 183, 0.1) 0%, transparent 70%);
-            animation: rotate 30s linear infinite;
             pointer-events: none;
         }
         
@@ -272,7 +267,6 @@
             border-radius: 12px;
             position: relative;
             overflow: hidden;
-            animation: progress-fill 2s ease-in-out;
         }
         
         .progress-bar::before {
@@ -283,7 +277,6 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            animation: progress-shine 2s ease-in-out infinite;
         }
         
         .progress-text {
@@ -603,41 +596,6 @@
         }
         
         /* Animations */
-        @keyframes celebration-sparkle {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
-        
-        @keyframes trophy-bounce {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-8px) scale(1.05); }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes progress-fill {
-            0% { width: 0; }
-            100% { width: 75%; }
-        }
-        
-        @keyframes progress-shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {

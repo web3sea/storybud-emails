@@ -85,7 +85,6 @@
                 radial-gradient(1px 1px at 80% 20%, rgba(139, 92, 246, 0.2) 50%, transparent 50%),
                 radial-gradient(1.5px 1.5px at 40% 80%, rgba(139, 92, 246, 0.3) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: gentle-float 6s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -107,7 +106,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: gentle-pulse 4s ease-in-out infinite;
         }
         
         /* Content styles - warmer, more personal */
@@ -415,16 +413,6 @@
             }
         }
         
-        /* Gentle animations */
-        @keyframes gentle-float {
-            0% { opacity: 0.3; transform: translateY(0px); }
-            100% { opacity: 0.6; transform: translateY(-3px); }
-        }
-        
-        @keyframes gentle-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {

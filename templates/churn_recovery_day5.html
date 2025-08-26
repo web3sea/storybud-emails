@@ -86,7 +86,6 @@
                 radial-gradient(1.5px 1.5px at 40% 80%, rgba(110, 231, 183, 0.4) 50%, transparent 50%),
                 radial-gradient(1px 1px at 70% 70%, rgba(110, 231, 183, 0.2) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: supportive-glow 4s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -108,7 +107,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: caring-sway 4s ease-in-out infinite;
         }
         
         /* Content styles */
@@ -514,15 +512,6 @@
         }
         
         /* Animations */
-        @keyframes supportive-glow {
-            0% { opacity: 0.4; }
-            100% { opacity: 0.7; }
-        }
-        
-        @keyframes caring-sway {
-            0%, 100% { transform: rotate(-2deg); }
-            50% { transform: rotate(2deg); }
-        }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {

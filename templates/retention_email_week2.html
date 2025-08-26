@@ -87,7 +87,6 @@
                 radial-gradient(3px 3px at 45% 15%, rgba(125, 211, 252, 0.6) 50%, transparent 50%),
                 radial-gradient(2px 2px at 65% 85%, rgba(125, 211, 252, 0.4) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: sparkle 3s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -108,7 +107,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: float 4s ease-in-out infinite;
         }
         
         /* Content styles */
@@ -455,16 +453,6 @@
         }
         
         /* Animations */
-        @keyframes sparkle {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
