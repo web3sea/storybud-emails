@@ -540,6 +540,79 @@
             0% { left: -100%; }
             100% { left: 100%; }
         }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                color: #E0E0E0 !important;
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+            }
+            
+            .content {
+                color: #e2e8f0 !important;
+            }
+            
+            .subheader {
+                color: #93c5fd !important;
+            }
+            
+            .achievement-banner {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .monthly-stats {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .stat-card {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .streak-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .streak-title {
+                color: #f7fafc !important;
+            }
+            
+            .progress-section {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .progress-title {
+                color: #f7fafc !important;
+            }
+            
+            .milestone-item {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+                border-top-color: #4a5568 !important;
+            }
+            
+            .footer-text {
+                color: #a0aec0 !important;
+            }
+        }
     </style>
 </head>
 
