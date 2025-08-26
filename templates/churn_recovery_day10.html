@@ -428,7 +428,9 @@
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body {
+            body,
+            body[style],
+            center[style] {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #E0E0E0 !important;
             }
@@ -447,9 +449,22 @@
                 color: #e2e8f0 !important;
             }
             
+            .body-text,
+            .content p {
+                color: #e2e8f0 !important;
+            }
+            
+            .greeting {
+                color: #e2e8f0 !important;
+            }
+            
             .emotional-section {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
+            }
+            
+            .emotional-text {
+                color: #e2e8f0 !important;
             }
             
             .memory-callback {
@@ -461,6 +476,10 @@
                 color: #f7fafc !important;
             }
             
+            .memory-text {
+                color: #e2e8f0 !important;
+            }
+            
             .final-offer {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
@@ -470,9 +489,18 @@
                 color: #f7fafc !important;
             }
             
+            .offer-details,
+            .offer-value {
+                color: #e2e8f0 !important;
+            }
+            
             .countdown-section {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
+            }
+            
+            .countdown-text {
+                color: #e2e8f0 !important;
             }
             
             .farewell-section {
@@ -482,6 +510,14 @@
             
             .farewell-title {
                 color: #f7fafc !important;
+            }
+            
+            .farewell-text {
+                color: #e2e8f0 !important;
+            }
+            
+            .secondary-link {
+                color: #93c5fd !important;
             }
             
             .footer {

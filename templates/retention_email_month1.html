@@ -543,7 +543,9 @@
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body {
+            body,
+            body[style],
+            center[style] {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #E0E0E0 !important;
             }
@@ -559,6 +561,11 @@
             }
             
             .content {
+                color: #e2e8f0 !important;
+            }
+            
+            .body-text,
+            .content p {
                 color: #e2e8f0 !important;
             }
             
@@ -590,6 +597,10 @@
                 color: #f7fafc !important;
             }
             
+            .streak-text {
+                color: #e2e8f0 !important;
+            }
+            
             .progress-section {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
@@ -599,9 +610,18 @@
                 color: #f7fafc !important;
             }
             
+            .progress-text {
+                color: #e2e8f0 !important;
+            }
+            
             .milestone-item {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
+            }
+            
+            .milestone-text,
+            .milestone-date {
+                color: #e2e8f0 !important;
             }
             
             .footer {

@@ -353,7 +353,8 @@
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body {
+            body,
+            body[style] {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #E0E0E0 !important;
             }
@@ -368,9 +369,27 @@
                 color: #e2e8f0 !important;
             }
             
+            .greeting p,
+            .content p {
+                color: #e2e8f0 !important;
+            }
+            
             .credits-status {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
+            }
+            
+            .credits-label,
+            .credits-message {
+                color: #e2e8f0 !important;
+            }
+            
+            .credits-number {
+                color: #f7fafc !important;
+            }
+            
+            .urgency-message p {
+                color: #e2e8f0 !important;
             }
             
             .benefits-reminder h4 {
@@ -388,6 +407,14 @@
             .reassurance {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
+            }
+            
+            .reassurance p {
+                color: #e2e8f0 !important;
+            }
+            
+            .closing-message p {
+                color: #e2e8f0 !important;
             }
             
             .footer {

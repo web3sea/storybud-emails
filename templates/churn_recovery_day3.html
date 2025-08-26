@@ -381,7 +381,9 @@
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body {
+            body,
+            body[style],
+            center[style] {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #E0E0E0 !important;
             }
@@ -400,6 +402,15 @@
                 color: #e2e8f0 !important;
             }
             
+            .body-text,
+            .content p {
+                color: #e2e8f0 !important;
+            }
+            
+            .greeting {
+                color: #e2e8f0 !important;
+            }
+            
             .memory-highlight {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
@@ -410,9 +421,18 @@
                 color: #f7fafc !important;
             }
             
+            .memory-text {
+                color: #e2e8f0 !important;
+            }
+            
             .personal-story {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
+            }
+            
+            .story-content,
+            .story-stat {
+                color: #e2e8f0 !important;
             }
             
             .benefit-item {
@@ -422,6 +442,10 @@
             
             .benefit-title {
                 color: #f7fafc !important;
+            }
+            
+            .benefit-description {
+                color: #e2e8f0 !important;
             }
             
             .footer {

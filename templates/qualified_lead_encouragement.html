@@ -471,7 +471,8 @@
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body {
+            body,
+            body[style] {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #E0E0E0 !important;
             }
@@ -490,6 +491,11 @@
                 color: #e2e8f0 !important;
             }
             
+            .hero-title,
+            .hero-subtitle {
+                color: #e2e8f0 !important;
+            }
+            
             .progress-celebration {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
@@ -497,6 +503,10 @@
             
             .progress-title {
                 color: #f7fafc !important;
+            }
+            
+            .progress-description {
+                color: #e2e8f0 !important;
             }
             
             .section-title {
@@ -510,6 +520,10 @@
             
             .milestone-title {
                 color: #f7fafc !important;
+            }
+            
+            .milestone-description {
+                color: #e2e8f0 !important;
             }
             
             .encouragement-section {
@@ -526,6 +540,15 @@
                 border-color: #4a5568 !important;
             }
             
+            .testimonial-text {
+                color: #e2e8f0 !important;
+            }
+            
+            .testimonial-author,
+            .testimonial-role {
+                color: #a0aec0 !important;
+            }
+            
             .next-step-card {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
@@ -533,6 +556,10 @@
             
             .next-step-title {
                 color: #f7fafc !important;
+            }
+            
+            .next-step-description {
+                color: #e2e8f0 !important;
             }
             
             .main-cta {

@@ -339,7 +339,8 @@
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body {
+            body,
+            body[style] {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
                 color: #E0E0E0 !important;
             }
@@ -358,6 +359,11 @@
                 color: #e2e8f0 !important;
             }
             
+            .greeting p,
+            .content p {
+                color: #e2e8f0 !important;
+            }
+            
             .section-title {
                 color: #f7fafc !important;
             }
@@ -367,9 +373,19 @@
                 border-color: #4a5568 !important;
             }
             
+            .account-card h4,
+            .account-card p {
+                color: #e2e8f0 !important;
+            }
+            
             .step-item {
                 background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
                 border-color: #4a5568 !important;
+            }
+            
+            .step-content h4,
+            .step-content p {
+                color: #e2e8f0 !important;
             }
             
             .cta-text {
