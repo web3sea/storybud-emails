@@ -1300,21 +1300,25 @@
                 <h2 class="progress-title">🔗 Email Sequence Timeline</h2>
                 <div class="progress-steps">
                     <div class="progress-line"></div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_welcome.html', 'Welcome', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_welcome.html', 'Day 1: Welcome', this)" style="cursor: pointer;">
                         <div class="step-number">1</div>
-                        <div class="step-label">Welcome</div>
+                        <div class="step-label">Day 1: Welcome</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-value.html', 'Value Prop', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_day3_value.html', 'Day 3: Value Prop', this)" style="cursor: pointer;">
                         <div class="step-number">2</div>
-                        <div class="step-label">Value Prop</div>
+                        <div class="step-label">Day 3: Value Prop</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-social-proof.html', 'Social Proof', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_day5_social.html', 'Day 5: Social Proof', this)" style="cursor: pointer;">
                         <div class="step-number">3</div>
-                        <div class="step-label">Social Proof</div>
+                        <div class="step-label">Day 5: Social Proof</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-cta.html', 'Call to Action', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-cta.html', 'Day 7: Call to Action', this)" style="cursor: pointer;">
                         <div class="step-number">4</div>
-                        <div class="step-label">Call to Action</div>
+                        <div class="step-label">Day 7: Call to Action</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_day10_followup.html', 'Day 10: Follow-up', this)" style="cursor: pointer;">
+                        <div class="step-number">5</div>
+                        <div class="step-label">Day 10: Follow-up</div>
                     </div>
                 </div>
             </div>
@@ -1322,7 +1326,7 @@
             <!-- Email Preview Container -->
             <div class="email-preview-container">
                 <div class="preview-header">
-                    <h3 class="preview-title">Welcome</h3>
+                    <h3 class="preview-title">Day 1: Welcome</h3>
                     <div class="preview-actions">
                         <a href="templates/qualified_lead_welcome.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
                         <button class="preview-action-btn secondary" onclick="downloadEmail('templates/qualified_lead_welcome.html')">Download</button>
@@ -1753,9 +1757,11 @@ This collection contains all email templates for the StoryBud email campaign seq
 25. Churn Recovery Day 10 - Last chance reconnection
 
 ## Template Files
-- Qualified Welcome: templates/qualified_lead_welcome.html
-- Qualified Value: templates/qualified-lead-value.html
-- Qualified Social Proof: templates/qualified-lead-social-proof.html
+- Qualified Day 1 Welcome: templates/qualified_lead_welcome.html
+- Qualified Day 3 Value Prop: templates/qualified_lead_day3_value.html
+- Qualified Day 5 Social Proof: templates/qualified_lead_day5_social.html
+- Qualified Day 7 Call to Action: templates/qualified-lead-cta.html
+- Qualified Day 10 Follow-up: templates/qualified_lead_day10_followup.html
 - Onboarding: templates/01-onboarding-foundation.html
 - First Story: templates/03-first-story-created.html
 - Education: templates/storybud_education_email.html
@@ -2274,10 +2280,11 @@ StoryBud Team`;
                     <label for="testEmailTemplate">Template:</label>
                     <select id="testEmailTemplate" required>
                         <option value="">Select a template</option>
-                        <option value="qualified_lead_welcome.html">Qualified - Welcome</option>
-                        <option value="qualified-lead-value.html">Qualified - Value Prop</option>
-                        <option value="qualified-lead-social-proof.html">Qualified - Social Proof</option>
-                        <option value="qualified-lead-cta.html">Qualified - Call to Action</option>
+                        <option value="qualified_lead_welcome.html">Qualified - Day 1: Welcome</option>
+                        <option value="qualified_lead_day3_value.html">Qualified - Day 3: Value Prop</option>
+                        <option value="qualified_lead_day5_social.html">Qualified - Day 5: Social Proof</option>
+                        <option value="qualified-lead-cta.html">Qualified - Day 7: Call to Action</option>
+                        <option value="qualified_lead_day10_followup.html">Qualified - Day 10: Follow-up</option>
                         <option value="01-onboarding-foundation.html">Adoption - Onboarding</option>
                         <option value="03-first-story-created.html">Adoption - First Story</option>
                         <option value="storybud_education_email.html">Adoption - Education</option>
