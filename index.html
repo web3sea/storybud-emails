@@ -1278,11 +1278,11 @@
                     
                     <h3>Structure of the Sequence</h3>
                     <ul>
-                        <li><strong>Day 1:</strong> <strong>"Abandoned conversion"</strong> - Welcome & Introduction – Warm greeting and overview of what StoryBud offers.</li>
-                        <li><strong>Day 3:</strong> Value Proposition – Highlight key benefits and unique features.</li>
-                        <li><strong>Day 5:</strong> Social Proof – Share success stories and testimonials.</li>
-                        <li><strong>Day 7:</strong> Call-to-Action – Clear next steps and invitation to try.</li>
-                        <li><strong>Day 10:</strong> Follow-up – Gentle reminder with additional value content.</li>
+                        <li><strong>Day 0–1:</strong> Welcome Email – Friendly greeting, brand story, and first call-to-action.</li>
+                        <li><strong>Day 2–4:</strong> First Activation Prompt – Clear guidance to complete a key setup step or experience core functionality.</li>
+                        <li><strong>Day 5–7:</strong> Education & Use Cases – Practical tips, examples, and quick wins to drive confidence.</li>
+                        <li><strong>Day 8–10:</strong> Engagement Reminder – Encouragement, troubleshooting help, and reassurance if progress has stalled.</li>
+                        <li><strong>Day 11–14:</strong> Upgrade/Retention Nudge – Highlight premium features, success stories, and long-term benefits.</li>
                     </ul>
                     
                     <h3>Benefits of the Sequence</h3>
@@ -1300,25 +1300,25 @@
                 <h2 class="progress-title">🔗 Email Sequence Timeline</h2>
                 <div class="progress-steps">
                     <div class="progress-line"></div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_welcome.html', 'Day 1: Welcome', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/1_qualified_lead_welcome.html', 'Day 0-1: Welcome', this)" style="cursor: pointer;">
                         <div class="step-number">1</div>
-                        <div class="step-label">Day 1: Welcome</div>
+                        <div class="step-label">Day 0-1: Welcome</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_day3_value.html', 'Day 3: Value Prop', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/2_ qualified-lead-cta.html', 'Day 2-4: First Activation', this)" style="cursor: pointer;">
                         <div class="step-number">2</div>
-                        <div class="step-label">Day 3: Value Prop</div>
+                        <div class="step-label">Day 2-4: First Activation</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_day5_social.html', 'Day 5: Social Proof', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/3_qualified_lead_first_activation.html', 'Day 5-7: Education', this)" style="cursor: pointer;">
                         <div class="step-number">3</div>
-                        <div class="step-label">Day 5: Social Proof</div>
+                        <div class="step-label">Day 5-7: Education</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified-lead-cta.html', 'Day 7: Call to Action', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/4_qualified_lead_encouragement.html', 'Day 8-10: Engagement', this)" style="cursor: pointer;">
                         <div class="step-number">4</div>
-                        <div class="step-label">Day 7: Call to Action</div>
+                        <div class="step-label">Day 8-10: Engagement</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_lead_day10_followup.html', 'Day 10: Follow-up', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/5_qualified_lead_day10_followup.html', 'Day 11-14: Retention', this)" style="cursor: pointer;">
                         <div class="step-number">5</div>
-                        <div class="step-label">Day 10: Follow-up</div>
+                        <div class="step-label">Day 11-14: Retention</div>
                     </div>
                 </div>
             </div>
@@ -1326,15 +1326,15 @@
             <!-- Email Preview Container -->
             <div class="email-preview-container">
                 <div class="preview-header">
-                    <h3 class="preview-title">Day 1: Welcome</h3>
+                    <h3 class="preview-title">Day 0-1: Welcome</h3>
                     <div class="preview-actions">
-                        <a href="templates/qualified_lead_welcome.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
-                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/qualified_lead_welcome.html')">Download</button>
-                        <button class="preview-action-btn test" onclick="openTestEmailModal('templates/qualified_lead_welcome.html')">🧪 Send Test Email</button>
+                        <a href="templates/1_qualified_lead_welcome.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/1_qualified_lead_welcome.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('templates/1_qualified_lead_welcome.html')">🧪 Send Test Email</button>
                     </div>
                 </div>
                 <div class="preview-content">
-                    <iframe id="qualifiedLeadPreviewFrame" src="templates/qualified_lead_welcome.html" class="email-preview-iframe"></iframe>
+                    <iframe id="qualifiedLeadPreviewFrame" src="templates/1_qualified_lead_welcome.html" class="email-preview-iframe"></iframe>
                 </div>
             </div>
         </div> <!-- End Qualified Sequence Container -->
@@ -1566,25 +1566,30 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">🔗 Email Sequence Timeline</h2>
                 <div class="timeline-days">
-                                        <div class="timeline-day active-day" onclick="showRetentionPreview('templates/retention_email_week1.html', 'Weekly Check-in', this)" style="cursor: pointer;">
-                        <div class="day-number">1W</div>
-                        <div class="day-name">Week 1</div>
-                        <div class="day-activity">Check-in</div>
+                    <div class="timeline-day active-day" onclick="showRetentionPreview('templates/storytime_email_day1.html', 'Day 1: Welcome', this)" style="cursor: pointer;">
+                        <div class="day-number">1</div>
+                        <div class="day-name">Day 1</div>
+                        <div class="day-activity">Welcome</div>
                     </div>
-                    <div class="timeline-day" onclick="showRetentionPreview('templates/retention_email_week2.html', 'Tips & Tricks', this)" style="cursor: pointer;">
-                        <div class="day-number">2W</div>
-                        <div class="day-name">Week 2</div>
-                        <div class="day-activity">Tips & Tricks</div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day2.html', 'Day 2-4: Building', this)" style="cursor: pointer;">
+                        <div class="day-number">2-4</div>
+                        <div class="day-name">Days 2-4</div>
+                        <div class="day-activity">Building</div>
                     </div>
-                    <div class="timeline-day" onclick="showRetentionPreview('templates/retention_email_month1.html', 'Monthly Report', this)" style="cursor: pointer;">
-                        <div class="day-number">1M</div>
-                        <div class="day-name">Month 1</div>
-                        <div class="day-activity">Monthly Report</div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day5.html', 'Day 5: Child View', this)" style="cursor: pointer;">
+                        <div class="day-number">5</div>
+                        <div class="day-name">Day 5</div>
+                        <div class="day-activity">Child's View</div>
                     </div>
-                    <div class="timeline-day" onclick="showRetentionPreview('templates/retention_email_month3.html', 'Feature Updates', this)" style="cursor: pointer;">
-                        <div class="day-number">3M</div>
-                        <div class="day-name">Month 3</div>
-                        <div class="day-activity">Feature Updates</div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day6.html', 'Day 6: Upgrade', this)" style="cursor: pointer;">
+                        <div class="day-number">6</div>
+                        <div class="day-name">Day 6</div>
+                        <div class="day-activity">Upgrade Tease</div>
+                    </div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day7.html', 'Day 7: Milestone', this)" style="cursor: pointer;">
+                        <div class="day-number">7</div>
+                        <div class="day-name">Day 7</div>
+                        <div class="day-activity">Milestone</div>
                     </div>
             </div>
         </div>
@@ -1592,14 +1597,14 @@
                         <!-- Email Preview Container -->
             <div class="email-preview-container">
                 <div class="preview-header">
-                    <h3 class="preview-title">Weekly Check-in</h3>
+                    <h3 class="preview-title">Day 1: Welcome</h3>
                     <div class="preview-actions">
-                        <a href="templates/retention_email_week1.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
-                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/retention_email_week1.html')">Download</button>
+                        <a href="templates/storytime_email_day1.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/storytime_email_day1.html')">Download</button>
                     </div>
                 </div>
                 <div class="preview-content">
-                    <iframe id="retentionPreviewFrame" src="templates/retention_email_week1.html" class="email-preview-iframe"></iframe>
+                    <iframe id="retentionPreviewFrame" src="templates/storytime_email_day1.html" class="email-preview-iframe"></iframe>
                 </div>
             </div>
         </div>
@@ -1757,11 +1762,11 @@ This collection contains all email templates for the StoryBud email campaign seq
 25. Churn Recovery Day 10 - Last chance reconnection
 
 ## Template Files
-- Qualified Day 1 Welcome: templates/qualified_lead_welcome.html
-- Qualified Day 3 Value Prop: templates/qualified_lead_day3_value.html
-- Qualified Day 5 Social Proof: templates/qualified_lead_day5_social.html
-- Qualified Day 7 Call to Action: templates/qualified-lead-cta.html
-- Qualified Day 10 Follow-up: templates/qualified_lead_day10_followup.html
+- Qualified Day 0-1 Welcome: templates/1_qualified_lead_welcome.html
+- Qualified Day 2-4 First Activation: templates/2_ qualified-lead-cta.html
+- Qualified Day 5-7 Education: templates/3_qualified_lead_first_activation.html
+- Qualified Day 8-10 Engagement: templates/4_qualified_lead_encouragement.html
+- Qualified Day 11-14 Retention: templates/5_qualified_lead_day10_followup.html
 - Onboarding: templates/01-onboarding-foundation.html
 - First Story: templates/03-first-story-created.html
 - Education: templates/storybud_education_email.html
@@ -2280,23 +2285,23 @@ StoryBud Team`;
                     <label for="testEmailTemplate">Template:</label>
                     <select id="testEmailTemplate" required>
                         <option value="">Select a template</option>
-                        <option value="qualified_lead_welcome.html">Qualified - Day 1: Welcome</option>
-                        <option value="qualified_lead_day3_value.html">Qualified - Day 3: Value Prop</option>
-                        <option value="qualified_lead_day5_social.html">Qualified - Day 5: Social Proof</option>
-                        <option value="qualified-lead-cta.html">Qualified - Day 7: Call to Action</option>
-                        <option value="qualified_lead_day10_followup.html">Qualified - Day 10: Follow-up</option>
+                        <option value="1_qualified_lead_welcome.html">Qualified - Day 0-1: Welcome</option>
+                        <option value="2_ qualified-lead-cta.html">Qualified - Day 2-4: First Activation</option>
+                        <option value="3_qualified_lead_first_activation.html">Qualified - Day 5-7: Education</option>
+                        <option value="4_qualified_lead_encouragement.html">Qualified - Day 8-10: Engagement</option>
+                        <option value="5_qualified_lead_day10_followup.html">Qualified - Day 11-14: Retention</option>
                         <option value="01-onboarding-foundation.html">Adoption - Onboarding</option>
                         <option value="03-first-story-created.html">Adoption - First Story</option>
                         <option value="storybud_education_email.html">Adoption - Education</option>
                         <option value="04-weekly-reading-report.html">Adoption - Weekly Report</option>
                         <option value="05-credits-running-low.html">Adoption - Qualified Upsell</option>
-                        <option value="storytime_email_day1.html">Engagement - Day 1</option>
-                        <option value="storytime_email_day2.html">Engagement - Day 2</option>
-                        <option value="storytime_email_day3.html">Engagement - Day 3</option>
-                        <option value="storytime_email_day4.html">Engagement - Day 4</option>
-                        <option value="storytime_email_day5.html">Engagement - Day 5</option>
-                        <option value="storytime_email_day6.html">Engagement - Day 6</option>
-                        <option value="storytime_email_day7.html">Engagement - Day 7</option>
+                        <option value="storytime_email_day1.html">Retention - Day 1: Welcome</option>
+                        <option value="storytime_email_day2.html">Retention - Day 2-4: Building</option>
+                        <option value="storytime_email_day3.html">Retention - Day 3: Momentum</option>
+                        <option value="storytime_email_day4.html">Retention - Day 4: Journey</option>
+                        <option value="storytime_email_day5.html">Retention - Day 5: Child's View</option>
+                        <option value="storytime_email_day6.html">Retention - Day 6: Upgrade Tease</option>
+                        <option value="storytime_email_day7.html">Retention - Day 7: Milestone</option>
                     </select>
                 </div>
                 <div class="form-group">
