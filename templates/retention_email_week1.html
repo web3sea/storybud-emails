@@ -87,7 +87,6 @@
                 radial-gradient(3px 3px at 45% 15%, rgba(252, 211, 77, 0.8) 50%, transparent 50%),
                 radial-gradient(2px 2px at 65% 85%, rgba(252, 211, 77, 0.6) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: sparkle 3s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -108,7 +107,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: float 4s ease-in-out infinite;
         }
         
         /* Content styles */
@@ -172,7 +170,6 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle, rgba(252, 211, 77, 0.08) 0%, transparent 70%);
-            animation: rotate 25s linear infinite;
             pointer-events: none;
         }
         
@@ -252,14 +249,12 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: shine 3s ease-in-out infinite;
         }
         
         .achievement-banner .trophy {
             font-size: 24px;
             margin-right: 10px;
             display: inline-block;
-            animation: bounce 2s ease-in-out infinite;
         }
         
         /* CTA Button */
@@ -364,85 +359,213 @@
             font-weight: 500;
         }
         
-                    /* Mobile responsiveness */
+        /* Mobile responsiveness */
         @media only screen and (max-width: 600px) {
             .email-container {
                 width: 100% !important;
                 margin: 0 !important;
-                border-radius: 0;
+                border-radius: 0 !important;
             }
             
             .header, .content {
-                padding: 40px 25px !important;
-            }
-            
-            .achievement-banner {
-                margin: 35px -25px !important;
-                padding: 18px 25px !important;
-                font-size: 16px !important;
+                padding: 30px 20px !important;
             }
             
             .header h1 {
                 font-size: 26px !important;
+                line-height: 1.2 !important;
             }
             
             .subheader {
                 font-size: 20px !important;
+                line-height: 1.3 !important;
             }
             
             .body-text {
                 font-size: 16px !important;
+                line-height: 1.5 !important;
             }
             
-            .cta-button {
-                padding: 18px 35px !important;
+            .achievement-banner {
+                margin: 25px -20px !important;
+                padding: 18px 20px !important;
                 font-size: 16px !important;
             }
             
+            /* Grid Layout Optimization */
             .stats-container {
-                gap: 10px !important;
+                flex-direction: column !important;
+                gap: 15px !important;
             }
             
             .stat-item {
                 max-width: 100% !important;
                 margin: 0 !important;
-                min-width: 90px !important;
+                padding: 20px !important;
             }
             
             .stat-number {
-                font-size: 28px !important;
+                font-size: 32px !important;
             }
             
             .stat-label {
-                font-size: 11px !important;
+                font-size: 14px !important;
+            }
+            
+            /* CTA Button Optimization */
+            .cta-button {
+                padding: 18px 32px !important;
+                font-size: 16px !important;
+                min-height: 44px !important;
+                display: block !important;
+                width: 100% !important;
+                max-width: 300px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+            
+            .secondary-cta {
+                display: block !important;
+                margin-top: 15px !important;
+                text-align: center !important;
+            }
+            
+            .footer {
+                padding: 25px 20px !important;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media only screen and (max-width: 480px) {
+            .header, .content {
+                padding: 25px 15px !important;
+            }
+            
+            .header h1 {
+                font-size: 24px !important;
+            }
+            
+            .subheader {
+                font-size: 18px !important;
+            }
+            
+            .body-text {
+                font-size: 15px !important;
+            }
+            
+            .achievement-banner {
+                margin: 20px -15px !important;
+                padding: 16px 15px !important;
+            }
+            
+            .stat-item {
+                padding: 18px !important;
+            }
+            
+            .cta-button {
+                padding: 16px 28px !important;
+                font-size: 15px !important;
+            }
+        }
+        
+        /* Extra small mobile devices */
+        @media only screen and (max-width: 360px) {
+            .header, .content {
+                padding: 20px 12px !important;
+            }
+            
+            .header h1 {
+                font-size: 22px !important;
+            }
+            
+            .achievement-banner {
+                margin: 18px -12px !important;
+                padding: 14px 12px !important;
+            }
+            
+            .cta-button {
+                padding: 14px 24px !important;
+                font-size: 14px !important;
             }
         }
         
         /* Animations */
-        @keyframes sparkle {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body,
+            body[style],
+            center[style] {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                color: #E0E0E0 !important;
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+            }
+            
+            .content {
+                color: #2d3748 !important;
+            }
+            
+            .body-text,
+            .content p {
+                color: #2d3748 !important;
+            }
+            
+            .subheader {
+                color: #374151 !important;
+            }
+            
+            .achievement-banner {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .stats-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .stat-item {
+                color: #2d3748 !important;
+            }
+            
+            .stat-number {
+                color: #f7fafc !important;
+            }
+            
+            .stat-label {
+                color: #a0aec0 !important;
+            }
+            
+            .quote-section {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .quote-text {
+                color: #2d3748 !important;
+            }
+            
+            .secondary-cta {
+                color: #374151 !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+                border-top-color: #4a5568 !important;
+            }
+            
+            .footer-text {
+                color: #a0aec0 !important;
+            }
         }
     </style>
 </head>

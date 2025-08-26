@@ -237,22 +237,179 @@
         
         @media (max-width: 600px) {
             body {
-                padding: 12px;
+                padding: 12px !important;
             }
             
             .header, .content, .footer {
-                padding-left: 16px;
-                padding-right: 16px;
+                padding: 25px 20px !important;
             }
             
             .welcome-heading {
-                font-size: 20px;
+                font-size: 24px !important;
+                line-height: 1.2 !important;
             }
             
             .logo-placeholder {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 20px !important;
+            }
+            
+            .greeting p {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .understanding-message p {
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+            }
+            
+            /* Grid Layout Optimization */
+            .value-preview {
+                gap: 20px !important;
+            }
+            
+            .value-item {
+                padding: 20px !important;
+                margin: 10px 0 !important;
+            }
+            
+            .gentle-cta {
+                padding: 25px 20px !important;
+                margin: 25px -20px !important;
+            }
+            
+            .closing-message {
+                margin: 25px 0 !important;
+            }
+            
+            .footer-links {
+                flex-direction: column !important;
+                gap: 12px !important;
+                text-align: center !important;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .header, .content, .footer {
+                padding: 20px 15px !important;
+            }
+            
+            .welcome-heading {
+                font-size: 22px !important;
+            }
+            
+            .greeting p {
+                font-size: 15px !important;
+            }
+            
+            .understanding-message p {
+                font-size: 14px !important;
+            }
+            
+            .value-item {
+                padding: 18px !important;
+            }
+            
+            .gentle-cta {
+                padding: 20px 15px !important;
+                margin: 20px -15px !important;
+            }
+        }
+        
+        /* Extra small mobile devices */
+        @media (max-width: 360px) {
+            .header, .content, .footer {
+                padding: 18px 12px !important;
+            }
+            
+            .welcome-heading {
+                font-size: 20px !important;
+            }
+            
+            .value-item {
+                padding: 16px !important;
+            }
+            
+            .gentle-cta {
+                padding: 18px 12px !important;
+                margin: 18px -12px !important;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body,
+            body[style],
+            center[style] {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                color: #E0E0E0 !important;
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #4a5568 100%) !important;
+            }
+            
+            .content {
+                color: #2d3748 !important;
+            }
+            
+            .greeting p,
+            .content p {
+                color: #2d3748 !important;
+            }
+            
+            .understanding-message p {
+                color: #2d3748 !important;
+            }
+            
+            .value-preview h3 {
+                color: #f7fafc !important;
+            }
+            
+            .value-item {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .value-item span:not(.value-icon) {
+                color: #2d3748 !important;
+            }
+            
+            .gentle-cta h4 {
+                color: #f7fafc !important;
+            }
+            
+            .gentle-cta p {
+                color: #2d3748 !important;
+            }
+            
+            .no-pressure {
+                color: #a0aec0 !important;
+            }
+            
+            .closing-message p {
+                color: #2d3748 !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+                border-top-color: #4a5568 !important;
+            }
+            
+            .footer-message,
+            .footer-team,
+            .footer-links a,
+            .footer-legal p {
+                color: #a0aec0 !important;
             }
         }
     </style>

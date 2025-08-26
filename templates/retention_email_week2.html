@@ -87,7 +87,6 @@
                 radial-gradient(3px 3px at 45% 15%, rgba(125, 211, 252, 0.6) 50%, transparent 50%),
                 radial-gradient(2px 2px at 65% 85%, rgba(125, 211, 252, 0.4) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: sparkle 3s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -108,7 +107,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: float 4s ease-in-out infinite;
         }
         
         /* Content styles */
@@ -324,53 +322,212 @@
             .email-container {
                 width: 100% !important;
                 margin: 0 !important;
-                border-radius: 0;
+                border-radius: 0 !important;
             }
             
             .header, .content {
-                padding: 40px 25px !important;
+                padding: 30px 20px !important;
             }
             
             .header h1 {
                 font-size: 26px !important;
+                line-height: 1.2 !important;
             }
             
             .subheader {
                 font-size: 20px !important;
+                line-height: 1.3 !important;
             }
             
             .body-text, .intro-text {
                 font-size: 16px !important;
+                line-height: 1.5 !important;
             }
             
-            .cta-button {
-                padding: 18px 35px !important;
-                font-size: 16px !important;
+            /* Grid Layout Optimization */
+            .tips-container {
+                gap: 20px !important;
             }
             
             .tip-item {
                 padding: 20px !important;
+                margin: 15px 0 !important;
             }
             
             .tip-title {
                 font-size: 18px !important;
+                line-height: 1.3 !important;
             }
             
             .tip-description {
                 font-size: 15px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .motivation-section {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            /* Button Optimization */
+            .cta-button {
+                padding: 18px 32px !important;
+                font-size: 16px !important;
+                min-height: 44px !important;
+                display: block !important;
+                width: 100% !important;
+                max-width: 300px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+            
+            .footer {
+                padding: 25px 20px !important;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media only screen and (max-width: 480px) {
+            .header, .content {
+                padding: 25px 15px !important;
+            }
+            
+            .header h1 {
+                font-size: 24px !important;
+            }
+            
+            .subheader {
+                font-size: 18px !important;
+            }
+            
+            .body-text, .intro-text {
+                font-size: 15px !important;
+            }
+            
+            .tip-item {
+                padding: 18px !important;
+            }
+            
+            .tip-title {
+                font-size: 17px !important;
+            }
+            
+            .tip-description {
+                font-size: 14px !important;
+            }
+            
+            .motivation-section {
+                margin: 20px -15px !important;
+                padding: 18px !important;
+            }
+            
+            .cta-button {
+                padding: 16px 28px !important;
+                font-size: 15px !important;
+            }
+        }
+        
+        /* Extra small mobile devices */
+        @media only screen and (max-width: 360px) {
+            .header, .content {
+                padding: 20px 12px !important;
+            }
+            
+            .header h1 {
+                font-size: 22px !important;
+            }
+            
+            .tip-item {
+                padding: 16px !important;
+            }
+            
+            .motivation-section {
+                margin: 18px -12px !important;
+                padding: 16px !important;
+            }
+            
+            .cta-button {
+                padding: 14px 24px !important;
+                font-size: 14px !important;
             }
         }
         
         /* Animations */
-        @keyframes sparkle {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body,
+            body[style],
+            center[style] {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                color: #E0E0E0 !important;
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+            }
+            
+            .content {
+                color: #2d3748 !important;
+            }
+            
+            .intro-text,
+            .content p {
+                color: #2d3748 !important;
+            }
+            
+            .subheader {
+                color: #374151 !important;
+            }
+            
+            .tip-item {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .tip-title {
+                color: #f7fafc !important;
+            }
+            
+            .tip-description {
+                color: #2d3748 !important;
+            }
+            
+            .feature-highlight {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .feature-title {
+                color: #f7fafc !important;
+            }
+            
+            .feature-text {
+                color: #2d3748 !important;
+            }
+            
+            .body-text {
+                color: #2d3748 !important;
+            }
+            
+            .secondary-cta {
+                color: #374151 !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+                border-top-color: #4a5568 !important;
+            }
+            
+            .footer-text {
+                color: #a0aec0 !important;
+            }
         }
     </style>
 </head>

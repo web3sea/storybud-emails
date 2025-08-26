@@ -87,7 +87,6 @@
                 radial-gradient(4px 4px at 45% 10%, rgba(252, 211, 77, 0.9) 50%, transparent 50%),
                 radial-gradient(2px 2px at 65% 90%, rgba(252, 211, 77, 0.7) 50%, transparent 50%);
             background-repeat: no-repeat;
-            animation: celebration-sparkle 2s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -108,7 +107,6 @@
             display: block;
             position: relative;
             z-index: 1;
-            animation: trophy-bounce 3s ease-in-out infinite;
         }
         
         /* Achievement Banner */
@@ -134,14 +132,12 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: shine 4s ease-in-out infinite;
         }
         
         .achievement-banner .trophy {
             font-size: 28px;
             margin-right: 12px;
             display: inline-block;
-            animation: bounce 2s ease-in-out infinite;
         }
         
         /* Content styles */
@@ -201,7 +197,6 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, rgba(110, 231, 183, 0.1) 0%, transparent 70%);
-            animation: rotate 30s linear infinite;
             pointer-events: none;
         }
         
@@ -272,7 +267,6 @@
             border-radius: 12px;
             position: relative;
             overflow: hidden;
-            animation: progress-fill 2s ease-in-out;
         }
         
         .progress-bar::before {
@@ -283,7 +277,6 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            animation: progress-shine 2s ease-in-out infinite;
         }
         
         .progress-text {
@@ -454,44 +447,46 @@
             .email-container {
                 width: 100% !important;
                 margin: 0 !important;
-                border-radius: 0;
+                border-radius: 0 !important;
             }
             
             .header, .content {
-                padding: 40px 25px !important;
-            }
-            
-            .achievement-banner {
-                margin: 35px -25px !important;
-                padding: 18px 25px !important;
-                font-size: 18px !important;
+                padding: 30px 20px !important;
             }
             
             .header h1 {
                 font-size: 28px !important;
+                line-height: 1.2 !important;
             }
             
             .subheader {
                 font-size: 22px !important;
+                line-height: 1.3 !important;
             }
             
             .body-text {
                 font-size: 16px !important;
+                line-height: 1.5 !important;
             }
             
-            .cta-button {
-                padding: 18px 35px !important;
-                font-size: 16px !important;
+            .achievement-banner {
+                margin: 25px -20px !important;
+                padding: 18px 20px !important;
+                font-size: 18px !important;
             }
             
+            /* Grid Layout Optimization */
             .monthly-stats {
                 grid-template-columns: 1fr !important;
-                gap: 15px !important;
+                gap: 20px !important;
             }
             
             .milestone-item {
                 flex-direction: column !important;
                 text-align: center !important;
+                gap: 15px !important;
+                padding: 20px !important;
+                margin: 15px 0 !important;
             }
             
             .milestone-date {
@@ -502,43 +497,197 @@
             .streak-number {
                 font-size: 36px !important;
             }
+            
+            .progress-section {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .celebration-message {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            /* Button Optimization */
+            .cta-button {
+                padding: 18px 32px !important;
+                font-size: 16px !important;
+                min-height: 44px !important;
+                display: block !important;
+                width: 100% !important;
+                max-width: 300px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+            
+            .footer {
+                padding: 25px 20px !important;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media only screen and (max-width: 480px) {
+            .header, .content {
+                padding: 25px 15px !important;
+            }
+            
+            .header h1 {
+                font-size: 26px !important;
+            }
+            
+            .subheader {
+                font-size: 20px !important;
+            }
+            
+            .body-text {
+                font-size: 15px !important;
+            }
+            
+            .achievement-banner {
+                margin: 20px -15px !important;
+                padding: 16px 15px !important;
+            }
+            
+            .milestone-item {
+                padding: 18px !important;
+            }
+            
+            .progress-section,
+            .celebration-message {
+                margin: 20px -15px !important;
+                padding: 18px !important;
+            }
+            
+            .cta-button {
+                padding: 16px 28px !important;
+                font-size: 15px !important;
+            }
+        }
+        
+        /* Extra small mobile devices */
+        @media only screen and (max-width: 360px) {
+            .header, .content {
+                padding: 20px 12px !important;
+            }
+            
+            .header h1 {
+                font-size: 24px !important;
+            }
+            
+            .achievement-banner {
+                margin: 18px -12px !important;
+                padding: 14px 12px !important;
+            }
+            
+            .milestone-item {
+                padding: 16px !important;
+            }
+            
+            .progress-section,
+            .celebration-message {
+                margin: 18px -12px !important;
+                padding: 16px !important;
+            }
+            
+            .cta-button {
+                padding: 14px 24px !important;
+                font-size: 14px !important;
+            }
         }
         
         /* Animations */
-        @keyframes celebration-sparkle {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
         
-        @keyframes trophy-bounce {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-8px) scale(1.05); }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes progress-fill {
-            0% { width: 0; }
-            100% { width: 75%; }
-        }
-        
-        @keyframes progress-shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body,
+            body[style],
+            center[style] {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                color: #E0E0E0 !important;
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+            }
+            
+            .content {
+                color: #2d3748 !important;
+            }
+            
+            .body-text,
+            .content p {
+                color: #2d3748 !important;
+            }
+            
+            .subheader {
+                color: #374151 !important;
+            }
+            
+            .achievement-banner {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .monthly-stats {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .stat-card {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .streak-container {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .streak-title {
+                color: #f7fafc !important;
+            }
+            
+            .streak-text {
+                color: #2d3748 !important;
+            }
+            
+            .progress-section {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .progress-title {
+                color: #f7fafc !important;
+            }
+            
+            .progress-text {
+                color: #2d3748 !important;
+            }
+            
+            .milestone-item {
+                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+                border-color: #4a5568 !important;
+            }
+            
+            .milestone-text,
+            .milestone-date {
+                color: #2d3748 !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+                border-top-color: #4a5568 !important;
+            }
+            
+            .footer-text {
+                color: #a0aec0 !important;
+            }
         }
     </style>
 </head>

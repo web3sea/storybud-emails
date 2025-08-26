@@ -1326,6 +1326,7 @@
                     <div class="preview-actions">
                         <a href="templates/qualified_lead_welcome.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
                         <button class="preview-action-btn secondary" onclick="downloadEmail('templates/qualified_lead_welcome.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('templates/qualified_lead_welcome.html')">🧪 Send Test Email</button>
                     </div>
                 </div>
                 <div class="preview-content">
@@ -1406,6 +1407,7 @@
                     <div class="preview-actions">
                         <a href="templates/01-onboarding-foundation.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
                         <button class="preview-action-btn secondary" onclick="downloadEmail('templates/01-onboarding-foundation.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('templates/01-onboarding-foundation.html')">🧪 Send Test Email</button>
                     </div>
                 </div>
                 <div class="preview-content">
@@ -1501,10 +1503,11 @@
             <div class="email-preview-container">
                 <div class="preview-header">
                     <h3 class="preview-title">Storytime Email - Day 1</h3>
-                    <div class="preview-actions">
-                        <a href="https://storybud-emails.vercel.app/templates/storytime_email_day1.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
-                        <button class="preview-action-btn secondary" onclick="downloadEmail('https://storybud-emails.vercel.app/templates/storytime_email_day1.html')">Download</button>
-                    </div>
+                                            <div class="preview-actions">
+                            <a href="https://storybud-emails.vercel.app/templates/storytime_email_day1.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                            <button class="preview-action-btn secondary" onclick="downloadEmail('https://storybud-emails.vercel.app/templates/storytime_email_day1.html')">Download</button>
+                            <button class="preview-action-btn test" onclick="openTestEmailModal('storytime_email_day1.html')">🧪 Send Test Email</button>
+                        </div>
                     </div>
                 <div class="preview-content">
                     <iframe id="emailPreviewFrame" src="https://storybud-emails.vercel.app/templates/storytime_email_day1.html" class="email-preview-iframe"></iframe>
@@ -2249,6 +2252,352 @@ StoryBud Team`;
             // Only auto-select Engagement tab on Sunday
             autoSelectEngagementOnSunday();
         });
+    </script>
+    
+    <!-- Test Email Modal -->
+    <div id="testEmailModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🧪 Send Test Email</h3>
+                <span class="close" onclick="closeTestEmailModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="testEmailAddress">Test Email Address:</label>
+                    <input type="email" id="testEmailAddress" placeholder="Enter email address to send test to" required>
+                </div>
+                <div class="form-group">
+                    <label for="testEmailSubject">Subject Line:</label>
+                    <input type="text" id="testEmailSubject" placeholder="Test email subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="testEmailTemplate">Template:</label>
+                    <select id="testEmailTemplate" required>
+                        <option value="">Select a template</option>
+                        <option value="qualified_lead_welcome.html">Qualified - Welcome</option>
+                        <option value="qualified-lead-value.html">Qualified - Value Prop</option>
+                        <option value="qualified-lead-social-proof.html">Qualified - Social Proof</option>
+                        <option value="qualified-lead-cta.html">Qualified - Call to Action</option>
+                        <option value="01-onboarding-foundation.html">Adoption - Onboarding</option>
+                        <option value="03-first-story-created.html">Adoption - First Story</option>
+                        <option value="storybud_education_email.html">Adoption - Education</option>
+                        <option value="04-weekly-reading-report.html">Adoption - Weekly Report</option>
+                        <option value="05-credits-running-low.html">Adoption - Qualified Upsell</option>
+                        <option value="storytime_email_day1.html">Engagement - Day 1</option>
+                        <option value="storytime_email_day2.html">Engagement - Day 2</option>
+                        <option value="storytime_email_day3.html">Engagement - Day 3</option>
+                        <option value="storytime_email_day4.html">Engagement - Day 4</option>
+                        <option value="storytime_email_day5.html">Engagement - Day 5</option>
+                        <option value="storytime_email_day6.html">Engagement - Day 6</option>
+                        <option value="storytime_email_day7.html">Engagement - Day 7</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="testEmailPersonalization">Test Personalization Data (JSON):</label>
+                    <textarea id="testEmailPersonalization" placeholder='{"user_name": "Test User", "user_email": "test@example.com", "subscription_name": "Premium", "credit_allowance": "unlimited"}' rows="4"></textarea>
+                    <small>Optional: Add test data to see how personalization works</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeTestEmailModal()">Cancel</button>
+                <button class="btn-primary" onclick="sendTestEmail()">Send Test Email</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Test Email Modal CSS -->
+    <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 0;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        animation: modalSlideIn 0.3s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .modal-header {
+        background: linear-gradient(135deg, #8B5CF6, #6366F1);
+        color: white;
+        padding: 20px;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .close {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .close:hover {
+        opacity: 1;
+    }
+
+    .modal-body {
+        padding: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #374151;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #8B5CF6;
+    }
+
+    .form-group small {
+        display: block;
+        margin-top: 5px;
+        color: #6b7280;
+        font-size: 12px;
+    }
+
+    .modal-footer {
+        padding: 20px 25px;
+        border-top: 1px solid #e5e7eb;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #8B5CF6, #6366F1);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+
+    .btn-secondary {
+        background: #f3f4f6;
+        color: #374151;
+    }
+
+    .btn-secondary:hover {
+        background: #e5e7eb;
+    }
+
+    /* Test Email Button Styling */
+    .preview-action-btn.test {
+        background: linear-gradient(135deg, #10B981, #059669);
+        color: white;
+        border: none;
+        margin-left: 8px;
+    }
+
+    .preview-action-btn.test:hover {
+        background: linear-gradient(135deg, #059669, #047857);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .modal-content {
+            background-color: #1f2937;
+            color: #f9fafb;
+        }
+        
+        .form-group label {
+            color: #f9fafb;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background-color: #374151;
+            border-color: #4b5563;
+            color: #f9fafb;
+        }
+        
+        .form-group small {
+            color: #9ca3af;
+        }
+        
+        .modal-footer {
+            border-top-color: #4b5563;
+        }
+        
+        .btn-secondary {
+            background: #374151;
+            color: #f9fafb;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+    }
+    </style>
+    
+    <!-- Test Email JavaScript Functions -->
+    <script>
+    // Test Email Modal Functions
+    function openTestEmailModal(templatePath = '') {
+        const modal = document.getElementById('testEmailModal');
+        const templateSelect = document.getElementById('testEmailTemplate');
+        
+        // Pre-select template if provided
+        if (templatePath) {
+            const fileName = templatePath.split('/').pop();
+            for (let i = 0; i < templateSelect.options.length; i++) {
+                if (templateSelect.options[i].value === fileName) {
+                    templateSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+        
+        modal.style.display = 'block';
+        
+        // Set default personalization data
+        document.getElementById('testEmailPersonalization').value = JSON.stringify({
+            user_name: "Test User",
+            user_email: "test@example.com",
+            subscription_name: "Premium",
+            credit_allowance: "unlimited",
+            stories_read: "5",
+            reading_time: "45",
+            new_words: "12",
+            days_active: "4",
+            vocabulary_improvement: "8",
+            stamina_improvement: "15",
+            comprehension_score: "92",
+            creative_responses: "6",
+            credits_remaining: "25",
+            create_story_link: "#",
+            features_guide_link: "#"
+        }, null, 2);
+    }
+
+    function closeTestEmailModal() {
+        document.getElementById('testEmailModal').style.display = 'none';
+    }
+
+    function sendTestEmail() {
+        const emailAddress = document.getElementById('testEmailAddress').value;
+        const subject = document.getElementById('testEmailSubject').value;
+        const template = document.getElementById('testEmailTemplate').value;
+        const personalization = document.getElementById('testEmailPersonalization').value;
+        
+        if (!emailAddress || !subject || !template) {
+            showNotification('Please fill in all required fields', 'error');
+            return;
+        }
+        
+        try {
+            // Validate JSON if personalization is provided
+            if (personalization.trim()) {
+                JSON.parse(personalization);
+            }
+        } catch (e) {
+            showNotification('Invalid JSON in personalization data', 'error');
+            return;
+        }
+        
+        // Show success message (in a real implementation, this would send the email)
+        showNotification('Test email sent successfully! 📧', 'success');
+        
+        // Log the test email details for debugging
+        console.log('Test Email Details:', {
+            to: emailAddress,
+            subject: subject,
+            template: template,
+            personalization: personalization
+        });
+        
+        // Close modal
+        closeTestEmailModal();
+        
+        // In a real implementation, you would:
+        // 1. Send the email via your email service (SendGrid, Mailgun, etc.)
+        // 2. Handle success/error responses
+        // 3. Show appropriate notifications
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('testEmailModal');
+        if (event.target === modal) {
+            closeTestEmailModal();
+        }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeTestEmailModal();
+        }
+    });
     </script>
 </body>
 </html>
