@@ -319,35 +319,202 @@
         
         @media (max-width: 600px) {
             body {
-                padding: 10px;
+                padding: 10px !important;
+            }
+            
+            .email-container {
+                border-radius: 12px !important;
             }
             
             .header, .content, .footer {
-                padding-left: 20px;
-                padding-right: 20px;
+                padding: 25px 20px !important;
             }
             
             .welcome-heading {
-                font-size: 26px;
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .welcome-subheading {
+                font-size: 15px !important;
+                line-height: 1.4 !important;
             }
             
             .alert-emoji {
-                font-size: 40px;
+                font-size: 40px !important;
+                margin-bottom: 8px !important;
+            }
+            
+            /* Grid Layout Optimization */
+            .credits-status {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .credits-label {
+                font-size: 16px !important;
+                line-height: 1.4 !important;
             }
             
             .credits-number {
-                font-size: 36px;
+                font-size: 36px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .credits-message {
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .urgency-message {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .urgency-message p {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .benefits-reminder {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .benefits-reminder h4 {
+                font-size: 20px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .benefits-reminder p {
+                font-size: 15px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .cta-section {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .cta-text {
+                font-size: 18px !important;
+                line-height: 1.3 !important;
             }
             
             .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 15px !important;
             }
             
             .cta-button-primary,
             .cta-button-secondary {
-                width: 100%;
-                max-width: 280px;
+                width: 100% !important;
+                max-width: 280px !important;
+                padding: 16px 32px !important;
+                font-size: 16px !important;
+                min-height: 44px !important;
+                display: block !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+            
+            .reassurance {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .reassurance p {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .closing-message {
+                margin: 25px -20px !important;
+                padding: 20px !important;
+            }
+            
+            .closing-message p {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            body {
+                padding: 8px !important;
+            }
+            
+            .header, .content, .footer {
+                padding: 20px 15px !important;
+            }
+            
+            .welcome-heading {
+                font-size: 24px !important;
+            }
+            
+            .alert-emoji {
+                font-size: 36px !important;
+            }
+            
+            .credits-number {
+                font-size: 32px !important;
+            }
+            
+            .credits-status,
+            .urgency-message,
+            .benefits-reminder,
+            .cta-section,
+            .reassurance,
+            .closing-message {
+                margin: 20px -15px !important;
+                padding: 18px !important;
+            }
+            
+            .cta-button-primary,
+            .cta-button-secondary {
+                padding: 14px 28px !important;
+                font-size: 15px !important;
+            }
+        }
+        
+        /* Extra small mobile devices */
+        @media (max-width: 360px) {
+            body {
+                padding: 5px !important;
+            }
+            
+            .header, .content, .footer {
+                padding: 18px 12px !important;
+            }
+            
+            .welcome-heading {
+                font-size: 22px !important;
+            }
+            
+            .alert-emoji {
+                font-size: 32px !important;
+            }
+            
+            .credits-number {
+                font-size: 28px !important;
+            }
+            
+            .credits-status,
+            .urgency-message,
+            .benefits-reminder,
+            .cta-section,
+            .reassurance,
+            .closing-message {
+                margin: 18px -12px !important;
+                padding: 16px !important;
+            }
+            
+            .cta-button-primary,
+            .cta-button-secondary {
+                padding: 12px 24px !important;
+                font-size: 14px !important;
             }
         }
         
