@@ -4,30 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekly Reading Report</title>
+    
     <style>
+        /* Import brand fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
             color: #374151;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            background: linear-gradient(135deg, #F3F4F6 0%, #F9FAFB 100%);
         }
         
         .email-container {
             background-color: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+            border: 1px solid #E5E7EB;
         }
         
         .header {
             padding: 40px 30px;
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8B5CF6 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%);
             position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 25% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
+                radial-gradient(1px 1px at 75% 35%, rgba(252, 211, 77, 0.2) 50%, transparent 50%),
+                radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
+                radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
+            background-repeat: no-repeat;
+            pointer-events: none;
         }
         
         .header::after {
@@ -38,6 +59,7 @@
             right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            z-index: 1;
         }
         
         .welcome-heading {
@@ -45,7 +67,10 @@
             color: white;
             margin: 0 0 8px 0;
             font-weight: 700;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
         }
         
         .welcome-subheading {
@@ -53,6 +78,8 @@
             color: rgba(255, 255, 255, 0.9);
             margin: 0;
             font-weight: 400;
+            position: relative;
+            z-index: 2;
         }
         
         .content {
@@ -66,16 +93,17 @@
         .greeting p {
             margin: 0 0 16px 0;
             font-size: 16px;
+            color: #475569;
         }
         
         .personalized-name {
-            color: #8B5CF6;
+            color: #7C3AED;
             font-weight: 600;
         }
         
         .impact-message {
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
-            border: 1px solid #E2E8F0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(167, 139, 250, 0.05) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.1);
             border-radius: 12px;
             padding: 24px;
             margin: 28px 0;
@@ -95,16 +123,17 @@
         
         .impact-message h3 {
             margin: 0 0 12px 0;
-            color: #1F2937;
+            color: #7C3AED;
             font-size: 18px;
             font-weight: 600;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
         .impact-text {
-            color: #6B7280;
+            color: #475569;
             font-size: 15px;
             margin: 0;
             font-weight: 500;
@@ -117,22 +146,23 @@
         .section-title {
             font-size: 22px;
             font-weight: 600;
-            color: #1F2937;
+            color: #7C3AED;
             margin: 0 0 24px 0;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
             margin: 20px 0;
         }
         
         .stat-card {
-            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
             color: white;
             padding: 20px;
             border-radius: 12px;
@@ -160,6 +190,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             margin-bottom: 8px;
             position: relative;
             z-index: 1;
@@ -174,19 +205,20 @@
         }
         
         .achievements-section {
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
-            border: 1px solid #E2E8F0;
+            background: linear-gradient(135deg, rgba(125, 211, 252, 0.05) 0%, rgba(110, 231, 183, 0.08) 100%);
+            border: 1px solid rgba(125, 211, 252, 0.2);
             border-radius: 12px;
             padding: 24px;
             margin: 28px 0;
-            border-left: 4px solid #8B5CF6;
+            border-left: 4px solid #7DD3FC;
         }
         
         .achievements-section h4 {
             margin: 0 0 16px 0;
-            color: #1F2937;
+            color: #7C3AED;
             font-size: 18px;
             font-weight: 600;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -207,7 +239,7 @@
             padding: 12px 16px;
             background: white;
             border-radius: 8px;
-            border: 1px solid #E2E8F0;
+            border: 1px solid #E5E7EB;
         }
         
         .achievement-icon {
@@ -228,23 +260,24 @@
         
         .achievement-value {
             font-size: 13px;
-            color: #6B7280;
+            color: #475569;
         }
         
         .tips-section {
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
-            border: 1px solid #E2E8F0;
+            background: linear-gradient(135deg, rgba(249, 168, 212, 0.05) 0%, rgba(251, 207, 232, 0.08) 100%);
+            border: 1px solid rgba(249, 168, 212, 0.2);
             border-radius: 12px;
             padding: 24px;
             margin: 28px 0;
-            border-left: 4px solid #8B5CF6;
+            border-left: 4px solid #F9A8D4;
         }
         
         .tips-section h4 {
             margin: 0 0 16px 0;
-            color: #1F2937;
+            color: #7C3AED;
             font-size: 18px;
             font-weight: 600;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -265,11 +298,11 @@
             padding: 12px 16px;
             background: white;
             border-radius: 8px;
-            border: 1px solid #E2E8F0;
+            border: 1px solid #E5E7EB;
         }
         
         .tip-number {
-            background: #8B5CF6;
+            background: #7C3AED;
             color: white;
             border-radius: 50%;
             width: 24px;
@@ -293,20 +326,21 @@
         }
         
         .credits-card {
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
-            border: 1px solid #E2E8F0;
+            background: linear-gradient(135deg, rgba(110, 231, 183, 0.05) 0%, rgba(110, 231, 183, 0.08) 100%);
+            border: 1px solid rgba(110, 231, 183, 0.2);
             border-radius: 12px;
             padding: 24px;
             margin: 28px 0;
             text-align: center;
-            border-left: 4px solid #8B5CF6;
+            border-left: 4px solid #6EE7B7;
         }
         
         .credits-card h4 {
             margin: 0 0 12px 0;
-            color: #1F2937;
+            color: #7C3AED;
             font-size: 18px;
             font-weight: 600;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -314,14 +348,14 @@
         }
         
         .credits-text {
-            color: #6B7280;
+            color: #475569;
             font-size: 15px;
             margin-bottom: 20px;
         }
         
         .credits-remaining {
             font-weight: 700;
-            color: #8B5CF6;
+            color: #7C3AED;
         }
         
         .cta-section {
@@ -331,22 +365,23 @@
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
             color: white;
             padding: 16px 32px;
             text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
+            border-radius: 50px;
+            font-weight: 700;
             font-size: 16px;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
             position: relative;
             overflow: hidden;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 12px 35px rgba(124, 58, 237, 0.4);
         }
         
         .cta-button::before {
@@ -368,26 +403,44 @@
             text-align: center;
             margin: 32px 0;
             font-size: 16px;
-            color: #6B7280;
+            color: #475569;
             font-style: italic;
         }
         
         .footer {
-            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
-            padding: 30px;
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+            padding: 40px 30px;
             text-align: center;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .footer-logo {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #7C3AED;
+            margin: 0 0 10px 0;
+        }
+        
+        .footer-tagline {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 25px 0;
+            font-style: italic;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .footer-message {
             margin: 0 0 8px 0;
-            color: white;
+            color: #7C3AED;
             font-weight: 600;
             font-size: 18px;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .footer-team {
             margin: 0 0 24px 0;
-            color: #D1D5DB;
+            color: #475569;
             font-style: italic;
         }
         
@@ -396,7 +449,7 @@
         }
         
         .footer-links a {
-            color: #9CA3AF;
+            color: #6B7280;
             text-decoration: none;
             margin: 0 12px;
             font-size: 14px;
@@ -404,19 +457,24 @@
         }
         
         .footer-links a:hover {
-            color: #E5E7EB;
+            color: #7C3AED;
+            text-decoration: underline;
         }
         
         .footer-legal {
-            font-size: 12px;
-            color: #6B7280;
+            font-size: 13px;
+            color: #9CA3AF;
             margin-top: 20px;
             line-height: 1.5;
         }
         
         .footer-legal a {
-            color: #8B5CF6;
+            color: #7C3AED;
             text-decoration: none;
+        }
+        
+        .footer-legal a:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 600px) {
@@ -443,14 +501,13 @@
                 line-height: 1.5 !important;
             }
             
-            /* Grid Layout Optimization */
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 15px !important;
             }
             
             .stat-card {
-                padding: 20px !important;
+                padding: 18px !important;
             }
             
             .stat-number {
@@ -462,20 +519,44 @@
             }
             
             .achievements-section,
-            .tips-section {
-                margin: 25px -20px !important;
+            .tips-section,
+            .credits-card,
+            .impact-message {
+                margin: 25px 0 !important;
                 padding: 20px !important;
             }
             
-            .achievement-item {
-                padding: 18px !important;
-                margin: 15px 0 !important;
+            .achievement-item,
+            .tip-item {
+                padding: 16px !important;
             }
             
-            .footer-links {
-                flex-direction: column !important;
-                gap: 12px !important;
-                text-align: center !important;
+            .cta-button {
+                padding: 16px 32px !important;
+                font-size: 16px !important;
+                min-height: 44px !important;
+                display: block !important;
+                width: 100% !important;
+                max-width: 280px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+            
+            .footer {
+                padding: 30px 20px !important;
+            }
+            
+            .footer-logo {
+                font-size: 20px !important;
+            }
+            
+            .footer-tagline {
+                font-size: 14px !important;
+            }
+            
+            .footer-links a {
+                display: block !important;
+                margin: 8px 0 !important;
             }
         }
         
@@ -514,13 +595,19 @@
             }
             
             .achievements-section,
-            .tips-section {
-                margin: 20px -15px !important;
+            .tips-section,
+            .credits-card,
+            .impact-message {
                 padding: 18px !important;
+            }
+            
+            .cta-button {
+                padding: 14px 28px !important;
+                font-size: 15px !important;
+                width: calc(100% - 56px) !important;
             }
         }
         
-        /* Extra small mobile devices */
         @media (max-width: 360px) {
             .header, .content, .footer {
                 padding: 18px 12px !important;
@@ -543,91 +630,140 @@
             }
             
             .achievements-section,
-            .tips-section {
-                margin: 18px -12px !important;
+            .tips-section,
+            .credits-card,
+            .impact-message {
                 padding: 16px !important;
+            }
+            
+            .cta-button {
+                padding: 12px 24px !important;
+                font-size: 14px !important;
+                width: calc(100% - 48px) !important;
             }
         }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body,
-            body[style],
-            center[style] {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                color: #E0E0E0 !important;
+            body {
+                background: linear-gradient(135deg, #1F2937 0%, #111827 100%) !important;
             }
             
             .email-container {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
-                border-color: #4a5568 !important;
+                background: #1F2937 !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+                border-color: #374151 !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A855F7 100%) !important;
             }
             
             .content {
-                color: #2d3748 !important;
+                background: #1F2937 !important;
             }
             
-            .greeting p,
-            .content p {
-                color: #2d3748 !important;
+            .greeting p {
+                color: #F3F4F6 !important;
+            }
+            
+            .personalized-name {
+                color: #A78BFA !important;
+            }
+            
+            .impact-message {
+                background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(139, 92, 246, 0.15) 100%) !important;
+                border-color: rgba(124, 58, 237, 0.3) !important;
             }
             
             .section-title,
             .achievements-section h4,
-            .tips-section h4 {
-                color: #f7fafc !important;
+            .tips-section h4,
+            .credits-card h4,
+            .impact-message h3 {
+                color: #A78BFA !important;
             }
             
-            .impact-text {
-                color: #2d3748 !important;
+            .impact-text,
+            .credits-text {
+                color: #F3F4F6 !important;
             }
             
             .stat-card {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
+                background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%) !important;
             }
             
-            .stat-number {
-                color: #f7fafc !important;
+            .achievements-section {
+                background: linear-gradient(135deg, rgba(125, 211, 252, 0.08) 0%, rgba(110, 231, 183, 0.12) 100%) !important;
+                border-color: rgba(125, 211, 252, 0.4) !important;
             }
             
-            .stat-label {
-                color: #a0aec0 !important;
+            .tips-section {
+                background: linear-gradient(135deg, rgba(249, 168, 212, 0.08) 0%, rgba(251, 207, 232, 0.12) 100%) !important;
+                border-color: rgba(249, 168, 212, 0.4) !important;
             }
             
-            .achievement-item {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
+            .credits-card {
+                background: linear-gradient(135deg, rgba(110, 231, 183, 0.08) 0%, rgba(110, 231, 183, 0.12) 100%) !important;
+                border-color: rgba(110, 231, 183, 0.4) !important;
             }
             
-            .achievement-label {
-                color: #f7fafc !important;
+            .achievement-item,
+            .tip-item {
+                background: #374151 !important;
+                border-color: #4B5563 !important;
+            }
+            
+            .achievement-label,
+            .tip-text {
+                color: #F3F4F6 !important;
             }
             
             .achievement-value {
-                color: #2d3748 !important;
+                color: #D1D5DB !important;
             }
             
-            .tip-item {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
+            .tip-text strong {
+                color: #F9FAFB !important;
             }
             
-            .tip-text {
-                color: #2d3748 !important;
+            .credits-remaining {
+                color: #A78BFA !important;
+            }
+            
+            .closing-message p {
+                color: #F3F4F6 !important;
             }
             
             .footer {
-                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
-                border-top-color: #4a5568 !important;
+                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
+                border-top-color: #374151 !important;
             }
             
+            .footer-logo {
+                color: #A78BFA !important;
+            }
+            
+            .footer-tagline,
             .footer-message,
-            .footer-team,
-            .footer-links a,
-            .footer-legal p {
-                color: #a0aec0 !important;
+            .footer-team {
+                color: #D1D5DB !important;
+            }
+            
+            .footer-links a {
+                color: #9CA3AF !important;
+            }
+            
+            .footer-links a:hover {
+                color: #A78BFA !important;
+            }
+            
+            .footer-legal {
+                color: #6B7280 !important;
+            }
+            
+            .footer-legal a {
+                color: #A78BFA !important;
             }
         }
     </style>
@@ -636,7 +772,7 @@
     <div class="email-container">
         <div class="header">
             <h1 class="welcome-heading">📊 Weekly Reading Report</h1>
-            <p class="welcome-subheading">Celebrating your reading journey together</p>
+            <p class="welcome-subheading">Celebrating your reading journey together.</p>
         </div>
         
         <div class="content">
@@ -654,16 +790,8 @@
                 <h3 class="section-title">📈 This Week's Reading Stats</h3>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number">{{stories_read|default:"5"}}</div>
-                        <div class="stat-label">Stories Read</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">{{reading_time|default:"45"}}</div>
-                        <div class="stat-label">Minutes Read</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">{{new_words|default:"12"}}</div>
-                        <div class="stat-label">New Words</div>
+                        <div class="stat-number">{{words_read|default:"12"}}</div>
+                        <div class="stat-label">Words Read</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">{{days_active|default:"4"}}</div>
@@ -683,24 +811,10 @@
                         </div>
                     </li>
                     <li class="achievement-item">
-                        <span class="achievement-icon">⏰</span>
-                        <div class="achievement-content">
-                            <div class="achievement-label">Reading Stamina</div>
-                            <div class="achievement-value">{{stamina_improvement|default:"15"}} minutes longer reading sessions</div>
-                        </div>
-                    </li>
-                    <li class="achievement-item">
                         <span class="achievement-icon">🧠</span>
                         <div class="achievement-content">
                             <div class="achievement-label">Comprehension</div>
                             <div class="achievement-value">{{comprehension_score|default:"92"}}% accuracy on story questions</div>
-                        </div>
-                    </li>
-                    <li class="achievement-item">
-                        <span class="achievement-icon">✨</span>
-                        <div class="achievement-content">
-                            <div class="achievement-label">Creativity</div>
-                            <div class="achievement-value">{{creative_responses|default:"6"}} imaginative story responses</div>
                         </div>
                     </li>
                 </ul>
@@ -738,23 +852,27 @@
             </div>
             
             <div class="closing-message">
-                <p>Thank you for making reading a priority. Your support truly makes a difference! ✨</p>
+                <p>Thank you for making reading a priority.</p>
             </div>
         </div>
         
         <div class="footer">
-            <p class="footer-message">Happy storytelling! 📚</p>
+            <div class="footer-logo">✨ StoryBud</div>
+            <p class="footer-tagline">"Every child deserves their own story."</p>
+            
+            <p class="footer-message">Happy storytelling!</p>
             <p class="footer-team">The StoryBud Team</p>
             
             <div class="footer-links">
-                <a href="https://storybud.com/about">About StoryBud</a>
+                <a href="https://storybud.com/contact">Support</a>
                 <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
-                <a href="mailto:support@storybud.com">Support Team</a>
+                <a href="https://storybud.com/terms-of-service">Terms</a>
             </div>
             
             <div class="footer-legal">
                 <p>You're receiving this email because you signed up for StoryBud.<br>
-                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | StoryBud Inc.<br>
+                1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
                 <p>Copyright © 2025 StoryBud All Rights Reserved</p>
             </div>
         </div>
