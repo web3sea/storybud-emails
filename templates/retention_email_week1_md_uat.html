@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>📚 How's your reading routine going?</title>
     
     <!--[if mso]>
@@ -144,7 +146,7 @@
             justify-content: center;
             gap: 15px;
             margin: 40px 0;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
         }
         
         .stat-item {
@@ -177,18 +179,6 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(139, 92, 246, 0.12);
             border-color: rgba(139, 92, 246, 0.3);
-        }
-        
-        .stat-item:nth-child(1) {
-            animation-delay: 0s;
-        }
-        
-        .stat-item:nth-child(2) {
-            animation-delay: 8s;
-        }
-        
-        .stat-item:nth-child(3) {
-            animation-delay: 16s;
         }
         
         .stat-icon {
@@ -306,9 +296,9 @@
         .secondary-cta {
             display: inline-block;
             background: transparent;
-            color: #6366F1 !important;
+            color: #7C3AED !important;
             padding: 18px 40px;
-            border: 2px solid #6366F1;
+            border: 2px solid #7C3AED;
             border-radius: 50px;
             font-family: 'Quicksand', 'Arial', sans-serif;
             font-size: 16px;
@@ -319,7 +309,7 @@
         }
         
         .secondary-cta:hover {
-            background: #6366F1;
+            background: #7C3AED;
             color: white !important;
             transform: translateY(-1px);
         }
@@ -354,9 +344,79 @@
         .footer-text {
             font-size: 16px;
             color: #475569;
-            margin: 0;
+            margin: 0 0 20px 0;
             font-family: 'Inter', 'Arial', sans-serif;
             font-weight: 500;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #6366F1;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #6B7280;
+        }
+        
+        .contact-info a {
+            color: #6366F1;
+            text-decoration: none;
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            .email-container {
+                background: #1F2937 !important;
+            }
+            
+            .content {
+                background: #1F2937 !important;
+                color: #F3F4F6 !important;
+            }
+            
+            .body-text {
+                color: #D1D5DB !important;
+            }
+            
+            .stat-item {
+                background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(163, 139, 250, 0.2) 100%) !important;
+                border-color: rgba(139, 92, 246, 0.3) !important;
+            }
+            
+            .stat-number {
+                color: #F3F4F6 !important;
+                -webkit-text-fill-color: #F3F4F6 !important;
+            }
+            
+            .stat-label {
+                color: #A78BFA !important;
+            }
+            
+            .quote-section {
+                background: linear-gradient(135deg, rgba(139, 92, 246, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%) !important;
+            }
+            
+            .quote-text {
+                color: #F3F4F6 !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #374151 0%, #4B5563 100%) !important;
+            }
+            
+            .footer-text, .contact-info {
+                color: #D1D5DB !important;
+            }
         }
         
         /* Mobile responsiveness */
@@ -392,7 +452,6 @@
                 font-size: 16px !important;
             }
             
-            /* Grid Layout Optimization */
             .stats-container {
                 flex-direction: column !important;
                 gap: 15px !important;
@@ -412,7 +471,6 @@
                 font-size: 14px !important;
             }
             
-            /* CTA Button Optimization */
             .cta-button {
                 padding: 18px 32px !important;
                 font-size: 16px !important;
@@ -486,85 +544,6 @@
             .cta-button {
                 padding: 14px 24px !important;
                 font-size: 14px !important;
-            }
-        }
-        
-        /* Animations */
-        
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            body,
-            body[style],
-            center[style] {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                color: #E0E0E0 !important;
-            }
-            
-            .email-container {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .header {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-            }
-            
-            .content {
-                color: #2d3748 !important;
-            }
-            
-            .body-text,
-            .content p {
-                color: #2d3748 !important;
-            }
-            
-            .subheader {
-                color: #374151 !important;
-            }
-            
-            .achievement-banner {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .stats-container {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .stat-item {
-                color: #2d3748 !important;
-            }
-            
-            .stat-number {
-                color: #f7fafc !important;
-            }
-            
-            .stat-label {
-                color: #a0aec0 !important;
-            }
-            
-            .quote-section {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .quote-text {
-                color: #2d3748 !important;
-            }
-            
-            .secondary-cta {
-                color: #374151 !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
-                border-top-color: #4a5568 !important;
-            }
-            
-            .footer-text {
-                color: #a0aec0 !important;
             }
         }
     </style>
@@ -646,6 +625,31 @@
                             <p class="footer-text">
                                 Keep inspiring, keep reading, keep creating magic ✨
                             </p>
+                            
+                            <!-- Footer Links -->
+                            <div class="footer-links">
+                                <a href="https://storybud.com/library">Story Library</a>
+                                <a href="https://storybud.com/blog">Blog</a>
+                                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
+                            </div>
+                            
+                            <!-- Contact Information -->
+                            <div class="contact-info">
+                                <p style="margin: 10px 0; font-family: 'Inter', 'Arial', sans-serif;">
+                                    Questions? Email us at <a href="mailto:support@storybud.com">support@storybud.com</a>
+                                </p>
+                            </div>
+                            
+                            <!-- Legal Footer -->
+                            <div class="footer-legal" style="margin-top: 30px;">
+                                <p style="font-size: 12px; color: #6B7280; margin-bottom: 15px; font-family: 'Inter', 'Arial', sans-serif;">
+                                    You're receiving this email because you signed up for StoryBud.<br>
+                                    <a href="#" style="color: #6366F1; text-decoration: none;">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                </p>
+                                <p style="font-size: 12px; color: #6B7280; margin: 0; font-family: 'Inter', 'Arial', sans-serif;">
+                                    Copyright © 2025 StoryBud All Rights Reserved
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </td>

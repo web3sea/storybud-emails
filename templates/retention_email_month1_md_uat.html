@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>🏆 Your incredible reading journey - Month 1 complete!</title>
     
     <!--[if mso]>
@@ -437,9 +439,106 @@
         .footer-text {
             font-size: 16px;
             color: #475569;
-            margin: 0;
+            margin: 0 0 20px 0;
             font-family: 'Inter', 'Arial', sans-serif;
             font-weight: 500;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #6366F1;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+            font-size: 14px;
+            color: #6B7280;
+        }
+        
+        .contact-info a {
+            color: #6366F1;
+            text-decoration: none;
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            .email-container {
+                background: #1F2937 !important;
+            }
+            
+            .content {
+                background: #1F2937 !important;
+                color: #F3F4F6 !important;
+            }
+            
+            .body-text {
+                color: #D1D5DB !important;
+            }
+            
+            .stat-card {
+                background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(167, 139, 250, 0.2) 100%) !important;
+                border-color: rgba(124, 58, 237, 0.3) !important;
+            }
+            
+            .stat-number {
+                color: #F3F4F6 !important;
+                -webkit-text-fill-color: #F3F4F6 !important;
+            }
+            
+            .stat-label {
+                color: #A78BFA !important;
+            }
+            
+            .progress-section {
+                background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%) !important;
+            }
+            
+            .progress-title {
+                color: #F3F4F6 !important;
+            }
+            
+            .progress-text {
+                color: #D1D5DB !important;
+            }
+            
+            .streak-container {
+                background: linear-gradient(135deg, rgba(124, 58, 237, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%) !important;
+            }
+            
+            .streak-title,
+            .streak-number,
+            .streak-text {
+                color: #F3F4F6 !important;
+            }
+            
+            .milestone-item {
+                background: rgba(124, 58, 237, 0.15) !important;
+                border-left-color: #A78BFA !important;
+            }
+            
+            .milestone-text {
+                color: #F3F4F6 !important;
+            }
+            
+            .milestone-date {
+                color: #D1D5DB !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #374151 0%, #4B5563 100%) !important;
+            }
+            
+            .footer-text, .contact-info {
+                color: #D1D5DB !important;
+            }
         }
         
         /* Mobile responsiveness */
@@ -475,7 +574,6 @@
                 font-size: 18px !important;
             }
             
-            /* Grid Layout Optimization */
             .monthly-stats {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
@@ -503,12 +601,6 @@
                 padding: 20px !important;
             }
             
-            .celebration-message {
-                margin: 25px -20px !important;
-                padding: 20px !important;
-            }
-            
-            /* Button Optimization */
             .cta-button {
                 padding: 18px 32px !important;
                 font-size: 16px !important;
@@ -552,8 +644,7 @@
                 padding: 18px !important;
             }
             
-            .progress-section,
-            .celebration-message {
+            .progress-section {
                 margin: 20px -15px !important;
                 padding: 18px !important;
             }
@@ -583,8 +674,7 @@
                 padding: 16px !important;
             }
             
-            .progress-section,
-            .celebration-message {
+            .progress-section {
                 margin: 18px -12px !important;
                 padding: 16px !important;
             }
@@ -592,101 +682,6 @@
             .cta-button {
                 padding: 14px 24px !important;
                 font-size: 14px !important;
-            }
-        }
-        
-        /* Animations */
-        
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            body,
-            body[style],
-            center[style] {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                color: #E0E0E0 !important;
-            }
-            
-            .email-container {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .header {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-            }
-            
-            .content {
-                color: #2d3748 !important;
-            }
-            
-            .body-text,
-            .content p {
-                color: #2d3748 !important;
-            }
-            
-            .subheader {
-                color: #374151 !important;
-            }
-            
-            .achievement-banner {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .monthly-stats {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .stat-card {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .streak-container {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .streak-title {
-                color: #f7fafc !important;
-            }
-            
-            .streak-text {
-                color: #2d3748 !important;
-            }
-            
-            .progress-section {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .progress-title {
-                color: #f7fafc !important;
-            }
-            
-            .progress-text {
-                color: #2d3748 !important;
-            }
-            
-            .milestone-item {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .milestone-text,
-            .milestone-date {
-                color: #2d3748 !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
-                border-top-color: #4a5568 !important;
-            }
-            
-            .footer-text {
-                color: #a0aec0 !important;
             }
         }
     </style>
@@ -711,7 +706,7 @@
                         
                         <!-- Content -->
                         <div class="content">
-                            <h2 class="subheader">Your Month 1 Reading Report</h2>
+                            <h2 class="subheader">Your Monthly Reading Report</h2>
                             
                             <div class="achievement-banner">
                                 <span class="trophy">🌟</span>Reading Champion - 30 Days Strong!
@@ -725,8 +720,8 @@
                             <div class="monthly-stats">
                                 <div class="stat-card">
                                     <span class="stat-icon">📚</span>
-                                    <span class="stat-number">28</span>
-                                    <div class="stat-label">Stories Read</div>
+                                    <span class="stat-number">4,569</span>
+                                    <div class="stat-label">Words Read</div>
                                 </div>
                                 <div class="stat-card">
                                     <span class="stat-icon">⏰</span>
@@ -800,8 +795,33 @@
                         <!-- Footer -->
                         <div class="footer">
                             <p class="footer-text">
-                                Here's to month 2 and countless more magical reading adventures! 📚✨
+                                Here's to month 2 and countless more magical reading adventures!
                             </p>
+                            
+                            <!-- Footer Links -->
+                            <div class="footer-links">
+                                <a href="https://storybud.com/library">Story Library</a>
+                                <a href="https://storybud.com/blog">Blog</a>
+                                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
+                            </div>
+                            
+                            <!-- Contact Information -->
+                            <div class="contact-info">
+                                <p style="margin: 10px 0; font-family: 'Inter', 'Arial', sans-serif;">
+                                    Questions? Email us at <a href="mailto:support@storybud.com">support@storybud.com</a>
+                                </p>
+                            </div>
+                            
+                            <!-- Legal Footer -->
+                            <div class="footer-legal" style="margin-top: 30px;">
+                                <p style="font-size: 12px; color: #6B7280; margin-bottom: 15px; font-family: 'Inter', 'Arial', sans-serif;">
+                                    You're receiving this email because you signed up for StoryBud.<br>
+                                    <a href="#" style="color: #6366F1; text-decoration: none;">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                </p>
+                                <p style="font-size: 12px; color: #6B7280; margin: 0; font-family: 'Inter', 'Arial', sans-serif;">
+                                    Copyright © 2025 StoryBud All Rights Reserved
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </td>
