@@ -1807,39 +1807,68 @@
                 </div>
             </div>
             
-            <!-- Power Users Timeline -->
+                        <!-- Power Users Timeline -->
             <div class="timeline-container">
                 <h2 class="timeline-title">⚡ Email Sequence Timeline</h2>
-                <div class="timeline-days">
-                    <div class="timeline-day active-day" onclick="showPowerUsersPreview('templates/power_user_premium_features_email_dm_uat.html', 'Premium Features', this)" style="cursor: pointer;">
-                        <div class="day-number">1</div>
-                        <div class="day-name">Features</div>
-                        <div class="day-activity">Premium Features</div>
-                    </div>
-                    <div class="timeline-day" onclick="showPowerUsersPreview('templates/power_user_power_user_education_email_dm_uat.html', 'Education', this)" style="cursor: pointer;">
-                        <div class="day-number">2</div>
-                        <div class="day-name">Learn</div>
-                        <div class="day-activity">Education</div>
-                    </div>
-                    <div class="timeline-day" onclick="showPowerUsersPreview('templates/power_user_power_user_pro_tips_md_uat.html', 'Pro Tips', this)" style="cursor: pointer;">
-                        <div class="day-number">3</div>
-                        <div class="day-name">Expert</div>
-                        <div class="day-activity">Pro Tips</div>
-                        <div class="timeline-day" onclick="showPowerUsersPreview('templates/power_user_power_user_impact_email_dm_uat.html', 'Impact Report', this)" style="cursor: pointer;">
-                            <div class="day-number">4</div>
-                            <div class="day-name">Impact</div>
-                            <div class="day-activity">Impact Report</div>
+                <div class="power-users-timeline-grid">
+                    <!-- Email 1: Premium Features -->
+                    <div class="power-user-card active-card" onclick="showPowerUsersPreview('templates/power_user_premium_features_email_dm_uat.html', 'Premium Features', this)" style="cursor: pointer;">
+                        <div class="card-number">1</div>
+                        <div class="card-header">
+                            <div class="card-icon">🚀</div>
+                            <div class="card-title">Features</div>
                         </div>
-                        <div class="timeline-day" onclick="showPowerUsersPreview('templates/credits_running_low_dm_uat.html', 'Credits Running Low', this)" style="cursor: pointer;">
-                            <div class="day-number">5</div>
-                            <div class="day-name">Upgrade</div>
-                            <div class="day-activity">Credits Running Low</div>
+                        <div class="card-description">Premium Features</div>
+                        <div class="card-details">Advanced feature exploration and premium capabilities showcase</div>
+                    </div>
+                    
+                    <!-- Email 2: Education -->
+                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/power_user_education_email_dm_uat.html', 'Education', this)" style="cursor: pointer;">
+                        <div class="card-number">2</div>
+                        <div class="card-header">
+                            <div class="card-icon">📚</div>
+                            <div class="card-title">Learn</div>
                         </div>
+                        <div class="card-description">Education</div>
+                        <div class="card-details">In-depth tutorials and best practice guides</div>
+                    </div>
+                    
+                    <!-- Email 3: Pro Tips -->
+                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/power_user_pro_tips_md_uat.html', 'Pro Tips', this)" style="cursor: pointer;">
+                        <div class="card-number">3</div>
+                        <div class="card-header">
+                            <div class="card-icon">💡</div>
+                            <div class="card-title">Expert</div>
+                        </div>
+                        <div class="card-description">Pro Tips</div>
+                        <div class="card-details">Expert strategies and optimization techniques</div>
+                    </div>
+                    
+                    <!-- Email 4: Impact Report -->
+                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/power_user_impact_email_dm_uat.html', 'Impact Report', this)" style="cursor: pointer;">
+                        <div class="card-number">4</div>
+                        <div class="card-header">
+                            <div class="card-icon">📊</div>
+                            <div class="card-title">Impact</div>
+                        </div>
+                        <div class="card-description">Impact Report</div>
+                        <div class="card-details">Success metrics and platform value demonstration</div>
+                    </div>
+                    
+                    <!-- Email 5: Credits Running Low -->
+                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/credits_running_low_dm_uat.html', 'Credits Running Low', this)" style="cursor: pointer;">
+                        <div class="card-number">5</div>
+                        <div class="card-header">
+                            <div class="card-icon">⬆️</div>
+                            <div class="card-title">Upgrade</div>
+                        </div>
+                        <div class="card-description">Credits Running Low</div>
+                        <div class="card-details">Targeted upgrade messaging for power users</div>
                     </div>
                 </div>
             </div>
             
-            <!-- Email Preview Container -->
+            <!-- Email Preview Container --><!-- Email Preview Container -->
             <div class="email-preview-container">
                 
                 <!-- Preview Title and Actions -->
@@ -2887,7 +2916,108 @@ StoryBud Team`;
             background: #4b5563;
         }
     }
-    </style>
+    
+/* Power Users Timeline Redesign */
+.power-users-timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.power-user-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 24px;
+    color: white;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.power-user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.power-user-card.active-card {
+    border-color: #ffd700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.card-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    font-size: 24px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.card-description {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffd700;
+}
+
+.card-details {
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .power-users-timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .power-user-card {
+        padding: 20px;
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .power-users-timeline-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+</style></style>
     
     <!-- Test Email JavaScript Functions -->
     <script>
