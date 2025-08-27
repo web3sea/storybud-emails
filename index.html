@@ -1601,6 +1601,7 @@
                     <div class="preview-actions">
                         <a href="templates/storytime_email_day1_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
                         <button class="preview-action-btn secondary" onclick="downloadEmail('templates/storytime_email_day1_dm_uat.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('storytime_email_day1_dm_uat.html')">🧪 Send Test Email</button>
                     </div>
                 </div>
                 <div class="preview-content">
@@ -1688,6 +1689,7 @@
                             <div class="preview-actions">
                         <a href="templates/churn_recovery_day1.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
                         <button class="preview-action-btn secondary" onclick="downloadEmail('templates/churn_recovery_day1.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('churn_recovery_day1.html')">🧪 Send Test Email</button>
                             </div>
                         </div>
                 <div class="preview-content">
@@ -2010,6 +2012,15 @@ StoryBud Team`;
                 };
             }
             
+            // Update the test email button
+            const testBtn = document.querySelector('#retention-sequence .preview-action-btn.test');
+            if (testBtn) {
+                const filename = emailUrl.split('/').pop();
+                testBtn.onclick = function() {
+                    openTestEmailModal(filename);
+                };
+            }
+            
             // Update active day styling
             document.querySelectorAll('#retention-sequence .timeline-day').forEach(day => {
                 day.classList.remove('active-day');
@@ -2046,13 +2057,22 @@ StoryBud Team`;
                 openInNewTabLink.href = emailUrl;
             }
             
-            const downloadBtn = document.querySelector('#churn-recovery-sequence .preview-action-btn.secondary');
+                        const downloadBtn = document.querySelector('#churn-recovery-sequence .preview-action-btn.secondary');
             if (downloadBtn) {
                 downloadBtn.onclick = function() {
                     downloadEmail(emailUrl);
                 };
             }
             
+            // Update the test email button
+            const testBtn = document.querySelector('#churn-recovery-sequence .preview-action-btn.test');
+            if (testBtn) {
+                const filename = emailUrl.split('/').pop();
+                testBtn.onclick = function() {
+                    openTestEmailModal(filename);
+                };
+            }
+
             // Update active day styling
             document.querySelectorAll('#churn-recovery-sequence .timeline-day').forEach(day => {
                 day.classList.remove('active-day');
