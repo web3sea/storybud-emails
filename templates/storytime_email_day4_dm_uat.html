@@ -1,21 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="x-apple-disable-message-reformatting">
-    <title>🧒 "Can we read the next part tonight?"</title>
-    
-    <!--[if mso]>
-    <noscript>
-        <xml>
-            <o:OfficeDocumentSettings>
-                <o:PixelsPerInch>96</o:PixelsPerInch>
-            </o:OfficeDocumentSettings>
-        </xml>
-    </noscript>
-    <![endif]-->
+    <title>💡 Reading together makes bedtime easier.</title>
     
     <style>
         /* Reset and base styles */
@@ -94,6 +82,7 @@
             background-repeat: repeat;
             background-size: 600px 120px;
             pointer-events: none;
+            opacity: 0.3;
         }
         
         .header h1 {
@@ -158,13 +147,15 @@
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            transition: transform 0.2s ease;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         }
         
         /* Footer */
@@ -178,14 +169,17 @@
         .footer-text {
             font-size: 14px;
             color: #a0aec0;
-            margin: 0;
+            margin: 0 0 10px 0;
             font-family: 'Arial', sans-serif;
         }
         
-        /* Decorative elements */
-        .stars {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.4)"/><circle cx="60" cy="70" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="30" cy="80" r="1.2" fill="rgba(255,255,255,0.4)"/></svg>');
-            background-repeat: repeat;
+        .footer-text a {
+            color: #cbd5e0;
+            text-decoration: underline;
+        }
+        
+        .footer-text a:hover {
+            color: #e2e8f0;
         }
         
         /* Mobile responsiveness */
@@ -239,172 +233,57 @@
                 font-size: 13px !important;
             }
         }
-        
-        /* Small mobile devices */
-        @media only screen and (max-width: 480px) {
-            .header, .content {
-                padding: 20px 15px !important;
-            }
-            
-            .header h1 {
-                font-size: 22px !important;
-            }
-            
-            .subheader {
-                font-size: 17px !important;
-            }
-            
-            .body-text {
-                font-size: 14px !important;
-            }
-            
-            .cta-button {
-                padding: 14px 28px !important;
-                font-size: 15px !important;
-            }
-        }
-        
-        /* Extra small mobile devices */
-        @media only screen and (max-width: 360px) {
-            .header, .content {
-                padding: 18px 12px !important;
-            }
-            
-            .header h1 {
-                font-size: 20px !important;
-            }
-            
-            .cta-button {
-                padding: 12px 24px !important;
-                font-size: 14px !important;
-            }
-        }
-        
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            body,
-            body[style],
-            center[style] {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                color: #E0E0E0 !important;
-            }
-            
-            .email-container {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .header {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .header::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-image: 
-                    radial-gradient(2px 2px at 20px 30px, #ffffff 50%, transparent 50%),
-                    radial-gradient(2px 2px at 40px 70px, #ffffff 50%, transparent 50%),
-                    radial-gradient(1px 1px at 90px 40px, #ffffff 50%, transparent 50%),
-                    radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent 50%),
-                    radial-gradient(2px 2px at 160px 30px, #ffffff 50%, transparent 50%);
-                background-repeat: repeat;
-                background-size: 200px 100px;
-            }
-            
-            .content {
-                color: #2d3748 !important;
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-            }
-            
-            .body-text {
-                color: #2d3748 !important;
-            }
-            
-            .subheader {
-                color: #374151 !important;
-            }
-            
-            .cta-button {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-                color: white !important;
-                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
-            }
-            
-            .cta-button:hover {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-                transform: translateY(-2px) !important;
-                box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
-                border-top-color: #4a5568 !important;
-            }
-            
-            .footer-text {
-                color: #a0aec0 !important;
-            }
-        }
-        
     </style>
 </head>
 
 <body style="margin: 0; padding: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);">
-    <center style="width: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);">
+    <center style="width: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%); padding: 20px 0;">
         <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-            When bedtime becomes their favorite time of day 🧒📖
+            Transform bedtime from chaos to calm with tonight's story 💡📚
         </div>
         
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
             <tr>
-                <td style="padding: 20px 0;">
+                <td>
                     <div class="email-container">
                         <!-- Header -->
-                        <div class="header stars">
-                            <span class="emoji">🧒</span>
-                            <h1>They'll look forward to storytime.</h1>
+                        <div class="header">
+                            <span class="emoji">💡</span>
+                            <h1>A calm ending to a busy day.</h1>
                         </div>
                         
                         <!-- Content -->
-                        <div class="content" style="background-color: #ffffff !important;">
-                            <h2 class="subheader" style="color: #4a5568 !important;">Day 5: The Child's Perspective</h2>
+                        <div class="content">
+                            <h2 class="subheader">Day 4: The Parent Benefit</h2>
                             
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                When children know there's another chapter waiting, bedtime transforms from something to resist into something to *anticipate.*
+                            <p class="body-text">
+                                Parents tell us the same thing over and over: reading together at night changes bedtime. Kids settle down faster, routines feel smoother, and the day ends on a positive, connected note.
                             </p>
                             
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Imagine the smile when they climb into bed and ask, "Is it time for the next story?" That excitement is what makes the reading habit stick—and why every new chapter matters.
+                            <p class="body-text">
+                                Even just one short story makes all the difference. It's not about how long you read—it's about being present, together, in a moment your child looks forward to every night.
                             </p>
                             
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Tonight's adventure is ready, and it's the perfect way to make reading the highlight of their day.
+                            <p class="body-text">
+                                Tonight's story is ready to help you wind down and connect—no screens, no distractions, just the two of you and an adventure.
                             </p>
                             
                             <!-- CTA Button -->
                             <div class="cta-container">
-                                <a href="#" class="cta-button">Unlock Tonight's Story</a>
+                                <a href="#" class="cta-button">Read Tonight's Story</a>
                             </div>
                         </div>
                         
                         <!-- Footer -->
                         <div class="footer">
                             <p class="footer-text">
-                                Making bedtime the best part of their day 🧒📖
+                                Creating peaceful bedtimes, one story at a time 💡📚
                             </p>
-
                             
                             <div class="footer-legal">
                                 <p class="footer-text">
                                     You're receiving this email because you signed up for StoryBud.<br>
-                                    <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color: #a0aec0; text-decoration: none;">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                    <a href="#">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
                                 </p>
                                 <p class="footer-text">
                                     Copyright © 2025 StoryBud All Rights Reserved
