@@ -1860,7 +1860,7 @@
                     </div>
                     
                     <!-- Email 5: Credits Running Low -->
-                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/credits_running_low_dm_uat.html', 'Credits Running Low', this)" style="cursor: pointer;">
+                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/power_user_credits_running_low_dm_uat.html', 'Credits Running Low', this)" style="cursor: pointer;">
                         <div class="card-number">5</div>
                         <div class="card-header">
                             <div class="card-icon">⬆️</div>
@@ -1872,7 +1872,7 @@
                 </div>
             </div>
             
-            <!-- Email Preview Container --><!-- Email Preview Container -->
+            <!-- Email Preview Container -->
             <div class="email-preview-container">
                 
                 <!-- Preview Title and Actions -->
@@ -2040,7 +2040,7 @@ This collection contains all email templates for the StoryBud email campaign seq
 - Onboarding: templates/01-onboarding-foundation.html
 - First Story: templates/03-first-story-created.html
 - Education: templates/storybud_education_email.html
-- Power Users: templates/power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html, power_user_impact_email_dm_uat.html, credits_running_low_dm_uat.html
+- Power Users: templates/power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html, power_user_impact_email_dm_uat.html, power_user_credits_running_low_dm_uat.html
 - Retention: templates/retention_email_weekly_md_uat.html, retention_email_monthly_md_uat.html, retention_email_weekly_reading_report_dm_uat.html
 - Credits Low: templates/05-credits-running-low.html
 - Storytime Emails: templates/storytime_email_day1_dm_uat.html through day7_dm_uat.html
@@ -2448,13 +2448,13 @@ StoryBud Team`;
                 };
             }
             
-            // Update active day styling
-            document.querySelectorAll('#power-users-sequence .timeline-day').forEach(day => {
-                day.classList.remove('active-day');
+            // Update active card styling
+            document.querySelectorAll('#power-users-sequence .power-user-card').forEach(card => {
+                card.classList.remove('active-card');
             });
             
             if (clickedElement) {
-                clickedElement.classList.add('active-day');
+                clickedElement.classList.add('active-card');
             }
         }
 
@@ -2707,7 +2707,7 @@ StoryBud Team`;
                         <option value="power_user_education_email_dm_uat.html">Power Users - Education</option>
                         <option value="power_user_pro_tips_md_uat.html">Power Users - Pro Tips</option>
                         <option value="power_user_impact_email_dm_uat.html">Power Users - Impact Report</option>
-                        <option value="credits_running_low_dm_uat.html">Power Users - Credits Running Low</option>
+                        <option value="power_user_credits_running_low_dm_uat.html">Power Users - Credits Running Low</option>
                         <option value="retention_email_weekly_md_uat.html">Retention - Weekly Check-in</option>
                         <option value="retention_email_monthly_md_uat.html">Retention - Monthly Milestone</option>
                         <option value="retention_email_weekly_reading_report_dm_uat.html">Retention - Weekly Reading Report</option>
