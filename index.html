@@ -1254,6 +1254,10 @@
                     <span class="tab-icon">🔄</span>
                     <span class="tab-text">Churn Recovery</span>
                 </button>
+                <button class="sequence-tab" onclick="showSequence('cold', event)">
+                    <span class="tab-icon">❄️</span>
+                    <span class="tab-text">Cold</span>
+                </button>
             </div>
         </div>
         
@@ -1699,6 +1703,75 @@
 
                             </div>
         
+        <!-- Cold Sequence Container -->
+        <div id="cold-sequence" class="sequence-container">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview: Cold Nurture Sequence</h2>
+                    <p>The Cold Nurture Sequence is designed to re-engage completely cold leads who have shown initial interest but have become unresponsive to standard communication. This sequence uses specialized messaging and offers to warm up cold prospects and guide them back into the engagement funnel.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Cold Lead Reactivation</strong> – Reconnect with prospects who have gone completely cold.</li>
+                        <li><strong>Interest Revival</strong> – Reignite interest through compelling offers and value propositions.</li>
+                        <li><strong>Trust Rebuilding</strong> – Establish credibility and demonstrate ongoing value.</li>
+                        <li><strong>Conversion Opportunity</strong> – Provide clear pathways for re-engagement and conversion.</li>
+                        <li><strong>List Hygiene</strong> – Identify truly uninterested prospects for list cleaning.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Day 21:</strong> Nurture Check-in – Gentle re-engagement with value-focused messaging.</li>
+                        <li><strong>Day 21:</strong> Special Offer – Compelling offer or incentive to encourage action.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Recovers cold leads that might otherwise be lost forever.</li>
+                        <li>Provides final opportunity for conversion before list removal.</li>
+                        <li>Helps identify genuinely interested prospects vs. unqualified leads.</li>
+                        <li>Maintains professional relationship even if prospects don't convert.</li>
+                        <li>Improves overall email deliverability through list hygiene.</li>
+                    </ul>
+                    
+                    <p><strong>Cold Outreach Strategy:</strong> This sequence takes a respectful, value-first approach to cold lead reactivation, providing genuine value while making it easy for uninterested prospects to opt out cleanly.</p>
+                </div>
+            </div>
+            
+            <!-- Cold Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">🔗 Email Sequence Timeline</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day active-day" onclick="showColdPreview('templates/dropped_nurture_day21_dm_uat.html', 'Day 21: Nurture Check-in', this)" style="cursor: pointer;">
+                        <div class="day-number">21</div>
+                        <div class="day-name">Day 21</div>
+                        <div class="day-activity">Nurture Check-in</div>
+                    </div>
+                    <div class="timeline-day" onclick="showColdPreview('templates/dropped_nurture_offer_day21_dm_uat.html', 'Day 21: Special Offer', this)" style="cursor: pointer;">
+                        <div class="day-number">21</div>
+                        <div class="day-name">Day 21</div>
+                        <div class="day-activity">Special Offer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Day 21: Nurture Check-in</h3>
+                    <div class="preview-actions">
+                        <a href="templates/dropped_nurture_day21_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/dropped_nurture_day21_dm_uat.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('dropped_nurture_day21_dm_uat.html')">🧪 Send Test Email</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="coldPreviewFrame" src="templates/dropped_nurture_day21_dm_uat.html" class="email-preview-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+        
         <!-- Download Section -->
         <div class="download-section">
             <h2 class="download-title">Test and Ship</h2>
@@ -2078,11 +2151,63 @@ StoryBud Team`;
                 day.classList.remove('active-day');
             });
             
-            if (clickedElement) {
+                        if (clickedElement) {
                 clickedElement.classList.add('active-day');
             }
         }
         
+        // Cold Preview functionality
+        function showColdPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#cold-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('coldPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#cold-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#cold-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update the test email button
+            const testBtn = document.querySelector('#cold-sequence .preview-action-btn.test');
+            if (testBtn) {
+                const filename = emailUrl.split('/').pop();
+                testBtn.onclick = function() {
+                    openTestEmailModal(filename);
+                };
+            }
+            
+            // Update active day styling
+            document.querySelectorAll('#cold-sequence .timeline-day').forEach(day => {
+                day.classList.remove('active-day');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-day');
+            }
+        }
+
         // Notification system
         function showNotification(message, type = 'info') {
             // Remove existing notifications
@@ -2322,6 +2447,8 @@ StoryBud Team`;
                         <option value="storytime_email_day5_dm_uat.html">Retention - Day 5: Child's View</option>
                         <option value="storytime_email_day6_dm_uat.html">Retention - Day 6: Upgrade Tease</option>
                         <option value="storytime_email_day7_dm_uat.html">Retention - Day 7: Milestone</option>
+                        <option value="dropped_nurture_day21_dm_uat.html">Cold - Day 21: Nurture Check-in</option>
+                        <option value="dropped_nurture_offer_day21_dm_uat.html">Cold - Day 21: Special Offer</option>
                     </select>
                 </div>
                 <div class="form-group">
