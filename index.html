@@ -1372,18 +1372,20 @@
         <div class="description-section">
             <div class="description">
                     <h2>📋 Campaign Overview: Onboarding Sequence</h2>
-                <p>The Onboarding Sequence is a streamlined 2-email series designed to welcome new users and celebrate their first milestone. This focused approach reduces overwhelm while establishing a strong foundation for user engagement and product adoption.</p>
+                <p>The Onboarding Sequence is a 3-email series designed to welcome new users, celebrate their first milestone, and provide ongoing support. This focused approach establishes a strong foundation for user engagement and product adoption while maintaining regular touchpoints.</p>
                 
                 <h3>Key Objectives</h3>
                 <ol>
                     <li><strong>Welcome & Orientation</strong> – Establish a warm first impression, set expectations, and highlight the immediate value of the platform.</li>
                     <li><strong>First Success Celebration</strong> – Celebrate the user's first story creation milestone and encourage continued engagement.</li>
+                    <li><strong>Weekly Check-in</strong> – Maintain momentum with regular touchpoints and progress encouragement.</li>
                 </ol>
                 
                 <h3>Structure of the Sequence</h3>
                 <ul>
                     <li><strong>Day 0–1:</strong> Welcome Email – Friendly greeting, brand story, and first call-to-action.</li>
                     <li><strong>Day 2–4:</strong> First Story Created – Celebration and encouragement when users create their first story.</li>
+                    <li><strong>Week 1:</strong> Check-in – Weekly touchpoint with progress encouragement and continued engagement.</li>
                 </ul>
                 
                 <h3>Benefits of the Sequence</h3>
@@ -1408,6 +1410,10 @@
                     <div class="progress-step" onclick="showOnboardingPreview('templates/onboarding_first_story_created_dm_uat.html', 'Day 2-4: First Story Created', this)" style="cursor: pointer;">
                     <div class="step-number">2</div>
                     <div class="step-label">Day 2-4: First Story Created</div>
+                </div>
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/onboarding_email_week1_md_uat.html', 'Week 1: Check-in', this)" style="cursor: pointer;">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Week 1: Check-in</div>
                 </div>
             </div>
         </div>
@@ -1907,7 +1913,7 @@
                     
                     <h3>Structure of the Sequence</h3>
                     <ul>
-                        <li><strong>Weekly Check-in:</strong> Regular engagement touchpoint with reading progress and encouragement.</li>
+
                         <li><strong>Monthly Milestone:</strong> Monthly celebration of achievements and continued value delivery.</li>
                         <li><strong>Weekly Reading Report:</strong> Detailed progress report with personalized insights and next steps.</li>
                     </ul>
@@ -1929,12 +1935,8 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">🔄 Email Sequence Timeline</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day active-day" onclick="showRetentionNewPreview('templates/retention_email_weekly_md_uat.html', 'Weekly Check-in', this)" style="cursor: pointer;">
-                        <div class="day-number">1</div>
-                        <div class="day-name">Weekly</div>
-                        <div class="day-activity">Weekly Check-in</div>
-                    </div>
-                    <div class="timeline-day" onclick="showRetentionNewPreview('templates/retention_email_monthly_md_uat.html', 'Monthly Milestone', this)" style="cursor: pointer;">
+
+                    <div class="timeline-day active-day" onclick="showRetentionNewPreview('templates/retention_email_monthly_md_uat.html', 'Monthly Milestone', this)" style="cursor: pointer;">
                         <div class="day-number">2</div>
                         <div class="day-name">Monthly</div>
                         <div class="day-activity">Monthly Milestone</div>
@@ -2035,10 +2037,10 @@ This collection contains all email templates for the StoryBud email campaign seq
 - Qualified Day 5-7 Education: templates/3_qualified_lead_first_activation.html
 - Qualified Day 8-10 Engagement: templates/4_qualified_lead_encouragement.html
 - Qualified Day 11-14 Retention: templates/5_qualified_lead_day10_followup.html
-- Onboarding: templates/onboarding_welcome_email_dm_uat.html, onboarding_first_story_created_dm_uat.html
+- Onboarding: templates/onboarding_welcome_email_dm_uat.html, onboarding_first_story_created_dm_uat.html, onboarding_email_week1_md_uat.html
 - Education: templates/storybud_education_email.html
 - Power Users: templates/power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html, power_user_impact_email_dm_uat.html, power_user_credits_running_low_dm_uat.html
-- Retention: templates/retention_email_weekly_md_uat.html, retention_email_monthly_md_uat.html, retention_email_weekly_reading_report_dm_uat.html
+- Retention: templates/retention_email_monthly_md_uat.html, retention_email_weekly_reading_report_dm_uat.html
 - Credits Low: templates/05-credits-running-low.html
 - Storytime Emails: templates/storytime_email_day1_dm_uat.html through day7_dm_uat.html
 - Retention Emails: templates/retention_email_week1.html, week2.html, month1.html, month3.html
@@ -2705,7 +2707,7 @@ StoryBud Team`;
                         <option value="power_user_pro_tips_md_uat.html">Power Users - Pro Tips</option>
                         <option value="power_user_impact_email_dm_uat.html">Power Users - Impact Report</option>
                         <option value="power_user_credits_running_low_dm_uat.html">Power Users - Credits Running Low</option>
-                        <option value="retention_email_weekly_md_uat.html">Retention - Weekly Check-in</option>
+
                         <option value="retention_email_monthly_md_uat.html">Retention - Monthly Milestone</option>
                         <option value="retention_email_weekly_reading_report_dm_uat.html">Retention - Weekly Reading Report</option>
                     </select>
