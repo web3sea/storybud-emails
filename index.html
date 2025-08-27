@@ -1410,7 +1410,7 @@
                     <div class="step-number">2</div>
                     <div class="step-label">Day 2-4: First Activation</div>
                 </div>
-                    <div class="progress-step" onclick="showOnboardingPreview('templates/education_email_dm_uat.html', 'Day 5-7: Education', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/power_user_power_user_education_email_dm_uat.html', 'Day 5-7: Education', this)" style="cursor: pointer;">
                     <div class="step-number">3</div>
                     <div class="step-label">Day 5-7: Education</div>
                 </div>
@@ -1818,21 +1818,21 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">⚡ Email Sequence Timeline</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day active-day" onclick="showPowerUsersPreview('templates/premium_features_email_dm_uat.html', 'Premium Features', this)" style="cursor: pointer;">
+                    <div class="timeline-day active-day" onclick="showPowerUsersPreview('templates/power_user_power_user_premium_features_email_dm_uat.html', 'Premium Features', this)" style="cursor: pointer;">
                         <div class="day-number">1</div>
                         <div class="day-name">Features</div>
                         <div class="day-activity">Premium Features</div>
                     </div>
-                    <div class="timeline-day" onclick="showPowerUsersPreview('templates/education_email_dm_uat.html', 'Education', this)" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showPowerUsersPreview('templates/power_user_power_user_education_email_dm_uat.html', 'Education', this)" style="cursor: pointer;">
                         <div class="day-number">2</div>
                         <div class="day-name">Learn</div>
                         <div class="day-activity">Education</div>
                     </div>
-                    <div class="timeline-day" onclick="showPowerUsersPreview('templates/pro_tips_md_uat.html', 'Pro Tips', this)" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showPowerUsersPreview('templates/power_user_power_user_pro_tips_md_uat.html', 'Pro Tips', this)" style="cursor: pointer;">
                         <div class="day-number">3</div>
                         <div class="day-name">Expert</div>
                         <div class="day-activity">Pro Tips</div>
-                        <div class="timeline-day" onclick="showPowerUsersPreview('templates/impact_email_dm_uat.html', 'Impact Report', this)" style="cursor: pointer;">
+                        <div class="timeline-day" onclick="showPowerUsersPreview('templates/power_user_power_user_impact_email_dm_uat.html', 'Impact Report', this)" style="cursor: pointer;">
                             <div class="day-number">4</div>
                             <div class="day-name">Impact</div>
                             <div class="day-activity">Impact Report</div>
@@ -1853,14 +1853,14 @@
                 <div class="preview-header">
                     <h3 class="preview-title">Premium Features</h3>
                     <div class="preview-actions">
-                        <a href="templates/premium_features_email_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
-                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/premium_features_email_dm_uat.html')">Download</button>
-                        <button class="preview-action-btn test" onclick="openTestEmailModal('premium_features_email_dm_uat.html')">🧪 Send Test Email</button>
+                        <a href="templates/power_user_power_user_premium_features_email_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/power_user_power_user_premium_features_email_dm_uat.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('power_user_premium_features_email_dm_uat.html')">🧪 Send Test Email</button>
                     </div>
                 </div>
                 
                 <!-- Email Preview iframe -->
-                <iframe id="powerUsersPreviewFrame" src="templates/premium_features_email_dm_uat.html" class="email-preview-iframe"></iframe>
+                <iframe id="powerUsersPreviewFrame" src="templates/power_user_power_user_premium_features_email_dm_uat.html" class="email-preview-iframe"></iframe>
             </div>
         </div>
         
@@ -1937,13 +1937,13 @@ This collection contains all email templates for the StoryBud email campaign seq
 - Onboarding: templates/01-onboarding-foundation.html
 - First Story: templates/03-first-story-created.html
 - Education: templates/storybud_education_email.html
-- Power Users: templates/premium_features_email_dm_uat.html, education_email_dm_uat.html, pro_tips_md_uat.html, impact_email_dm_uat.html, credits_running_low_dm_uat.html
+- Power Users: templates/power_user_power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html, power_user_impact_email_dm_uat.html, credits_running_low_dm_uat.html
 - Credits Low: templates/05-credits-running-low.html
 - Storytime Emails: templates/storytime_email_day1_dm_uat.html through day7_dm_uat.html
 - Retention Emails: templates/retention_email_week1.html, week2.html, month1.html, month3.html
 - Churn Recovery: templates/churn_recovery5_dm_uat.html, churn_recovery7_dm_uat.html, churn_recovery20_dm_uat.html
 - Cold Outreach: templates/dropped_nurture_day21_dm_uat.html, dropped_nurture_offer_day21_dm_uat.html
-- Power Users: templates/premium_features_email_dm_uat.html, education_email_dm_uat.html, pro_tips_md_uat.html
+- Power Users: templates/power_user_power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html
 
 ## Implementation Notes
 - All templates use responsive design
@@ -2598,10 +2598,10 @@ StoryBud Team`;
                         <option value="churn_recover20_dm_uat.html">Churn Recovery - Day 20: Final Push</option>
                         <option value="dropped_nurture_day21_dm_uat.html">Cold - Day 21: Nurture Check-in</option>
                         <option value="dropped_nurture_offer_day21_dm_uat.html">Cold - Day 21: Special Offer</option>
-                        <option value="premium_features_email_dm_uat.html">Power Users - Premium Features</option>
-                        <option value="education_email_dm_uat.html">Power Users - Education</option>
-                        <option value="pro_tips_md_uat.html">Power Users - Pro Tips</option>
-                        <option value="impact_email_dm_uat.html">Power Users - Impact Report</option>
+                        <option value="power_user_premium_features_email_dm_uat.html">Power Users - Premium Features</option>
+                        <option value="power_user_education_email_dm_uat.html">Power Users - Education</option>
+                        <option value="power_user_pro_tips_md_uat.html">Power Users - Pro Tips</option>
+                        <option value="power_user_impact_email_dm_uat.html">Power Users - Impact Report</option>
                         <option value="credits_running_low_dm_uat.html">Power Users - Credits Running Low</option>
                     </select>
                 </div>
