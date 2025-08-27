@@ -1385,7 +1385,6 @@
                     <li><strong>Day 2–4:</strong> First Activation Prompt – Clear guidance to complete a key setup step or experience core functionality.</li>
                     <li><strong>Day 5–7:</strong> Education & Use Cases – Practical tips, examples, and quick wins to drive confidence.</li>
                     <li><strong>Day 8–10:</strong> Engagement Reminder – Encouragement, troubleshooting help, and reassurance if progress has stalled.</li>
-                    <li><strong>Day 11–14:</strong> Upgrade/Retention Nudge – Highlight premium features, success stories, and long-term benefits.</li>
                 </ul>
                 
                 <h3>Benefits of the Sequence</h3>
@@ -1418,11 +1417,6 @@
                     <div class="progress-step" onclick="showOnboardingPreview('templates/retention_email_weekly_reading_report_dm_uat.html', 'Day 8-10: Engagement', this)" style="cursor: pointer;">
                     <div class="step-number">4</div>
                     <div class="step-label">Day 8-10: Engagement</div>
-                </div>
-
-                    <div class="progress-step" onclick="showOnboardingPreview('templates/credits_running_low_dm_uat.html', 'Day 11-14: Upgrade', this)" style="cursor: pointer;">
-                    <div class="step-number">5</div>
-                    <div class="step-label">Day 11-14: Upgrade</div>
                 </div>
             </div>
         </div>
@@ -1804,6 +1798,7 @@
                         <li><strong>Education:</strong> In-depth tutorials and best practice guides for maximum platform utilization.</li>
                         <li><strong>Pro Tips:</strong> Expert strategies, shortcuts, and optimization techniques for power users.</li>
                         <li><strong>Impact Report:</strong> Showcase user success metrics and demonstrate platform value through personalized impact data.</li>
+                        <li><strong>Credits Running Low:</strong> Targeted upgrade messaging for power users approaching usage limits, emphasizing premium features and increased capacity.</li>
                     </ul>
                     
                     <h3>Benefits of the Sequence</h3>
@@ -1841,6 +1836,11 @@
                             <div class="day-number">4</div>
                             <div class="day-name">Impact</div>
                             <div class="day-activity">Impact Report</div>
+                        </div>
+                        <div class="timeline-day" onclick="showPowerUsersPreview('templates/credits_running_low_dm_uat.html', 'Credits Running Low', this)" style="cursor: pointer;">
+                            <div class="day-number">5</div>
+                            <div class="day-name">Upgrade</div>
+                            <div class="day-activity">Credits Running Low</div>
                         </div>
                     </div>
                 </div>
@@ -1937,7 +1937,7 @@ This collection contains all email templates for the StoryBud email campaign seq
 - Onboarding: templates/01-onboarding-foundation.html
 - First Story: templates/03-first-story-created.html
 - Education: templates/storybud_education_email.html
-- Power Users: templates/premium_features_email_dm_uat.html, education_email_dm_uat.html, pro_tips_md_uat.html, impact_email_dm_uat.html
+- Power Users: templates/premium_features_email_dm_uat.html, education_email_dm_uat.html, pro_tips_md_uat.html, impact_email_dm_uat.html, credits_running_low_dm_uat.html
 - Credits Low: templates/05-credits-running-low.html
 - Storytime Emails: templates/storytime_email_day1_dm_uat.html through day7_dm_uat.html
 - Retention Emails: templates/retention_email_week1.html, week2.html, month1.html, month3.html
@@ -2585,7 +2585,7 @@ StoryBud Team`;
                         <option value="03-first-story-created.html">Adoption - Day 2-4: First Activation</option>
                         <option value="storybud_education_email.html">Adoption - Day 5-7: Education</option>
                         <option value="04-weekly-reading-report.html">Adoption - Day 8-10: Engagement</option>
-                        <option value="05-credits-running-low.html">Adoption - Day 11-14: Upgrade</option>
+
                         <option value="storytime_email_day1_dm_uat.html">Retention - Day 1: Welcome</option>
                         <option value="storytime_email_day2_dm_uat.html">Retention - Day 2-4: Building</option>
                         <option value="storytime_email_day3_dm_uat.html">Retention - Day 3: Momentum</option>
@@ -2595,13 +2595,14 @@ StoryBud Team`;
                         <option value="storytime_email_day7_dm_uat.html">Retention - Day 7: Milestone</option>
                         <option value="churn_recovery5_dm_uat.html">Churn Recovery - Day 5: Re-engagement</option>
                         <option value="churn_recovery7_dm_uat.html">Churn Recovery - Day 7: Value Reminder</option>
-                        <option value="impact_email_dm_uat.html">Power Users - Impact Report</option>
                         <option value="churn_recover20_dm_uat.html">Churn Recovery - Day 20: Final Push</option>
                         <option value="dropped_nurture_day21_dm_uat.html">Cold - Day 21: Nurture Check-in</option>
                         <option value="dropped_nurture_offer_day21_dm_uat.html">Cold - Day 21: Special Offer</option>
                         <option value="premium_features_email_dm_uat.html">Power Users - Premium Features</option>
                         <option value="education_email_dm_uat.html">Power Users - Education</option>
                         <option value="pro_tips_md_uat.html">Power Users - Pro Tips</option>
+                        <option value="impact_email_dm_uat.html">Power Users - Impact Report</option>
+                        <option value="credits_running_low_dm_uat.html">Power Users - Credits Running Low</option>
                     </select>
                 </div>
                 <div class="form-group">
