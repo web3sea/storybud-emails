@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlock Your Child's Reading Potential | StoryBud</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* Import brand fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,10 +16,10 @@
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #374151;
-            background: #F8FAFC;
+            background: linear-gradient(135deg, #F3F4F6 0%, #F9FAFB 100%);
             min-height: 100vh;
         }
         
@@ -24,24 +27,40 @@
             max-width: 600px;
             margin: 0 auto;
             background: #FFFFFF;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
             margin-top: 20px;
             margin-bottom: 20px;
             border: 1px solid #E5E7EB;
         }
         
         .header {
-            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%);
             padding: 32px 30px;
             text-align: center;
             position: relative;
+            color: white;
         }
         
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 25% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
+                radial-gradient(1px 1px at 75% 35%, rgba(252, 211, 77, 0.2) 50%, transparent 50%),
+                radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
+                radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
         
         .logo {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 32px;
             font-weight: 700;
             color: white;
@@ -69,17 +88,17 @@
         }
         
         .hero-title {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 24px;
             font-weight: 600;
-            color: #111827;
+            color: #1F2937;
             margin-bottom: 15px;
             line-height: 1.3;
         }
         
         .hero-subtitle {
             font-size: 16px;
-            color: #6B7280;
+            color: #475569;
             margin-bottom: 30px;
             line-height: 1.5;
         }
@@ -89,18 +108,19 @@
         }
         
         .feature-card {
-            background: #F9FAFB;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 16px;
-            border: 1px solid #E5E7EB;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(167, 139, 250, 0.05) 100%);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
             transition: all 0.2s ease;
         }
         
-        
         .feature-card:hover {
-            background: #FFFFFF;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.08);
+            background: rgba(139, 92, 246, 0.05);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
+            border-color: rgba(139, 92, 246, 0.2);
+            transform: translateY(-2px);
         }
         
         .feature-header {
@@ -115,136 +135,185 @@
         }
         
         .feature-title {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 18px;
             font-weight: 600;
-            color: #111827;
+            color: #7C3AED;
         }
         
         .feature-description {
-            color: #4B5563;
-            font-size: 14px;
+            color: #475569;
+            font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         
         .feature-highlight {
-            background: rgba(139, 92, 246, 0.1);
-            border-radius: 6px;
-            padding: 8px 12px;
-            font-size: 12px;
-            color: #8B5CF6;
-            font-weight: 500;
-            margin-bottom: 15px;
+            background: linear-gradient(135deg, rgba(249, 168, 212, 0.15) 0%, rgba(251, 207, 232, 0.2) 100%);
+            border: 1px solid rgba(249, 168, 212, 0.3);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+            color: #7C3AED;
+            font-weight: 600;
+            margin-bottom: 0;
             display: inline-block;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
             color: white;
             text-decoration: none;
             padding: 10px 20px;
-            border-radius: 8px;
+            border-radius: 50px;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
         }
         
         .cta-button:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.3);
         }
         
         .final-cta {
-            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A855F7 100%);
             padding: 32px 30px;
             text-align: center;
             color: white;
+            position: relative;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(3px 3px at 15% 20%, rgba(252, 211, 77, 0.4) 50%, transparent 50%),
+                radial-gradient(2px 2px at 85% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
+                radial-gradient(4px 4px at 25% 75%, rgba(252, 211, 77, 0.4) 50%, transparent 50%),
+                radial-gradient(2px 2px at 75% 80%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
+            background-repeat: no-repeat;
+            pointer-events: none;
         }
         
         .final-cta h3 {
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 22px;
             font-weight: 600;
             margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
         }
         
         .final-cta p {
             font-size: 16px;
             margin-bottom: 25px;
-            opacity: 0.9;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
         }
         
         .final-cta-button {
             display: inline-block;
-            background: #FCD34D;
+            background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
             color: #1F2937;
             text-decoration: none;
             padding: 15px 30px;
-            border-radius: 12px;
+            border-radius: 50px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(252, 211, 77, 0.3);
+            box-shadow: 0 8px 25px rgba(252, 211, 77, 0.4);
+            position: relative;
+            z-index: 1;
         }
         
         .final-cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(252, 211, 77, 0.4);
+            box-shadow: 0 12px 35px rgba(252, 211, 77, 0.5);
         }
         
         .footer {
-            background: #F9FAFB;
-            padding: 24px 30px;
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+            padding: 40px 30px;
             text-align: center;
-            color: #6B7280;
             border-top: 1px solid #E5E7EB;
+        }
+        
+        .footer-logo {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #7C3AED;
+            margin: 0 0 10px 0;
+        }
+        
+        .footer-tagline {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 25px 0;
+            font-style: italic;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .footer-greeting {
             font-size: 16px;
-            color: #111827;
-            font-weight: 500;
+            color: #7C3AED;
+            font-weight: 600;
             margin-bottom: 10px;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .footer-team {
             font-size: 14px;
-            color: #6B7280;
+            color: #475569;
             font-style: italic;
             margin-bottom: 20px;
         }
         
         .footer-links {
-            margin-bottom: 25px;
+            margin: 20px 0;
         }
         
         .footer-links a {
             color: #6B7280;
             text-decoration: none;
-            font-size: 13px;
-            margin: 0 15px;
+            font-size: 14px;
+            margin: 0 12px;
             transition: color 0.2s ease;
         }
         
         .footer-links a:hover {
-            color: #8B5CF6;
+            color: #7C3AED;
+            text-decoration: underline;
         }
         
         .footer-subscription {
-            font-size: 11px;
+            font-size: 13px;
             color: #9CA3AF;
             margin-bottom: 15px;
+            line-height: 1.4;
         }
         
         .footer-subscription a {
-            color: #8B5CF6;
+            color: #7C3AED;
             text-decoration: none;
         }
         
+        .footer-subscription a:hover {
+            text-decoration: underline;
+        }
+        
         .footer-copyright {
-            font-size: 10px;
+            font-size: 13px;
             color: #9CA3AF;
         }
         
@@ -269,7 +338,7 @@
             }
             
             .header-subtitle {
-                font-size: 14px !important;
+                font-size: 16px !important;
                 line-height: 1.4 !important;
             }
             
@@ -278,8 +347,8 @@
             }
             
             .hero-title {
-                font-size: 24px !important;
-                line-height: 1.2 !important;
+                font-size: 22px !important;
+                line-height: 1.3 !important;
             }
             
             .hero-subtitle {
@@ -287,11 +356,8 @@
                 line-height: 1.5 !important;
             }
             
-            /* Grid Layout Optimization */
             .feature-grid {
                 padding: 15px 20px 30px !important;
-                gap: 20px !important;
-                grid-template-columns: 1fr !important;
             }
             
             .feature-card {
@@ -302,7 +368,7 @@
             .feature-header {
                 flex-direction: column !important;
                 text-align: center !important;
-                gap: 15px !important;
+                gap: 10px !important;
             }
             
             .feature-icon {
@@ -314,22 +380,22 @@
             .feature-title {
                 font-size: 18px !important;
                 line-height: 1.3 !important;
+                margin-bottom: 10px !important;
             }
             
             .feature-description {
                 font-size: 15px !important;
-                line-height: 1.5 !important;
+                line-height: 1.6 !important;
             }
             
             .feature-highlight {
-                font-size: 14px !important;
+                font-size: 13px !important;
                 line-height: 1.4 !important;
-                padding: 12px !important;
+                padding: 10px 12px !important;
             }
             
             .final-cta {
-                margin: 25px -20px !important;
-                padding: 20px !important;
+                padding: 30px 20px !important;
             }
             
             .final-cta h3 {
@@ -342,7 +408,6 @@
                 line-height: 1.5 !important;
             }
             
-            /* Button Optimization */
             .cta-button {
                 padding: 14px 24px !important;
                 font-size: 14px !important;
@@ -366,7 +431,20 @@
             }
             
             .footer {
-                padding: 25px 20px !important;
+                padding: 30px 20px !important;
+            }
+            
+            .footer-logo {
+                font-size: 20px !important;
+            }
+            
+            .footer-tagline {
+                font-size: 14px !important;
+            }
+            
+            .footer-links a {
+                display: block !important;
+                margin: 8px 0 !important;
             }
         }
         
@@ -385,7 +463,7 @@
             }
             
             .hero-title {
-                font-size: 22px !important;
+                font-size: 20px !important;
             }
             
             .feature-grid {
@@ -397,18 +475,19 @@
             }
             
             .final-cta {
-                margin: 20px -15px !important;
-                padding: 18px !important;
+                padding: 25px 15px !important;
             }
             
             .cta-button {
                 padding: 12px 20px !important;
                 font-size: 13px !important;
+                width: calc(100% - 40px) !important;
             }
             
             .final-cta-button {
                 padding: 14px 28px !important;
                 font-size: 15px !important;
+                width: calc(100% - 56px) !important;
             }
         }
         
@@ -427,7 +506,7 @@
             }
             
             .hero-title {
-                font-size: 20px !important;
+                font-size: 18px !important;
             }
             
             .feature-grid {
@@ -439,95 +518,105 @@
             }
             
             .final-cta {
-                margin: 18px -12px !important;
-                padding: 16px !important;
+                padding: 20px 12px !important;
             }
             
             .cta-button {
                 padding: 10px 18px !important;
                 font-size: 12px !important;
+                width: calc(100% - 36px) !important;
             }
             
             .final-cta-button {
                 padding: 12px 24px !important;
                 font-size: 14px !important;
+                width: calc(100% - 48px) !important;
             }
         }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body,
-            body[style],
-            center[style] {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                color: #E0E0E0 !important;
+            body {
+                background: linear-gradient(135deg, #1F2937 0%, #111827 100%) !important;
             }
             
             .email-container {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
+                background: #1F2937 !important;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #4a5568 !important;
+                border-color: #374151 !important;
             }
             
             .header {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #4a5568 100%) !important;
+                background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A855F7 100%) !important;
             }
             
-            .content {
-                color: #2d3748 !important;
+            .hero-section {
+                background: #1F2937 !important;
             }
             
             .hero-title {
-                color: #f7fafc !important;
+                color: #F9FAFB !important;
             }
             
             .hero-subtitle {
-                color: #2d3748 !important;
+                color: #F3F4F6 !important;
             }
             
             .feature-card {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
+                background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(139, 92, 246, 0.15) 100%) !important;
+                border-color: rgba(124, 58, 237, 0.3) !important;
+            }
+            
+            .feature-card:hover {
+                background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(139, 92, 246, 0.2) 100%) !important;
+                border-color: rgba(124, 58, 237, 0.4) !important;
             }
             
             .feature-title {
-                color: #f7fafc !important;
+                color: #A78BFA !important;
             }
             
             .feature-description {
-                color: #2d3748 !important;
+                color: #F3F4F6 !important;
             }
             
             .feature-highlight {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-                color: #f7fafc !important;
+                background: linear-gradient(135deg, rgba(249, 168, 212, 0.2) 0%, rgba(251, 207, 232, 0.25) 100%) !important;
+                border-color: rgba(249, 168, 212, 0.4) !important;
+                color: #A78BFA !important;
             }
             
             .final-cta {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
-                border-color: #4a5568 !important;
-            }
-            
-            .final-cta h3 {
-                color: #f7fafc !important;
-            }
-            
-            .final-cta p {
-                color: #2d3748 !important;
+                background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A855F7 100%) !important;
             }
             
             .footer {
-                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
-                border-top-color: #4a5568 !important;
+                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
+                border-top-color: #374151 !important;
             }
             
-            .footer-greeting,
-            .footer-team,
-            .footer-links a,
-            .footer-subscription,
-            .footer-copyright {
-                color: #a0aec0 !important;
+            .footer-logo {
+                color: #A78BFA !important;
+            }
+            
+            .footer-tagline, .footer-greeting, .footer-team {
+                color: #D1D5DB !important;
+            }
+            
+            .footer-links a {
+                color: #9CA3AF !important;
+            }
+            
+            .footer-links a:hover {
+                color: #A78BFA !important;
+            }
+            
+            .footer-subscription, .footer-copyright {
+                color: #6B7280 !important;
+            }
+            
+            .footer-subscription a {
+                color: #A78BFA !important;
             }
         }
     </style>
@@ -535,14 +624,14 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <div class="logo">StoryBud</div>
-            <div class="header-subtitle">Where Every Child Becomes the Hero</div>
+            <div class="logo">✨ StoryBud</div>
+            <div class="header-subtitle">Where Every Child Becomes the Hero.</div>
         </div>
         
         <div class="content">
             <div class="hero-section">
                 <h1 class="hero-title">Unlock Your Child's Reading Potential <span class="magic-sparkle">✨</span></h1>
-                <p class="hero-subtitle">Discover the powerful features that make StoryBud more than just storytelling – it's a complete reading development platform designed to inspire lifelong readers.</p>
+                <p class="hero-subtitle">Discover the powerful features that make StoryBud more than just storytelling — it's a complete reading development platform designed to inspire lifelong readers.</p>
             </div>
             
             <div class="feature-grid">
@@ -552,8 +641,7 @@
                         <h3 class="feature-title">Smart Personalization</h3>
                     </div>
                     <p class="feature-description">Stories that adapt to your child's age and reading level. Watch vocabulary grow and comprehension improve with AI-powered content that matches their interests and development stage.</p>
-                    <div class="feature-highlight">🔖 Age-Adaptive Reading</div>
-                    <a href="#" class="cta-button">Explore personalization features →</a>
+                    <div class="feature-highlight">📖 Age-Adaptive Reading</div>
                 </div>
                 
                 <div class="feature-card">
@@ -562,8 +650,7 @@
                         <h3 class="feature-title">Captivating Illustrations & Animations</h3>
                     </div>
                     <p class="feature-description">Beautiful AI-generated artwork brings stories to life with your child as the hero. Choose from multiple art styles to create visually stunning adventures that enhance visual learning and imagination. Add 5-second animations to each story page for extra magic.</p>
-                    <div class="feature-highlight">🔖 Visual Learning Magic</div>
-                    <a href="#" class="cta-button">See examples →</a>
+                    <div class="feature-highlight">📖 Visual Learning Magic</div>
                 </div>
                 
                 <div class="feature-card">
@@ -573,7 +660,6 @@
                     </div>
                     <p class="feature-description">The magic moment: "That's ME in the story!" Upload your child's photo to feature them in every illustration. Watch engagement soar when they become the hero of their own adventures.</p>
                     <div class="feature-highlight">💚 Builds Confidence & Connection</div>
-                    <a href="#" class="cta-button">How it works →</a>
                 </div>
                 
                 <div class="feature-card">
@@ -582,8 +668,7 @@
                         <h3 class="feature-title">Immersive Narration</h3>
                     </div>
                     <p class="feature-description">Professional voice acting with precise word highlighting helps children follow along and improve reading skills. Choose from multiple narrator voices or upgrade to clone your own voice for that personal touch.</p>
-                    <div class="feature-highlight">🔖 Parents Who Travel Love This</div>
-                    <a href="#" class="cta-button">Hear samples →</a>
+                    <div class="feature-highlight">📖 Parents Who Travel Love This</div>
                 </div>
                 
                 <div class="feature-card">
@@ -592,29 +677,34 @@
                         <h3 class="feature-title">Community Story Library</h3>
                     </div>
                     <p class="feature-description">Join our growing community of storytelling families. Access a diverse library of parent-created stories and share your own magical creations to inspire others.</p>
-                    <div class="feature-highlight">🔖 Free Stories</div>
-                    <a href="#" class="cta-button">Explore the library →</a>
+                    <div class="feature-highlight">📖 Free Stories</div>
                 </div>
             </div>
             
             <div class="final-cta">
                 <h3>Start Your Reading Journey Today! <span class="magic-sparkle">🚀</span></h3>
-                <p>Create your first personalized story in 60 seconds. No waiting, no shipping – just instant access to AI-powered stories that make your child the hero. Start building reading confidence today!</p>
-                <a href="#" class="final-cta-button">Start Your Free Story →</a>
+                <p>Create your first personalized story in 60 seconds. No waiting, no shipping — just instant access to AI-powered stories that make your child the hero. Start building reading confidence today!</p>
+                <a href="#" class="final-cta-button">Start Your Free 14-Day Trial →</a>
             </div>
         </div>
         
         <div class="footer">
-            <div class="footer-greeting">Happy storytelling! ✨</div>
+            <div class="footer-logo">✨ StoryBud</div>
+            <p class="footer-tagline">"Every child deserves their own story."</p>
+            
+            <div class="footer-greeting">Happy storytelling!</div>
             <div class="footer-team">The StoryBud Team</div>
+            
             <div class="footer-links">
-                <a href="#">About StoryBud</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Support Team</a>
+                <a href="https://storybud.com/contact">Support</a>
+                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
+                <a href="https://storybud.com/terms-of-service">Terms</a>
             </div>
+            
             <div class="footer-subscription">
                 You're receiving this email because you signed up for StoryBud.<br>
-                <a href="#">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | StoryBud Inc.<br>
+                1111B South Governors Avenue, STE 37071, Dover, DE 19904
             </div>
             <div class="footer-copyright">Copyright © 2025 StoryBud All Rights Reserved</div>
         </div>

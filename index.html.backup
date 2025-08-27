@@ -1,0 +1,2755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryBud Email Templates</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #F3F4F6, #E8F4FD);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+            position: relative;
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            border: none;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+        }
+        
+        .main-title {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 3.5rem;
+            color: #8B5CF6;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #6B7280;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        /* Description Section */
+        .description-section {
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+        }
+        
+        .description {
+            background: #F9FAFB;
+            border: 2px solid #E5E7EB;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .description h3 {
+            color: #374151;
+            font-size: 1.4rem;
+            margin: 30px 0 20px 0;
+            font-weight: 700;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #8B5CF6;
+        }
+        
+        .description h3:first-child {
+            margin-top: 0;
+        }
+        
+        .description p {
+            color: #6B7280;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .description ol, .description ul {
+            color: #6B7280;
+            margin: 15px 0 25px 25px;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .description li {
+            margin-bottom: 12px;
+        }
+        
+        .description strong {
+            color: #374151;
+            font-weight: 600;
+        }
+        
+        /* Templates Section */
+        .templates-section {
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #8B5CF6;
+            margin-bottom: 50px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .template-card {
+            background: linear-gradient(135deg, #F9FAFB, #F3F4F6);
+            border: 2px solid #E5E7EB;
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .template-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8B5CF6, #A78BFA, #C4B5FD);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .template-card:hover {
+            border-color: #8B5CF6;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+        }
+        
+        .template-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .template-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .template-icon {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            filter: drop-shadow(2px 2px 4px rgba(139, 92, 246, 0.2));
+        }
+        
+        .template-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #374151;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .template-description {
+            color: #6B7280;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .template-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .template-link {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .template-link:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .preview-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #F3F4F6;
+            color: #6B7280;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid #E5E7EB;
+        }
+        
+        .preview-btn:hover {
+            background: #E5E7EB;
+            color: #374151;
+            border-color: #8B5CF6;
+        }
+        
+
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .header-section, .description-section, .templates-section {
+                padding: 30px 25px;
+                margin-bottom: 40px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .template-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .template-actions {
+                flex-direction: column;
+            }
+            
+            .template-link, .preview-btn {
+            text-align: center;
+                justify-content: center;
+            }
+            
+            /* Email Preview Container Responsive */
+            .email-preview-container {
+                margin: 20px 0;
+            }
+            
+            .preview-header {
+                padding: 20px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            
+            .preview-title {
+                font-size: 1.3rem;
+            }
+            
+            .preview-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .preview-content {
+                padding: 20px;
+            }
+            
+            .email-preview-iframe {
+                height: 400px;
+            }
+            
+
+        }
+        
+        /* Sequence Navigation */
+        .sequence-navigation {
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px 40px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+            position: relative;
+        }
+        
+        .sequence-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: #8B5CF6;
+            margin-bottom: 20px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-shadow: 2px 2px 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .sequence-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #6B7280;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        
+        .sequence-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .sequence-tab {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            border: 2px solid #E5E7EB;
+            color: #6B7280;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .sequence-tab:hover {
+            background: linear-gradient(135deg, #E5E7EB, #D1D5DB);
+            color: #374151;
+            border-color: #8B5CF6;
+            transform: translateY(-2px);
+        }
+        
+        .sequence-tab.active {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            border-color: #8B5CF6;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+        
+        .sequence-tab.active:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(139, 92, 246, 0.4);
+        }
+        
+        .tab-icon {
+            font-size: 1.3rem;
+        }
+        
+        .tab-text {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        /* Sequence Containers */
+        .sequence-container {
+            display: none;
+        }
+        
+        .sequence-container.active {
+            display: block;
+        }
+        
+        /* Timeline Styles */
+        .timeline-container {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+                margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+        }
+        
+        .timeline-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #8B5CF6;
+            margin-bottom: 30px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .timeline-days {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline-day {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-day:hover {
+            border-color: #8B5CF6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+            cursor: pointer;
+        }
+        
+        .timeline-day:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+        }
+        
+        .timeline-day.current-day {
+            background: linear-gradient(135deg, #FCD34D, #F59E0B);
+            color: #1F2937;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+        }
+        
+        .timeline-day.current-day .day-number,
+        .timeline-day.current-day .day-name,
+        .timeline-day.current-day .day-activity {
+            color: #1F2937;
+            font-weight: 600;
+        }
+        
+        /* Active day styling for timeline */
+        .timeline-day.active-day {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+        
+        .timeline-day.active-day .day-number,
+        .timeline-day.active-day .day-name,
+        .timeline-day.active-day .day-activity {
+            color: white;
+            font-weight: 600;
+        }
+        
+        .day-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8B5CF6;
+            margin-bottom: 8px;
+        }
+        
+        .day-name {
+            font-size: 0.9rem;
+            color: #6B7280;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .day-activity {
+            font-size: 0.8rem;
+            color: #374151;
+            line-height: 1.3;
+        }
+        
+        /* Progress Indicator */
+        .progress-section {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+        }
+        
+        .progress-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #8B5CF6;
+            margin-bottom: 30px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #8B5CF6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .step-label {
+            font-size: 0.9rem;
+            color: #6B7280;
+            text-align: center;
+            max-width: 120px;
+            line-height: 1.3;
+        }
+        
+        /* Active step styling for onboarding */
+        .progress-step.active-step {
+            transform: scale(1.05);
+        }
+        
+        .progress-step.active-step .step-number {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .progress-step.active-step .step-label {
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+        
+        .progress-line {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            height: 3px;
+            background: #E5E7EB;
+            z-index: 1;
+        }
+        
+        /* Email Preview Container */
+        .email-preview-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            overflow: hidden;
+        }
+        
+        .preview-header {
+            background: linear-gradient(135deg, #F3F4F6, #E5E7EB);
+            padding: 24px 32px;
+            border-bottom: 1px solid #E5E7EB;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .preview-title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #374151;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .preview-action-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+        }
+        
+        .preview-action-btn:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+        }
+        
+        .preview-action-btn.secondary {
+            background: #F3F4F6;
+            color: #6B7280;
+            border: 2px solid #E5E7EB;
+        }
+        
+        .preview-action-btn.secondary:hover {
+            background: #E5E7EB;
+            color: #374151;
+            border-color: #8B5CF6;
+        }
+        
+        .preview-content {
+            padding: 32px;
+            background: #F9FAFB;
+        }
+        
+        .email-preview-iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            background: white;
+        }
+        
+        /* Download Section */
+        .download-section {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+            text-align: center;
+        }
+        
+        .download-title {
+            font-size: 1.8rem;
+            color: #8B5CF6;
+            margin-bottom: 20px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .download-description {
+            color: #6B7280;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #10B981, #34D399);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(135deg, #059669, #10B981);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .download-left,
+        .download-right {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .test-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .test-btn:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            max-width: 400px;
+            animation: slideInRight 0.3s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .notification-content {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #10B981;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .notification-success .notification-content {
+            border-left-color: #10B981;
+        }
+        
+        .notification-info .notification-content {
+            border-left-color: #8B5CF6;
+        }
+        
+        .notification-message {
+            color: #374151;
+            font-weight: 500;
+            margin-right: 15px;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: #9CA3AF;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .notification-close:hover {
+            background: #F3F4F6;
+            color: #6B7280;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .modal-body {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .preview-iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            background: #F9FAFB;
+        }
+        
+        .preview-placeholder {
+            background: linear-gradient(135deg, #F3F4F6, #E8F4FD);
+            border: 2px dashed #8B5CF6;
+            border-radius: 12px;
+            padding: 60px 20px;
+            text-align: center;
+            color: #6B7280;
+        }
+        
+        .preview-placeholder h3 {
+            color: #8B5CF6;
+            margin-bottom: 15px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        .preview-placeholder p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .preview-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .preview-action-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .preview-primary {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .preview-primary:hover {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .preview-secondary {
+            background: #F3F4F6;
+            color: #6B7280;
+            border: 2px solid #E5E7EB;
+        }
+        
+        .preview-secondary:hover {
+            background: #E5E7EB;
+            color: #374151;
+            border-color: #8B5CF6;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1F2937, #111827);
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .header-section,
+        body.dark-mode .description-section,
+        body.dark-mode .templates-section,
+        body.dark-mode .progress-section,
+        body.dark-mode .download-section {
+            background: #1F2937;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode .description {
+            background: #374151;
+            border-color: #4B5563;
+        }
+        
+        body.dark-mode .description h3 {
+            color: #FCD34D;
+        }
+        
+        body.dark-mode .description p,
+        body.dark-mode .description ol,
+        body.dark-mode .description ul,
+        body.dark-mode .description li {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .description strong {
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .template-card {
+            background: linear-gradient(135deg, #374151, #4B5563);
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .template-title {
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .template-description {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .preview-btn {
+            background: #4B5563;
+            color: #D1D5DB;
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .preview-btn:hover {
+            background: #6B7280;
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .subtitle {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .step-label {
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .progress-line {
+            background: #6B7280;
+        }
+        
+        body.dark-mode .download-description {
+            color: #D1D5DB;
+        }
+        
+
+        
+        body.dark-mode .modal-content {
+            background-color: #1F2937;
+        }
+        
+        body.dark-mode .modal-header {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
+        }
+        
+        body.dark-mode .preview-iframe {
+            background: #374151;
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .preview-placeholder {
+            background: linear-gradient(135deg, #374151, #4B5563);
+            border-color: #8B5CF6;
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .preview-placeholder h3 {
+            color: #FCD34D;
+        }
+        
+        body.dark-mode .preview-secondary {
+            background: #4B5563;
+            color: #D1D5DB;
+            border-color: #6B7280;
+        }
+        
+        body.dark-mode .preview-secondary:hover {
+            background: #6B7280;
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .notification-content {
+            background: #1F2937;
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .notification-message {
+            color: #E0E0E0;
+        }
+        
+        body.dark-mode .notification-close:hover {
+            background: #374151;
+            color: #D1D5DB;
+        }
+        
+        body.dark-mode .sequence-navigation {
+            background: #1F2937 !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        body.dark-mode .sequence-subtitle {
+            color: #D1D5DB !important;
+        }
+        
+        body.dark-mode .sequence-tab {
+            background: linear-gradient(135deg, #374151, #4B5563) !important;
+            border-color: #6B7280 !important;
+            color: #D1D5DB !important;
+        }
+        
+        body.dark-mode .sequence-tab:hover {
+            background: linear-gradient(135deg, #4B5563, #6B7280) !important;
+            color: #E0E0E0 !important;
+        }
+        
+        body.dark-mode .sequence-tab.active {
+            background: linear-gradient(135deg, #7C3AED, #8B5CF6) !important;
+            border-color: #8B5CF6 !important;
+            color: white !important;
+        }
+        
+        body.dark-mode .timeline-container {
+            background: #1F2937 !important;
+            border: 1px solid #374151 !important;
+        }
+        
+        body.dark-mode .timeline-title {
+            color: #A78BFA !important;
+        }
+        
+        body.dark-mode .timeline-day {
+            background: linear-gradient(135deg, #374151, #4B5563) !important;
+            border-color: #6B7280 !important;
+        }
+        
+        body.dark-mode .timeline-day:hover {
+            border-color: #A78BFA !important;
+            box-shadow: 0 8px 25px rgba(167, 139, 250, 0.15) !important;
+        }
+        
+        body.dark-mode .timeline-day.current-day {
+            background: linear-gradient(135deg, #FCD34D, #F59E0B) !important;
+            color: #1F2937 !important;
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4) !important;
+        }
+        
+        body.dark-mode .timeline-day.current-day .day-number,
+        body.dark-mode .timeline-day.current-day .day-name,
+        body.dark-mode .timeline-day.current-day .day-activity {
+            color: #1F2937 !important;
+            font-weight: 600 !important;
+        }
+        
+        /* Dark mode styles for email preview */
+        body.dark-mode .email-preview-container {
+            background: #1F2937;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode .preview-header {
+            background: linear-gradient(135deg, #374151, #4B5563);
+            border-bottom-color: #4B5563;
+        }
+        
+        body.dark-mode .preview-title {
+            color: #F9FAFB;
+        }
+        
+        body.dark-mode .preview-content {
+            background: #111827;
+        }
+        
+        body.dark-mode .preview-action-btn.secondary {
+            background: #374151;
+            color: #D1D5DB;
+            border-color: #4B5563;
+        }
+        
+        body.dark-mode .preview-action-btn.secondary:hover {
+            background: #4B5563;
+            color: #F9FAFB;
+            border-color: #8B5CF6;
+        }
+        
+        body.dark-mode .day-number {
+            color: #A78BFA !important;
+        }
+        
+        body.dark-mode .day-name {
+            color: #D1D5DB !important;
+        }
+        
+        body.dark-mode .day-activity {
+            color: #E5E7EB !important;
+        }
+        
+        /* Dark mode styles for onboarding active step */
+        body.dark-mode .progress-step.active-step .step-number {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA) !important;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5) !important;
+        }
+        
+        body.dark-mode .progress-step.active-step .step-label {
+            color: #A78BFA !important;
+        }
+        
+        /* Qualified specific styles */
+        .placeholder-content {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6B7280;
+        }
+        
+        .placeholder-content p {
+            font-size: 18px;
+            margin: 0;
+        }
+        
+        #qualified-lead-sequence .progress-step {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #qualified-lead-sequence .progress-step:hover {
+            transform: translateY(-2px);
+        }
+        
+        #qualified-lead-sequence .progress-step.active-step .step-number {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        #qualified-lead-sequence .progress-step.active-step .step-label {
+            color: #8B5CF6;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Email Sequences Hero Section -->
+        <div class="sequence-navigation">
+            <h1 class="sequence-title">StoryBud Email Campaign</h1>
+            <p class="sequence-subtitle">Lifecycle email campaigns that guide customers seamlessly from first touch to long-term loyalty.</p>
+            <button class="theme-toggle" id="themeToggle">🌓</button>
+            <div class="sequence-tabs">
+                <button class="sequence-tab active" onclick="showSequence('qualified-lead', event)">
+                    <span class="tab-icon">🎯</span>
+                    <span class="tab-text">Qualified</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('onboarding', event)">
+                    <span class="tab-icon">🚀</span>
+                    <span class="tab-text">Adoption</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('engagement', event)">
+                    <span class="tab-icon">💫</span>
+                    <span class="tab-text">Engagement</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('retention', event)">
+                    <span class="tab-icon">🌟</span>
+                    <span class="tab-text">Retention</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('churn-recovery', event)">
+                    <span class="tab-icon">🔄</span>
+                    <span class="tab-text">Churn Recovery</span>
+                </button>
+                <button class="sequence-tab" onclick="showSequence('cold', event)">
+                    <span class="tab-icon">❄️</span>
+                    <span class="tab-text">Cold</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Qualified Sequence Container -->
+        <div id="qualified-lead-sequence" class="sequence-container active">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview</h2>
+                    <p>The Qualified Sequence is designed to nurture "high intent" leads who have shown interest in StoryBud but haven't yet converted to active users. They demonstrated strong buying signals but didn't follow through, starting the conversion process but not completing it.</p>
+                    
+                    <p>This sequence focuses on building trust, demonstrating value, and providing compelling reasons to take the next step in their journey.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Lead Qualification</strong> – Assess prospect readiness and segment based on engagement level and interest signals.</li>
+                        <li><strong>Value Demonstration</strong> – Showcase the unique benefits and features that make StoryBud special.</li>
+                        <li><strong>Trust Building</strong> – Share testimonials, case studies, and social proof to establish credibility.</li>
+                        <li><strong>Conversion Optimization</strong> – Guide qualified leads toward the most appropriate next action.</li>
+                        <li><strong>Relationship Nurturing</strong> – Maintain engagement with valuable content while prospects evaluate their decision.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Day 0–1:</strong> Welcome Email – Friendly greeting, brand story, and first call-to-action.</li>
+                        <li><strong>Day 2–4:</strong> First Activation Prompt – Clear guidance to complete a key setup step or experience core functionality.</li>
+                        <li><strong>Day 5–7:</strong> Education & Use Cases – Practical tips, examples, and quick wins to drive confidence.</li>
+                        <li><strong>Day 8–10:</strong> Engagement Reminder – Encouragement, troubleshooting help, and reassurance if progress has stalled.</li>
+                        <li><strong>Day 11–14:</strong> Upgrade/Retention Nudge – Highlight premium features, success stories, and long-term benefits.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Increases conversion rates by nurturing leads with relevant, valuable content.</li>
+                        <li>Builds brand awareness and establishes StoryBud as a trusted solution.</li>
+                        <li>Provides multiple touch points to guide prospects through their decision-making process.</li>
+                        <li>Creates opportunities for lead scoring and segmentation based on engagement.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Progress Section -->
+            <div class="progress-section">
+                <h2 class="progress-title">🔗 Email Sequence Timeline</h2>
+                <div class="progress-steps">
+                    <div class="progress-line"></div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/1_qualified_lead_welcome.html', 'Day 0-1: Welcome', this)" style="cursor: pointer;">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Day 0-1: Welcome</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/2_ qualified-lead-cta.html', 'Day 2-4: First Activation', this)" style="cursor: pointer;">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Day 2-4: First Activation</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/3_qualified_lead_first_activation.html', 'Day 5-7: Education', this)" style="cursor: pointer;">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Day 5-7: Education</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/4_qualified_lead_encouragement.html', 'Day 8-10: Engagement', this)" style="cursor: pointer;">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Day 8-10: Engagement</div>
+                    </div>
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/5_qualified_lead_day10_followup.html', 'Day 11-14: Retention', this)" style="cursor: pointer;">
+                        <div class="step-number">5</div>
+                        <div class="step-label">Day 11-14: Retention</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Day 0-1: Welcome</h3>
+                    <div class="preview-actions">
+                        <a href="templates/1_qualified_lead_welcome.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/1_qualified_lead_welcome.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('templates/1_qualified_lead_welcome.html')">🧪 Send Test Email</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="qualifiedLeadPreviewFrame" src="templates/1_qualified_lead_welcome.html" class="email-preview-iframe"></iframe>
+                </div>
+            </div>
+        </div> <!-- End Qualified Sequence Container -->
+        
+        <!-- Adoption Sequence Container -->
+        <div id="onboarding-sequence" class="sequence-container">
+        <!-- Description Section -->
+        <div class="description-section">
+            <div class="description">
+                    <h2>📋 Campaign Overview</h2>
+                <p>The Adoption Sequence is a structured series of email templates designed to guide new users from initial sign-up to full product adoption. Each email plays a specific role in building trust, delivering value, and encouraging ongoing engagement. Together, they create a cohesive journey that reduces drop-off, accelerates time-to-value, and increases conversion to paid or long-term use.</p>
+                
+                <h3>Key Objectives</h3>
+                <ol>
+                    <li><strong>Welcome & Orientation</strong> – Establish a warm first impression, set expectations, and highlight the immediate value of the platform.</li>
+                    <li><strong>Activation Prompts</strong> – Provide clear, actionable steps that help users experience a "first win" quickly.</li>
+                    <li><strong>Education & Enablement</strong> – Share tips, tutorials, and examples that deepen understanding and showcase practical use cases.</li>
+                    <li><strong>Encouragement & Motivation</strong> – Reinforce progress, celebrate milestones, and reduce friction points that may cause users to disengage.</li>
+                    <li><strong>Conversion & Retention</strong> – Transition users from free to paid tiers (if applicable) and keep them engaged with ongoing product benefits.</li>
+                </ol>
+                
+                <h3>Structure of the Sequence</h3>
+                <ul>
+                    <li><strong>Day 0–1:</strong> Welcome Email – Friendly greeting, brand story, and first call-to-action.</li>
+                    <li><strong>Day 2–4:</strong> First Activation Prompt – Clear guidance to complete a key setup step or experience core functionality.</li>
+                    <li><strong>Day 5–7:</strong> Education & Use Cases – Practical tips, examples, and quick wins to drive confidence.</li>
+                    <li><strong>Day 8–10:</strong> Engagement Reminder – Encouragement, troubleshooting help, and reassurance if progress has stalled.</li>
+                    <li><strong>Day 11–14:</strong> Upgrade/Retention Nudge – Highlight premium features, success stories, and long-term benefits.</li>
+                </ul>
+                
+                <h3>Benefits of the Sequence</h3>
+                <ul>
+                    <li>Provides a consistent, branded user journey that aligns with the company's voice and values.</li>
+                    <li>Reduces churn by addressing common adoption hurdles early.</li>
+                    <li>Increases conversion rates through timely, contextual nudges.</li>
+                    <li>Builds a foundation for long-term customer relationships by pairing education with encouragement.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Progress Section -->
+        <div class="progress-section">
+                <h2 class="progress-title">🔗 Email Sequence Timeline</h2>
+            <div class="progress-steps">
+                <div class="progress-line"></div>
+                    <div class="progress-step active-step" onclick="showOnboardingPreview('templates/01-onboarding-foundation.html', 'Day 0-1: Welcome', this)" style="cursor: pointer;">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Day 0-1: Welcome</div>
+                </div>
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/03-first-story-created.html', 'Day 2-4: First Activation', this)" style="cursor: pointer;">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Day 2-4: First Activation</div>
+                </div>
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/storybud_education_email.html', 'Day 5-7: Education', this)" style="cursor: pointer;">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Day 5-7: Education</div>
+                </div>
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/04-weekly-reading-report.html', 'Day 8-10: Engagement', this)" style="cursor: pointer;">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Day 8-10: Engagement</div>
+                </div>
+
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/05-credits-running-low.html', 'Day 11-14: Upgrade', this)" style="cursor: pointer;">
+                    <div class="step-number">5</div>
+                    <div class="step-label">Day 11-14: Upgrade</div>
+                </div>
+            </div>
+        </div>
+        
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Day 0-1: Welcome</h3>
+                    <div class="preview-actions">
+                        <a href="templates/01-onboarding-foundation.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/01-onboarding-foundation.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('templates/01-onboarding-foundation.html')">🧪 Send Test Email</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="onboardingPreviewFrame" src="templates/01-onboarding-foundation.html" class="email-preview-iframe"></iframe>
+                    </div>
+                </div>
+                
+
+        </div> <!-- End Onboarding Sequence Container -->
+        
+        <!-- Engagement Sequence Container -->
+        <div id="engagement-sequence" class="sequence-container">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview</h2>
+                    <p>The 7-Day Story Adventure is an engaging email sequence designed to create a daily reading habit and build anticipation for storytime. Each day delivers a new chapter or story element, transforming bedtime into an exciting adventure that children and parents look forward to together.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Daily Engagement</strong> – Create a consistent reading routine that becomes part of the family's daily schedule.</li>
+                        <li><strong>Story Progression</strong> – Build anticipation through progressive storytelling that keeps readers coming back each day.</li>
+                        <li><strong>Habit Formation</strong> – Establish reading as a daily activity that children actively request and enjoy.</li>
+                        <li><strong>Family Bonding</strong> – Strengthen parent-child relationships through shared reading experiences.</li>
+                        <li><strong>Reading Motivation</strong> – Foster a love for stories and reading that extends beyond the email sequence.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Adventure</h3>
+                    <ul>
+                        <li><strong>Day 1 (Sunday):</strong> Story Discovery – Introduce the adventure and set the stage for the week ahead.</li>
+                        <li><strong>Day 2 (Monday):</strong> Character Introduction – Meet the main characters and establish emotional connections.</li>
+                        <li><strong>Day 3 (Tuesday):</strong> Adventure Begins – Start the journey with the first major plot development.</li>
+                        <li><strong>Day 4 (Wednesday):</strong> Plot Twist – Introduce unexpected elements that increase engagement.</li>
+                        <li><strong>Day 5 (Thursday):</strong> Climax – Build tension and excitement as the story reaches its peak.</li>
+                        <li><strong>Day 6 (Friday):</strong> Resolution – Begin wrapping up loose ends and prepare for the conclusion.</li>
+                        <li><strong>Day 7 (Saturday):</strong> Story Complete – Provide a satisfying ending and set up for future adventures.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Creates a daily reading habit that parents and children can maintain long-term.</li>
+                        <li>Builds anticipation and excitement around storytime, reducing resistance to bedtime.</li>
+                        <li>Provides structured content that parents don't need to plan or prepare.</li>
+                        <li>Strengthens family bonds through shared reading experiences.</li>
+                        <li>Establishes reading as a positive, enjoyable daily activity.</li>
+                    </ul>
+                    </div>
+                </div>
+                
+            <!-- Engagement Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">📋 Email Sequence Timeline</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day active-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day1_dm_uat.html', 'Storytime Email - Day 1', this)" style="cursor: pointer;">
+                        <div class="day-number">1</div>
+                        <div class="day-name">Sunday</div>
+                        <div class="day-activity">Story Discovery</div>
+                    </div>
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day2_dm_uat.html', 'Storytime Email - Day 2', this)" style="cursor: pointer;">
+                        <div class="day-number">2</div>
+                        <div class="day-name">Monday</div>
+                        <div class="day-activity">Character Introduction</div>
+                    </div>
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day3_dm_uat.html', 'Storytime Email - Day 3', this)" style="cursor: pointer;">
+                        <div class="day-number">3</div>
+                        <div class="day-name">Tuesday</div>
+                        <div class="day-activity">Adventure Begins</div>
+                </div>
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day4_dm_uat.html', 'Storytime Email - Day 4', this)" style="cursor: pointer;">
+                        <div class="day-number">4</div>
+                        <div class="day-name">Wednesday</div>
+                        <div class="day-activity">Plot Twist</div>
+                    </div>
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day5_dm_uat.html', 'Storytime Email - Day 5', this)" style="cursor: pointer;">
+                        <div class="day-number">5</div>
+                        <div class="day-name">Thursday</div>
+                        <div class="day-activity">Climax</div>
+                    </div>
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day6_dm_uat.html', 'Storytime Email - Day 6', this)" style="cursor: pointer;">
+                        <div class="day-number">6</div>
+                        <div class="day-name">Friday</div>
+                        <div class="day-activity">Resolution</div>
+                </div>
+                    <div class="timeline-day" onclick="showEmailPreview('https://storybud-emails.vercel.app/templates/storytime_email_day7_dm_uat.html', 'Storytime Email - Day 7', this)" style="cursor: pointer;">
+                        <div class="day-number">7</div>
+                        <div class="day-name">Saturday</div>
+                        <div class="day-activity">Story Complete</div>
+                    </div>
+                    </div>
+                </div>
+                
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Storytime Email - Day 1</h3>
+                                            <div class="preview-actions">
+                            <a href="https://storybud-emails.vercel.app/templates/storytime_email_day1_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                            <button class="preview-action-btn secondary" onclick="downloadEmail('https://storybud-emails.vercel.app/templates/storytime_email_day1_dm_uat.html')">Download</button>
+                            <button class="preview-action-btn test" onclick="openTestEmailModal('storytime_email_day1_dm_uat.html')">🧪 Send Test Email</button>
+                        </div>
+                    </div>
+                <div class="preview-content">
+                    <iframe id="emailPreviewFrame" src="https://storybud-emails.vercel.app/templates/storytime_email_day1_dm_uat.html" class="email-preview-iframe"></iframe>
+                </div>
+            </div>
+                
+            <!-- Engagement Templates Section -->
+
+        </div>
+        
+        <!-- Retention Sequence Container -->
+        <div id="retention-sequence" class="sequence-container">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview: Bedtime Stories Sequence</h2>
+                    <p>The Bedtime Stories Sequence is a carefully crafted 7-day email series designed to establish a nightly reading routine between parents and children while building engagement with a bedtime story service. Each email combines emotional storytelling with practical encouragement, creating a magical nighttime atmosphere that transforms bedtime from resistance into anticipation. The sequence builds momentum day by day, culminating in habit formation and increased likelihood of continued engagement.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Routine Establishment</strong> – Help parents create a consistent, enjoyable bedtime reading tradition that children actively anticipate.</li>
+                        <li><strong>Emotional Connection</strong> – Build deep bonds between parent and child through shared storytelling experiences while positioning the service as essential to these precious moments.</li>
+                        <li><strong>Habit Formation</strong> – Use behavioral psychology principles to transform one-time readers into committed nightly story families.</li>
+                        <li><strong>Value Demonstration</strong> – Showcase how age-appropriate, engaging stories can make bedtime smoother while supporting reading development.</li>
+                        <li><strong>Engagement & Retention</strong> – Keep families returning night after night, building streaks that lead to long-term subscription commitment.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Day 1:</strong> Welcome to Adventure – Sets the magical tone, introduces the concept of nightly traditions, and delivers the first story experience.</li>
+                        <li><strong>Day 2-4:</strong> Building Momentum – Reinforces the routine with encouraging messaging about creating lasting memories and continuing the journey.</li>
+                        <li><strong>Day 5:</strong> Child's Perspective – Shifts focus to how children experience the anticipation and joy, emphasizing the transformation from bedtime resistance to excitement.</li>
+                        <li><strong>Day 6:</strong> Upgrade Tease – Introduces the possibility of custom stories where the child becomes the hero, planting seeds for premium features.</li>
+                        <li><strong>Day 7:</strong> Milestone Celebration – Celebrates the achievement of a full week, reinforces the established routine, and motivates continued engagement.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Creates a consistent, emotionally-driven journey that aligns with the intimate, magical nature of bedtime storytelling.</li>
+                        <li>Reduces drop-off by addressing common bedtime struggles and positioning reading as the solution.</li>
+                        <li>Increases engagement through progressive habit formation and celebration of small wins.</li>
+                        <li>Builds foundation for premium upgrades by demonstrating value before introducing advanced features.</li>
+                        <li>Establishes long-term retention through routine creation that becomes integral to family life.</li>
+                        <li>Uses cohesive night sky branding that reinforces the bedtime theme and creates memorable visual consistency.</li>
+                    </ul>
+                    
+                    <p><strong>Design Philosophy:</strong> Each email features a magical starry night aesthetic with twinkling animations, creating an immersive bedtime atmosphere that parents and children associate with cozy, special moments together. The visual consistency reinforces the emotional connection to the nightly routine.</p>
+                    </div>
+        </div>
+        
+            <!-- Retention Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">🔗 Email Sequence Timeline</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day active-day" onclick="showRetentionPreview('templates/storytime_email_day1_dm_uat.html', 'Day 1: Welcome', this)" style="cursor: pointer;">
+                        <div class="day-number">1</div>
+                        <div class="day-name">Day 1</div>
+                        <div class="day-activity">Welcome</div>
+                    </div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day2_dm_uat.html', 'Day 2-4: Building', this)" style="cursor: pointer;">
+                        <div class="day-number">2-4</div>
+                        <div class="day-name">Days 2-4</div>
+                        <div class="day-activity">Building</div>
+                    </div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day5_dm_uat.html', 'Day 5: Child View', this)" style="cursor: pointer;">
+                        <div class="day-number">5</div>
+                        <div class="day-name">Day 5</div>
+                        <div class="day-activity">Child's View</div>
+                    </div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day6_dm_uat.html', 'Day 6: Upgrade', this)" style="cursor: pointer;">
+                        <div class="day-number">6</div>
+                        <div class="day-name">Day 6</div>
+                        <div class="day-activity">Upgrade Tease</div>
+                    </div>
+                    <div class="timeline-day" onclick="showRetentionPreview('templates/storytime_email_day7_dm_uat.html', 'Day 7: Milestone', this)" style="cursor: pointer;">
+                        <div class="day-number">7</div>
+                        <div class="day-name">Day 7</div>
+                        <div class="day-activity">Milestone</div>
+                    </div>
+            </div>
+        </div>
+        
+                        <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Day 1: Welcome</h3>
+                    <div class="preview-actions">
+                        <a href="templates/storytime_email_day1_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/storytime_email_day1_dm_uat.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('storytime_email_day1_dm_uat.html')">🧪 Send Test Email</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="retentionPreviewFrame" src="templates/storytime_email_day1_dm_uat.html" class="email-preview-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Churn Recovery Sequence Container -->
+        <div id="churn-recovery-sequence" class="sequence-container">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview: Churn Recovery Sequence</h2>
+                    <p>The Churn Recovery Sequence is a strategic email campaign designed to re-engage users who have become inactive or disengaged from the platform. This sequence uses a combination of emotional reconnection, value reinforcement, and strategic incentives to win back users and restore their engagement with the bedtime story service.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Re-engagement</strong> – Reconnect with inactive users through personalized messaging that addresses their specific situation.</li>
+                        <li><strong>Value Reminder</strong> – Remind users of the benefits and positive experiences they had with the platform.</li>
+                        <li><strong>Barrier Removal</strong> – Identify and address any obstacles that may have prevented continued usage.</li>
+                        <li><strong>Fresh Start</strong> – Provide an easy path back to engagement with new content and features.</li>
+                        <li><strong>Long-term Retention</strong> – Convert recovered users into active, engaged community members.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Day 1:</strong> Reconnection Email – Warm, non-pushy message acknowledging their absence and expressing genuine care.</li>
+                        <li><strong>Day 3:</strong> Value Reminder – Highlight specific benefits and positive memories from their previous usage.</li>
+                        <li><strong>Day 5:</strong> Barrier Identification – Ask for feedback and offer solutions to common obstacles.</li>
+                        <li><strong>Day 7:</strong> Fresh Start Offer – Provide an incentive or new feature to encourage return engagement.</li>
+                        <li><strong>Day 10:</strong> Final Appeal – Last chance message with strongest incentive and clear call-to-action.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Recovers valuable users who may have churned due to temporary circumstances or minor issues.</li>
+                        <li>Provides insights into common churn reasons through feedback collection and engagement patterns.</li>
+                        <li>Demonstrates customer care and commitment to user success, strengthening brand perception.</li>
+                        <li>Creates opportunities for upselling and cross-selling to recovered users.</li>
+                        <li>Builds a more resilient user base through proactive re-engagement strategies.</li>
+                        <li>Reduces overall churn rates and increases customer lifetime value.</li>
+                    </ul>
+                    
+                    <p><strong>Recovery Strategy:</strong> This sequence employs a gentle, understanding approach that focuses on rebuilding trust and providing value rather than aggressive sales tactics. Each email is designed to make users feel valued and supported in their return journey.</p>
+                            </div>
+                        </div>
+            
+            <!-- Churn Recovery Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">🔗 Email Sequence Timeline</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day active-day" onclick="showChurnRecoveryPreview('templates/churn_recovery5_dm_uat.html', 'Day 5: Re-engagement', this)" style="cursor: pointer;">
+                        <div class="day-number">5</div>
+                        <div class="day-name">Day 5</div>
+                        <div class="day-activity">Re-engagement</div>
+                    </div>
+                    <div class="timeline-day" onclick="showChurnRecoveryPreview('templates/churn_recovery7_dm_uat.html', 'Day 7: Value Reminder', this)" style="cursor: pointer;">
+                        <div class="day-number">7</div>
+                        <div class="day-name">Day 7</div>
+                        <div class="day-activity">Value Reminder</div>
+                    </div>
+                    <div class="timeline-day" onclick="showChurnRecoveryPreview('templates/churn_recover20_dm_uat.html', 'Day 20: Final Push', this)" style="cursor: pointer;">
+                        <div class="day-number">20</div>
+                        <div class="day-name">Day 20</div>
+                        <div class="day-activity">Final Push</div>
+                    </div>
+                        </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Day 5: Re-engagement</h3>
+                    <div class="preview-actions">
+                        <a href="templates/churn_recovery5_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/churn_recovery5_dm_uat.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('churn_recovery5_dm_uat.html')">🧪 Send Test Email</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="churnRecoveryPreviewFrame" src="templates/churn_recovery5_dm_uat.html" class="email-preview-iframe"></iframe>
+                </div>
+            </div>
+
+                            </div>
+        
+        <!-- Cold Sequence Container -->
+        <div id="cold-sequence" class="sequence-container">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview: Cold Nurture Sequence</h2>
+                    <p>The Cold Nurture Sequence is designed to re-engage completely cold leads who have shown initial interest but have become unresponsive to standard communication. This sequence uses specialized messaging and offers to warm up cold prospects and guide them back into the engagement funnel.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Cold Lead Reactivation</strong> – Reconnect with prospects who have gone completely cold.</li>
+                        <li><strong>Interest Revival</strong> – Reignite interest through compelling offers and value propositions.</li>
+                        <li><strong>Trust Rebuilding</strong> – Establish credibility and demonstrate ongoing value.</li>
+                        <li><strong>Conversion Opportunity</strong> – Provide clear pathways for re-engagement and conversion.</li>
+                        <li><strong>List Hygiene</strong> – Identify truly uninterested prospects for list cleaning.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Day 21:</strong> Nurture Check-in – Gentle re-engagement with value-focused messaging.</li>
+                        <li><strong>Day 21:</strong> Special Offer – Compelling offer or incentive to encourage action.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Recovers cold leads that might otherwise be lost forever.</li>
+                        <li>Provides final opportunity for conversion before list removal.</li>
+                        <li>Helps identify genuinely interested prospects vs. unqualified leads.</li>
+                        <li>Maintains professional relationship even if prospects don't convert.</li>
+                        <li>Improves overall email deliverability through list hygiene.</li>
+                    </ul>
+                    
+                    <p><strong>Cold Outreach Strategy:</strong> This sequence takes a respectful, value-first approach to cold lead reactivation, providing genuine value while making it easy for uninterested prospects to opt out cleanly.</p>
+                </div>
+            </div>
+            
+            <!-- Cold Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">🔗 Email Sequence Timeline</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day active-day" onclick="showColdPreview('templates/dropped_nurture_day21_dm_uat.html', 'Day 21: Nurture Check-in', this)" style="cursor: pointer;">
+                        <div class="day-number">21</div>
+                        <div class="day-name">Day 21</div>
+                        <div class="day-activity">Nurture Check-in</div>
+                    </div>
+                    <div class="timeline-day" onclick="showColdPreview('templates/dropped_nurture_offer_day21_dm_uat.html', 'Day 21: Special Offer', this)" style="cursor: pointer;">
+                        <div class="day-number">21</div>
+                        <div class="day-name">Day 21</div>
+                        <div class="day-activity">Special Offer</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                <div class="preview-header">
+                    <h3 class="preview-title">Day 21: Nurture Check-in</h3>
+                    <div class="preview-actions">
+                        <a href="templates/dropped_nurture_day21_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/dropped_nurture_day21_dm_uat.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('dropped_nurture_day21_dm_uat.html')">🧪 Send Test Email</button>
+                    </div>
+                </div>
+                <div class="preview-content">
+                    <iframe id="coldPreviewFrame" src="templates/dropped_nurture_day21_dm_uat.html" class="email-preview-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Download Section -->
+        <div class="download-section">
+            <h2 class="download-title">Test and Ship</h2>
+            <div class="download-buttons">
+                <div class="download-left">
+                    <button class="download-btn" onclick="downloadAllTemplates()">Download All Templates</button>
+                        </div>
+                <div class="download-right">
+                    <button class="test-btn" onclick="testPersonalization()">🧪 Test Personalization</button>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+    
+    <script>
+
+        
+        // Download functionality
+        function downloadAllTemplates() {
+            // Create a text file with all template content
+            let allTemplates = `# StoryBud Email Templates - Complete Collection
+
+## Template Overview
+This collection contains all email templates for the StoryBud email campaign sequences.
+
+## Template List by Section
+
+### 🎯 Qualified Section
+1. Welcome - "We're Still Here When You're Ready" - Abandoned conversion nurturing
+2. Value Prop - "Your Brand Story is Your Competitive Edge" - Competitive advantages
+3. Social Proof - "See What Others Are Saying About StoryBud" - Testimonials and case studies
+4. Call to Action - Clear next steps and invitation (coming soon)
+
+### 🚀 Adoption Section
+5. Onboarding - Welcome new users with subscription details
+6. First Story - Celebrate when users create their first story
+7. Education - Feature showcase and reading development benefits
+8. Weekly Report - Highlight reading progress with fun stats
+9. Qualified Upsell - Conversion optimization for qualified users
+
+### 💫 Engagement Section
+10. Storytime Day 1 - Welcome to the Adventure
+11. Storytime Day 2 - The Habit Builder
+12. Storytime Day 3 - The Cliffhanger Reminder
+13. Storytime Day 4 - The Parent Benefit
+14. Storytime Day 5 - The Child's Perspective
+15. Storytime Day 6 - The Upgrade Tease
+16. Storytime Day 7 - The Routine Anchor
+
+### 🌟 Retention Section
+17. Retention Week 1 - Early retention nurturing
+18. Retention Week 2 - Continued engagement
+19. Retention Month 1 - Monthly milestone celebration
+20. Retention Month 3 - Quarterly relationship building
+
+### 🔄 Churn Recovery Section
+21. Churn Recovery Day 1 - Initial re-engagement attempt
+22. Churn Recovery Day 3 - Follow-up with value proposition
+23. Churn Recovery Day 5 - Mid-sequence encouragement
+24. Churn Recovery Day 7 - Final re-engagement effort
+25. Churn Recovery Day 10 - Last chance reconnection
+
+## Template Files
+- Qualified Day 0-1 Welcome: templates/1_qualified_lead_welcome.html
+- Qualified Day 2-4 First Activation: templates/2_ qualified-lead-cta.html
+- Qualified Day 5-7 Education: templates/3_qualified_lead_first_activation.html
+- Qualified Day 8-10 Engagement: templates/4_qualified_lead_encouragement.html
+- Qualified Day 11-14 Retention: templates/5_qualified_lead_day10_followup.html
+- Onboarding: templates/01-onboarding-foundation.html
+- First Story: templates/03-first-story-created.html
+- Education: templates/storybud_education_email.html
+- Weekly Report: templates/04-weekly-reading-report.html
+- Credits Low: templates/05-credits-running-low.html
+- Storytime Emails: templates/storytime_email_day1_dm_uat.html through day7_dm_uat.html
+- Retention Emails: templates/retention_email_week1.html, week2.html, month1.html, month3.html
+- Churn Recovery: templates/churn_recovery5_dm_uat.html, churn_recovery7_dm_uat.html, churn_recover20_dm_uat.html
+
+## Implementation Notes
+- All templates use responsive design
+- Include dynamic variables: {{user_name}}, {{subscription_name}}, {{credit_allowance}}
+- Footer contains unsubscribe links and company information
+- Templates are optimized for email clients
+- Qualified section focuses on high-intent lead nurturing
+- Engagement section creates daily reading habits
+- Retention section maintains long-term relationships
+- Churn recovery section re-engages inactive users
+
+## Support
+For questions about these templates, contact: support@storybud.com
+
+---
+Generated on: ${new Date().toLocaleDateString()}
+StoryBud Team`;
+
+            // Create and download the file
+            const blob = new Blob([allTemplates], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'StoryBud-Email-Templates.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+            
+            // Show success message
+            showNotification('Templates downloaded successfully! 📧', 'success');
+        }
+        
+        // Sequence Navigation
+        function showSequence(sequenceType, event) {
+            // Hide all sequence containers
+            const containers = document.querySelectorAll('.sequence-container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.sequence-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show the selected sequence container
+            const selectedContainer = document.getElementById(sequenceType + '-sequence');
+            if (selectedContainer) {
+                selectedContainer.classList.add('active');
+            }
+            
+            // Add active class to the clicked tab
+            if (event) {
+                const clickedTab = event.target.closest('.sequence-tab');
+                if (clickedTab) {
+                    clickedTab.classList.add('active');
+                }
+            }
+        }
+        
+        // Email Preview functionality
+        function showEmailPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('.preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('emailPreviewFrame');
+            if (previewFrame) {
+                previewFrame.src = emailUrl;
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('.preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('.preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update active day styling
+            document.querySelectorAll('.timeline-day').forEach(day => {
+                day.classList.remove('active-day');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-day');
+            }
+        }
+        
+        // Download email function
+        function downloadEmail(emailUrl) {
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.href = emailUrl;
+            link.download = 'email-template.html';
+            link.target = '_blank';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success notification
+            showNotification('Email template download started! 📧', 'success');
+        }
+        
+        // Qualified Preview functionality
+        function showQualifiedLeadPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#qualified-lead-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('qualifiedLeadPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#qualified-lead-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#qualified-lead-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update active step styling
+            document.querySelectorAll('#qualified-lead-sequence .progress-step').forEach(step => {
+                step.classList.remove('active-step');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-step');
+            }
+        }
+        
+        // Onboarding Preview functionality
+        function showOnboardingPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#onboarding-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('onboardingPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#onboarding-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#onboarding-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update active step styling
+            document.querySelectorAll('#onboarding-sequence .progress-step').forEach(step => {
+                step.classList.remove('active-step');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-step');
+            }
+        }
+        
+        // Retention Preview functionality
+        function showRetentionPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#retention-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('retentionPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#retention-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#retention-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update the test email button
+            const testBtn = document.querySelector('#retention-sequence .preview-action-btn.test');
+            if (testBtn) {
+                const filename = emailUrl.split('/').pop();
+                testBtn.onclick = function() {
+                    openTestEmailModal(filename);
+                };
+            }
+            
+            // Update active day styling
+            document.querySelectorAll('#retention-sequence .timeline-day').forEach(day => {
+                day.classList.remove('active-day');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-day');
+            }
+        }
+        
+        // Churn Recovery Preview functionality
+        function showChurnRecoveryPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#churn-recovery-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('churnRecoveryPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#churn-recovery-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+                        const downloadBtn = document.querySelector('#churn-recovery-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update the test email button
+            const testBtn = document.querySelector('#churn-recovery-sequence .preview-action-btn.test');
+            if (testBtn) {
+                const filename = emailUrl.split('/').pop();
+                testBtn.onclick = function() {
+                    openTestEmailModal(filename);
+                };
+            }
+
+            // Update active day styling
+            document.querySelectorAll('#churn-recovery-sequence .timeline-day').forEach(day => {
+                day.classList.remove('active-day');
+            });
+            
+                        if (clickedElement) {
+                clickedElement.classList.add('active-day');
+            }
+        }
+        
+        // Cold Preview functionality
+        function showColdPreview(emailUrl, emailTitle, clickedElement) {
+            // Update the preview title
+            const previewTitle = document.querySelector('#cold-sequence .preview-title');
+            if (previewTitle) {
+                previewTitle.textContent = emailTitle;
+            }
+            
+            // Update the iframe source
+            const previewFrame = document.getElementById('coldPreviewFrame');
+            if (previewFrame) {
+                // Handle both local files and external URLs
+                if (emailUrl.startsWith('http')) {
+                    previewFrame.src = emailUrl;
+                } else {
+                    // Local file - construct full path
+                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                }
+            }
+            
+            // Update the action buttons
+            const openInNewTabLink = document.querySelector('#cold-sequence .preview-action-btn');
+            if (openInNewTabLink) {
+                openInNewTabLink.href = emailUrl;
+            }
+            
+            const downloadBtn = document.querySelector('#cold-sequence .preview-action-btn.secondary');
+            if (downloadBtn) {
+                downloadBtn.onclick = function() {
+                    downloadEmail(emailUrl);
+                };
+            }
+            
+            // Update the test email button
+            const testBtn = document.querySelector('#cold-sequence .preview-action-btn.test');
+            if (testBtn) {
+                const filename = emailUrl.split('/').pop();
+                testBtn.onclick = function() {
+                    openTestEmailModal(filename);
+                };
+            }
+            
+            // Update active day styling
+            document.querySelectorAll('#cold-sequence .timeline-day').forEach(day => {
+                day.classList.remove('active-day');
+            });
+            
+            if (clickedElement) {
+                clickedElement.classList.add('active-day');
+            }
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => notification.remove());
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span class="notification-message">${message}</span>
+                    <button class="notification-close" onclick="this.parentElement.parentElement.remove()">&times;</button>
+                </div>
+            `;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // Personalization testing functionality
+        function testPersonalization() {
+            const testScenarios = [
+                {
+                    name: 'Short Name',
+                    data: {
+                        user_name: 'Alex',
+                        user_email: 'alex@example.com',
+                        child_name: 'Sam',
+                        subscription_name: 'Starter',
+                        credit_allowance: '10',
+                        stories_read: '3',
+                        reading_time: '20',
+                        new_words: '8',
+                        days_active: '2',
+                        vocabulary_improvement: '5',
+                        stamina_improvement: '10',
+                        comprehension_score: '85',
+                        creative_responses: '4',
+                        credits_remaining: '15',
+                        create_story_link: '#',
+                        features_guide_link: '#'
+                    }
+                },
+                {
+                    name: 'Long Name',
+                    data: {
+                        user_name: 'Alexandria Rodriguez-Williams',
+                        user_email: 'alexandria.rodriguez-williams@example.com',
+                        child_name: 'Isabella Rodriguez-Williams',
+                        subscription_name: 'Premium Family Plan',
+                        credit_allowance: 'unlimited',
+                        stories_read: '12',
+                        reading_time: '120',
+                        new_words: '25',
+                        days_active: '7',
+                        vocabulary_improvement: '18',
+                        stamina_improvement: '45',
+                        comprehension_score: '98',
+                        creative_responses: '15',
+                        credits_remaining: '150',
+                        create_story_link: '#',
+                        features_guide_link: '#'
+                    }
+                },
+                {
+                    name: 'Missing Data (Fallbacks)',
+                    data: {
+                        user_name: '',
+                        user_email: '',
+                        child_name: '',
+                        subscription_name: '',
+                        credit_allowance: '',
+                        stories_read: '',
+                        reading_time: '',
+                        new_words: '',
+                        days_active: '',
+                        vocabulary_improvement: '',
+                        stamina_improvement: '',
+                        comprehension_score: '',
+                        creative_responses: '',
+                        credits_remaining: '',
+                        create_story_link: '',
+                        features_guide_link: ''
+                    }
+                }
+            ];
+
+            let testResults = '## Personalization Testing Results\n\n';
+            
+            testScenarios.forEach(scenario => {
+                testResults += `### ${scenario.name}\n`;
+                testResults += '**Test Data:**\n';
+                Object.entries(scenario.data).forEach(([key, value]) => {
+                    testResults += `- ${key}: ${value || '(empty - will use fallback)'}\n`;
+                });
+                testResults += '\n**Expected Behavior:**\n';
+                testResults += '- All personalization tags should display fallback values when data is missing\n';
+                testResults += '- Long names should not break layout\n';
+                testResults += '- Numbers should display properly\n';
+                testResults += '- Links should have fallback URLs\n\n';
+            });
+
+            testResults += '## Fallback Values Implemented\n';
+            testResults += '- `{{user_name|default:"there"}}` - Shows "Hi there!" when name is missing\n';
+            testResults += '- `{{user_email|default:"brad%40storybud.com"}}` - Shows "brad@storybud.com" when email is missing\n';
+            testResults += '- `{{child_name|default:"your child"}}` - Shows "your child" when child name is missing\n';
+            testResults += '- `{{subscription_name|default:"StoryBud"}}` - Shows "StoryBud" when subscription is missing\n';
+            testResults += '- `{{credit_allowance|default:"unlimited"}}` - Shows "unlimited" when credits are missing\n';
+            testResults += '- `{{stories_read|default:"5"}}` - Shows "5" when data is missing\n';
+            testResults += '- `{{reading_time|default:"45"}}` - Shows "45" when data is missing\n';
+            testResults += '- `{{new_words|default:"12"}}` - Shows "12" when data is missing\n';
+            testResults += '- `{{days_active|default:"4"}}` - Shows "4" when data is missing\n';
+            testResults += '- `{{vocabulary_improvement|default:"8"}}` - Shows "8" when data is missing\n';
+            testResults += '- `{{stamina_improvement|default:"15"}}` - Shows "15" when data is missing\n';
+            testResults += '- `{{comprehension_score|default:"92"}}` - Shows "92" when data is missing\n';
+            testResults += '- `{{creative_responses|default:"6"}}` - Shows "6" when data is missing\n';
+            testResults += '- `{{credits_remaining|default:"25"}}` - Shows "25" when data is missing\n';
+            testResults += '- `{{create_story_link|default:"#"}}` - Shows "#" when link is missing\n';
+            testResults += '- `{{features_guide_link|default:"#"}}` - Shows "#" when link is missing\n\n';
+            testResults += '## Testing Instructions\n';
+            testResults += '1. Open each email template\n';
+            testResults += '2. Test with the scenarios above\n';
+            testResults += '3. Verify fallbacks work correctly\n';
+            testResults += '4. Check layout with long names\n';
+            testResults += '5. Ensure all personalization tags have fallbacks\n\n';
+            testResults += `Generated on: ${new Date().toLocaleDateString()}`;
+
+            // Create and download the test results
+            const blob = new Blob([testResults], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Personalization-Testing-Results.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+            
+            // Show success message
+            showNotification('Personalization testing guide downloaded! 🧪', 'success');
+        }
+
+        // Highlight current day if it's Sunday (but don't change main section)
+        function autoSelectEngagementOnSunday() {
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            
+            // If it's Sunday (day 0), just highlight Sunday as current day
+            if (dayOfWeek === 0) {
+                // Highlight Sunday as current day in the Engagement timeline
+                const sundayDay = document.querySelector('.timeline-day .day-name');
+                if (sundayDay && sundayDay.textContent === 'Sunday') {
+                    sundayDay.closest('.timeline-day').classList.add('current-day');
+                }
+            }
+        }
+        
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '🌙'; // Change to moon icon for dark mode
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌓';
+                localStorage.removeItem('theme');
+            }
+        });
+        
+        // Auto-select Qualified tab on page load (default behavior)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Default to Qualified section on new page load
+            showSequence('qualified-lead');
+            
+            // Update tab states to show Qualified as active
+            document.querySelectorAll('.sequence-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector('.sequence-tab[onclick*="qualified-lead"]').classList.add('active');
+            
+            // Only auto-select Engagement tab on Sunday
+            autoSelectEngagementOnSunday();
+        });
+    </script>
+    
+    <!-- Test Email Modal -->
+    <div id="testEmailModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🧪 Send Test Email</h3>
+                <span class="close" onclick="closeTestEmailModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="testEmailAddress">Test Email Address:</label>
+                    <input type="email" id="testEmailAddress" placeholder="Enter email address to send test to" required>
+                </div>
+                <div class="form-group">
+                    <label for="testEmailSubject">Subject Line:</label>
+                    <input type="text" id="testEmailSubject" placeholder="Test email subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="testEmailTemplate">Template:</label>
+                    <select id="testEmailTemplate" required>
+                        <option value="">Select a template</option>
+                        <option value="1_qualified_lead_welcome.html">Qualified - Day 0-1: Welcome</option>
+                        <option value="2_ qualified-lead-cta.html">Qualified - Day 2-4: First Activation</option>
+                        <option value="3_qualified_lead_first_activation.html">Qualified - Day 5-7: Education</option>
+                        <option value="4_qualified_lead_encouragement.html">Qualified - Day 8-10: Engagement</option>
+                        <option value="5_qualified_lead_day10_followup.html">Qualified - Day 11-14: Retention</option>
+                        <option value="01-onboarding-foundation.html">Adoption - Day 0-1: Welcome</option>
+                        <option value="03-first-story-created.html">Adoption - Day 2-4: First Activation</option>
+                        <option value="storybud_education_email.html">Adoption - Day 5-7: Education</option>
+                        <option value="04-weekly-reading-report.html">Adoption - Day 8-10: Engagement</option>
+                        <option value="05-credits-running-low.html">Adoption - Day 11-14: Upgrade</option>
+                        <option value="storytime_email_day1_dm_uat.html">Retention - Day 1: Welcome</option>
+                        <option value="storytime_email_day2_dm_uat.html">Retention - Day 2-4: Building</option>
+                        <option value="storytime_email_day3_dm_uat.html">Retention - Day 3: Momentum</option>
+                        <option value="storytime_email_day4_dm_uat.html">Retention - Day 4: Journey</option>
+                        <option value="storytime_email_day5_dm_uat.html">Retention - Day 5: Child's View</option>
+                        <option value="storytime_email_day6_dm_uat.html">Retention - Day 6: Upgrade Tease</option>
+                        <option value="storytime_email_day7_dm_uat.html">Retention - Day 7: Milestone</option>
+                        <option value="churn_recovery5_dm_uat.html">Churn Recovery - Day 5: Re-engagement</option>
+                        <option value="churn_recovery7_dm_uat.html">Churn Recovery - Day 7: Value Reminder</option>
+                        <option value="churn_recover20_dm_uat.html">Churn Recovery - Day 20: Final Push</option>
+                        <option value="dropped_nurture_day21_dm_uat.html">Cold - Day 21: Nurture Check-in</option>
+                        <option value="dropped_nurture_offer_day21_dm_uat.html">Cold - Day 21: Special Offer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="testEmailPersonalization">Test Personalization Data (JSON):</label>
+                    <textarea id="testEmailPersonalization" placeholder='{"user_name": "Test User", "user_email": "test@example.com", "subscription_name": "Premium", "credit_allowance": "unlimited"}' rows="4"></textarea>
+                    <small>Optional: Add test data to see how personalization works</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeTestEmailModal()">Cancel</button>
+                <button class="btn-primary" onclick="sendTestEmail()">Send Test Email</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Test Email Modal CSS -->
+    <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 0;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        animation: modalSlideIn 0.3s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .modal-header {
+        background: linear-gradient(135deg, #8B5CF6, #6366F1);
+        color: white;
+        padding: 20px;
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .close {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .close:hover {
+        opacity: 1;
+    }
+
+    .modal-body {
+        padding: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #374151;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #8B5CF6;
+    }
+
+    .form-group small {
+        display: block;
+        margin-top: 5px;
+        color: #6b7280;
+        font-size: 12px;
+    }
+
+    .modal-footer {
+        padding: 20px 25px;
+        border-top: 1px solid #e5e7eb;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #8B5CF6, #6366F1);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    }
+
+    .btn-secondary {
+        background: #f3f4f6;
+        color: #374151;
+    }
+
+    .btn-secondary:hover {
+        background: #e5e7eb;
+    }
+
+    /* Test Email Button Styling */
+    .preview-action-btn.test {
+        background: linear-gradient(135deg, #10B981, #059669);
+        color: white;
+        border: none;
+        margin-left: 8px;
+    }
+
+    .preview-action-btn.test:hover {
+        background: linear-gradient(135deg, #059669, #047857);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+        .modal-content {
+            background-color: #1f2937;
+            color: #f9fafb;
+        }
+        
+        .form-group label {
+            color: #f9fafb;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background-color: #374151;
+            border-color: #4b5563;
+            color: #f9fafb;
+        }
+        
+        .form-group small {
+            color: #9ca3af;
+        }
+        
+        .modal-footer {
+            border-top-color: #4b5563;
+        }
+        
+        .btn-secondary {
+            background: #374151;
+            color: #f9fafb;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+    }
+    </style>
+    
+    <!-- Test Email JavaScript Functions -->
+    <script>
+    // Test Email Modal Functions
+    function openTestEmailModal(templatePath = '') {
+        const modal = document.getElementById('testEmailModal');
+        const templateSelect = document.getElementById('testEmailTemplate');
+        
+        // Pre-select template if provided
+        if (templatePath) {
+            const fileName = templatePath.split('/').pop();
+            for (let i = 0; i < templateSelect.options.length; i++) {
+                if (templateSelect.options[i].value === fileName) {
+                    templateSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+        
+        modal.style.display = 'block';
+        
+        // Set default personalization data
+        document.getElementById('testEmailPersonalization').value = JSON.stringify({
+            user_name: "Test User",
+            user_email: "test@example.com",
+            subscription_name: "Premium",
+            credit_allowance: "unlimited",
+            stories_read: "5",
+            reading_time: "45",
+            new_words: "12",
+            days_active: "4",
+            vocabulary_improvement: "8",
+            stamina_improvement: "15",
+            comprehension_score: "92",
+            creative_responses: "6",
+            credits_remaining: "25",
+            create_story_link: "#",
+            features_guide_link: "#"
+        }, null, 2);
+    }
+
+    function closeTestEmailModal() {
+        document.getElementById('testEmailModal').style.display = 'none';
+    }
+
+    function sendTestEmail() {
+        const emailAddress = document.getElementById('testEmailAddress').value;
+        const subject = document.getElementById('testEmailSubject').value;
+        const template = document.getElementById('testEmailTemplate').value;
+        const personalization = document.getElementById('testEmailPersonalization').value;
+        
+        if (!emailAddress || !subject || !template) {
+            showNotification('Please fill in all required fields', 'error');
+            return;
+        }
+        
+        try {
+            // Validate JSON if personalization is provided
+            if (personalization.trim()) {
+                JSON.parse(personalization);
+            }
+        } catch (e) {
+            showNotification('Invalid JSON in personalization data', 'error');
+            return;
+        }
+        
+        // Show success message (in a real implementation, this would send the email)
+        showNotification('Test email sent successfully! 📧', 'success');
+        
+        // Log the test email details for debugging
+        console.log('Test Email Details:', {
+            to: emailAddress,
+            subject: subject,
+            template: template,
+            personalization: personalization
+        });
+        
+        // Close modal
+        closeTestEmailModal();
+        
+        // In a real implementation, you would:
+        // 1. Send the email via your email service (SendGrid, Mailgun, etc.)
+        // 2. Handle success/error responses
+        // 3. Show appropriate notifications
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('testEmailModal');
+        if (event.target === modal) {
+            closeTestEmailModal();
+        }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeTestEmailModal();
+        }
+    });
+    </script>
+</body>
+</html>
