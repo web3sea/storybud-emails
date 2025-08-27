@@ -40,7 +40,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             border: none;
             color: white;
             padding: 12px;
@@ -222,7 +222,7 @@
         .template-link {
             display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             text-decoration: none;
             padding: 12px 24px;
@@ -379,7 +379,7 @@
         }
         
         .sequence-tab.active {
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             border-color: #8B5CF6;
             box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
@@ -470,7 +470,7 @@
         
         /* Active day styling for timeline */
         .timeline-day.active-day {
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             transform: scale(1.05);
             box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
@@ -566,7 +566,7 @@
         }
         
         .progress-step.active-step .step-number {
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
         }
         
@@ -618,37 +618,43 @@
             flex-wrap: wrap;
         }
         
-        .preview-action-btn {
+                .preview-action-btn {
             display: inline-flex;
             align-items: center;
             padding: 10px 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 600;
             font-size: 0.9rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: none;
             cursor: pointer;
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
-            color: white;
-        }
-        
-        .preview-action-btn:hover {
-            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
-        }
-        
-        .preview-action-btn.secondary {
-            background: #F3F4F6;
-            color: #6B7280;
-            border: 2px solid #E5E7EB;
-        }
-        
-        .preview-action-btn.secondary:hover {
-            background: #E5E7EB;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: #374151;
-            border-color: #8B5CF6;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+                .preview-action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+        
+                .preview-action-btn.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            color: #6B7280;
+            border: 1px solid rgba(107, 114, 128, 0.3);
+        }
+        
+                .preview-action-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            color: #374151;
+            border-color: rgba(139, 92, 246, 0.4);
         }
         
         .preview-content {
@@ -723,7 +729,7 @@
         .test-btn {
             display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             text-decoration: none;
             padding: 16px 32px;
@@ -847,7 +853,7 @@
         }
         
         .modal-header {
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             padding: 20px 30px;
             display: flex;
@@ -924,18 +930,25 @@
             flex-wrap: wrap;
         }
         
-        .preview-action-btn {
+                .preview-action-btn {
             display: inline-flex;
             align-items: center;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 12px;
-            text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
             transition: all 0.3s ease;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #374151;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         }
         
         .preview-primary {
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
         }
@@ -1160,16 +1173,18 @@
             background: #111827;
         }
         
-        body.dark-mode .preview-action-btn.secondary {
-            background: #374151;
-            color: #D1D5DB;
-            border-color: #4B5563;
+        body.dark-mode         .preview-action-btn.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            color: #6B7280;
+            border: 1px solid rgba(107, 114, 128, 0.3);
         }
         
-        body.dark-mode .preview-action-btn.secondary:hover {
-            background: #4B5563;
-            color: #F9FAFB;
-            border-color: #8B5CF6;
+        body.dark-mode         .preview-action-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            color: #374151;
+            border-color: rgba(139, 92, 246, 0.4);
         }
         
         body.dark-mode .day-number {
@@ -1216,7 +1231,7 @@
         }
         
         #qualified-lead-sequence .progress-step.active-step .step-number {
-            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+            background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
         }
         
@@ -2600,17 +2615,20 @@ StoryBud Team`;
     }
 
     /* Test Email Button Styling */
-    .preview-action-btn.test {
-        background: linear-gradient(135deg, #10B981, #059669);
-        color: white;
-        border: none;
+        .preview-action-btn.test {
+        background: rgba(16, 185, 129, 0.1);
+        backdrop-filter: blur(10px);
+        color: #059669;
+        border: 1px solid rgba(16, 185, 129, 0.3);
         margin-left: 8px;
     }
 
-    .preview-action-btn.test:hover {
-        background: linear-gradient(135deg, #059669, #047857);
+        .preview-action-btn.test:hover {
+        background: rgba(16, 185, 129, 0.2);
+        backdrop-filter: blur(15px);
+        border-color: rgba(16, 185, 129, 0.5);
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
     }
 
     /* Dark mode support */
