@@ -1639,11 +1639,10 @@
                     
                     <h3>Structure of the Sequence</h3>
                     <ul>
-                        <li><strong>Day 1:</strong> Reconnection Email – Warm, non-pushy message acknowledging their absence and expressing genuine care.</li>
-                        <li><strong>Day 3:</strong> Value Reminder – Highlight specific benefits and positive memories from their previous usage.</li>
-                        <li><strong>Day 5:</strong> Barrier Identification – Ask for feedback and offer solutions to common obstacles.</li>
-                        <li><strong>Day 7:</strong> Fresh Start Offer – Provide an incentive or new feature to encourage return engagement.</li>
-                        <li><strong>Day 10:</strong> Final Appeal – Last chance message with strongest incentive and clear call-to-action.</li>
+                        <li><strong>Day 4:</strong> Re-engagement – Initial reconnection attempt with personalized messaging and value reminder.</li>
+                        <li><strong>Day 7:</strong> Value Reminder – Highlight specific benefits and positive memories from their previous usage.</li>
+                        <li><strong>Day 11:</strong> Follow-up – Strategic follow-up with additional incentives and barrier removal.</li>
+                        <li><strong>Day 20:</strong> Final Push – Last chance message with strongest incentive and clear call-to-action.</li>
                     </ul>
                     
                     <h3>Benefits of the Sequence</h3>
@@ -1664,9 +1663,9 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">🔗 Email Sequence Timeline</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day active-day" onclick="showChurnRecoveryPreview('templates/churn_recovery5_dm_uat.html', 'Day 5: Re-engagement', this)" style="cursor: pointer;">
-                        <div class="day-number">5</div>
-                        <div class="day-name">Day 5</div>
+                    <div class="timeline-day active-day" onclick="showChurnRecoveryPreview('templates/churn_recovery4_dm_uat.html', 'Day 4: Re-engagement', this)" style="cursor: pointer;">
+                        <div class="day-number">4</div>
+                        <div class="day-name">Day 4</div>
                         <div class="day-activity">Re-engagement</div>
                     </div>
                     <div class="timeline-day" onclick="showChurnRecoveryPreview('templates/churn_recovery7_dm_uat.html', 'Day 7: Value Reminder', this)" style="cursor: pointer;">
@@ -1674,7 +1673,12 @@
                         <div class="day-name">Day 7</div>
                         <div class="day-activity">Value Reminder</div>
                     </div>
-                    <div class="timeline-day" onclick="showChurnRecoveryPreview('templates/churn_recover20_dm_uat.html', 'Day 20: Final Push', this)" style="cursor: pointer;">
+                    <div class="timeline-day" onclick="showChurnRecoveryPreview('templates/churn_recovery11_dm_uat.html', 'Day 11: Follow-up', this)" style="cursor: pointer;">
+                        <div class="day-number">11</div>
+                        <div class="day-name">Day 11</div>
+                        <div class="day-activity">Follow-up</div>
+                    </div>
+                    <div class="timeline-day" onclick="showChurnRecoveryPreview('templates/churn_recovery20_dm_uat.html', 'Day 20: Final Push', this)" style="cursor: pointer;">
                         <div class="day-number">20</div>
                         <div class="day-name">Day 20</div>
                         <div class="day-activity">Final Push</div>
@@ -1685,7 +1689,7 @@
             <!-- Email Preview Container -->
             <div class="email-preview-container">
                 <div class="preview-header">
-                    <h3 class="preview-title">Day 5: Re-engagement</h3>
+                    <h3 class="preview-title">Day 4: Re-engagement</h3>
                     <div class="preview-actions">
                         <a href="templates/churn_recovery5_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
                         <button class="preview-action-btn secondary" onclick="downloadEmail('templates/churn_recovery5_dm_uat.html')">Download</button>
@@ -2041,7 +2045,7 @@ This collection contains all email templates for the StoryBud email campaign seq
 - Credits Low: templates/05-credits-running-low.html
 - Storytime Emails: templates/storytime_email_day1_dm_uat.html through day7_dm_uat.html
 - Retention Emails: templates/retention_email_week1.html, week2.html, month1.html, month3.html
-- Churn Recovery: templates/churn_recovery5_dm_uat.html, churn_recovery7_dm_uat.html, churn_recovery20_dm_uat.html
+- Churn Recovery: templates/churn_recovery4_dm_uat.html, churn_recovery7_dm_uat.html, churn_recovery11_dm_uat.html, churn_recovery20_dm_uat.html
 - Cold Outreach: templates/dropped_nurture_day21_dm_uat.html, dropped_nurture_offer_day21_dm_uat.html
 - Power Users: templates/power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html
 
@@ -2693,9 +2697,10 @@ StoryBud Team`;
                         <option value="storytime_email_day5_dm_uat.html">Retention - Day 5: Child's View</option>
                         <option value="storytime_email_day6_dm_uat.html">Retention - Day 6: Upgrade Tease</option>
                         <option value="storytime_email_day7_dm_uat.html">Retention - Day 7: Milestone</option>
-                        <option value="churn_recovery5_dm_uat.html">Churn Recovery - Day 5: Re-engagement</option>
+                        <option value="churn_recovery4_dm_uat.html">Churn Recovery - Day 4: Re-engagement</option>
                         <option value="churn_recovery7_dm_uat.html">Churn Recovery - Day 7: Value Reminder</option>
-                        <option value="churn_recover20_dm_uat.html">Churn Recovery - Day 20: Final Push</option>
+                        <option value="churn_recovery11_dm_uat.html">Churn Recovery - Day 11: Follow-up</option>
+                        <option value="churn_recovery20_dm_uat.html">Churn Recovery - Day 20: Final Push</option>
                         <option value="dropped_nurture_day21_dm_uat.html">Cold - Day 21: Nurture Check-in</option>
                         <option value="dropped_nurture_offer_day21_dm_uat.html">Cold - Day 21: Special Offer</option>
                         <option value="power_user_premium_features_email_dm_uat.html">Power Users - Premium Features</option>
