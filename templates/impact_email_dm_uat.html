@@ -4,30 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Read a Story!</title>
+    
     <style>
+        /* Import brand fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
             color: #374151;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            background: linear-gradient(135deg, #F3F4F6 0%, #F9FAFB 100%);
         }
         
         .email-container {
             background-color: white;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
+            border: 1px solid #E5E7EB;
         }
         
         .header {
             padding: 40px 30px;
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8B5CF6 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6366F1 100%);
             position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 25% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
+                radial-gradient(1px 1px at 75% 35%, rgba(252, 211, 77, 0.2) 50%, transparent 50%),
+                radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
+                radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
+            background-repeat: no-repeat;
+            pointer-events: none;
         }
         
         .header::after {
@@ -38,6 +59,7 @@
             right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            z-index: 1;
         }
         
         .welcome-heading {
@@ -45,7 +67,19 @@
             color: white;
             margin: 0 0 8px 0;
             font-weight: 700;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .welcome-subheading {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
         }
         
         .content {
@@ -59,10 +93,11 @@
         .greeting p {
             margin: 0 0 16px 0;
             font-size: 16px;
+            color: #475569;
         }
         
         .personalized-name {
-            color: #8B5CF6;
+            color: #7C3AED;
             font-weight: 600;
         }
         
@@ -74,16 +109,17 @@
             margin: 0 0 20px 0;
             font-size: 16px;
             line-height: 1.7;
+            color: #475569;
         }
         
         .highlight-text {
-            color: #1F2937;
+            color: #10B981;
             font-weight: 600;
         }
         
         .story-benefits {
-            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
-            border: 1px solid #BAE6FD;
+            background: linear-gradient(135deg, rgba(110, 231, 183, 0.08) 0%, rgba(110, 231, 183, 0.15) 100%);
+            border: 1px solid rgba(110, 231, 183, 0.3);
             border-radius: 12px;
             padding: 24px;
             margin: 28px 0;
@@ -98,14 +134,15 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #8B5CF6, #3B82F6, #06B6D4);
+            background: linear-gradient(90deg, #6EE7B7, #10B981, #059669);
         }
         
         .story-benefits h3 {
             margin: 0 0 16px 0;
-            color: #0F172A;
+            color: #065F46;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -125,8 +162,8 @@
             gap: 12px;
             padding: 12px 16px;
             background: white;
-            border-radius: 8px;
-            border: 1px solid #E0F2FE;
+            border-radius: 12px;
+            border: 1px solid rgba(110, 231, 183, 0.2);
         }
         
         .benefit-icon {
@@ -136,7 +173,7 @@
         
         .benefit-text {
             font-size: 14px;
-            color: #475569;
+            color: #047857;
             font-weight: 500;
         }
         
@@ -144,9 +181,9 @@
             text-align: center;
             margin: 40px 0;
             padding: 32px 24px;
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.08) 100%);
             border-radius: 12px;
-            border: 1px solid #E2E8F0;
+            border: 1px solid rgba(139, 92, 246, 0.2);
         }
         
         .cta-text {
@@ -154,26 +191,28 @@
             color: #374151;
             margin: 0 0 20px 0;
             font-weight: 500;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
             color: white;
             padding: 16px 32px;
             text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
+            border-radius: 50px;
+            font-weight: 700;
             font-size: 16px;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
             position: relative;
             overflow: hidden;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
         }
         
         .cta-button::before {
@@ -192,50 +231,69 @@
         }
         
         .tip-box {
-            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-            border: 1px solid #F59E0B;
+            background: linear-gradient(135deg, rgba(252, 211, 77, 0.08) 0%, rgba(245, 158, 11, 0.12) 100%);
+            border: 1px solid rgba(252, 211, 77, 0.3);
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             margin: 28px 0;
-            border-left: 4px solid #F59E0B;
+            border-left: 4px solid #FCD34D;
         }
         
         .tip-box p {
             margin: 0;
             font-size: 15px;
-            color: #92400E;
+            color: #475569;
             line-height: 1.6;
         }
         
         .tip-label {
             font-weight: 700;
-            color: #B45309;
+            color: #7C3AED;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .closing-message {
             text-align: center;
             margin: 32px 0;
             font-size: 16px;
-            color: #6B7280;
+            color: #475569;
             font-style: italic;
         }
         
         .footer {
-            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
-            padding: 30px;
+            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
+            padding: 40px 30px;
             text-align: center;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .footer-logo {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #7C3AED;
+            margin: 0 0 10px 0;
+        }
+        
+        .footer-tagline {
+            font-size: 16px;
+            color: #475569;
+            margin: 0 0 25px 0;
+            font-style: italic;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .footer-message {
             margin: 0 0 8px 0;
-            color: white;
+            color: #7C3AED;
             font-weight: 600;
             font-size: 18px;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .footer-team {
             margin: 0 0 24px 0;
-            color: #D1D5DB;
+            color: #475569;
             font-style: italic;
         }
         
@@ -244,7 +302,7 @@
         }
         
         .footer-links a {
-            color: #9CA3AF;
+            color: #6B7280;
             text-decoration: none;
             margin: 0 12px;
             font-size: 14px;
@@ -252,24 +310,33 @@
         }
         
         .footer-links a:hover {
-            color: #E5E7EB;
+            color: #7C3AED;
+            text-decoration: underline;
         }
         
         .footer-legal {
-            font-size: 12px;
-            color: #6B7280;
+            font-size: 13px;
+            color: #9CA3AF;
             margin-top: 20px;
             line-height: 1.5;
         }
         
         .footer-legal a {
-            color: #8B5CF6;
+            color: #7C3AED;
             text-decoration: none;
+        }
+        
+        .footer-legal a:hover {
+            text-decoration: underline;
         }
         
         @media (max-width: 600px) {
             body {
                 padding: 10px !important;
+            }
+            
+            .email-container {
+                border-radius: 12px !important;
             }
             
             .header, .content, .footer {
@@ -281,68 +348,84 @@
                 line-height: 1.2 !important;
             }
             
-            .welcome-subheading {
-                font-size: 14px !important;
-            }
-            
             .greeting p {
                 font-size: 16px !important;
                 line-height: 1.5 !important;
             }
             
             .story-benefits h3 {
-                font-size: 20px !important;
+                font-size: 16px !important;
                 line-height: 1.3 !important;
             }
             
-            /* Grid Layout Optimization */
             .benefits-list {
                 gap: 15px !important;
             }
             
             .benefit-item {
-                padding: 20px !important;
+                padding: 16px !important;
                 margin: 10px 0 !important;
             }
             
             .benefit-text {
-                font-size: 15px !important;
+                font-size: 14px !important;
                 line-height: 1.5 !important;
             }
             
             .tip-box {
-                margin: 25px -20px !important;
+                margin: 25px 0 !important;
                 padding: 20px !important;
             }
             
             .tip-box p {
-                font-size: 15px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .tip-label {
                 font-size: 14px !important;
+                line-height: 1.5 !important;
             }
             
             .cta-text {
+                font-size: 18px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .cta-button {
+                padding: 16px 32px !important;
                 font-size: 16px !important;
-                line-height: 1.5 !important;
+                min-height: 44px !important;
+                display: block !important;
+                width: 100% !important;
+                max-width: 280px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
             }
             
-            .closing-message p {
-                font-size: 15px !important;
-                line-height: 1.5 !important;
+            .closing-message {
+                margin: 25px 0 !important;
+                padding: 20px 0 !important;
             }
             
-            .footer-links {
-                flex-direction: column !important;
-                gap: 12px !important;
-                text-align: center !important;
+            .footer {
+                padding: 30px 20px !important;
+            }
+            
+            .footer-logo {
+                font-size: 20px !important;
+            }
+            
+            .footer-tagline {
+                font-size: 14px !important;
+            }
+            
+            .footer-links a {
+                display: block !important;
+                margin: 8px 0 !important;
             }
         }
         
-        /* Small mobile devices */
         @media (max-width: 480px) {
+            body {
+                padding: 8px !important;
+            }
+            
             .header, .content, .footer {
                 padding: 20px 15px !important;
             }
@@ -352,7 +435,7 @@
             }
             
             .story-benefits h3 {
-                font-size: 18px !important;
+                font-size: 16px !important;
             }
             
             .greeting p {
@@ -360,7 +443,7 @@
             }
             
             .benefit-item {
-                padding: 18px !important;
+                padding: 14px !important;
             }
             
             .benefit-text {
@@ -368,13 +451,21 @@
             }
             
             .tip-box {
-                margin: 20px -15px !important;
                 padding: 18px !important;
+            }
+            
+            .cta-button {
+                padding: 14px 28px !important;
+                font-size: 15px !important;
+                width: calc(100% - 56px) !important;
             }
         }
         
-        /* Extra small mobile devices */
         @media (max-width: 360px) {
+            body {
+                padding: 5px !important;
+            }
+            
             .header, .content, .footer {
                 padding: 18px 12px !important;
             }
@@ -384,91 +475,128 @@
             }
             
             .story-benefits h3 {
-                font-size: 17px !important;
+                font-size: 15px !important;
             }
             
             .benefit-item {
-                padding: 16px !important;
+                padding: 12px !important;
             }
             
             .tip-box {
-                margin: 18px -12px !important;
                 padding: 16px !important;
+            }
+            
+            .cta-button {
+                padding: 12px 24px !important;
+                font-size: 14px !important;
+                width: calc(100% - 48px) !important;
             }
         }
         
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
-            body,
-            body[style] {
-                background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%) !important;
-                color: #E0E0E0 !important;
+            body {
+                background: linear-gradient(135deg, #1F2937 0%, #111827 100%) !important;
             }
             
             .email-container {
-                background-color: white !important;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
-                border-color: #E2E8F0 !important;
+                background-color: #1F2937 !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+                border-color: #374151 !important;
             }
             
             .header {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8B5CF6 100%) !important;
+                background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6366F1 100%) !important;
             }
             
             .content {
-                color: #2d3748 !important;
-                background-color: #ffffff !important;
+                background-color: #1F2937 !important;
             }
             
             .greeting p,
-            .content p {
-                color: #2d3748 !important;
+            .main-message p {
+                color: #F3F4F6 !important;
+            }
+            
+            .personalized-name {
+                color: #A78BFA !important;
+            }
+            
+            .highlight-text {
+                color: #6EE7B7 !important;
+            }
+            
+            .story-benefits {
+                background: linear-gradient(135deg, rgba(110, 231, 183, 0.12) 0%, rgba(110, 231, 183, 0.2) 100%) !important;
+                border-color: rgba(110, 231, 183, 0.4) !important;
             }
             
             .story-benefits h3 {
-                color: #1F2937 !important;
+                color: #F3F4F6 !important;
             }
             
             .benefit-item {
-                background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%) !important;
-                border-color: #BAE6FD !important;
+                background: #374151 !important;
+                border-color: rgba(110, 231, 183, 0.3) !important;
             }
             
             .benefit-text {
-                color: #2d3748 !important;
+                color: #F3F4F6 !important;
             }
             
-            .tip-box {
-                background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%) !important;
-                border-color: #F59E0B !important;
-            }
-            
-            .tip-box p {
-                color: #2d3748 !important;
-            }
-            
-            .tip-label {
-                color: #92400E !important;
+            .cta-section {
+                background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(139, 92, 246, 0.12) 100%) !important;
+                border-color: rgba(124, 58, 237, 0.3) !important;
             }
             
             .cta-text {
-                color: #2d3748 !important;
+                color: #F3F4F6 !important;
             }
             
-            .closing-message p {
-                color: #2d3748 !important;
+            .tip-box {
+                background: linear-gradient(135deg, rgba(252, 211, 77, 0.12) 0%, rgba(245, 158, 11, 0.18) 100%) !important;
+                border-color: rgba(252, 211, 77, 0.4) !important;
+            }
+            
+            .tip-box p {
+                color: #F3F4F6 !important;
+            }
+            
+            .tip-label {
+                color: #A78BFA !important;
+            }
+            
+            .closing-message {
+                color: #F3F4F6 !important;
             }
             
             .footer {
-                background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
-                border-top-color: #4a5568 !important;
+                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
+                border-top-color: #374151 !important;
             }
             
-            .footer-message,
-            .footer-team,
-            .footer-links a,
-            .footer-legal p {
-                color: #a0aec0 !important;
+            .footer-logo {
+                color: #A78BFA !important;
+            }
+            
+            .footer-tagline, .footer-message, .footer-team {
+                color: #D1D5DB !important;
+            }
+            
+            .footer-links a {
+                color: #9CA3AF !important;
+            }
+            
+            .footer-links a:hover {
+                color: #A78BFA !important;
+            }
+            
+            .footer-legal {
+                color: #6B7280 !important;
+            }
+            
+            .footer-legal a {
+                color: #A78BFA !important;
             }
         }
     </style>
@@ -476,7 +604,8 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <h1 class="welcome-heading">📚 Let's Read a Story!</h1>
+            <h1 class="welcome-heading">Let's Read a Story!</h1>
+            <p class="welcome-subheading">Where every child becomes the hero.</p>
         </div>
         
         <div class="content">
@@ -492,7 +621,7 @@
             </div>
             
             <div class="story-benefits">
-                <h3>✨ Why Story Time Matters</h3>
+                <h3>Why Story Time Matters</h3>
                 <ul class="benefits-list">
                     <li class="benefit-item">
                         <span class="benefit-icon">🌟</span>
@@ -523,27 +652,31 @@
             </div>
             
             <div class="tip-box">
-                <p><span class="tip-label">💡 Tip:</span> Make it a ritual! Cozy up in a favorite reading spot, let your child choose a special stuffed animal to "listen in," and turn storytime into a nightly adventure they'll always look forward to.</p>
+                <p><span class="tip-label">Tip:</span> Make it a ritual! Cozy up in a favorite reading spot, let your child choose a special stuffed animal to "listen in," and turn storytime into a nightly adventure they'll always look forward to.</p>
             </div>
             
             <div class="closing-message">
-                <p>Here's to building magical memories together, one story at a time. ✨</p>
+                <p>Here's to building magical memories together, one story at a time.</p>
             </div>
         </div>
         
         <div class="footer">
-            <p class="footer-message">Happy storytelling! 📚</p>
+            <div class="footer-logo">StoryBud</div>
+            <p class="footer-tagline">"Every child deserves their own story."</p>
+            
+            <p class="footer-message">Happy storytelling!</p>
             <p class="footer-team">The StoryBud Team</p>
             
             <div class="footer-links">
-                <a href="https://storybud.com/about">About StoryBud</a>
+                <a href="https://storybud.com/contact">Support</a>
                 <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
-                <a href="mailto:support@storybud.com">Support Team</a>
+                <a href="https://storybud.com/terms-of-service">Terms</a>
             </div>
             
             <div class="footer-legal">
                 <p>You're receiving this email because you signed up for StoryBud.<br>
-                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | StoryBud Inc.<br>
+                1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
                 <p>Copyright © 2025 StoryBud All Rights Reserved</p>
             </div>
         </div>
