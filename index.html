@@ -1277,6 +1277,10 @@
                     <span class="tab-icon">⚡</span>
                     <span class="tab-text">Power Users</span>
                 </button>
+                <button class="sequence-tab" onclick="showSequence('retention-new', event)">
+                    <span class="tab-icon">🔄</span>
+                    <span class="tab-text">Retention</span>
+                </button>
             </div>
         </div>
         
@@ -1818,7 +1822,7 @@
             <div class="timeline-container">
                 <h2 class="timeline-title">⚡ Email Sequence Timeline</h2>
                 <div class="timeline-days">
-                    <div class="timeline-day active-day" onclick="showPowerUsersPreview('templates/power_user_power_user_premium_features_email_dm_uat.html', 'Premium Features', this)" style="cursor: pointer;">
+                    <div class="timeline-day active-day" onclick="showPowerUsersPreview('templates/power_user_premium_features_email_dm_uat.html', 'Premium Features', this)" style="cursor: pointer;">
                         <div class="day-number">1</div>
                         <div class="day-name">Features</div>
                         <div class="day-activity">Premium Features</div>
@@ -1853,14 +1857,91 @@
                 <div class="preview-header">
                     <h3 class="preview-title">Premium Features</h3>
                     <div class="preview-actions">
-                        <a href="templates/power_user_power_user_premium_features_email_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
-                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/power_user_power_user_premium_features_email_dm_uat.html')">Download</button>
+                        <a href="templates/power_user_premium_features_email_dm_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/power_user_premium_features_email_dm_uat.html')">Download</button>
                         <button class="preview-action-btn test" onclick="openTestEmailModal('power_user_premium_features_email_dm_uat.html')">🧪 Send Test Email</button>
                     </div>
                 </div>
                 
                 <!-- Email Preview iframe -->
-                <iframe id="powerUsersPreviewFrame" src="templates/power_user_power_user_premium_features_email_dm_uat.html" class="email-preview-iframe"></iframe>
+                <iframe id="powerUsersPreviewFrame" src="templates/power_user_premium_features_email_dm_uat.html" class="email-preview-iframe"></iframe>
+            </div>
+        </div>
+        
+        <!-- Retention Sequence Container -->
+        <div id="retention-new-sequence" class="sequence-container">
+            <!-- Description Section -->
+            <div class="description-section">
+                <div class="description">
+                    <h2>📋 Campaign Overview: Retention Sequence</h2>
+                    <p>The Retention Sequence is designed to maintain engagement with existing users through strategic check-ins and value reinforcement. This sequence focuses on preventing churn by delivering ongoing value, celebrating user progress, and maintaining regular touchpoints that keep users actively engaged with the platform.</p>
+                    
+                    <h3>Key Objectives</h3>
+                    <ol>
+                        <li><strong>Churn Prevention</strong> – Identify and address potential disengagement before users become inactive.</li>
+                        <li><strong>Value Reinforcement</strong> – Regularly remind users of the benefits and positive impact of the platform.</li>
+                        <li><strong>Habit Maintenance</strong> – Support the establishment and maintenance of long-term usage patterns.</li>
+                        <li><strong>Progress Celebration</strong> – Acknowledge user milestones and achievements to build emotional investment.</li>
+                        <li><strong>Community Building</strong> – Foster a sense of belonging and connection to the platform community.</li>
+                    </ol>
+                    
+                    <h3>Structure of the Sequence</h3>
+                    <ul>
+                        <li><strong>Weekly Check-in:</strong> Regular engagement touchpoint with reading progress and encouragement.</li>
+                        <li><strong>Monthly Milestone:</strong> Monthly celebration of achievements and continued value delivery.</li>
+                        <li><strong>Weekly Reading Report:</strong> Detailed progress report with personalized insights and next steps.</li>
+                    </ul>
+                    
+                    <h3>Benefits of the Sequence</h3>
+                    <ul>
+                        <li>Reduces churn through proactive engagement and value delivery.</li>
+                        <li>Increases long-term user satisfaction and platform loyalty.</li>
+                        <li>Provides valuable feedback loop for understanding user behavior.</li>
+                        <li>Creates opportunities for upselling and feature adoption.</li>
+                        <li>Builds strong user relationships that drive word-of-mouth referrals.</li>
+                    </ul>
+                    
+                    <p><strong>Retention Strategy:</strong> This sequence takes a proactive approach to user retention, focusing on consistent value delivery and positive reinforcement to build lasting user relationships.</p>
+                </div>
+            </div>
+            
+            <!-- Retention Timeline -->
+            <div class="timeline-container">
+                <h2 class="timeline-title">🔄 Email Sequence Timeline</h2>
+                <div class="timeline-days">
+                    <div class="timeline-day active-day" onclick="showRetentionNewPreview('templates/retention_email_weekly_md_uat.html', 'Weekly Check-in', this)" style="cursor: pointer;">
+                        <div class="day-number">1</div>
+                        <div class="day-name">Weekly</div>
+                        <div class="day-activity">Weekly Check-in</div>
+                    </div>
+                    <div class="timeline-day" onclick="showRetentionNewPreview('templates/retention_email_monthly_md_uat.html', 'Monthly Milestone', this)" style="cursor: pointer;">
+                        <div class="day-number">2</div>
+                        <div class="day-name">Monthly</div>
+                        <div class="day-activity">Monthly Milestone</div>
+                    </div>
+                    <div class="timeline-day" onclick="showRetentionNewPreview('templates/retention_email_weekly_reading_report_dm_uat.html', 'Weekly Reading Report', this)" style="cursor: pointer;">
+                        <div class="day-number">3</div>
+                        <div class="day-name">Report</div>
+                        <div class="day-activity">Weekly Reading Report</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Email Preview Container -->
+            <div class="email-preview-container">
+                
+                <!-- Preview Title and Actions -->
+                <div class="preview-header">
+                    <h3 class="preview-title">Weekly Check-in</h3>
+                    <div class="preview-actions">
+                        <a href="templates/retention_email_weekly_md_uat.html" target="_blank" class="preview-action-btn">Open in New Tab</a>
+                        <button class="preview-action-btn secondary" onclick="downloadEmail('templates/retention_email_weekly_md_uat.html')">Download</button>
+                        <button class="preview-action-btn test" onclick="openTestEmailModal('retention_email_weekly_md_uat.html')">🧪 Send Test Email</button>
+                    </div>
+                </div>
+                
+                <!-- Email Preview iframe -->
+                <iframe id="retentionNewPreviewFrame" src="templates/retention_email_weekly_md_uat.html" class="email-preview-iframe"></iframe>
             </div>
         </div>
         
@@ -1937,13 +2018,14 @@ This collection contains all email templates for the StoryBud email campaign seq
 - Onboarding: templates/01-onboarding-foundation.html
 - First Story: templates/03-first-story-created.html
 - Education: templates/storybud_education_email.html
-- Power Users: templates/power_user_power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html, power_user_impact_email_dm_uat.html, credits_running_low_dm_uat.html
+- Power Users: templates/power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html, power_user_impact_email_dm_uat.html, credits_running_low_dm_uat.html
+- Retention: templates/retention_email_weekly_md_uat.html, retention_email_monthly_md_uat.html, retention_email_weekly_reading_report_dm_uat.html
 - Credits Low: templates/05-credits-running-low.html
 - Storytime Emails: templates/storytime_email_day1_dm_uat.html through day7_dm_uat.html
 - Retention Emails: templates/retention_email_week1.html, week2.html, month1.html, month3.html
 - Churn Recovery: templates/churn_recovery5_dm_uat.html, churn_recovery7_dm_uat.html, churn_recovery20_dm_uat.html
 - Cold Outreach: templates/dropped_nurture_day21_dm_uat.html, dropped_nurture_offer_day21_dm_uat.html
-- Power Users: templates/power_user_power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html
+- Power Users: templates/power_user_premium_features_email_dm_uat.html, power_user_education_email_dm_uat.html, power_user_pro_tips_md_uat.html
 
 ## Implementation Notes
 - All templates use responsive design
@@ -2603,6 +2685,9 @@ StoryBud Team`;
                         <option value="power_user_pro_tips_md_uat.html">Power Users - Pro Tips</option>
                         <option value="power_user_impact_email_dm_uat.html">Power Users - Impact Report</option>
                         <option value="credits_running_low_dm_uat.html">Power Users - Credits Running Low</option>
+                        <option value="retention_email_weekly_md_uat.html">Retention - Weekly Check-in</option>
+                        <option value="retention_email_monthly_md_uat.html">Retention - Monthly Milestone</option>
+                        <option value="retention_email_weekly_reading_report_dm_uat.html">Retention - Weekly Reading Report</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -2817,6 +2902,58 @@ StoryBud Team`;
     
     <!-- Test Email JavaScript Functions -->
     <script>
+    // Retention New Preview functionality
+    function showRetentionNewPreview(emailUrl, emailTitle, clickedElement) {
+        // Update the preview title
+        const previewTitle = document.querySelector('#retention-new-sequence .preview-title');
+        if (previewTitle) {
+            previewTitle.textContent = emailTitle;
+        }
+        
+        // Update the iframe source
+        const previewFrame = document.getElementById('retentionNewPreviewFrame');
+        if (previewFrame) {
+            // Handle both local files and external URLs
+            if (emailUrl.startsWith('http')) {
+                previewFrame.src = emailUrl;
+            } else {
+                // Local file - construct full path
+                previewFrame.src = window.location.origin + '/' + emailUrl;
+            }
+        }
+        
+        // Update the action buttons
+        const openInNewTabLink = document.querySelector('#retention-new-sequence .preview-action-btn');
+        if (openInNewTabLink) {
+            openInNewTabLink.href = emailUrl;
+        }
+        
+        const downloadBtn = document.querySelector('#retention-new-sequence .preview-action-btn.secondary');
+        if (downloadBtn) {
+            downloadBtn.onclick = function() {
+                downloadEmail(emailUrl);
+            };
+        }
+        
+        // Update the test email button
+        const testBtn = document.querySelector('#retention-new-sequence .preview-action-btn.test');
+        if (testBtn) {
+            const filename = emailUrl.split('/').pop();
+            testBtn.onclick = function() {
+                openTestEmailModal(filename);
+            };
+        }
+        
+        // Update active day styling
+        document.querySelectorAll('#retention-new-sequence .timeline-day').forEach(day => {
+            day.classList.remove('active-day');
+        });
+        
+        if (clickedElement) {
+            clickedElement.classList.add('active-day');
+        }
+    }
+    
     // Test Email Modal Functions
     function openTestEmailModal(templatePath = '') {
         const modal = document.getElementById('testEmailModal');
