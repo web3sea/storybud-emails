@@ -1,65 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>Welcome to StoryBud!</title>
     
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
     <style>
-        /* Import brand fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            line-height: 1.6;
-            color: #374151;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #F3F4F6 0%, #F9FAFB 100%);
+        /* Reset and base styles */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+            background: #F3F4F6 !important;
         }
         
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        table, td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+        
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        /* Main container styles */
         .email-container {
-            background-color: white;
+            max-width: 600px;
+            background: #FFFFFF;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-            border: 1px solid #E5E7EB;
         }
         
+        /* Header styles */
         .header {
+            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%);
             padding: 40px 30px;
             text-align: center;
-            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%);
-            position: relative;
             color: white;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(2px 2px at 25% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 75% 35%, rgba(252, 211, 77, 0.2) 50%, transparent 50%),
-                radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
-            background-repeat: no-repeat;
-            pointer-events: none;
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            z-index: 1;
         }
         
         .welcome-heading {
@@ -67,10 +76,8 @@
             color: white;
             margin: 0 0 8px 0;
             font-weight: 700;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Quicksand', Georgia, sans-serif;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 2;
         }
         
         .welcome-subheading {
@@ -78,22 +85,18 @@
             color: rgba(255, 255, 255, 0.9);
             margin: 0;
             font-weight: 400;
-            position: relative;
-            z-index: 2;
         }
         
+        /* Content styles */
         .content {
             padding: 36px 30px;
         }
         
-        .greeting {
-            margin-bottom: 32px;
-        }
-        
-        .greeting p {
+        .greeting-text {
             margin: 0 0 16px 0;
             font-size: 16px;
             color: #475569;
+            font-family: 'Inter', Arial, sans-serif;
         }
         
         .personalized-name {
@@ -101,52 +104,36 @@
             font-weight: 600;
         }
         
-        .section {
-            margin-bottom: 36px;
-        }
-        
         .section-title {
             font-size: 22px;
             font-weight: 600;
             color: #7C3AED;
             margin: 0 0 20px 0;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-family: 'Quicksand', Georgia, sans-serif;
         }
         
+        /* Account card */
         .account-card {
-            background: linear-gradient(135deg, rgba(110, 231, 183, 0.08) 0%, rgba(110, 231, 183, 0.12) 100%);
-            border: 1px solid rgba(110, 231, 183, 0.3);
+            background: #F0F9FF;
+            border: 2px solid #BAE6FD;
             border-radius: 12px;
             padding: 24px;
-            position: relative;
-            overflow: hidden;
+            margin: 20px 0;
         }
         
-        .account-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #6EE7B7, #10B981, #059669);
-        }
-        
-        .account-card h4 {
+        .account-card-title {
             margin: 0 0 12px 0;
             color: #7C3AED;
             font-size: 18px;
             font-weight: 600;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Quicksand', Georgia, sans-serif;
         }
         
-        .account-card p {
+        .account-card-text {
             margin: 0;
             font-size: 15px;
             color: #475569;
+            font-family: 'Inter', Arial, sans-serif;
         }
         
         .credits-highlight {
@@ -155,36 +142,27 @@
             font-size: 16px;
         }
         
+        /* Steps container */
         .steps-container {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(167, 139, 250, 0.05) 100%);
+            background: #F8F4FF;
             border-radius: 12px;
             padding: 24px;
             border-left: 4px solid #8B5CF6;
-            border: 1px solid rgba(139, 92, 246, 0.1);
+            border: 2px solid #E0E7FF;
         }
         
-        .steps-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 16px;
-        }
-        
+        /* Step items */
         .step-item {
-            display: flex;
-            align-items: flex-start;
             background: white;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.08);
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
             border: 1px solid #E5E7EB;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 16px;
         }
         
-        .step-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.15);
+        .step-item:last-child {
+            margin-bottom: 0;
         }
         
         .step-number {
@@ -193,39 +171,37 @@
             border-radius: 50%;
             width: 32px;
             height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-weight: 700;
             font-size: 16px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            margin-right: 16px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+            font-family: 'Quicksand', Georgia, sans-serif;
+            text-align: center;
+            line-height: 32px;
         }
         
-        .step-content h4 {
+        .step-content-title {
             margin: 0 0 4px 0;
             color: #1F2937;
             font-size: 16px;
             font-weight: 600;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Quicksand', Georgia, sans-serif;
         }
         
-        .step-content p {
+        .step-content-text {
             margin: 0;
             color: #475569;
             font-size: 14px;
             font-weight: 500;
+            font-family: 'Inter', Arial, sans-serif;
         }
         
+        /* CTA Section */
         .cta-section {
             text-align: center;
             margin: 40px 0;
             padding: 32px 24px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.08) 100%);
+            background: #F0F9FF;
             border-radius: 12px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            border: 2px solid #BAE6FD;
         }
         
         .cta-text {
@@ -233,45 +209,23 @@
             color: #374151;
             margin: 0 0 20px 0;
             font-weight: 500;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Quicksand', Georgia, sans-serif;
         }
         
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
-            color: white;
+            color: white !important;
             padding: 16px 32px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
             font-size: 16px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            transition: all 0.3s ease;
+            font-family: 'Quicksand', Georgia, sans-serif;
             box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
-            position: relative;
-            overflow: hidden;
         }
         
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(124, 58, 237, 0.4);
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
+        /* Footer */
         .footer {
             background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
             padding: 40px 30px;
@@ -280,7 +234,7 @@
         }
         
         .footer-logo {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Quicksand', Georgia, sans-serif;
             font-size: 24px;
             font-weight: 700;
             color: #7C3AED;
@@ -292,7 +246,7 @@
             color: #475569;
             margin: 0 0 25px 0;
             font-style: italic;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
         }
         
         .footer-message {
@@ -300,13 +254,14 @@
             color: #7C3AED;
             font-weight: 600;
             font-size: 18px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Quicksand', Georgia, sans-serif;
         }
         
         .footer-team {
             margin: 0 0 24px 0;
             color: #475569;
             font-style: italic;
+            font-family: 'Inter', Arial, sans-serif;
         }
         
         .footer-links {
@@ -318,7 +273,7 @@
             text-decoration: none;
             margin: 0 12px;
             font-size: 14px;
-            transition: color 0.2s ease;
+            font-family: 'Inter', Arial, sans-serif;
         }
         
         .footer-links a:hover {
@@ -331,6 +286,7 @@
             color: #9CA3AF;
             margin-top: 20px;
             line-height: 1.5;
+            font-family: 'Inter', Arial, sans-serif;
         }
         
         .footer-legal a {
@@ -342,164 +298,16 @@
             text-decoration: underline;
         }
         
-        @media (max-width: 600px) {
-            body {
-                padding: 10px !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 25px 20px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .welcome-subheading {
-                font-size: 14px !important;
-            }
-            
-            .section-title {
-                font-size: 20px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .steps-list {
-                gap: 20px !important;
-            }
-            
-            .step-item {
-                flex-direction: column !important;
-                text-align: center !important;
-                gap: 15px !important;
-                padding: 20px !important;
-            }
-            
-            .step-number {
-                margin: 0 auto !important;
-            }
-            
-            .step-content {
-                text-align: center !important;
-            }
-            
-            .step-content h4 {
-                font-size: 16px !important;
-            }
-            
-            .step-content p {
-                font-size: 14px !important;
-            }
-            
-            .account-card {
-                padding: 20px !important;
-                margin: 20px 0 !important;
-            }
-            
-            .account-card h4 {
-                font-size: 17px !important;
-            }
-            
-            .account-card p {
-                font-size: 14px !important;
-            }
-            
-            .cta-button {
-                padding: 16px 32px !important;
-                font-size: 16px !important;
-                min-height: 44px !important;
-                display: block !important;
-                width: 100% !important;
-                max-width: 280px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
-            }
-            
-            .footer {
-                padding: 30px 20px !important;
-            }
-            
-            .footer-logo {
-                font-size: 20px !important;
-            }
-            
-            .footer-tagline {
-                font-size: 14px !important;
-            }
-            
-            .footer-links a {
-                display: block !important;
-                margin: 8px 0 !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header, .content, .footer {
-                padding: 20px 15px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 24px !important;
-            }
-            
-            .section-title {
-                font-size: 18px !important;
-            }
-            
-            .step-content h4 {
-                font-size: 15px !important;
-            }
-            
-            .step-content p {
-                font-size: 13px !important;
-            }
-            
-            .account-card {
-                padding: 18px !important;
-            }
-            
-            .cta-button {
-                padding: 14px 28px !important;
-                font-size: 15px !important;
-                width: calc(100% - 56px) !important;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .header, .content, .footer {
-                padding: 18px 12px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 22px !important;
-            }
-            
-            .step-content h4 {
-                font-size: 14px !important;
-            }
-            
-            .account-card {
-                padding: 16px !important;
-            }
-            
-            .cta-button {
-                padding: 12px 24px !important;
-                font-size: 14px !important;
-                width: calc(100% - 48px) !important;
-            }
-        }
-        
-        /* Dark mode support */
+        /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1F2937 0%, #111827 100%) !important;
+            html, body {
+                background: #1F2937 !important;
             }
             
             .email-container {
-                background-color: #1F2937 !important;
+                background: #1F2937 !important;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #374151 !important;
+                border: 1px solid #374151 !important;
             }
             
             .header {
@@ -507,10 +315,10 @@
             }
             
             .content {
-                background-color: #1F2937 !important;
+                background: #1F2937 !important;
             }
             
-            .greeting p {
+            .greeting-text {
                 color: #F3F4F6 !important;
             }
             
@@ -523,15 +331,15 @@
             }
             
             .account-card {
-                background: linear-gradient(135deg, rgba(125, 211, 252, 0.12) 0%, rgba(110, 231, 183, 0.18) 100%) !important;
+                background: rgba(125, 211, 252, 0.15) !important;
                 border-color: rgba(125, 211, 252, 0.4) !important;
             }
             
-            .account-card h4 {
+            .account-card-title {
                 color: #A78BFA !important;
             }
             
-            .account-card p {
+            .account-card-text {
                 color: #F3F4F6 !important;
             }
             
@@ -540,7 +348,7 @@
             }
             
             .steps-container {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(139, 92, 246, 0.15) 100%) !important;
+                background: rgba(124, 58, 237, 0.15) !important;
                 border-color: rgba(124, 58, 237, 0.3) !important;
             }
             
@@ -549,16 +357,16 @@
                 border-color: #4B5563 !important;
             }
             
-            .step-content h4 {
+            .step-content-title {
                 color: #F9FAFB !important;
             }
             
-            .step-content p {
+            .step-content-text {
                 color: #F3F4F6 !important;
             }
             
             .cta-section {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(139, 92, 246, 0.12) 100%) !important;
+                background: rgba(124, 58, 237, 0.15) !important;
                 border-color: rgba(124, 58, 237, 0.3) !important;
             }
             
@@ -575,7 +383,9 @@
                 color: #A78BFA !important;
             }
             
-            .footer-tagline, .footer-message, .footer-team {
+            .footer-tagline,
+            .footer-message,
+            .footer-team {
                 color: #D1D5DB !important;
             }
             
@@ -595,91 +405,256 @@
                 color: #A78BFA !important;
             }
         }
+        
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+            }
+            
+            .header, .content, .footer {
+                padding: 25px 20px !important;
+            }
+            
+            .welcome-heading {
+                font-size: 26px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .section-title {
+                font-size: 20px !important;
+                line-height: 1.3 !important;
+            }
+            
+            .step-item {
+                padding: 20px 15px !important;
+            }
+            
+            .cta-button {
+                padding: 16px 32px !important;
+                font-size: 16px !important;
+                display: block !important;
+                width: 100% !important;
+                max-width: 280px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+            
+            .footer-links a {
+                display: block !important;
+                margin: 8px 0 !important;
+            }
+        }
     </style>
 </head>
-<body>
-    <div class="email-container">
-        <div class="header">
-            <h1 class="welcome-heading">📚 Welcome to StoryBud!</h1>
-            <p class="welcome-subheading">Where stories come to life.</p>
+
+<body style="margin: 0; padding: 0; width: 100%; height: 100%; background: #F3F4F6;">
+    <center style="width: 100%; background: #F3F4F6;">
+        <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+            Welcome to StoryBud! Your magical storytelling journey begins here. Create personalized stories for your little one today! ✨📚
         </div>
         
-        <div class="content">
-            <div class="greeting">
-                <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>,</p>
-                <p>Welcome to the StoryBud family! We're thrilled you're here and can't wait to help you create magical, personalized stories that will become cherished memories.</p>
-            </div>
-            
-            <div class="section">
-                <h3 class="section-title">🎁 Your Account is Ready</h3>
-                <div class="account-card">
-                    <h4>{{subscription_name|default:"StoryBud"}} Plan Active</h4>
-                    <p>You have <span class="credits-highlight">{{credit_allowance|default:"unlimited"}} credits</span> ready to use each month for creating personalized stories with illustrations, voice narration, and character portraits.</p>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h3 class="section-title">🚀 Create Your First Story</h3>
-                <div class="steps-container">
-                    <ol class="steps-list">
-                        <li class="step-item">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Pick Your Adventure</h4>
-                                <p>Choose from adventure, fantasy, learning, or everyday fun themes</p>
-                            </div>
-                        </li>
-                        <li class="step-item">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Add Your Little Hero</h4>
-                                <p>Include your child's name and photo to make them the star</p>
-                            </div>
-                        </li>
-                        <li class="step-item">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Choose Art Style</h4>
-                                <p>From watercolor to cartoon - pick what your child loves most</p>
-                            </div>
-                        </li>
-                        <li class="step-item">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Watch the Magic</h4>
-                                <p>Your personalized story will be ready in just minutes!</p>
-                            </div>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            
-            <div class="cta-section">
-                <p class="cta-text">Ready to create something magical?</p>
-                <a href="https://storybud.com/" class="cta-button">Create Your First Story</a>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-logo">✨ StoryBud</div>
-            <p class="footer-tagline">"Every child deserves their own story."</p>
-            
-            <p class="footer-message">Happy storytelling!</p>
-            <p class="footer-team">The StoryBud Team</p>
-            
-            <div class="footer-links">
-                <a href="https://storybud.com/contact">Support</a>
-                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
-                <a href="https://storybud.com/terms-of-service">Terms</a>
-            </div>
-            
-            <div class="footer-legal">
-                <p>You're receiving this email because you signed up for StoryBud.<br>
-                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | StoryBud Inc.<br>
-                1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
-                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
-            </div>
-        </div>
-    </div>
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+            <tr>
+                <td style="padding: 30px 15px;">
+                    <div class="email-container">
+                        
+                        <!-- Header -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="header" style="background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%); padding: 40px 30px; text-align: center; color: white;">
+                                    <h1 class="welcome-heading" style="font-size: 32px; color: white; margin: 0 0 8px 0; font-weight: 700; font-family: 'Quicksand', Georgia, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">📚 Welcome to StoryBud!</h1>
+                                    <p class="welcome-subheading" style="font-size: 16px; color: rgba(255, 255, 255, 0.9); margin: 0; font-weight: 400; font-family: 'Inter', Arial, sans-serif;">Where stories come to life.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <!-- Content -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="content" style="padding: 36px 30px; font-family: 'Inter', Arial, sans-serif;">
+                                    
+                                    <!-- Greeting -->
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="padding-bottom: 28px;">
+                                                <p class="greeting-text" style="margin: 0 0 16px 0; font-size: 16px; color: #475569; font-family: 'Inter', Arial, sans-serif;">Hi <span class="personalized-name" style="color: #7C3AED; font-weight: 600;">{{user_name|default:"there"}}</span>,</p>
+                                                <p class="greeting-text" style="margin: 0 0 16px 0; font-size: 16px; color: #475569; font-family: 'Inter', Arial, sans-serif;">Welcome to the StoryBud family! We're thrilled you're here and can't wait to help you create magical, personalized stories that will become cherished memories.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                    <!-- Account Section -->
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="padding-bottom: 36px;">
+                                                <h3 class="section-title" style="font-size: 22px; font-weight: 600; color: #7C3AED; margin: 0 0 20px 0; font-family: 'Quicksand', Georgia, sans-serif;">🎁 Your Account is Ready</h3>
+                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="account-card" style="background: #F0F9FF; border: 2px solid #BAE6FD; border-radius: 12px;">
+                                                    <tr>
+                                                        <td style="padding: 24px;">
+                                                            <h4 class="account-card-title" style="margin: 0 0 12px 0; color: #7C3AED; font-size: 18px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">{{subscription_name|default:"StoryBud"}} Plan Active</h4>
+                                                            <p class="account-card-text" style="margin: 0; font-size: 15px; color: #475569; font-family: 'Inter', Arial, sans-serif;">You have <span class="credits-highlight" style="color: #7C3AED; font-weight: 700; font-size: 16px;">{{credit_allowance|default:"unlimited"}} credits</span> ready to use each month for creating personalized stories with illustrations, voice narration, and character portraits.</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                    <!-- Steps Section -->
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td style="padding-bottom: 36px;">
+                                                <h3 class="section-title" style="font-size: 22px; font-weight: 600; color: #7C3AED; margin: 0 0 20px 0; font-family: 'Quicksand', Georgia, sans-serif;">🚀 Create Your First Story</h3>
+                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="steps-container" style="background: #F8F4FF; border-radius: 12px; border-left: 4px solid #8B5CF6; border: 2px solid #E0E7FF;">
+                                                    <tr>
+                                                        <td style="padding: 24px;">
+                                                            
+                                                            <!-- Step 1 -->
+                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 16px;">
+                                                                <tr>
+                                                                    <td style="padding: 20px;">
+                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                            <tr>
+                                                                                <td style="width: 48px; vertical-align: top;">
+                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                                        <tr>
+                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">1</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td style="vertical-align: top; padding-left: 16px;">
+                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Pick Your Adventure</h4>
+                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">Choose from adventure, fantasy, learning, or everyday fun themes</p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            
+                                                            <!-- Step 2 -->
+                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 16px;">
+                                                                <tr>
+                                                                    <td style="padding: 20px;">
+                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                            <tr>
+                                                                                <td style="width: 48px; vertical-align: top;">
+                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                                        <tr>
+                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">2</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td style="vertical-align: top; padding-left: 16px;">
+                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Add Your Little Hero</h4>
+                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">Include your child's name and photo to make them the star</p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            
+                                                            <!-- Step 3 -->
+                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 16px;">
+                                                                <tr>
+                                                                    <td style="padding: 20px;">
+                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                            <tr>
+                                                                                <td style="width: 48px; vertical-align: top;">
+                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                                        <tr>
+                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">3</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td style="vertical-align: top; padding-left: 16px;">
+                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Choose Art Style</h4>
+                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">From watercolor to cartoon - pick what your child loves most</p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            
+                                                            <!-- Step 4 -->
+                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 0;">
+                                                                <tr>
+                                                                    <td style="padding: 20px;">
+                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                            <tr>
+                                                                                <td style="width: 48px; vertical-align: top;">
+                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                                        <tr>
+                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">4</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td style="vertical-align: top; padding-left: 16px;">
+                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Watch the Magic</h4>
+                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">Your personalized story will be ready in just minutes!</p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                    <!-- CTA Section -->
+                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <td class="cta-section" style="text-align: center; padding: 32px 24px; background: #F0F9FF; border-radius: 12px; border: 2px solid #BAE6FD;">
+                                                <p class="cta-text" style="font-size: 18px; color: #374151; margin: 0 0 20px 0; font-weight: 500; font-family: 'Quicksand', Georgia, sans-serif;">Ready to create something magical?</p>
+                                                <a href="https://storybud.com/" class="cta-button" style="display: inline-block; background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%); color: white !important; padding: 16px 32px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);">Create Your First Story</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <!-- Footer -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td class="footer" style="background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); padding: 40px 30px; text-align: center; border-top: 1px solid #E5E7EB;">
+                                    <div class="footer-logo" style="font-family: 'Quicksand', Georgia, sans-serif; font-size: 24px; font-weight: 700; color: #7C3AED; margin: 0 0 10px 0;">✨ StoryBud</div>
+                                    <p class="footer-tagline" style="font-size: 16px; color: #475569; margin: 0 0 25px 0; font-style: italic; font-family: 'Inter', Arial, sans-serif;">"Every child deserves their own story."</p>
+                                    
+                                    <p class="footer-message" style="margin: 0 0 8px 0; color: #7C3AED; font-weight: 600; font-size: 18px; font-family: 'Quicksand', Georgia, sans-serif;">Happy storytelling!</p>
+                                    <p class="footer-team" style="margin: 0 0 24px 0; color: #475569; font-style: italic; font-family: 'Inter', Arial, sans-serif;">The StoryBud Team</p>
+                                    
+                                    <div class="footer-links" style="margin: 20px 0;">
+                                        <a href="https://storybud.com/contact" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px; font-family: 'Inter', Arial, sans-serif;">Support</a>
+                                        <a href="https://storybud.com/privacy-policy" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px; font-family: 'Inter', Arial, sans-serif;">Privacy Policy</a>
+                                        <a href="https://storybud.com/terms-of-service" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px; font-family: 'Inter', Arial, sans-serif;">Terms</a>
+                                    </div>
+                                    
+                                    <div class="footer-legal" style="font-size: 13px; color: #9CA3AF; margin-top: 20px; line-height: 1.5; font-family: 'Inter', Arial, sans-serif;">
+                                        <p style="margin: 0 0 10px 0;">You're receiving this email because you signed up for StoryBud.<br>
+                                        <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | StoryBud Inc.<br>
+                                        1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
+                                        <p style="margin: 0;">Copyright © 2025 StoryBud All Rights Reserved</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </center>
 </body>
 </html>
