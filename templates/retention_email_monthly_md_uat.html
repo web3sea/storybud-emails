@@ -19,14 +19,23 @@
     </noscript>
     <![endif]-->
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         /* Reset and base styles */
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+        }
+        
         html, body {
             margin: 0 !important;
             padding: 0 !important;
             height: 100% !important;
             width: 100% !important;
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 50%, #F9FAFB 100%);
         }
         
         * {
@@ -48,683 +57,532 @@
         
         img {
             -ms-interpolation-mode: bicubic;
+            display: block;
+            outline: none;
+            border: none;
+            text-decoration: none;
         }
         
         a {
             text-decoration: none;
         }
         
-        /* Main container */
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #FFFFFF;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-            border-radius: 16px;
-        }
-        
-        /* Header styles */
-        .header {
-            background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
-            padding: 50px 40px;
-            text-align: center;
-            color: white;
-        }
-        
-        
-        .header h1 {
-            margin: 0;
-            font-family: 'Quicksand', 'Georgia', sans-serif;
-            font-size: 34px;
-            font-weight: 800;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-        
-        .header .emoji {
-            font-size: 56px;
-            margin-bottom: 15px;
-            display: block;
-            z-index: 1;
-        }
-        
-        /* Achievement Banner */
-        .achievement-banner {
-            background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
-            color: #1F2937;
-            padding: 20px 40px;
-            margin: 35px -40px;
-            text-align: center;
+        /* Typography - Brand Fonts */
+        h1, h2, h3, .headline {
+            font-family: 'Quicksand', Georgia, serif !important;
             font-weight: 700;
-            font-size: 20px;
-            font-family: 'Quicksand', sans-serif;
-            box-shadow: 0 4px 6px -1px rgba(252, 211, 77, 0.3);
         }
         
-        
-        .achievement-banner .trophy {
-            font-size: 28px;
-            margin-right: 12px;
-            display: inline-block;
+        p, td, .body-text {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
         }
         
-        /* Content styles */
-        .content {
-            padding: 50px 40px;
-            font-family: 'Inter', 'Arial', sans-serif;
-            line-height: 1.7;
-            color: #1F2937;
-            background: #FFFFFF;
+        /* Brand Colors */
+        .purple-gradient {
+            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%) !important;
         }
         
-        .subheader {
-            font-size: 26px;
-            font-weight: 700;
-            color: #7C3AED;
-            margin: 0 0 30px 0;
-            font-family: 'Quicksand', 'Georgia', sans-serif;
-            text-align: center;
+        .violet-gradient {
+            background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%) !important;
         }
         
-        .body-text {
-            font-size: 18px;
-            margin-bottom: 25px;
-            color: #475569;
-            text-align: center;
-        }
-        
-        /* Monthly Stats */
-        .monthly-stats {
-            margin: 40px 0;
-        }
-        
-        .stat-card {
-            background: #FAF5FF;
-            border-radius: 16px;
-            padding: 25px;
-            text-align: center;
-            border: 1px solid #E9D5FF;
-        }
-        
-        
-        
-        .stat-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-            display: block;
-            z-index: 1;
-        }
-        
-        .stat-number {
-            font-size: 36px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            font-family: 'Quicksand', 'Georgia', sans-serif;
-            margin-bottom: 8px;
-            z-index: 1;
-            line-height: 1;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #6366F1;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            z-index: 1;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Progress Bar */
-        .progress-section {
-            background: linear-gradient(135deg, rgba(249, 168, 212, 0.1) 0%, rgba(125, 211, 252, 0.1) 100%);
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 0;
-            text-align: left;
-        }
-        
-        .progress-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1F2937;
-            margin: 0 0 20px 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-        
-        .progress-bar-container {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 12px;
-            height: 12px;
-            margin: 20px 0;
-        }
-        
-        .progress-bar {
-            background: linear-gradient(90deg, #6EE7B7 0%, #34D399 100%);
-            height: 100%;
-            width: 75%;
-            border-radius: 12px;
-        }
-        
-        
-        .progress-text {
-            font-size: 16px;
-            color: #475569;
-            margin-top: 12px;
-            font-weight: 500;
-        }
-        
-        /* Reading Streak */
-        .streak-container {
-            background: linear-gradient(135deg, #F9A8D4 10%, #7DD3FC 100%);
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .streak-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #1F2937;
-            margin: 0 0 15px 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-        
-        .streak-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: #1F2937;
-            margin: 10px 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-        
-        .streak-text {
-            font-size: 16px;
-            color: #1F2937;
-            margin: 0;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-        
-        /* Milestones */
-        .milestones-container {
-            margin: 40px 0;
-        }
-        
-        .milestone-item {
-            padding: 20px;
-            background: rgba(110, 231, 183, 0.1);
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border-left: 4px solid #6EE7B7;
-        }
-        
-        .milestone-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .milestone-icon {
-            font-size: 24px;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .milestone-text {
-            font-size: 16px;
-            color: #1F2937;
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        .milestone-date {
-            font-size: 14px;
-            color: #6B7280;
-            margin-left: auto;
-            font-style: italic;
-        }
-        
-        /* CTA Button */
-        .cta-container {
-            text-align: center;
-            margin: 45px 0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
-            color: white !important;
-            padding: 20px 45px;
-            border-radius: 50px;
-            font-family: 'Quicksand', 'Arial', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3);
-        }
-        
-        
-        
-        
-        /* Secondary Button */
-        .secondary-cta {
-            display: inline-block;
-            background: transparent;
-            color: #7C3AED !important;
-            padding: 18px 40px;
-            border: 2px solid #7C3AED;
-            border-radius: 50px;
-            font-family: 'Quicksand', 'Arial', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 20px;
-        }
-        
-        
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid #E5E7EB;
-        }
-        
-        .footer-text {
-            font-size: 16px;
-            color: #475569;
-            margin: 0 0 20px 0;
-            font-family: 'Inter', 'Arial', sans-serif;
-            font-weight: 500;
-        }
-        
-        .footer-links {
-            margin: 20px 0;
-        }
-        
-        .footer-links a {
-            display: inline-block;
-            margin: 0 15px;
-            color: #6366F1;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .contact-info {
-            margin: 20px 0;
-            font-size: 14px;
-            color: #6B7280;
-        }
-        
-        .contact-info a {
-            color: #6366F1;
-            text-decoration: none;
+        .gold-accent {
+            background: linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%) !important;
         }
         
         /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
-            .email-container {
+            .email-wrapper {
                 background: #1F2937 !important;
             }
             
-            .content {
+            .content-bg {
                 background: #1F2937 !important;
+            }
+            
+            .dark-mode-text {
                 color: #F3F4F6 !important;
             }
             
-            .body-text {
+            .dark-mode-subtext {
                 color: #D1D5DB !important;
             }
             
-            .stat-card {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(167, 139, 250, 0.2) 100%) !important;
-                border-color: rgba(124, 58, 237, 0.3) !important;
+            .stat-bg {
+                background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(167, 139, 250, 0.25) 100%) !important;
+                border-color: rgba(139, 92, 246, 0.35) !important;
             }
             
-            .stat-number {
-                color: #F3F4F6 !important;
-                -webkit-text-fill-color: #F3F4F6 !important;
+            .achievement-bg {
+                background: linear-gradient(135deg, rgba(252, 211, 77, 0.25) 0%, rgba(251, 191, 36, 0.25) 100%) !important;
             }
             
-            .stat-label {
+            .progress-bg {
+                background: linear-gradient(135deg, rgba(249, 168, 212, 0.2) 0%, rgba(125, 211, 252, 0.2) 100%) !important;
+            }
+            
+            .milestone-bg {
+                background: rgba(110, 231, 183, 0.2) !important;
+                border-color: #6EE7B7 !important;
+            }
+            
+            .footer-bg {
+                background: #374151 !important;
+                border-color: #4B5563 !important;
+            }
+            
+            .link-purple {
                 color: #A78BFA !important;
             }
             
-            .progress-section {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%) !important;
-            }
-            
-            .progress-title {
-                color: #F3F4F6 !important;
-            }
-            
-            .progress-text {
-                color: #D1D5DB !important;
-            }
-            
-            .streak-container {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%) !important;
-            }
-            
-            .streak-title,
-            .streak-number,
-            .streak-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .milestone-item {
-                background: rgba(124, 58, 237, 0.15) !important;
-                border-left-color: #A78BFA !important;
-            }
-            
-            .milestone-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .milestone-date {
-                color: #D1D5DB !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #374151 0%, #4B5563 100%) !important;
-            }
-            
-            .footer-text, .contact-info {
-                color: #D1D5DB !important;
+            .link-indigo {
+                color: #818CF8 !important;
             }
         }
         
-        /* Mobile responsiveness */
-        @media only screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                margin: 0 !important;
-                border-radius: 0 !important;
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-padding {
+                padding: 20px !important;
             }
             
-            .header, .content {
+            .mobile-padding-lg {
                 padding: 30px 20px !important;
             }
             
-            .header h1 {
+            h1 {
                 font-size: 28px !important;
-                line-height: 1.2 !important;
+                line-height: 1.3 !important;
             }
             
-            .subheader {
+            h2 {
                 font-size: 22px !important;
                 line-height: 1.3 !important;
             }
             
             .body-text {
                 font-size: 16px !important;
-                line-height: 1.5 !important;
+                line-height: 1.6 !important;
             }
             
-            .achievement-banner {
-                margin: 25px -20px !important;
-                padding: 18px 20px !important;
-                font-size: 18px !important;
+            .stat-number {
+                font-size: 28px !important;
             }
             
-            .monthly-stats {
-                margin: 20px 0 !important;
+            .cta-button td {
+                padding: 16px 32px !important;
             }
             
-            .milestone-item {
-                text-align: center !important;
-                padding: 20px !important;
-                margin: 15px 0 !important;
+            .hide-mobile {
+                display: none !important;
             }
             
-            .milestone-date {
-                margin-left: 0 !important;
-                margin-top: 8px !important;
-            }
-            
-            .streak-number {
-                font-size: 36px !important;
-            }
-            
-            .progress-section {
-                margin: 25px -20px !important;
-                padding: 20px !important;
-            }
-            
-            .cta-button {
-                padding: 18px 32px !important;
-                font-size: 16px !important;
-                min-height: 44px !important;
+            .stack-mobile {
                 display: block !important;
                 width: 100% !important;
-                max-width: 300px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
             }
             
-            .footer {
-                padding: 25px 20px !important;
-            }
-        }
-        
-        /* Small mobile devices */
-        @media only screen and (max-width: 480px) {
-            .header, .content {
-                padding: 25px 15px !important;
-            }
-            
-            .header h1 {
-                font-size: 26px !important;
-            }
-            
-            .subheader {
-                font-size: 20px !important;
-            }
-            
-            .body-text {
-                font-size: 15px !important;
-            }
-            
-            .achievement-banner {
-                margin: 20px -15px !important;
-                padding: 16px 15px !important;
-            }
-            
-            .milestone-item {
-                padding: 18px !important;
-            }
-            
-            .progress-section {
-                margin: 20px -15px !important;
-                padding: 18px !important;
-            }
-            
-            .cta-button {
-                padding: 16px 28px !important;
-                font-size: 15px !important;
-            }
-        }
-        
-        /* Extra small mobile devices */
-        @media only screen and (max-width: 360px) {
-            .header, .content {
-                padding: 20px 12px !important;
-            }
-            
-            .header h1 {
-                font-size: 24px !important;
-            }
-            
-            .achievement-banner {
-                margin: 18px -12px !important;
-                padding: 14px 12px !important;
-            }
-            
-            .milestone-item {
-                padding: 16px !important;
-            }
-            
-            .progress-section {
-                margin: 18px -12px !important;
-                padding: 16px !important;
-            }
-            
-            .cta-button {
-                padding: 14px 24px !important;
-                font-size: 14px !important;
+            .mobile-full-width {
+                width: 100% !important;
             }
         }
     </style>
 </head>
 
-<body style="margin: 0; padding: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 50%, #F9FAFB 100%);">
-    <center style="width: 100%; background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 50%, #F9FAFB 100%);">
-        <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-            🏆 Celebrating one incredible month of reading adventures together!
-        </div>
-        
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-            <tr>
-                <td style="padding: 30px 15px;">
-                    <div class="email-container">
-                        
-                        <!-- Header -->
-                        <div class="header">
-                            <span class="emoji">🏆</span>
-                            <h1>One Magical Month<br>Complete!</h1>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="content">
-                            <h2 class="subheader">Your Monthly Reading Report</h2>
-                            
-                            <div class="achievement-banner">
-                                <span class="trophy">🌟</span>Reading Champion - 30 Days Strong!
-                            </div>
-                            
-                            <p class="body-text">
-                                What an incredible journey! You've officially completed your first month of nightly reading adventures. Take a moment to celebrate—you've created something truly special together.
-                            </p>
-                            
-                            <!-- Monthly Stats Grid -->
-                            <!--
-                            <div class="monthly-stats">
-                                <div class="stat-card">
-                                    <span class="stat-icon">📚</span>
-                                    <span class="stat-number">4,569</span>
-                                    <div class="stat-label">Words Read</div>
-                                </div>
-                                <div class="stat-card">
-                                    <span class="stat-icon">⏰</span>
-                                    <span class="stat-number">14</span>
-                                    <div class="stat-label">Hours Together</div>
-                                </div>
-                                <div class="stat-card">
-                                    <span class="stat-icon">🔥</span>
-                                    <span class="stat-number">23</span>
-                                    <div class="stat-label">Day Streak</div>
-                                </div>
-                                <div class="stat-card">
-                                    <span class="stat-icon">📖</span>
-                                    <span class="stat-number">420</span>
-                                    <div class="stat-label">Pages Explored</div>
-                                </div>
-                            </div>
-                            -->
-                            
-                            <!-- Reading Streak -->
-                            <div class="streak-container">
-                                <h3 class="streak-title">🔥 Current Reading Streak</h3>
-                                <div class="streak-number">23 Days</div>
-                                <p class="streak-text">You're on fire! Keep this momentum going—you're building a lifelong habit that will benefit your child forever.</p>
-                            </div>
-                            
-                            <!-- Progress Section -->
-                            <div class="progress-section">
-                                <h3 class="progress-title">Habit Formation Progress</h3>
-                                <div class="progress-bar-container">
-                                    <div class="progress-bar"></div>
-                                </div>
-                                <p class="progress-text">75% to forming a permanent reading habit! You're almost there.</p>
-                            </div>
-                            
-                            <!-- Milestones -->
-                            <div class="milestones-container">
-                                <div class="milestone-item">
-                                    <span class="milestone-icon">🎉</span>
-                                    <span class="milestone-text">First week completed</span>
-                                    <span class="milestone-date">3 weeks ago</span>
-                                </div>
-                                <div class="milestone-item">
-                                    <span class="milestone-icon">🌟</span>
-                                    <span class="milestone-text">Reached 10-story milestone</span>
-                                    <span class="milestone-date">2 weeks ago</span>
-                                </div>
-                                <div class="milestone-item">
-                                    <span class="milestone-icon">🏆</span>
-                                    <span class="milestone-text">20-day reading streak achieved</span>
-                                    <span class="milestone-date">3 days ago</span>
-                                </div>
-                                <div class="milestone-item">
-                                    <span class="milestone-icon">🎭</span>
-                                    <span class="milestone-text">Completed first adventure series</span>
-                                    <span class="milestone-date">Yesterday</span>
-                                </div>
-                            </div>
-                            
-                            <p class="body-text">
-                                The research is clear: children who read regularly with their parents develop stronger vocabulary, better comprehension skills, and a genuine love for learning. You're giving your child an incredible gift.
-                            </p>
-                            
-                            <!-- CTA Button -->
-                            <div class="cta-container">
-                                <a href="#" class="cta-button">🚀 Start Month 2 Adventure</a>
-                                <br>
-                                <a href="#" class="secondary-cta">Share Your Success</a>
-                            </div>
-                        </div>
-                        
-                        <!-- Footer -->
-                        <div class="footer">
-                            <p class="footer-text">
-                                Here's to month 2 and countless more magical reading adventures!
-                            </p>
-                            
-                            <!-- Footer Links -->
-                            <div class="footer-links">
-                                <a href="https://storybud.com/library">Story Library</a>
-                                <a href="https://storybud.com/blog">Blog</a>
-                                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
-                            </div>
-                            
-                            <!-- Contact Information -->
-                            <div class="contact-info">
-                                <p style="margin: 10px 0; font-family: 'Inter', 'Arial', sans-serif;">
-                                    Questions? Email us at <a href="mailto:support@storybud.com">support@storybud.com</a>
-                                </p>
-                            </div>
-                            
-                            <!-- Legal Footer -->
-                            <div class="footer-legal" style="margin-top: 30px;">
-                                <p style="font-size: 12px; color: #6B7280; margin-bottom: 15px; font-family: 'Inter', 'Arial', sans-serif;">
-                                    You're receiving this email because you signed up for StoryBud.<br>
-                                    <a href="#" style="color: #6366F1; text-decoration: none;">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
-                                </p>
-                                <p style="font-size: 12px; color: #6B7280; margin: 0; font-family: 'Inter', 'Arial', sans-serif;">
-                                    Copyright © 2025 StoryBud All Rights Reserved
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </center>
+<body style="margin: 0; padding: 0; width: 100%; height: 100%;">
+    <!-- Preview Text -->
+    <div style="display: none; font-size: 1px; color: #F3F4F6; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        🏆 Celebrating one incredible month of reading adventures together! See your amazing stats and milestones...
+    </div>
+    
+    <!-- Email Wrapper -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="email-wrapper" style="background: #F3F4F6;">
+        <tr>
+            <td align="center" style="padding: 40px 20px;">
+                
+                <!-- Email Container - 600px max width -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; width: 100%; background: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);">
+                    
+                    <!-- Header Section -->
+                    <tr>
+                        <td class="violet-gradient" style="background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%); padding: 50px 40px; text-align: center;" align="center">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 0; text-align: center;">
+                                        <!-- Emoji -->
+                                        <div style="font-size: 56px; line-height: 1; margin-bottom: 20px;">🏆</div>
+                                        <!-- Headline -->
+                                        <h1 style="margin: 0; color: #FFFFFF; font-family: 'Quicksand', Georgia, serif; font-size: 36px; font-weight: 700; line-height: 1.3; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                                            One Magical Month<br>Complete!
+                                        </h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content-bg mobile-padding-lg" style="background: #FFFFFF; padding: 50px 40px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                
+                                <!-- Subheader -->
+                                <tr>
+                                    <td style="padding-bottom: 30px; text-align: center;">
+                                        <h2 class="dark-mode-text" style="margin: 0; color: #7C3AED; font-family: 'Quicksand', Georgia, serif; font-size: 26px; font-weight: 700;">
+                                            Your Monthly Reading Report
+                                        </h2>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Achievement Banner -->
+                                <tr>
+                                    <td style="padding-bottom: 30px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="achievement-bg gold-accent" style="background: linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%); border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 20px; text-align: center;">
+                                                    <span style="font-size: 28px; margin-right: 10px;">🌟</span>
+                                                    <span style="color: #1F2937; font-family: 'Quicksand', Georgia, serif; font-size: 20px; font-weight: 700;">
+                                                        Reading Champion - 30 Days Strong!
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Intro Text -->
+                                <tr>
+                                    <td style="padding-bottom: 40px; text-align: center;">
+                                        <p class="body-text dark-mode-subtext" style="margin: 0; color: #475569; font-family: 'Inter', Arial, sans-serif; font-size: 18px; line-height: 1.7;">
+                                            What an incredible journey! You've officially completed your first month of nightly reading adventures. Take a moment to celebrate—you've created something truly special together.
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Monthly Stats - Table Grid -->
+                                <tr>
+                                    <td style="padding-bottom: 40px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <!-- First Row of Stats -->
+                                            <tr>
+                                                <td style="padding: 0 10px 20px 0; width: 50%;" class="mobile-full-width">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="stat-bg" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(167, 139, 250, 0.08) 100%); border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.15);">
+                                                        <tr>
+                                                            <td style="padding: 25px; text-align: center;">
+                                                                <div style="font-size: 32px; margin-bottom: 10px;">📚</div>
+                                                                <div class="stat-number dark-mode-text" style="font-size: 36px; font-weight: 700; color: #7C3AED; font-family: 'Quicksand', Georgia, serif; line-height: 1; margin-bottom: 8px;">4,569</div>
+                                                                <div style="font-size: 14px; color: #6366F1; font-weight: 600; font-family: 'Inter', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.5px;">Words Read</div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="padding: 0 0 20px 10px; width: 50%;" class="mobile-full-width">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="stat-bg" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(167, 139, 250, 0.08) 100%); border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.15);">
+                                                        <tr>
+                                                            <td style="padding: 25px; text-align: center;">
+                                                                <div style="font-size: 32px; margin-bottom: 10px;">⏰</div>
+                                                                <div class="stat-number dark-mode-text" style="font-size: 36px; font-weight: 700; color: #7C3AED; font-family: 'Quicksand', Georgia, serif; line-height: 1; margin-bottom: 8px;">14</div>
+                                                                <div style="font-size: 14px; color: #6366F1; font-weight: 600; font-family: 'Inter', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.5px;">Hours Together</div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Second Row of Stats -->
+                                            <tr>
+                                                <td style="padding: 0 10px 0 0; width: 50%;" class="mobile-full-width">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="stat-bg" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(167, 139, 250, 0.08) 100%); border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.15);">
+                                                        <tr>
+                                                            <td style="padding: 25px; text-align: center;">
+                                                                <div style="font-size: 32px; margin-bottom: 10px;">🔥</div>
+                                                                <div class="stat-number dark-mode-text" style="font-size: 36px; font-weight: 700; color: #7C3AED; font-family: 'Quicksand', Georgia, serif; line-height: 1; margin-bottom: 8px;">23</div>
+                                                                <div style="font-size: 14px; color: #6366F1; font-weight: 600; font-family: 'Inter', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.5px;">Day Streak</div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="padding: 0 0 0 10px; width: 50%;" class="mobile-full-width">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="stat-bg" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(167, 139, 250, 0.08) 100%); border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.15);">
+                                                        <tr>
+                                                            <td style="padding: 25px; text-align: center;">
+                                                                <div style="font-size: 32px; margin-bottom: 10px;">📖</div>
+                                                                <div class="stat-number dark-mode-text" style="font-size: 36px; font-weight: 700; color: #7C3AED; font-family: 'Quicksand', Georgia, serif; line-height: 1; margin-bottom: 8px;">420</div>
+                                                                <div style="font-size: 14px; color: #6366F1; font-weight: 600; font-family: 'Inter', Arial, sans-serif; text-transform: uppercase; letter-spacing: 0.5px;">Pages Explored</div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Reading Streak Section -->
+                                <tr>
+                                    <td style="padding-bottom: 40px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(135deg, #F9A8D4 10%, #7DD3FC 100%); border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 30px; text-align: center;">
+                                                    <h3 class="dark-mode-text" style="margin: 0 0 15px 0; color: #1F2937; font-family: 'Quicksand', Georgia, serif; font-size: 22px; font-weight: 700;">
+                                                        🔥 Current Reading Streak
+                                                    </h3>
+                                                    <div class="dark-mode-text" style="font-size: 48px; font-weight: 800; color: #1F2937; font-family: 'Quicksand', Georgia, serif; margin: 10px 0;">
+                                                        23 Days
+                                                    </div>
+                                                    <p class="dark-mode-text" style="margin: 0; color: #1F2937; font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 1.6; font-weight: 500;">
+                                                        You're on fire! Keep this momentum going—you're building a lifelong habit that will benefit your child forever.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Progress Section -->
+                                <tr>
+                                    <td style="padding-bottom: 40px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="progress-bg" style="background: linear-gradient(135deg, rgba(249, 168, 212, 0.1) 0%, rgba(125, 211, 252, 0.1) 100%); border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 30px;">
+                                                    <h3 class="dark-mode-text" style="margin: 0 0 20px 0; color: #1F2937; font-family: 'Quicksand', Georgia, serif; font-size: 20px; font-weight: 700; text-align: center;">
+                                                        Habit Formation Progress
+                                                    </h3>
+                                                    <!-- Progress Bar -->
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: rgba(255, 255, 255, 0.7); border-radius: 12px; height: 12px;">
+                                                        <tr>
+                                                            <td style="padding: 0; border-radius: 12px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="75%" style="background: linear-gradient(90deg, #6EE7B7 0%, #34D399 100%); border-radius: 12px; height: 12px;">
+                                                                    <tr>
+                                                                        <td style="height: 12px; border-radius: 12px;">&nbsp;</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <p class="dark-mode-subtext" style="margin: 12px 0 0 0; color: #475569; font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 500; text-align: center;">
+                                                        75% to forming a permanent reading habit! You're almost there.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Milestones -->
+                                <tr>
+                                    <td style="padding-bottom: 40px;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <!-- Milestone 1 -->
+                                            <tr>
+                                                <td style="padding-bottom: 15px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="milestone-bg" style="background: rgba(110, 231, 183, 0.1); border-radius: 12px; border-left: 4px solid #6EE7B7;">
+                                                        <tr>
+                                                            <td style="padding: 20px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td style="width: 30px; vertical-align: middle;">
+                                                                            <span style="font-size: 24px;">🎉</span>
+                                                                        </td>
+                                                                        <td style="padding-left: 15px; vertical-align: middle;">
+                                                                            <span class="dark-mode-text" style="color: #1F2937; font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 600;">First week completed</span>
+                                                                        </td>
+                                                                        <td style="text-align: right; vertical-align: middle;" class="hide-mobile">
+                                                                            <span class="dark-mode-subtext" style="color: #6B7280; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-style: italic;">3 weeks ago</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Milestone 2 -->
+                                            <tr>
+                                                <td style="padding-bottom: 15px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="milestone-bg" style="background: rgba(110, 231, 183, 0.1); border-radius: 12px; border-left: 4px solid #6EE7B7;">
+                                                        <tr>
+                                                            <td style="padding: 20px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td style="width: 30px; vertical-align: middle;">
+                                                                            <span style="font-size: 24px;">🌟</span>
+                                                                        </td>
+                                                                        <td style="padding-left: 15px; vertical-align: middle;">
+                                                                            <span class="dark-mode-text" style="color: #1F2937; font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 600;">Reached 10-story milestone</span>
+                                                                        </td>
+                                                                        <td style="text-align: right; vertical-align: middle;" class="hide-mobile">
+                                                                            <span class="dark-mode-subtext" style="color: #6B7280; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-style: italic;">2 weeks ago</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Milestone 3 -->
+                                            <tr>
+                                                <td style="padding-bottom: 15px;">
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="milestone-bg" style="background: rgba(110, 231, 183, 0.1); border-radius: 12px; border-left: 4px solid #6EE7B7;">
+                                                        <tr>
+                                                            <td style="padding: 20px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td style="width: 30px; vertical-align: middle;">
+                                                                            <span style="font-size: 24px;">🏆</span>
+                                                                        </td>
+                                                                        <td style="padding-left: 15px; vertical-align: middle;">
+                                                                            <span class="dark-mode-text" style="color: #1F2937; font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 600;">20-day reading streak achieved</span>
+                                                                        </td>
+                                                                        <td style="text-align: right; vertical-align: middle;" class="hide-mobile">
+                                                                            <span class="dark-mode-subtext" style="color: #6B7280; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-style: italic;">3 days ago</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Milestone 4 -->
+                                            <tr>
+                                                <td>
+                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="milestone-bg" style="background: rgba(110, 231, 183, 0.1); border-radius: 12px; border-left: 4px solid #6EE7B7;">
+                                                        <tr>
+                                                            <td style="padding: 20px;">
+                                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td style="width: 30px; vertical-align: middle;">
+                                                                            <span style="font-size: 24px;">🎭</span>
+                                                                        </td>
+                                                                        <td style="padding-left: 15px; vertical-align: middle;">
+                                                                            <span class="dark-mode-text" style="color: #1F2937; font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 600;">Completed first adventure series</span>
+                                                                        </td>
+                                                                        <td style="text-align: right; vertical-align: middle;" class="hide-mobile">
+                                                                            <span class="dark-mode-subtext" style="color: #6B7280; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-style: italic;">Yesterday</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Closing Text -->
+                                <tr>
+                                    <td style="padding-bottom: 40px; text-align: center;">
+                                        <p class="body-text dark-mode-subtext" style="margin: 0; color: #475569; font-family: 'Inter', Arial, sans-serif; font-size: 18px; line-height: 1.7;">
+                                            The research is clear: children who read regularly with their parents develop stronger vocabulary, better comprehension skills, and a genuine love for learning. You're giving your child an incredible gift.
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                                <!-- CTA Buttons -->
+                                <tr>
+                                    <td style="padding-bottom: 20px; text-align: center;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                            <tr>
+                                                <td class="cta-button violet-gradient" style="background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%); border-radius: 50px; box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3);">
+                                                    <a href="https://storybud.com/story/month2" target="_blank" style="display: inline-block; padding: 18px 32px; color: #FFFFFF; font-family: Georgia, serif; font-size: 18px; font-weight: 700; text-decoration: none; white-space: nowrap;">
+                                                        🚀 Start Month 2 Adventure
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Secondary CTA -->
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="border: 2px solid #7C3AED; border-radius: 50px;">
+                                            <tr>
+                                                <td style="padding: 16px 36px;">
+                                                    <a href="https://storybud.com/share" target="_blank" class="link-purple" style="color: #7C3AED; font-family: 'Quicksand', Georgia, serif; font-size: 16px; font-weight: 600; text-decoration: none;">
+                                                        Share Your Success
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer-bg mobile-padding" style="background: #F3F4F6; border-top: 1px solid #E5E7EB; padding: 40px;">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                
+                                <!-- Footer Message -->
+                                <tr>
+                                    <td style="padding-bottom: 25px; text-align: center;">
+                                        <p class="dark-mode-subtext" style="margin: 0; color: #475569; font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 500;">
+                                            Here's to month 2 and countless more magical reading adventures!
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Footer Links -->
+                                <tr>
+                                    <td style="padding-bottom: 25px; text-align: center;">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                            <tr>
+                                                <td style="padding: 0 15px;">
+                                                    <a href="https://storybud.com/library" class="link-indigo" style="color: #6366F1; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none;">Story Library</a>
+                                                </td>
+                                                <td style="padding: 0 15px;">
+                                                    <a href="https://storybud.com/blog" class="link-indigo" style="color: #6366F1; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none;">Blog</a>
+                                                </td>
+                                                <td style="padding: 0 15px;">
+                                                    <a href="https://storybud.com/privacy-policy" class="link-indigo" style="color: #6366F1; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 600; text-decoration: none;">Privacy</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Contact Info -->
+                                <tr>
+                                    <td style="padding-bottom: 25px; text-align: center;">
+                                        <p class="dark-mode-subtext" style="margin: 0; color: #6B7280; font-family: 'Inter', Arial, sans-serif; font-size: 14px;">
+                                            Questions? Email us at <a href="mailto:support@storybud.com" class="link-indigo" style="color: #6366F1; text-decoration: none;">support@storybud.com</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Legal Footer -->
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <p class="dark-mode-subtext" style="margin: 0 0 10px 0; color: #6B7280; font-family: 'Inter', Arial, sans-serif; font-size: 12px; line-height: 1.6;">
+                                            You're receiving this email because you signed up for StoryBud.<br>
+                                            <a href="https://storybud.com/unsubscribe" class="link-indigo" style="color: #6366F1; text-decoration: none;">Unsubscribe</a> | 
+                                            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                        </p>
+                                        <p class="dark-mode-subtext" style="margin: 0; color: #6B7280; font-family: 'Inter', Arial, sans-serif; font-size: 12px;">
+                                            Copyright © 2025 StoryBud. All Rights Reserved.
+                                        </p>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Container -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Email Wrapper -->
+    
 </body>
 </html>
