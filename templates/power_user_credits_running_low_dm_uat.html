@@ -1,778 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Don't Let the Story End Here</title>
-    
+    <title>Story Time Continues...</title>
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
     <style>
-        /* Import brand fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            line-height: 1.6;
-            color: #374151;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #F3F4F6 0%, #F9FAFB 100%);
+        /* Reset and base styles */
+        table, td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
         }
         
-        .email-container {
-            background-color: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-            border: 1px solid #E5E7EB;
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
         }
         
-        .header {
-            padding: 40px 30px;
-            text-align: center;
-            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%);
-            position: relative;
-            color: white;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(2px 2px at 25% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 75% 35%, rgba(252, 211, 77, 0.2) 50%, transparent 50%),
-                radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
-            background-repeat: no-repeat;
-            pointer-events: none;
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        }
-        
-        .alert-emoji {
-            font-size: 48px;
-            margin-bottom: 16px;
-            display: none;
-        }
-        
-        .welcome-heading {
-            font-size: 32px;
-            color: white;
-            margin: 0 0 8px 0;
-            font-weight: 700;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .welcome-subheading {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 0;
-            font-weight: 400;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .content {
-            padding: 36px 30px;
-        }
-        
-        .greeting {
-            margin-bottom: 28px;
-        }
-        
-        .greeting p {
-            margin: 0 0 16px 0;
-            font-size: 16px;
-            color: #475569;
-        }
-        
-        .personalized-name {
-            color: #7C3AED;
-            font-weight: 600;
-        }
-        
-        .credits-status {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.08) 100%);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 28px 0;
-            text-align: center;
-            border-left: 4px solid #8B5CF6;
-        }
-        
-        .credits-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: #7C3AED;
-            margin: 12px 0;
+        img {
+            -ms-interpolation-mode: bicubic;
             display: block;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .credits-label {
-            font-size: 16px;
-            color: #374151;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .credits-message {
-            font-size: 14px;
-            color: #475569;
-        }
-        
-        .urgency-message {
-            background: linear-gradient(135deg, rgba(249, 168, 212, 0.08) 0%, rgba(251, 207, 232, 0.12) 100%);
-            border: 1px solid rgba(249, 168, 212, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 28px 0;
-            border-left: 4px solid #F9A8D4;
-        }
-        
-        .urgency-message p {
-            margin: 0 0 16px 0;
-            font-size: 16px;
-            line-height: 1.7;
-            color: #374151;
-        }
-        
-        .urgency-message p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .benefits-reminder {
-            background: linear-gradient(135deg, rgba(125, 211, 252, 0.08) 0%, rgba(110, 231, 183, 0.12) 100%);
-            border: 1px solid rgba(125, 211, 252, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 28px 0;
-            border-left: 4px solid #7DD3FC;
-        }
-        
-        .benefits-reminder h4 {
-            margin: 0 0 16px 0;
-            color: #7C3AED;
-            font-size: 18px;
-            font-weight: 700;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .benefits-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 12px;
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #E5E7EB;
-        }
-        
-        .benefit-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-        
-        .benefit-text {
-            font-size: 14px;
-            color: #475569;
-            font-weight: 500;
-        }
-        
-        .cta-section {
-            text-align: center;
-            margin: 40px 0;
-            padding: 32px 24px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.08) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .cta-text {
-            font-size: 18px;
-            color: #374151;
-            margin: 0 0 20px 0;
-            font-weight: 500;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(124, 58, 237, 0.4);
-        }
-        
-        .cta-button-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-button-primary:hover::before {
-            left: 100%;
-        }
-        
-        .cta-button-secondary {
-            display: inline-block;
-            background: white;
-            color: #7C3AED;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            border: 2px solid #7C3AED;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-button-secondary:hover {
-            background: #7C3AED;
-            color: white;
-        }
-        
-        .reassurance {
-            text-align: center;
-            margin: 28px 0;
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(110, 231, 183, 0.08) 0%, rgba(110, 231, 183, 0.12) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(110, 231, 183, 0.3);
-            font-size: 14px;
-            color: #374151;
-        }
-        
-        .closing-message {
-            text-align: center;
-            margin: 32px 0;
-            font-size: 16px;
-            color: #475569;
-            font-style: italic;
-        }
-        
-        .footer {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 40px 30px;
-            text-align: center;
-            border-top: 1px solid #E5E7EB;
-        }
-        
-        .footer-logo {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #7C3AED;
-            margin: 0 0 10px 0;
-        }
-        
-        .footer-tagline {
-            font-size: 16px;
-            color: #475569;
-            margin: 0 0 25px 0;
-            font-style: italic;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .footer-message {
-            margin: 0 0 8px 0;
-            color: #7C3AED;
-            font-weight: 600;
-            font-size: 18px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .footer-team {
-            margin: 0 0 24px 0;
-            color: #475569;
-            font-style: italic;
-        }
-        
-        .footer-links {
-            margin: 20px 0;
-        }
-        
-        .footer-links a {
-            color: #6B7280;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 14px;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #7C3AED;
-            text-decoration: underline;
-        }
-        
-        .footer-legal {
-            font-size: 13px;
-            color: #9CA3AF;
-            margin-top: 20px;
-            line-height: 1.5;
-        }
-        
-        .footer-legal a {
-            color: #7C3AED;
+            outline: none;
+            border: none;
             text-decoration: none;
         }
         
-        .footer-legal a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            body {
-                padding: 10px !important;
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-hide {
+                display: none !important;
             }
             
-            .email-container {
-                border-radius: 12px !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 25px 20px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .welcome-subheading {
-                font-size: 15px !important;
-                line-height: 1.4 !important;
-            }
-            
-            .alert-emoji {
-                font-size: 40px !important;
-                margin-bottom: 8px !important;
-            }
-            
-            .credits-status {
-                margin: 25px 0 !important;
-                padding: 20px !important;
-            }
-            
-            .credits-label {
-                font-size: 16px !important;
-                line-height: 1.4 !important;
-            }
-            
-            .credits-number {
-                font-size: 36px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .credits-message {
-                font-size: 15px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .urgency-message {
-                margin: 25px 0 !important;
-                padding: 20px !important;
-            }
-            
-            .urgency-message p {
-                font-size: 16px !important;
-                line-height: 1.6 !important;
-            }
-            
-            .benefits-reminder {
-                margin: 25px 0 !important;
-                padding: 20px !important;
-            }
-            
-            .benefits-reminder h4 {
-                font-size: 18px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .benefits-reminder p {
-                font-size: 15px !important;
-                line-height: 1.6 !important;
-            }
-            
-            .cta-section {
-                margin: 25px 0 !important;
-                padding: 20px !important;
-            }
-            
-            .cta-text {
-                font-size: 18px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .cta-buttons {
-                flex-direction: column !important;
-                align-items: center !important;
-                gap: 15px !important;
-            }
-            
-            .cta-button-primary,
-            .cta-button-secondary {
+            table[width="600"] {
                 width: 100% !important;
-                max-width: 280px !important;
-                padding: 16px 32px !important;
-                font-size: 16px !important;
-                min-height: 44px !important;
-                display: block !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
+                max-width: 100% !important;
             }
             
-            .reassurance {
-                margin: 25px 0 !important;
+            td[style*="padding:40px"] {
                 padding: 20px !important;
             }
             
-            .reassurance p {
-                font-size: 15px !important;
-                line-height: 1.6 !important;
+            td[style*="padding:30px"] {
+                padding: 20px !important;
             }
             
-            .closing-message {
-                margin: 25px 0 !important;
-                padding: 20px 0 !important;
-            }
-            
-            .closing-message p {
-                font-size: 16px !important;
-                line-height: 1.6 !important;
-            }
-            
-            .footer-logo {
-                font-size: 20px !important;
-            }
-            
-            .footer-tagline {
-                font-size: 14px !important;
-            }
-            
-            .footer-links a {
-                display: block !important;
-                margin: 8px 0 !important;
-            }
-        }
-        
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            body {
-                padding: 8px !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 20px 15px !important;
-            }
-            
-            .welcome-heading {
+            h1[style*="font-size:28px"] {
                 font-size: 24px !important;
+                line-height: 30px !important;
             }
             
-            .alert-emoji {
-                font-size: 36px !important;
-            }
-            
-            .credits-number {
-                font-size: 32px !important;
-            }
-            
-            .credits-status,
-            .urgency-message,
-            .benefits-reminder,
-            .cta-section,
-            .reassurance,
-            .closing-message {
-                padding: 18px !important;
-            }
-            
-            .cta-button-primary,
-            .cta-button-secondary {
-                padding: 14px 28px !important;
-                font-size: 15px !important;
-                width: calc(100% - 56px) !important;
-            }
-        }
-        
-        /* Extra small mobile devices */
-        @media (max-width: 360px) {
-            body {
-                padding: 5px !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 18px 12px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 22px !important;
-            }
-            
-            .alert-emoji {
-                font-size: 32px !important;
-            }
-            
-            .credits-number {
-                font-size: 28px !important;
-            }
-            
-            .credits-status,
-            .urgency-message,
-            .benefits-reminder,
-            .cta-section,
-            .reassurance,
-            .closing-message {
-                padding: 16px !important;
-            }
-            
-            .cta-button-primary,
-            .cta-button-secondary {
-                padding: 12px 24px !important;
+            p[style*="font-size:16px"] {
                 font-size: 14px !important;
-                width: calc(100% - 48px) !important;
+                line-height: 20px !important;
+            }
+            
+            p[style*="font-size:48px"] {
+                font-size: 36px !important;
+                line-height: 40px !important;
             }
         }
         
-        /* Dark mode support */
+        /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
             body {
-                background: linear-gradient(135deg, #1F2937 0%, #111827 100%) !important;
+                background-color: #1F2937 !important;
             }
             
-            .email-container {
-                background: #1F2937 !important;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #374151 !important;
+            table[style*="background-color:#f3f4f6"] {
+                background-color: #1F2937 !important;
             }
             
-            .header {
-                background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A855F7 100%) !important;
+            table[style*="background-color:#ffffff"] {
+                background-color: #374151 !important;
             }
             
-            .content {
-                background: #1F2937 !important;
-            }
-            
-            .greeting p, .content p {
-                color: #F3F4F6 !important;
-            }
-            
-            .personalized-name {
-                color: #A78BFA !important;
-            }
-            
-            .credits-status {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(139, 92, 246, 0.2) 100%) !important;
-                border-color: #7C3AED !important;
-            }
-            
-            .credits-label, .credits-message {
-                color: #F3F4F6 !important;
-            }
-            
-            .credits-number {
-                color: #A78BFA !important;
-            }
-            
-            .urgency-message {
-                background: linear-gradient(135deg, rgba(249, 168, 212, 0.15) 0%, rgba(251, 207, 232, 0.2) 100%) !important;
-                border-color: #F9A8D4 !important;
-            }
-            
-            .urgency-message p {
-                color: #F3F4F6 !important;
-            }
-            
-            .benefits-reminder {
-                background: linear-gradient(135deg, rgba(125, 211, 252, 0.12) 0%, rgba(110, 231, 183, 0.15) 100%) !important;
-                border-color: #7DD3FC !important;
-            }
-            
-            .benefits-reminder h4 {
-                color: #A78BFA !important;
-            }
-            
-            .benefits-reminder p {
-                color: #F3F4F6 !important;
-            }
-            
-            .benefit-item {
-                background: #374151 !important;
-                border-color: #4B5563 !important;
-            }
-            
-            .benefit-text {
+            p[style*="color:#475569"] {
                 color: #D1D5DB !important;
             }
             
-            .cta-section {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(139, 92, 246, 0.2) 100%) !important;
-                border-color: #7C3AED !important;
+            p[style*="color:#374151"] {
+                color: #E5E7EB !important;
             }
             
-            .cta-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .reassurance {
-                background: linear-gradient(135deg, rgba(110, 231, 183, 0.12) 0%, rgba(110, 231, 183, 0.18) 100%) !important;
-                border-color: #6EE7B7 !important;
-            }
-            
-            .reassurance p {
-                color: #F3F4F6 !important;
-            }
-            
-            .closing-message p {
-                color: #F3F4F6 !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
-                border-top-color: #374151 !important;
-            }
-            
-            .footer-logo {
-                color: #A78BFA !important;
-            }
-            
-            .footer-tagline, .footer-message, .footer-team {
-                color: #D1D5DB !important;
-            }
-            
-            .footer-links a {
-                color: #9CA3AF !important;
-            }
-            
-            .footer-links a:hover {
-                color: #A78BFA !important;
-            }
-            
-            .footer-legal {
-                color: #6B7280 !important;
-            }
-            
-            .footer-legal a {
+            span[style*="color:#7C3AED"] {
                 color: #A78BFA !important;
             }
         }
     </style>
 </head>
-<body>
-    <div class="email-container">
-        <div class="header">
-            <h1 class="welcome-heading">📚 Story Time Continues...</h1>
-            <p class="welcome-subheading">Keep the magic going.</p>
-        </div>
-        
-        <div class="content">
-            <div class="greeting">
-                <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
-                <p>You've been creating wonderful stories together! We wanted to give you a friendly heads-up that you have a few credits left for this month.</p>
-            </div>
-            
-            <div class="credits-status">
-                <div class="credits-label">Credits Remaining This Month</div>
-                <span class="credits-number">{{credits_remaining|default:"3"}}</span>
-                <div class="credits-message">Perfect for a few more magical bedtime stories</div>
-            </div>
-            
-            <div class="urgency-message">
-                <p>We love seeing how much you and {{child_name|default:"your child"}} enjoy creating stories together. If you'd like to keep the adventures going beyond your remaining credits, we have options to add more anytime.</p>
-                <p>Whether it's for tonight's bedtime story or next week's creative session, we're here to keep the storytelling magic flowing.</p>
-            </div>
-            
-            <div class="benefits-reminder">
-                <h4>🌟 Keep the Magic Alive With More Credits</h4>
-                <p style="margin: 0; font-size: 15px; color: #475569; line-height: 1.6;">More credits mean more personalized stories, custom illustrations, voice narration, and precious family memories whenever you want to create them together.</p>
-            </div>
-            
-            <div class="cta-section">
-                <p class="cta-text">Ready to add more storytelling magic?</p>
-                <div class="cta-buttons">
-                    <a href="{{explore_plans_link|default:'#'}}" class="cta-button-secondary">Explore Plans</a>
-                </div>
-            </div>
-            
-            <div class="closing-message">
-                <p>Thank you for making StoryBud part of your family's routine. We're here whenever you're ready for more adventures!</p>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-logo">✨ StoryBud</div>
-            <p class="footer-tagline">"Every child deserves their own story."</p>
-            
-            <p class="footer-message">Happy storytelling! 📚</p>
-            <p class="footer-team">The StoryBud Team</p>
-            
-            <div class="footer-links">
-                <a href="https://storybud.com/support">Support</a>
-                <a href="https://storybud.com/privacy">Privacy Policy</a>
-                <a href="https://storybud.com/terms">Terms</a>
-            </div>
-            
-            <div class="footer-legal">
-                <p>You're receiving this email because you signed up for StoryBud.<br>
-                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | StoryBud Inc.<br>
-                1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
-                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
-            </div>
-        </div>
+<body style="margin:0; padding:0; background-color:#f3f4f6;">
+    
+    <!-- Preheader Text -->
+    <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
+        📚 Your StoryBud credits are running low - keep the magical adventures going!
     </div>
+
+    <!-- Main Container -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3f4f6;">
+        <tr>
+            <td align="center" style="padding:20px;">
+                
+                <!-- Email Content -->
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; max-width:600px;">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="background-color:#8B5CF6; padding:40px 20px;">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" style="padding-bottom:10px;">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="font-size:32px; line-height:32px; padding-right:10px;">📚</td>
+                                                <td>
+                                                    <h1 style="margin:0; color:#ffffff; font-family:Georgia, serif; font-size:28px; font-weight:normal;">Story Time Continues...</h1>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin:0; color:#ffffff; font-family:Arial, sans-serif; font-size:16px; opacity:0.95;">Keep the magic going.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td style="padding:30px 20px;">
+                            
+                            <!-- Greeting -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom:25px;">
+                                        <p style="margin:0 0 15px 0; color:#475569; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
+                                            Hi <span style="color:#7C3AED; font-weight:bold;">{{user_name|default:"there"}}</span>!
+                                        </p>
+                                        <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
+                                            You've been creating wonderful stories together! We wanted to give you a friendly heads-up that you have a few credits left for this month.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Credits Status Box -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom:30px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F4FF; border-left:4px solid #8B5CF6;">
+                                            <tr>
+                                                <td align="center" style="background-color:#FEF3C7; border:1px solid #F59E0B; border-radius:8px; padding:25px;" class="credits-display">
+                                                    <p style="margin:0 0 10px 0; color:#374151; font-family:Arial, sans-serif; font-size:16px; font-weight:bold;">
+                                                        Credits Remaining This Month
+                                                    </p>
+                                                    <p style="margin:0 0 10px 0; color:#7C3AED; font-family:Georgia, serif; font-size:48px; font-weight:bold; line-height:48px;">
+                                                        {{credits_remaining|default:"3"}}
+                                                    </p>
+                                                    <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:14px;">
+                                                        Perfect for a few more magical bedtime stories
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Message Box -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom:30px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FDF2F8; border-left:4px solid #F9A8D4;">
+                                            <tr>
+                                                <td style="padding:25px;">
+                                                    <p style="margin:0 0 15px 0; color:#374151; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
+                                                        We love seeing how much you and {{child_name|default:"your child"}} enjoy creating stories together. If you'd like to keep the adventures going beyond your remaining credits, we have options to add more anytime.
+                                                    </p>
+                                                    <p style="margin:0; color:#374151; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
+                                                        Whether it's for tonight's bedtime story or next week's creative session, we're here to keep the storytelling magic flowing.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Benefits Reminder -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom:30px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F0FDFB; border-left:4px solid #7DD3FC;">
+                                            <tr>
+                                                <td style="padding:25px;">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td style="font-size:20px; line-height:20px; padding-right:8px;">🌟</td>
+                                                            <td>
+                                                                <h3 style="margin:0 0 15px 0; color:#7C3AED; font-family:Georgia, serif; font-size:18px;">Keep the Magic Alive With More Credits</h3>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:15px; line-height:22px;">
+                                                        More credits mean more personalized stories, custom illustrations, voice narration, and precious family memories whenever you want to create them together.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- CTA Section -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" style="padding:30px 20px; background-color:#F8F4FF;">
+                                        <p style="margin:0 0 20px 0; color:#374151; font-family:Georgia, serif; font-size:18px;">
+                                            Ready to add more storytelling magic?
+                                        </p>
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td align="center" style="border:2px solid #7C3AED; background-color:#ffffff;">
+                                                    <a href="{{explore_plans_link|default:'https://storybud.com/plans'}}" style="display:block; padding:15px 35px; color:#7C3AED; font-family:Georgia, serif; font-size:16px; font-weight:bold; text-decoration:none;">
+                                                        Explore Plans
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Closing Message -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" style="padding-top:30px;">
+                                        <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:16px; line-height:24px; font-style:italic;">
+                                            Thank you for making StoryBud part of your family's routine. We're here whenever you're ready for more adventures!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color:#F3F4F6; padding:35px 20px; border-top:1px solid #E5E7EB;">
+                            
+                            <!-- Footer Logo -->
+                            <h3 style="margin:0 0 10px 0; color:#7C3AED; font-family:Georgia, serif; font-size:24px; font-weight:bold;">
+                                ✨ StoryBud
+                            </h3>
+                            
+                            <!-- Tagline -->
+                            <p style="margin:0 0 25px 0; color:#475569; font-family:Arial, sans-serif; font-size:16px; font-style:italic;">
+                                "Every child deserves their own story."
+                            </p>
+                            
+                            <!-- Sign-off -->
+                            <p style="margin:0 0 8px 0; color:#7C3AED; font-family:Georgia, serif; font-size:18px; font-weight:bold;">
+                                Happy storytelling! 📚
+                            </p>
+                            <p style="margin:0 0 25px 0; color:#475569; font-family:Arial, sans-serif; font-size:14px; font-style:italic;">
+                                The StoryBud Team
+                            </p>
+                            
+                            <!-- Footer Links -->
+                            <table cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td style="padding:0 12px;">
+                                        <a href="https://storybud.com/support" style="color:#6B7280; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Support</a>
+                                    </td>
+                                    <td style="padding:0 12px;">
+                                        <a href="https://storybud.com/privacy" style="color:#6B7280; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Privacy Policy</a>
+                                    </td>
+                                    <td style="padding:0 12px;">
+                                        <a href="https://storybud.com/terms" style="color:#6B7280; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Terms</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal Footer -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" style="padding-top:20px;">
+                                        <p style="margin:0 0 10px 0; color:#9CA3AF; font-family:Arial, sans-serif; font-size:12px; line-height:18px;">
+                                            You're receiving this email because you signed up for StoryBud.<br>
+                                            <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color:#7C3AED; text-decoration:none;">Unsubscribe</a> <span class="mobile-hide">|</span> StoryBud Inc.<br>
+                                            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                        </p>
+                                        <p style="margin:0; color:#9CA3AF; font-family:Arial, sans-serif; font-size:12px;">
+                                            Copyright © 2025 StoryBud All Rights Reserved
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Content -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
 </body>
 </html>

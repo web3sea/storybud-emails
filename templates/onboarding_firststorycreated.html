@@ -52,9 +52,89 @@
         
         /* Dark Mode Styles */
         @media (prefers-color-scheme: dark) {
-            .dark-bg { background-color: #1F2937 !important; }
-            .dark-text { color: #F3F4F6 !important; }
-            .dark-border { border-color: #374151 !important; }
+            /* Main backgrounds */
+            body { 
+                background-color: #1F2937 !important; 
+            }
+            
+            /* Email wrapper and container */
+            table[style*="background-color: #F3F4F6"] { 
+                background-color: #1F2937 !important; 
+            }
+            
+            table[style*="background-color: #ffffff"] { 
+                background-color: #374151 !important; 
+            }
+            
+            /* Header - keep gradient but darken */
+            td[style*="background-color: #10B981"] { 
+                background: #047857 !important; 
+            }
+            
+            /* Text colors */
+            h1, h2, h3, h4 { 
+                color: #F3F4F6 !important; 
+            }
+            
+            p[style*="color: #475569"] { 
+                color: #D1D5DB !important; 
+            }
+            
+            p[style*="color: #374151"] { 
+                color: #E5E7EB !important; 
+            }
+            
+            p[style*="color: #1F2937"] { 
+                color: #F3F4F6 !important; 
+            }
+            
+            /* Purple/brand text - keep for contrast */
+            span[style*="color: #7C3AED"] { 
+                color: #A78BFA !important; 
+            }
+            
+            span[style*="color: #10B981"] { 
+                color: #34D399 !important; 
+            }
+            
+            /* Card backgrounds */
+            td[style*="background: linear-gradient"] { 
+                background: #4B5563 !important; 
+            }
+            
+            /* Buttons - keep green but adjust */
+            td[style*="background-color: #10B981"] { 
+                background-color: #059669 !important; 
+            }
+            
+            /* Footer */
+            td[style*="background-color: #F9FAFB"] { 
+                background-color: #111827 !important; 
+            }
+            
+            /* Footer links */
+            a[style*="color: #6B7280"] { 
+                color: #D1D5DB !important; 
+            }
+            
+            a[style*="color: #9CA3AF"] { 
+                color: #9CA3AF !important; 
+            }
+            
+            /* StoryBud brand text */
+            p[style*="color: #7C3AED"] { 
+                color: #A78BFA !important; 
+            }
+            
+            /* Pipe separators */
+            td[style*="color: #D1D5DB"] { 
+                color: #6B7280 !important; 
+            }
+            
+            /* General border adjustments */
+            td[style*="border:"] { 
+                border-color: #4B5563 !important; 
+            }
         }
     </style>
 </head>
@@ -357,11 +437,11 @@
                                                 <td>
                                                     <a href="https://storybud.com/contact" style="color: #6B7280; text-decoration: none; font-size: 14px;">Support</a>
                                                 </td>
-                                                <td style="padding: 0 8px; color: #D1D5DB;">|</td>
+                                                <td style="padding: 0 8px; color: #D1D5DB;" class="mobile-hide">|</td>
                                                 <td>
                                                     <a href="https://storybud.com/privacy-policy" style="color: #6B7280; text-decoration: none; font-size: 14px;">Privacy Policy</a>
                                                 </td>
-                                                <td style="padding: 0 8px; color: #D1D5DB;">|</td>
+                                                <td style="padding: 0 8px; color: #D1D5DB;" class="mobile-hide">|</td>
                                                 <td>
                                                     <a href="https://storybud.com/terms-of-service" style="color: #6B7280; text-decoration: none; font-size: 14px;">Terms</a>
                                                 </td>
@@ -373,7 +453,7 @@
                                     <td align="center" style="padding-top: 20px;">
                                         <p style="margin: 0; font-size: 13px; color: #9CA3AF; line-height: 1.5;">
                                             You're receiving this email because you signed up for StoryBud.<br>
-                                            <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | StoryBud Inc.<br>
+                                            <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> <span class="mobile-hide">|</span> StoryBud Inc.<br>
                                             1111B South Governors Avenue, STE 37071, Dover, DE 19904<br>
                                             Copyright © 2025 StoryBud All Rights Reserved
                                         </p>

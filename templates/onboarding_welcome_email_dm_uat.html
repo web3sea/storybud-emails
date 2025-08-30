@@ -1,677 +1,305 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="x-apple-disable-message-reformatting">
-    <meta name="color-scheme" content="light dark">
-    <meta name="supported-color-schemes" content="light dark">
     <title>Welcome to StoryBud!</title>
-    
-    <!--[if mso]>
-    <noscript>
-        <xml>
-            <o:OfficeDocumentSettings>
-                <o:PixelsPerInch>96</o:PixelsPerInch>
-            </o:OfficeDocumentSettings>
-        </xml>
-    </noscript>
-    <![endif]-->
-    
-    <style>
-        /* Reset and base styles */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            height: 100% !important;
-            width: 100% !important;
-            background: #F3F4F6 !important;
-        }
-        
-        * {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-        }
-        
-        table, td {
-            mso-table-lspace: 0pt !important;
-            mso-table-rspace: 0pt !important;
-        }
-        
-        table {
-            border-spacing: 0 !important;
-            border-collapse: collapse !important;
-            table-layout: fixed !important;
-            margin: 0 auto !important;
-        }
-
-        img {
-            -ms-interpolation-mode: bicubic;
-        }
-        
-        a {
-            text-decoration: none;
-        }
-        
-        /* Main container styles */
-        .email-container {
-            max-width: 600px;
-            background: #FFFFFF;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-        }
-        
-        /* Header styles */
-        .header {
-            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%);
-            padding: 40px 30px;
-            text-align: center;
-            color: white;
-        }
-        
-        .header-logo {
-            max-width: 120px;
-            height: auto;
-            margin: 0 0 20px 0;
-            display: block;
-        }
-        
-        .welcome-heading {
-            font-size: 32px;
-            color: white;
-            margin: 0 0 8px 0;
-            font-weight: 700;
-            font-family: 'Quicksand', Georgia, sans-serif;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .welcome-subheading {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 0;
-            font-weight: 400;
-        }
-        
-        /* Content styles */
-        .content {
-            padding: 36px 30px;
-        }
-        
-        .greeting-text {
-            margin: 0 0 16px 0;
-            font-size: 16px;
-            color: #475569;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        
-        .personalized-name {
-            color: #7C3AED;
-            font-weight: 600;
-        }
-        
-        .section-title {
-            font-size: 22px;
-            font-weight: 600;
-            color: #7C3AED;
-            margin: 0 0 20px 0;
-            font-family: 'Quicksand', Georgia, sans-serif;
-        }
-        
-        /* Account card */
-        .account-card {
-            background: #F0F9FF;
-            border: 2px solid #BAE6FD;
-            border-radius: 12px;
-            padding: 24px;
-            margin: 20px 0;
-        }
-        
-        .account-card-title {
-            margin: 0 0 12px 0;
-            color: #7C3AED;
-            font-size: 18px;
-            font-weight: 600;
-            font-family: 'Quicksand', Georgia, sans-serif;
-        }
-        
-        .account-card-text {
-            margin: 0;
-            font-size: 15px;
-            color: #475569;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        
-        .credits-highlight {
-            color: #7C3AED;
-            font-weight: 700;
-            font-size: 16px;
-        }
-        
-        /* Steps container */
-        .steps-container {
-            background: #F8F4FF;
-            border-radius: 12px;
-            padding: 24px;
-            border-left: 4px solid #8B5CF6;
-            border: 2px solid #E0E7FF;
-        }
-        
-        /* Step items */
-        .step-item {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
-            border: 1px solid #E5E7EB;
-            margin-bottom: 16px;
-        }
-        
-        .step-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .step-number {
-            background: linear-gradient(135deg, #7C3AED, #8B5CF6);
-            color: white;
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            font-weight: 700;
-            font-size: 16px;
-            font-family: 'Quicksand', Georgia, sans-serif;
-            text-align: center;
-            line-height: 32px;
-        }
-        
-        .step-content-title {
-            margin: 0 0 4px 0;
-            color: #1F2937;
-            font-size: 16px;
-            font-weight: 600;
-            font-family: 'Quicksand', Georgia, sans-serif;
-        }
-        
-        .step-content-text {
-            margin: 0;
-            color: #475569;
-            font-size: 14px;
-            font-weight: 500;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            margin: 40px 0;
-            padding: 32px 24px;
-            background: #F0F9FF;
-            border-radius: 12px;
-            border: 2px solid #BAE6FD;
-        }
-        
-        .cta-text {
-            font-size: 18px;
-            color: #374151;
-            margin: 0 0 20px 0;
-            font-weight: 500;
-            font-family: 'Quicksand', Georgia, sans-serif;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
-            color: white !important;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            font-family: 'Quicksand', Georgia, sans-serif;
-            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
-        }
-        
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 40px 30px;
-            text-align: center;
-            border-top: 1px solid #E5E7EB;
-        }
-        
-        .footer-logo {
-            font-family: 'Quicksand', Georgia, sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #7C3AED;
-            margin: 0 0 10px 0;
-        }
-        
-        .footer-tagline {
-            font-size: 16px;
-            color: #475569;
-            margin: 0 0 25px 0;
-            font-style: italic;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        
-        .footer-message {
-            margin: 0 0 8px 0;
-            color: #7C3AED;
-            font-weight: 600;
-            font-size: 18px;
-            font-family: 'Quicksand', Georgia, sans-serif;
-        }
-        
-        .footer-team {
-            margin: 0 0 24px 0;
-            color: #475569;
-            font-style: italic;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        
-        .footer-links {
-            margin: 20px 0;
-        }
-        
-        .footer-links a {
-            color: #6B7280;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 14px;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        
-        .footer-links a:hover {
-            color: #7C3AED;
-            text-decoration: underline;
-        }
-        
-        .footer-legal {
-            font-size: 13px;
-            color: #9CA3AF;
-            margin-top: 20px;
-            line-height: 1.5;
-            font-family: 'Inter', Arial, sans-serif;
-        }
-        
-        .footer-legal a {
-            color: #7C3AED;
-            text-decoration: none;
-        }
-        
-        .footer-legal a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            html, body {
-                background: #1F2937 !important;
-            }
-            
-            .email-container {
-                background: #1F2937 !important;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border: 1px solid #374151 !important;
-            }
-            
-            .header {
-                background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A855F7 100%) !important;
-            }
-            
-            .content {
-                background: #1F2937 !important;
-            }
-            
-            .greeting-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .personalized-name {
-                color: #A78BFA !important;
-            }
-            
-            .section-title {
-                color: #A78BFA !important;
-            }
-            
-            .account-card {
-                background: rgba(125, 211, 252, 0.15) !important;
-                border-color: rgba(125, 211, 252, 0.4) !important;
-            }
-            
-            .account-card-title {
-                color: #A78BFA !important;
-            }
-            
-            .account-card-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .credits-highlight {
-                color: #A78BFA !important;
-            }
-            
-            .steps-container {
-                background: rgba(124, 58, 237, 0.15) !important;
-                border-color: rgba(124, 58, 237, 0.3) !important;
-            }
-            
-            .step-item {
-                background: #374151 !important;
-                border-color: #4B5563 !important;
-            }
-            
-            .step-content-title {
-                color: #F9FAFB !important;
-            }
-            
-            .step-content-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .cta-section {
-                background: rgba(124, 58, 237, 0.15) !important;
-                border-color: rgba(124, 58, 237, 0.3) !important;
-            }
-            
-            .cta-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
-                border-top-color: #374151 !important;
-            }
-            
-            .footer-logo {
-                color: #A78BFA !important;
-            }
-            
-            .footer-tagline,
-            .footer-message,
-            .footer-team {
-                color: #D1D5DB !important;
-            }
-            
-            .footer-links a {
-                color: #9CA3AF !important;
-            }
-            
-            .footer-links a:hover {
-                color: #A78BFA !important;
-            }
-            
-            .footer-legal {
-                color: #6B7280 !important;
-            }
-            
-            .footer-legal a {
-                color: #A78BFA !important;
-            }
-            
-            .header-logo {
-                opacity: 0.9 !important;
-            }
-        }
-        
-        /* Mobile responsiveness */
-        @media only screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                margin: 0 !important;
-                border-radius: 0 !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 25px 20px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .section-title {
-                font-size: 20px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .step-item {
-                padding: 20px 15px !important;
-            }
-            
-            .cta-button {
-                padding: 16px 32px !important;
-                font-size: 16px !important;
-                display: block !important;
-                width: 100% !important;
-                max-width: 280px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
-            }
-            
-            .footer-links a {
-                display: block !important;
-                margin: 8px 0 !important;
-            }
-            
-            .header-logo {
-                max-width: 100px !important;
-                margin: 0 0 15px 0 !important;
-            }
-        }
-    </style>
 </head>
-
-<body style="margin: 0; padding: 0; width: 100%; height: 100%; background: #F3F4F6;">
-    <center style="width: 100%; background: #F3F4F6;">
-        <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-            Welcome to StoryBud! Your magical storytelling journey begins here. Create personalized stories for your little one today! ✨📚
-        </div>
-        
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-            <tr>
-                <td style="padding: 30px 15px;">
-                    <div class="email-container">
-                        
-                        <!-- Header -->
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td class="header" style="background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 50%, #6366F1 100%); padding: 40px 30px; text-align: center; color: white;">
-                                    <img src="https://i.imgur.com/axU6Y0c.png" alt="StoryBud Logo" class="header-logo" style="max-width: 120px; height: auto; margin: 0 0 20px 0; display: block; margin-left: auto; margin-right: auto;" />
-                                    <h1 class="welcome-heading" style="font-size: 32px; color: white; margin: 0 0 8px 0; font-weight: 700; font-family: 'Quicksand', Georgia, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">📚 Welcome to StoryBud!</h1>
-                                    <p class="welcome-subheading" style="font-size: 16px; color: rgba(255, 255, 255, 0.9); margin: 0; font-weight: 400; font-family: 'Inter', Arial, sans-serif;">Where stories come to life.</p>
-                                </td>
-                            </tr>
-                        </table>
-                        
-                        <!-- Content -->
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td class="content" style="padding: 36px 30px; font-family: 'Inter', Arial, sans-serif;">
-                                    
-                                    <!-- Greeting -->
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-                                            <td style="padding-bottom: 28px;">
-                                                <p class="greeting-text" style="margin: 0 0 16px 0; font-size: 16px; color: #475569; font-family: 'Inter', Arial, sans-serif;">Hi <span class="personalized-name" style="color: #7C3AED; font-weight: 600;">{{user_name|default:"there"}}</span>,</p>
-                                                <p class="greeting-text" style="margin: 0 0 16px 0; font-size: 16px; color: #475569; font-family: 'Inter', Arial, sans-serif;">Welcome to the StoryBud family! We're thrilled you're here and can't wait to help you create magical, personalized stories that will become cherished memories.</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    
-                                    <!-- Account Section -->
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-                                            <td style="padding-bottom: 36px;">
-                                                <h3 class="section-title" style="font-size: 22px; font-weight: 600; color: #7C3AED; margin: 0 0 20px 0; font-family: 'Quicksand', Georgia, sans-serif;">🎁 Your Account is Ready</h3>
-                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="account-card" style="background: #F0F9FF; border: 2px solid #BAE6FD; border-radius: 12px;">
-                                                    <tr>
-                                                        <td style="padding: 24px;">
-                                                            <h4 class="account-card-title" style="margin: 0 0 12px 0; color: #7C3AED; font-size: 18px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">{{subscription_name|default:"StoryBud"}} Plan Active</h4>
-                                                            <p class="account-card-text" style="margin: 0; font-size: 15px; color: #475569; font-family: 'Inter', Arial, sans-serif;">You have <span class="credits-highlight" style="color: #7C3AED; font-weight: 700; font-size: 16px;">{{credit_allowance|default:"unlimited"}} credits</span> ready to use each month for creating personalized stories with illustrations, voice narration, and character portraits.</p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    
-                                    <!-- Steps Section -->
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-                                            <td style="padding-bottom: 36px;">
-                                                <h3 class="section-title" style="font-size: 22px; font-weight: 600; color: #7C3AED; margin: 0 0 20px 0; font-family: 'Quicksand', Georgia, sans-serif;">🚀 Create Your First Story</h3>
-                                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="steps-container" style="background: #F8F4FF; border-radius: 12px; border-left: 4px solid #8B5CF6; border: 2px solid #E0E7FF;">
-                                                    <tr>
-                                                        <td style="padding: 24px;">
-                                                            
-                                                            <!-- Step 1 -->
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 16px;">
-                                                                <tr>
-                                                                    <td style="padding: 20px;">
-                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                            <tr>
-                                                                                <td style="width: 48px; vertical-align: top;">
-                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                                                                                        <tr>
-                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">1</td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td style="vertical-align: top; padding-left: 16px;">
-                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Pick Your Adventure</h4>
-                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">Choose from adventure, fantasy, learning, or everyday fun themes</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            
-                                                            <!-- Step 2 -->
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 16px;">
-                                                                <tr>
-                                                                    <td style="padding: 20px;">
-                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                            <tr>
-                                                                                <td style="width: 48px; vertical-align: top;">
-                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                                                                                        <tr>
-                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">2</td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td style="vertical-align: top; padding-left: 16px;">
-                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Add Your Little Hero</h4>
-                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">Include your child's name and photo to make them the star</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            
-                                                            <!-- Step 3 -->
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 16px;">
-                                                                <tr>
-                                                                    <td style="padding: 20px;">
-                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                            <tr>
-                                                                                <td style="width: 48px; vertical-align: top;">
-                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                                                                                        <tr>
-                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">3</td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td style="vertical-align: top; padding-left: 16px;">
-                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Choose Art Style</h4>
-                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">From watercolor to cartoon - pick what your child loves most</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            
-                                                            <!-- Step 4 -->
-                                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="step-item" style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15); border: 1px solid #E5E7EB; margin-bottom: 0;">
-                                                                <tr>
-                                                                    <td style="padding: 20px;">
-                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                            <tr>
-                                                                                <td style="width: 48px; vertical-align: top;">
-                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                                                                                        <tr>
-                                                                                            <td class="step-number" style="background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: white; border-radius: 50%; width: 32px; height: 32px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; text-align: center; line-height: 32px;">4</td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                                <td style="vertical-align: top; padding-left: 16px;">
-                                                                                    <h4 class="step-content-title" style="margin: 0 0 4px 0; color: #1F2937; font-size: 16px; font-weight: 600; font-family: 'Quicksand', Georgia, sans-serif;">Watch the Magic</h4>
-                                                                                    <p class="step-content-text" style="margin: 0; color: #475569; font-size: 14px; font-weight: 500; font-family: 'Inter', Arial, sans-serif;">Your personalized story will be ready in just minutes!</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    
-                                    <!-- CTA Section -->
-                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                        <tr>
-                                            <td class="cta-section" style="text-align: center; padding: 32px 24px; background: #F0F9FF; border-radius: 12px; border: 2px solid #BAE6FD;">
-                                                <p class="cta-text" style="font-size: 18px; color: #374151; margin: 0 0 20px 0; font-weight: 500; font-family: 'Quicksand', Georgia, sans-serif;">Ready to create something magical?</p>
-                                                <a href="https://storybud.com/" class="cta-button" style="display: inline-block; background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%); color: white !important; padding: 16px 32px; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 16px; font-family: 'Quicksand', Georgia, sans-serif; box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);">Create Your First Story</a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    
-                                </td>
-                            </tr>
-                        </table>
-                        
-                        <!-- Footer -->
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                            <tr>
-                                <td class="footer" style="background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); padding: 40px 30px; text-align: center; border-top: 1px solid #E5E7EB;">
-                                    <div class="footer-logo" style="font-family: 'Quicksand', Georgia, sans-serif; font-size: 24px; font-weight: 700; color: #7C3AED; margin: 0 0 10px 0;">✨ StoryBud</div>
-                                    <p class="footer-tagline" style="font-size: 16px; color: #475569; margin: 0 0 25px 0; font-style: italic; font-family: 'Inter', Arial, sans-serif;">"Every child deserves their own story."</p>
-                                    
-                                    <p class="footer-message" style="margin: 0 0 8px 0; color: #7C3AED; font-weight: 600; font-size: 18px; font-family: 'Quicksand', Georgia, sans-serif;">Happy storytelling!</p>
-                                    <p class="footer-team" style="margin: 0 0 24px 0; color: #475569; font-style: italic; font-family: 'Inter', Arial, sans-serif;">The StoryBud Team</p>
-                                    
-                                    <div class="footer-links" style="margin: 20px 0;">
-                                        <a href="https://storybud.com/contact" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px; font-family: 'Inter', Arial, sans-serif;">Support</a>
-                                        <a href="https://storybud.com/privacy-policy" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px; font-family: 'Inter', Arial, sans-serif;">Privacy Policy</a>
-                                        <a href="https://storybud.com/terms-of-service" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px; font-family: 'Inter', Arial, sans-serif;">Terms</a>
-                                    </div>
-                                    
-                                    <div class="footer-legal" style="font-size: 13px; color: #9CA3AF; margin-top: 20px; line-height: 1.5; font-family: 'Inter', Arial, sans-serif;">
-                                        <p style="margin: 0 0 10px 0;">You're receiving this email because you signed up for StoryBud.<br>
-                                        <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | StoryBud Inc.<br>
-                                        1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
-                                        <p style="margin: 0;">Copyright © 2025 StoryBud All Rights Reserved</p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                        
-                    </div>
-                </td>
-            </tr>
-        </table>
-    </center>
+<body style="margin:0; padding:0; background-color:#f3f4f6;">
+    
+    <!-- Main Container -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3f4f6;">
+        <tr>
+            <td align="center" style="padding:20px;">
+                
+                <!-- Email Content -->
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; max-width:600px;">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="background-color:#8B5CF6; padding:40px 20px;">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <!-- Logo Text (replace with image when available) -->
+                                <tr>
+                                    <td align="center" style="padding-bottom:20px;">
+                                        <h2 style="margin:0; color:#ffffff; font-family:Georgia, serif; font-size:28px; font-weight:bold;">✨ StoryBud</h2>
+                                    </td>
+                                </tr>
+                                <!-- Welcome Message -->
+                                <tr>
+                                    <td align="center">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="font-size:24px; line-height:24px; padding-right:8px;">📚</td>
+                                                <td>
+                                                    <h1 style="margin:0; color:#ffffff; font-family:Georgia, serif; font-size:28px; font-weight:normal;">Welcome to StoryBud!</h1>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-top:10px;">
+                                        <p style="margin:0; color:#ffffff; font-family:Arial, sans-serif; font-size:16px; opacity:0.95;">Where stories come to life.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td style="padding:30px 20px;">
+                            
+                            <!-- Greeting -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom:25px;">
+                                        <p style="margin:0 0 15px 0; color:#475569; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
+                                            Hi <span style="color:#7C3AED; font-weight:bold;">{{user_name|default:"there"}}</span>,
+                                        </p>
+                                        <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
+                                            Welcome to the StoryBud family! We're thrilled you're here and can't wait to help you create magical, personalized stories that will become cherished memories.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Account Section -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom:30px;">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="font-size:20px; line-height:20px; padding-right:8px;">🎁</td>
+                                                <td>
+                                                    <h2 style="margin:0; color:#7C3AED; font-family:Georgia, serif; font-size:22px; font-weight:normal;">Your Account is Ready</h2>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:30px;">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F0F9FF; border:2px solid #BAE6FD;">
+                                            <tr>
+                                                <td style="padding:20px;">
+                                                    <h3 style="margin:0 0 10px 0; color:#7C3AED; font-family:Georgia, serif; font-size:18px;">
+                                                        {{subscription_name|default:"StoryBud"}} Plan Active
+                                                    </h3>
+                                                    <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:15px; line-height:22px;">
+                                                        You have <span style="color:#7C3AED; font-weight:bold; font-size:16px;">{{credit_allowance|default:"unlimited"}} credits</span> ready to use each month for creating personalized stories with illustrations, voice narration, and character portraits.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Steps Section -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-bottom:20px;">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="font-size:20px; line-height:20px; padding-right:8px;">🚀</td>
+                                                <td>
+                                                    <h2 style="margin:0; color:#7C3AED; font-family:Georgia, serif; font-size:22px; font-weight:normal;">Create Your First Story</h2>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Steps Container -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F4FF; border:2px solid #E0E7FF;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        
+                                        <!-- Step 1 -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB; margin-bottom:15px;">
+                                            <tr>
+                                                <td style="padding:15px;">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td width="40" valign="top">
+                                                                <table cellpadding="0" cellspacing="0" border="0">
+                                                                    <tr>
+                                                                        <td align="center" style="background-color:#7C3AED; color:#ffffff; width:32px; height:32px; font-family:Georgia, serif; font-size:16px; font-weight:bold;">1</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td valign="top" style="padding-left:15px;">
+                                                                <h4 style="margin:0 0 5px 0; color:#1F2937; font-family:Georgia, serif; font-size:16px;">Pick Your Adventure</h4>
+                                                                <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:14px; line-height:20px;">Choose from adventure, fantasy, learning, or everyday fun themes</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <!-- Step 2 -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB; margin-bottom:15px;">
+                                            <tr>
+                                                <td style="padding:15px;">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td width="40" valign="top">
+                                                                <table cellpadding="0" cellspacing="0" border="0">
+                                                                    <tr>
+                                                                        <td align="center" style="background-color:#7C3AED; color:#ffffff; width:32px; height:32px; font-family:Georgia, serif; font-size:16px; font-weight:bold;">2</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td valign="top" style="padding-left:15px;">
+                                                                <h4 style="margin:0 0 5px 0; color:#1F2937; font-family:Georgia, serif; font-size:16px;">Add Your Little Hero</h4>
+                                                                <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:14px; line-height:20px;">Include your child's name and photo to make them the star</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <!-- Step 3 -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB; margin-bottom:15px;">
+                                            <tr>
+                                                <td style="padding:15px;">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td width="40" valign="top">
+                                                                <table cellpadding="0" cellspacing="0" border="0">
+                                                                    <tr>
+                                                                        <td align="center" style="background-color:#7C3AED; color:#ffffff; width:32px; height:32px; font-family:Georgia, serif; font-size:16px; font-weight:bold;">3</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td valign="top" style="padding-left:15px;">
+                                                                <h4 style="margin:0 0 5px 0; color:#1F2937; font-family:Georgia, serif; font-size:16px;">Choose Art Style</h4>
+                                                                <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:14px; line-height:20px;">From watercolor to cartoon - pick what your child loves most</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <!-- Step 4 -->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB;">
+                                            <tr>
+                                                <td style="padding:15px;">
+                                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td width="40" valign="top">
+                                                                <table cellpadding="0" cellspacing="0" border="0">
+                                                                    <tr>
+                                                                        <td align="center" style="background-color:#7C3AED; color:#ffffff; width:32px; height:32px; font-family:Georgia, serif; font-size:16px; font-weight:bold;">4</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td valign="top" style="padding-left:15px;">
+                                                                <h4 style="margin:0 0 5px 0; color:#1F2937; font-family:Georgia, serif; font-size:16px;">Watch the Magic</h4>
+                                                                <p style="margin:0; color:#475569; font-family:Arial, sans-serif; font-size:14px; line-height:20px;">Your personalized story will be ready in just minutes!</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- CTA Section -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:35px;">
+                                <tr>
+                                    <td align="center" style="background-color:#F0F9FF; border:2px solid #BAE6FD; padding:30px 20px;">
+                                        <p style="margin:0 0 20px 0; color:#374151; font-family:Georgia, serif; font-size:18px;">
+                                            Ready to create something magical?
+                                        </p>
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td align="center" style="background-color:#7C3AED; padding:15px 35px;">
+                                                    <a href="https://storybud.com/" style="color:#ffffff; font-family:Georgia, serif; font-size:16px; font-weight:bold; text-decoration:none;">
+                                                        Create Your First Story
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color:#F3F4F6; padding:35px 20px; border-top:1px solid #E5E7EB;">
+                            
+                            <!-- Footer Logo -->
+                            <h3 style="margin:0 0 10px 0; color:#7C3AED; font-family:Georgia, serif; font-size:24px; font-weight:bold;">
+                                ✨ StoryBud
+                            </h3>
+                            
+                            <!-- Tagline -->
+                            <p style="margin:0 0 25px 0; color:#475569; font-family:Arial, sans-serif; font-size:16px; font-style:italic;">
+                                "Every child deserves their own story."
+                            </p>
+                            
+                            <!-- Sign-off -->
+                            <p style="margin:0 0 8px 0; color:#7C3AED; font-family:Georgia, serif; font-size:18px; font-weight:bold;">
+                                Happy storytelling!
+                            </p>
+                            <p style="margin:0 0 25px 0; color:#475569; font-family:Arial, sans-serif; font-size:14px; font-style:italic;">
+                                The StoryBud Team
+                            </p>
+                            
+                            <!-- Footer Links -->
+                            <table cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td style="padding:0 12px;">
+                                        <a href="https://storybud.com/contact" style="color:#6B7280; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Support</a>
+                                    </td>
+                                    <td style="padding:0 12px;">
+                                        <a href="https://storybud.com/privacy-policy" style="color:#6B7280; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Privacy Policy</a>
+                                    </td>
+                                    <td style="padding:0 12px;">
+                                        <a href="https://storybud.com/terms-of-service" style="color:#6B7280; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Terms</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal Footer -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" style="padding-top:20px;">
+                                        <p style="margin:0 0 10px 0; color:#9CA3AF; font-family:Arial, sans-serif; font-size:12px; line-height:18px;">
+                                            You're receiving this email because you signed up for StoryBud.<br>
+                                            <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color:#7C3AED; text-decoration:none;">Unsubscribe</a> | StoryBud Inc.<br>
+                                            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                        </p>
+                                        <p style="margin:0; color:#9CA3AF; font-family:Arial, sans-serif; font-size:12px;">
+                                            Copyright © 2025 StoryBud All Rights Reserved
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Content -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
 </body>
 </html>
