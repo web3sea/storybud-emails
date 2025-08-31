@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>🛏️ A week of stories—what a start!</title>
     
     <!--[if mso]>
@@ -17,331 +20,260 @@
     </noscript>
     <![endif]-->
     
-    <style>
+    <style type="text/css">
         /* Reset and base styles */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            height: 100% !important;
-            width: 100% !important;
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);
-        }
+        #outlook a { padding: 0; }
+        table { border-collapse: collapse !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        p { display: block; margin: 0; }
+        a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
         
-        * {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-        }
-        
-        table, td {
-            mso-table-lspace: 0pt !important;
-            mso-table-rspace: 0pt !important;
-        }
-        
-        table {
-            border-spacing: 0 !important;
-            border-collapse: collapse !important;
-            table-layout: fixed !important;
-            margin: 0 auto !important;
-        }
-        
-        img {
-            -ms-interpolation-mode: bicubic;
-        }
-        
-        a {
-            text-decoration: none;
-        }
-        
-        /* Main container */
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Header styles */
-        .header {
-            background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);
-            padding: 40px 30px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(2px 2px at 20px 30px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 40px 70px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 90px 40px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 130px 80px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 160px 30px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 200px 90px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 250px 50px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 300px 20px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 350px 70px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 400px 40px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 450px 85px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 500px 25px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 550px 65px, #ffffff 50%, transparent 50%);
-            background-repeat: repeat;
-            background-size: 600px 120px;
-            pointer-events: none;
-        }
-        
-        .header h1 {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            font-size: 28px;
-            font-weight: bold;
-            line-height: 1.3;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header .emoji {
-            font-size: 36px;
-            margin-bottom: 10px;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Content styles */
-        .content {
-            padding: 40px 30px;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background: #ffffff;
-        }
-        
-        .subheader {
-            font-size: 20px;
-            font-weight: bold;
-            color: #4a5568;
-            margin: 0 0 25px 0;
-            font-family: 'Georgia', serif;
-        }
-        
-        .body-text {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #2d3748;
-        }
-        
-        .body-text:last-of-type {
-            margin-bottom: 30px;
-        }
-        
-        /* CTA Button */
-        .cta-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white !important;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            transition: transform 0.2s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            padding: 30px;
-            text-align: center;
-            border-top: 1px solid #4a5568;
-        }
-        
-        .footer-text {
-            font-size: 14px;
-            color: #a0aec0;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        /* Decorative elements */
-        .stars {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.4)"/><circle cx="60" cy="70" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="30" cy="80" r="1.2" fill="rgba(255,255,255,0.4)"/></svg>');
-            background-repeat: repeat;
-        }
-        
-        /* Mobile responsiveness */
+        /* Mobile styles */
         @media only screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                margin: 0 !important;
-                border-radius: 0 !important;
-            }
-            
-            .header, .content {
-                padding: 25px 20px !important;
-            }
-            
-            .header h1 {
-                font-size: 24px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .header .emoji {
-                font-size: 32px !important;
-                margin-bottom: 8px !important;
-            }
-            
-            .subheader {
-                font-size: 18px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .body-text {
-                font-size: 15px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .cta-button {
-                padding: 16px 32px !important;
-                font-size: 16px !important;
-                min-height: 44px !important;
-                display: block !important;
-                width: 100% !important;
-                max-width: 280px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
-            }
-            
-            .footer {
-                padding: 25px 20px !important;
-            }
-            
-            .footer-text {
-                font-size: 13px !important;
-            }
+            .mobile-hide { display: none !important; }
+            .mobile-center { text-align: center !important; }
+            .container { width: 100% !important; max-width: 100% !important; }
+            .content-padding { padding-left: 20px !important; padding-right: 20px !important; }
+            .header-padding { padding: 25px 20px !important; }
+            .footer-padding { padding: 25px 20px !important; }
+            .button-td { padding: 0 20px !important; }
+            .button-a { display: block !important; width: 100% !important; max-width: 280px !important; margin: 0 auto !important; }
+            h1 { font-size: 24px !important; line-height: 30px !important; }
+            h2 { font-size: 18px !important; line-height: 24px !important; }
+            .body-text { font-size: 15px !important; line-height: 22px !important; }
+            .small-text { font-size: 13px !important; line-height: 18px !important; }
+            .emoji-size { font-size: 32px !important; }
+            .spacer-20 { height: 20px !important; }
+            .spacer-30 { height: 30px !important; }
         }
         
-        /* Small mobile devices */
         @media only screen and (max-width: 480px) {
-            .header, .content {
-                padding: 20px 15px !important;
-            }
-            
-            .header h1 {
-                font-size: 22px !important;
-            }
-            
-            .subheader {
-                font-size: 17px !important;
-            }
-            
-            .body-text {
-                font-size: 14px !important;
-            }
-            
-            .cta-button {
-                padding: 14px 28px !important;
-                font-size: 15px !important;
-            }
+            .header-padding { padding: 20px 15px !important; }
+            .content-padding { padding-left: 15px !important; padding-right: 15px !important; }
+            h1 { font-size: 22px !important; }
+            h2 { font-size: 17px !important; }
+            .body-text { font-size: 14px !important; }
+            .button-a { font-size: 15px !important; }
         }
         
-        /* Extra small mobile devices */
         @media only screen and (max-width: 360px) {
-            .header, .content {
-                padding: 18px 12px !important;
-            }
-            
-            .header h1 {
-                font-size: 20px !important;
-            }
-            
-            .cta-button {
-                padding: 12px 24px !important;
-                font-size: 14px !important;
-            }
+            .header-padding { padding: 18px 12px !important; }
+            .content-padding { padding-left: 12px !important; padding-right: 12px !important; }
+            h1 { font-size: 20px !important; }
+            .button-a { font-size: 14px !important; padding: 0 24px !important; }
         }
         
+        /* Dark Mode Styles */
+        @media (prefers-color-scheme: dark) {
+            .dark-bg { background-color: #1a202c !important; }
+            .dark-bg-secondary { background-color: #2d3748 !important; }
+            .light-bg { background-color: #2d3748 !important; }
+            .dark-text { color: #F3F4F6 !important; }
+            .dark-text-secondary { color: #E2E8F0 !important; }
+        }
+        
+        /* Outlook.com Dark Mode */
+        [data-ogsc] .dark-bg { background-color: #1a202c !important; }
+        [data-ogsc] .dark-bg-secondary { background-color: #2d3748 !important; }
+        [data-ogsc] .light-bg { background-color: #2d3748 !important; }
+        [data-ogsc] .dark-text { color: #F3F4F6 !important; }
+        [data-ogsc] .dark-text-secondary { color: #E2E8F0 !important; }
+        .mobile-show { display: block !important; }
     </style>
+    
+    <!--[if mso]>
+    <style type="text/css">
+        table { border-collapse: collapse; border: none; border-spacing: 0; }
+        .button-a { padding: 18px 40px !important; }
+    </style>
+    <![endif]-->
 </head>
 
-<body style="margin: 0; padding: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);">
-    <center style="width: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);">
-        <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+<body style="margin: 0; padding: 0; word-spacing: normal; background-color: #2d3748;">
+    <div role="article" aria-roledescription="email" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+        
+        <!-- Preheader Text -->
+        <div style="display: none; font-size: 1px; color: #2d3748; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
             Seven nights down—celebrating your new bedtime tradition! 🛏️📚
+            &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
         </div>
         
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+        <!-- Email Container -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color: #2d3748;" class="dark-bg">
             <tr>
-                <td style="padding: 20px 0;">
-                    <div class="email-container">
-                        <!-- Header -->
-                        <div class="header stars">
-                            <span class="emoji">🛏️</span>
-                            <h1>You've built a reading routine together.</h1>
-                        </div>
+                <td align="center" style="padding: 20px 10px;">
+                    
+                    <!-- Main Container Table -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="container" style="max-width: 600px; width: 100%; background-color: #4a5568; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);" class="dark-bg-secondary">
                         
-                        <!-- Content -->
-                        <div class="content" style="background-color: #ffffff !important;">
-                            <h2 class="subheader" style="color: #4a5568 !important;">Day 7: The Routine Anchor</h2>
-                            
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Congratulations! You and your child just completed a full week of nightly stories. That's not just seven nights of reading—it's the start of a powerful routine that strengthens their skills, sparks their imagination, and deepens your bond.
-                            </p>
-                            
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Tonight's story continues the journey, and with every chapter, your child gets closer to the grand finale of this adventure. Imagine where you'll be after a month of nightly stories—think of the worlds you'll explore together.
-                            </p>
-                            
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Keep the streak alive. Tonight's adventure is just a click away.
-                            </p>
-                            
-                            <!-- CTA Button -->
-                            <div class="cta-container">
-                                <a href="#" class="cta-button">Read Tonight's Story</a>
-                            </div>
-                        </div>
+                        <!-- Header Section -->
+                        <tr>
+                            <td align="center" style="padding: 0;">
+                                <!--[if mso]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 600px; height: 160px;">
+                                <v:fill type="gradient" color="#2d3748" color2="#4a5568" angle="135" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                                <div>
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td align="center" class="header-padding" style="background: #2d3748; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%); padding: 40px 30px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="padding-bottom: 10px;">
+                                                        <span class="emoji-size" style="font-size: 36px; line-height: 36px;">🛏️</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <h1 style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 28px; line-height: 34px; color: #FFFFFF; font-weight: bold; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">
+                                                            You've built a reading routine together.
+                                                        </h1>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </div>
+                                <!--[if mso]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                        </tr>
                         
-                        <!-- Footer -->
-                        <div class="footer">
-                            <p class="footer-text">
-                                Seven nights down, countless adventures to go! 🛏️📚
-                            </p>
-
-                            
-                            <div class="footer-legal">
-                                <p class="footer-text">
-                                    You're receiving this email because you signed up for StoryBud.<br>
-                                    <a href="#" style="color: #a0aec0; text-decoration: none;">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
-                                </p>
-                                <p class="footer-text">
-                                    Copyright © 2025 StoryBud All Rights Reserved
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Content Section -->
+                        <tr>
+                            <td align="center" class="light-bg" style="background-color: #FFFFFF; padding: 0;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    
+                                    <!-- Subheader -->
+                                    <tr>
+                                        <td align="left" class="content-padding" style="padding: 40px 30px 0 30px;">
+                                            <h2 class="dark-text" style="margin: 0 0 25px 0; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; line-height: 26px; color: #4a5568; font-weight: bold;">
+                                                Journey Series Day 7: The Routine Anchor
+                                            </h2>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Body Text Paragraph 1 -->
+                                    <tr>
+                                        <td align="left" class="content-padding" style="padding: 0 30px 20px 30px;">
+                                            <p class="body-text dark-text-secondary" style="margin: 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #2d3748;">
+                                                Congratulations! You and your child just completed a full week of nightly stories. That's not just seven nights of reading—it's the start of a powerful routine that strengthens their skills, sparks their imagination, and deepens your bond.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Body Text Paragraph 2 -->
+                                    <tr>
+                                        <td align="left" class="content-padding" style="padding: 0 30px 20px 30px;">
+                                            <p class="body-text dark-text-secondary" style="margin: 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #2d3748;">
+                                                Tonight's story continues the journey, and with every chapter, your child gets closer to the grand finale of this adventure. Imagine where you'll be after a month of nightly stories—think of the worlds you'll explore together.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Body Text Paragraph 3 -->
+                                    <tr>
+                                        <td align="left" class="content-padding" style="padding: 0 30px 30px 30px;">
+                                            <p class="body-text dark-text-secondary" style="margin: 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #2d3748;">
+                                                Keep the streak alive. Tonight's adventure is just a click away.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer -->
+                                    <tr>
+                                        <td height="20" class="spacer-20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- CTA Button -->
+                                    <tr>
+                                        <td align="center" class="button-td" style="padding: 0 30px 40px 30px;">
+                                            <!--[if mso]>
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://storybud.com/stories/day7?utm_source=email&utm_medium=onboarding&utm_campaign=day7" style="height: 54px; v-text-anchor: middle; width: 220px;" arcsize="50%" strokecolor="#667eea" fillcolor="#667eea">
+                                            <w:anchorlock/>
+                                            <center style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold;">Read Tonight's Story</center>
+                                            </v:roundrect>
+                                            <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="border-radius: 50px; background: #667eea; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                                        <a href="https://storybud.com/" target="_blank" class="button-a" style="background: #667eea; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 1px solid #667eea; font-family: Arial, sans-serif; font-size: 18px; line-height: 54px; text-decoration: none; padding: 0 40px; color: #FFFFFF; display: block; border-radius: 50px; font-weight: bold; min-width: 140px;">
+                                                            Read Tonight's Story
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--<![endif]-->
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer -->
+                                    <tr>
+                                        <td height="20" class="spacer-20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                </table>
+                            </td>
+                        </tr>
+                        
+                        <!-- Footer Section -->
+                        <tr>
+                            <td align="center" style="background: #1a202c; background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); padding: 0; border-top: 1px solid #4a5568;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    
+                                    <!-- Footer Content -->
+                                    <tr>
+                                        <td align="center" class="footer-padding" style="padding: 30px;">
+                                            
+                                            <!-- Seven nights message -->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="padding-bottom: 20px;">
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a0aec0;">
+                                                            Seven nights down, countless adventures to go! 🛏️📚
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <!-- Legal Footer -->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td align="center">
+                                                        <p class="small-text" style="margin: 0 0 10px 0; font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a0aec0;">
+                                                            You're receiving this email because you signed up for StoryBud.<br>
+                                                            <a href="%%unsubscribe%%" target="_blank" style="color: #a0aec0; text-decoration: none;">Unsubscribe</a> <span class="mobile-hide">|</span> 
+                                                            <span class="mobile-hide">1111B South Governors Avenue, STE 37071, Dover, DE 19904</span>
+                                                            <span style="display: none;" class="mobile-show"><br>1111B South Governors Avenue, STE 37071, Dover, DE 19904</span>
+                                                        </p>
+                                                        <p class="small-text" style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a0aec0;">
+                                                            Copyright © 2025 StoryBud. All Rights Reserved.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    <!-- End Main Container -->
+                    
                 </td>
             </tr>
         </table>
-    </center>
+        <!-- End Email Container -->
+        
+    </div>
 </body>
 </html>
