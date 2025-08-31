@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     <meta name="color-scheme" content="light dark">
     <meta name="supported-color-schemes" content="light dark">
     <title>✨ 5 secrets to make storytime even more magical</title>
@@ -19,616 +20,559 @@
     </noscript>
     <![endif]-->
     
-    <style>
+    <style type="text/css">
         /* Reset and base styles */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            height: 100% !important;
-            width: 100% !important;
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 50%, #F9FAFB 100%);
-        }
+        #outlook a { padding: 0; }
+        table { border-collapse: collapse !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        p { display: block; margin: 0; }
+        a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
         
-        * {
-            -ms-text-size-adjust: 100%;
-            -webkit-text-size-adjust: 100%;
-        }
-        
-        table, td {
-            mso-table-lspace: 0pt !important;
-            mso-table-rspace: 0pt !important;
-        }
-        
-        table {
-            border-spacing: 0 !important;
-            border-collapse: collapse !important;
-            table-layout: fixed !important;
-            margin: 0 auto !important;
-        }
-        
-        img {
-            -ms-interpolation-mode: bicubic;
-        }
-        
-        a {
-            text-decoration: none;
-        }
-        
-        /* Main container */
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #FFFFFF;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-        
-        /* Header styles */
-        .header {
-            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
-            padding: 50px 40px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(3px 3px at 15% 20%, rgba(125, 211, 252, 0.6) 50%, transparent 50%),
-                radial-gradient(2px 2px at 85% 30%, rgba(125, 211, 252, 0.4) 50%, transparent 50%),
-                radial-gradient(4px 4px at 25% 70%, rgba(125, 211, 252, 0.5) 50%, transparent 50%),
-                radial-gradient(2px 2px at 75% 80%, rgba(125, 211, 252, 0.3) 50%, transparent 50%),
-                radial-gradient(3px 3px at 45% 15%, rgba(125, 211, 252, 0.6) 50%, transparent 50%),
-                radial-gradient(2px 2px at 65% 85%, rgba(125, 211, 252, 0.4) 50%, transparent 50%);
-            background-repeat: no-repeat;
-            pointer-events: none;
-        }
-        
-        .header h1 {
-            margin: 0;
-            font-family: 'Quicksand', 'Georgia', sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            line-height: 1.3;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .header .emoji {
-            font-size: 48px;
-            margin-bottom: 15px;
-            display: block;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Content styles */
-        .content {
-            padding: 50px 40px;
-            font-family: 'Inter', 'Arial', sans-serif;
-            line-height: 1.7;
-            color: #1F2937;
-            background: #FFFFFF;
-        }
-        
-        .subheader {
-            font-size: 24px;
-            font-weight: 700;
-            color: #7C3AED;
-            margin: 0 0 30px 0;
-            font-family: 'Quicksand', 'Georgia', sans-serif;
-            text-align: center;
-        }
-        
-        .body-text {
-            font-size: 18px;
-            margin-bottom: 25px;
-            color: #475569;
-            text-align: center;
-        }
-        
-        .intro-text {
-            font-size: 18px;
-            margin-bottom: 40px;
-            color: #475569;
-            text-align: center;
-        }
-        
-        /* Tips Container */
-        .tips-container {
-            margin: 40px 0;
-        }
-        
-        .tip-item {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(167, 139, 250, 0.08) 100%);
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-left: 4px solid #8B5CF6;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tip-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .tip-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, rgba(110, 231, 183, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .tip-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 12px;
-            font-family: 'Quicksand', sans-serif;
-        }
-        
-        .tip-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1F2937;
-            margin: 0 0 12px 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-        
-        .tip-description {
-            font-size: 16px;
-            color: #475569;
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        .tip-icon {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            font-size: 24px;
-            opacity: 0.7;
-        }
-        
-        /* Feature Highlight */
-        .feature-highlight {
-            background: linear-gradient(135deg, #F9A8D4 10%, #7DD3FC 100%);
-            border-radius: 16px;
-            padding: 30px;
-            margin: 40px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .feature-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #1F2937;
-            margin: 0 0 15px 0;
-            font-family: 'Quicksand', sans-serif;
-        }
-        
-        .feature-text {
-            font-size: 16px;
-            color: #1F2937;
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        /* CTA Button */
-        .cta-container {
-            text-align: center;
-            margin: 45px 0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
-            color: white !important;
-            padding: 20px 45px;
-            border-radius: 50px;
-            font-family: 'Quicksand', 'Arial', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            transform: translate(-50%, -50%);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(139, 92, 246, 0.4);
-        }
-        
-        .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        /* Secondary Button */
-        .secondary-cta {
-            display: inline-block;
-            background: transparent;
-            color: #7C3AED !important;
-            padding: 18px 40px;
-            border: 2px solid #7C3AED;
-            border-radius: 50px;
-            font-family: 'Quicksand', 'Arial', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .secondary-cta:hover {
-            background: #7C3AED;
-            color: white !important;
-            transform: translateY(-1px);
-        }
-        
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid #E5E7EB;
-        }
-        
-        .footer-text {
-            font-size: 16px;
-            color: #475569;
-            margin: 0 0 20px 0;
-            font-family: 'Inter', 'Arial', sans-serif;
-            font-weight: 500;
-        }
-        
-        .footer-links {
-            margin: 20px 0;
-        }
-        
-        .footer-links a {
-            display: inline-block;
-            margin: 0 15px;
-            color: #6366F1;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        .contact-info {
-            margin: 20px 0;
-            font-size: 14px;
-            color: #6B7280;
-        }
-        
-        .contact-info a {
-            color: #6366F1;
-            text-decoration: none;
-        }
-        
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            .email-container {
-                background: #1F2937 !important;
-            }
-            
-            .content {
-                background: #1F2937 !important;
-            }
-            
-            .content, .body-text, .intro-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .tip-item {
-                background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(167, 139, 250, 0.2) 100%) !important;
-            }
-            
-            .tip-title {
-                color: #F3F4F6 !important;
-            }
-            
-            .tip-description {
-                color: #D1D5DB !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #374151 0%, #4B5563 100%) !important;
-            }
-            
-            .footer-text, .contact-info {
-                color: #D1D5DB !important;
-            }
-        }
-        
-        /* Mobile responsiveness */
+        /* Mobile styles */
         @media only screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                margin: 0 !important;
-                border-radius: 0 !important;
-            }
-            
-            .header, .content {
-                padding: 30px 20px !important;
-            }
-            
-            .header h1 {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .subheader {
-                font-size: 20px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .body-text, .intro-text {
-                font-size: 16px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .tips-container {
-                gap: 20px !important;
-            }
-            
-            .tip-item {
-                padding: 20px !important;
-                margin: 15px 0 !important;
-            }
-            
-            .tip-title {
-                font-size: 18px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .tip-description {
-                font-size: 15px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .feature-highlight {
-                margin: 25px -20px !important;
-                padding: 20px !important;
-            }
-            
-            .cta-button {
-                padding: 18px 32px !important;
-                font-size: 16px !important;
-                min-height: 44px !important;
-                display: block !important;
-                width: 100% !important;
-                max-width: 300px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
-            }
-            
-            .footer {
-                padding: 25px 20px !important;
-            }
+            .mobile-hide { display: none !important; }
+            .mobile-center { text-align: center !important; }
+            .mobile-padding { padding: 20px !important; }
+            .container { width: 100% !important; max-width: 100% !important; }
+            .content-padding { padding-left: 20px !important; padding-right: 20px !important; }
+            .header-padding { padding: 30px 20px !important; }
+            .tip-padding { padding: 20px !important; }
+            .footer-padding { padding: 30px 20px !important; }
+            .button-td { padding: 0 20px !important; }
+            .button-a { display: block !important; width: 100% !important; max-width: 300px !important; margin: 0 auto !important; }
+            h1 { font-size: 26px !important; line-height: 32px !important; }
+            h2 { font-size: 20px !important; line-height: 26px !important; }
+            h3 { font-size: 18px !important; line-height: 24px !important; }
+            .body-text { font-size: 16px !important; line-height: 24px !important; }
+            .small-text { font-size: 14px !important; line-height: 20px !important; }
+            .tip-title { font-size: 18px !important; }
+            .tip-text { font-size: 15px !important; line-height: 22px !important; }
+            .spacer-20 { height: 20px !important; }
+            .spacer-30 { height: 30px !important; }
         }
         
-        /* Small mobile devices */
-        @media only screen and (max-width: 480px) {
-            .header, .content {
-                padding: 25px 15px !important;
-            }
-            
-            .header h1 {
-                font-size: 24px !important;
-            }
-            
-            .subheader {
-                font-size: 18px !important;
-            }
-            
-            .body-text, .intro-text {
-                font-size: 15px !important;
-            }
-            
-            .tip-item {
-                padding: 18px !important;
-            }
-            
-            .tip-title {
-                font-size: 17px !important;
-            }
-            
-            .tip-description {
-                font-size: 14px !important;
-            }
-            
-            .feature-highlight {
-                margin: 20px -15px !important;
-                padding: 18px !important;
-            }
-            
-            .cta-button {
-                padding: 16px 28px !important;
-                font-size: 15px !important;
-            }
+        /* Dark Mode Styles */
+        @media (prefers-color-scheme: dark) {
+            .dark-bg { background-color: #1F2937 !important; }
+            .dark-bg-secondary { background-color: #374151 !important; }
+            .dark-text { color: #F3F4F6 !important; }
+            .dark-text-secondary { color: #D1D5DB !important; }
+            .dark-border { border-color: #4B5563 !important; }
+            .tip-dark-bg { background-color: #374151 !important; }
         }
         
-        /* Extra small mobile devices */
-        @media only screen and (max-width: 360px) {
-            .header, .content {
-                padding: 20px 12px !important;
-            }
-            
-            .header h1 {
-                font-size: 22px !important;
-            }
-            
-            .tip-item {
-                padding: 16px !important;
-            }
-            
-            .feature-highlight {
-                margin: 18px -12px !important;
-                padding: 16px !important;
-            }
-            
-            .cta-button {
-                padding: 14px 24px !important;
-                font-size: 14px !important;
-            }
-        }
+        /* Outlook.com Dark Mode */
+        [data-ogsc] .dark-bg { background-color: #1F2937 !important; }
+        [data-ogsc] .dark-bg-secondary { background-color: #374151 !important; }
+        [data-ogsc] .dark-text { color: #F3F4F6 !important; }
+        [data-ogsc] .dark-text-secondary { color: #D1D5DB !important; }
+        [data-ogsc] .tip-dark-bg { background-color: #374151 !important; }
     </style>
+    
+    <!--[if mso]>
+    <style type="text/css">
+        table { border-collapse: collapse; border: none; border-spacing: 0; }
+        .button-a { padding: 18px 40px !important; }
+    </style>
+    <![endif]-->
 </head>
 
-<body style="margin: 0; padding: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 50%, #F9FAFB 100%);">
-    <center style="width: 100%; background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 50%, #F9FAFB 100%);">
-        <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+<body style="margin: 0; padding: 0; word-spacing: normal; background-color: #F3F4F6;">
+    <div role="article" aria-roledescription="email" lang="en" style="text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+        
+        <!-- Preheader Text -->
+        <div style="display: none; font-size: 1px; color: #F3F4F6; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
             Pro tips to make your reading routine even more magical ✨📚
+            &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
         </div>
         
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+        <!-- Email Container -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="background-color: #F3F4F6;">
             <tr>
-                <td style="padding: 30px 15px;">
-                    <div class="email-container">
+                <td align="center" style="padding: 30px 10px;">
+                    
+                    <!-- Main Container Table -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="container" style="max-width: 600px; width: 100%; background-color: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(139, 92, 246, 0.1);">
                         
-                        <!-- Header -->
-                        <div class="header">
-                            <span class="emoji">🎭</span>
-                            <h1>Level Up Your<br>Storytime Magic!</h1>
-                        </div>
+                        <!-- Header Section -->
+                        <tr>
+                            <td align="center" style="padding: 0;">
+                                <!--[if mso]>
+                                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: 600px; height: 200px;">
+                                <v:fill type="gradient" color="#8B5CF6" color2="#A78BFA" angle="135" />
+                                <v:textbox inset="0,0,0,0">
+                                <![endif]-->
+                                <div>
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td align="center" class="header-padding" style="background: #8B5CF6; background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%); padding: 50px 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="padding-bottom: 15px;">
+                                                        <span style="font-size: 48px; line-height: 48px;">🎭</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">
+                                                        <h1 style="margin: 0; font-family: Georgia, serif; font-size: 32px; line-height: 38px; color: #FFFFFF; font-weight: bold;">
+                                                            Level Up Your<br>Storytime Magic!
+                                                        </h1>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </div>
+                                <!--[if mso]>
+                                </v:textbox>
+                                </v:rect>
+                                <![endif]-->
+                            </td>
+                        </tr>
                         
-                        <!-- Content -->
-                        <div class="content">
-                            <h2 class="subheader">Week 2: Pro Tips for Reading Success</h2>
-                            
-                            <p class="intro-text">
-                                You've mastered the basics! Now let's unlock some insider secrets that will take your nightly reading adventures from great to absolutely magical.
-                            </p>
-                            
-                            <!-- Tips Container -->
-                            <div class="tips-container">
-                                <div class="tip-item">
-                                    <div class="tip-number">1</div>
-                                    <div class="tip-icon">🎭</div>
-                                    <h3 class="tip-title">Try Different Voices</h3>
-                                    <p class="tip-description">Give each character a unique voice or accent. Your child will love hearing you become the gruff dragon or the squeaky mouse. Don't worry about being perfect—the sillier, the better!</p>
-                                </div>
-                                
-                                <div class="tip-item">
-                                    <div class="tip-number">2</div>
-                                    <div class="tip-icon">🤔</div>
-                                    <h3 class="tip-title">Ask "What If" Questions</h3>
-                                    <p class="tip-description">Pause during exciting moments: "What do you think happens next?" or "What would you do if you were the hero?" This keeps them engaged and develops critical thinking.</p>
-                                </div>
-                                
-                                <div class="tip-item">
-                                    <div class="tip-number">3</div>
-                                    <div class="tip-icon">🛏️</div>
-                                    <h3 class="tip-title">Create a Cozy Reading Nest</h3>
-                                    <p class="tip-description">Dim the lights, add some soft pillows, maybe a special blanket. The cozier the space, the more your child will associate reading with comfort and security.</p>
-                                </div>
-                                
-                                <div class="tip-item">
-                                    <div class="tip-number">4</div>
-                                    <div class="tip-icon">🎨</div>
-                                    <h3 class="tip-title">Let Them Draw Their Favorite Part</h3>
-                                    <p class="tip-description">After reading, give them paper and crayons to draw their favorite scene. This helps them process the story and creates a beautiful keepsake of your reading journey together.</p>
-                                </div>
-                                
-                                <div class="tip-item">
-                                    <div class="tip-number">5</div>
-                                    <div class="tip-icon">📱</div>
-                                    <h3 class="tip-title">Use StoryBud's Reading Level Feature</h3>
-                                    <p class="tip-description">Adjust the reading level in your settings to match your child's growing skills. As they improve, gradually increase the complexity to keep them challenged but not frustrated.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Feature Highlight -->
-                            <div class="feature-highlight">
-                                <h3 class="feature-title">💡 Pro Parent Tip</h3>
-                                <p class="feature-text">If your child seems restless, try shorter stories or break longer ones into "chapters" across multiple nights. The goal is to end each session wanting more!</p>
-                            </div>
-                            
-                            <p class="body-text">
-                                Remember: there's no "perfect" way to read together. The magic happens in the connection, the laughter, and the shared adventure. Every family finds their own rhythm.
-                            </p>
-                            
-                            <!-- CTA Button -->
-                            <div class="cta-container">
-                                <a href="#" class="cta-button">✨ Try Tonight's Story</a>
-                                <br><br>
-                                <a href="#" style="color: #7C3AED; text-decoration: none; font-weight: 600; font-size: 16px;">Explore Reading Settings</a>
-                            </div>
-                        </div>
+                        <!-- Content Section -->
+                        <tr>
+                            <td align="center" class="dark-bg" style="background-color: #FFFFFF; padding: 0;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    
+                                    <!-- Subheader -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 50px 40px 0 40px;">
+                                            <h2 class="dark-text" style="margin: 0; font-family: Georgia, serif; font-size: 24px; line-height: 30px; color: #7C3AED; font-weight: bold;">
+                                                Week 2: Pro Tips for Reading Success
+                                            </h2>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Intro Text -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 30px 40px;">
+                                            <p class="body-text dark-text-secondary" style="margin: 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 18px; line-height: 26px; color: #475569;">
+                                                You've mastered the basics! Now let's unlock some insider secrets that will take your nightly reading adventures from great to absolutely magical.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer -->
+                                    <tr>
+                                        <td height="20" class="spacer-20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Tip 1 -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 0 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3FF; border-radius: 12px; border-left: 4px solid #8B5CF6;" class="tip-dark-bg">
+                                                <tr>
+                                                    <td class="tip-padding" style="padding: 25px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="40" valign="top" align="center">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                        <tr>
+                                                                            <td align="center" style="width: 32px; height: 32px; background-color: #8B5CF6; border-radius: 50%; font-family: Arial, sans-serif; font-size: 16px; line-height: 32px; color: #FFFFFF; font-weight: bold;">
+                                                                                1
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td style="padding-left: 15px;">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3 class="tip-title dark-text" style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; line-height: 24px; color: #1F2937; font-weight: bold;">
+                                                                                    Try Different Voices 🎭
+                                                                                </h3>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="tip-text dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #475569;">
+                                                                                    Give each character a unique voice or accent. Your child will love hearing you become the gruff dragon or the squeaky mouse. Don't worry about being perfect—the sillier, the better!
+                                                                                </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer between tips -->
+                                    <tr>
+                                        <td height="20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Tip 2 -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 0 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3FF; border-radius: 12px; border-left: 4px solid #8B5CF6;" class="tip-dark-bg">
+                                                <tr>
+                                                    <td class="tip-padding" style="padding: 25px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="40" valign="top" align="center">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                        <tr>
+                                                                            <td align="center" style="width: 32px; height: 32px; background-color: #8B5CF6; border-radius: 50%; font-family: Arial, sans-serif; font-size: 16px; line-height: 32px; color: #FFFFFF; font-weight: bold;">
+                                                                                2
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td style="padding-left: 15px;">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3 class="tip-title dark-text" style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; line-height: 24px; color: #1F2937; font-weight: bold;">
+                                                                                    Ask "What If" Questions 🤔
+                                                                                </h3>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="tip-text dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #475569;">
+                                                                                    Pause during exciting moments: "What do you think happens next?" or "What would you do if you were the hero?" This keeps them engaged and develops critical thinking.
+                                                                                </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer between tips -->
+                                    <tr>
+                                        <td height="20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Tip 3 -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 0 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3FF; border-radius: 12px; border-left: 4px solid #8B5CF6;" class="tip-dark-bg">
+                                                <tr>
+                                                    <td class="tip-padding" style="padding: 25px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="40" valign="top" align="center">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                        <tr>
+                                                                            <td align="center" style="width: 32px; height: 32px; background-color: #8B5CF6; border-radius: 50%; font-family: Arial, sans-serif; font-size: 16px; line-height: 32px; color: #FFFFFF; font-weight: bold;">
+                                                                                3
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td style="padding-left: 15px;">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3 class="tip-title dark-text" style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; line-height: 24px; color: #1F2937; font-weight: bold;">
+                                                                                    Create a Cozy Reading Nest 🛏️
+                                                                                </h3>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="tip-text dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #475569;">
+                                                                                    Dim the lights, add some soft pillows, maybe a special blanket. The cozier the space, the more your child will associate reading with comfort and security.
+                                                                                </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer between tips -->
+                                    <tr>
+                                        <td height="20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Tip 4 -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 0 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3FF; border-radius: 12px; border-left: 4px solid #8B5CF6;" class="tip-dark-bg">
+                                                <tr>
+                                                    <td class="tip-padding" style="padding: 25px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="40" valign="top" align="center">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                        <tr>
+                                                                            <td align="center" style="width: 32px; height: 32px; background-color: #8B5CF6; border-radius: 50%; font-family: Arial, sans-serif; font-size: 16px; line-height: 32px; color: #FFFFFF; font-weight: bold;">
+                                                                                4
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td style="padding-left: 15px;">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3 class="tip-title dark-text" style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; line-height: 24px; color: #1F2937; font-weight: bold;">
+                                                                                    Let Them Draw Their Favorite Part 🎨
+                                                                                </h3>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="tip-text dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #475569;">
+                                                                                    After reading, give them paper and crayons to draw their favorite scene. This helps them process the story and creates a beautiful keepsake of your reading journey together.
+                                                                                </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer between tips -->
+                                    <tr>
+                                        <td height="20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Tip 5 -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 0 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #F5F3FF; border-radius: 12px; border-left: 4px solid #8B5CF6;" class="tip-dark-bg">
+                                                <tr>
+                                                    <td class="tip-padding" style="padding: 25px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="40" valign="top" align="center">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                                        <tr>
+                                                                            <td align="center" style="width: 32px; height: 32px; background-color: #8B5CF6; border-radius: 50%; font-family: Arial, sans-serif; font-size: 16px; line-height: 32px; color: #FFFFFF; font-weight: bold;">
+                                                                                5
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td style="padding-left: 15px;">
+                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <h3 class="tip-title dark-text" style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; line-height: 24px; color: #1F2937; font-weight: bold;">
+                                                                                    Use StoryBud's Reading Level Feature 📱
+                                                                                </h3>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="tip-text dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #475569;">
+                                                                                    Adjust the reading level in your settings to match your child's growing skills. As they improve, gradually increase the complexity to keep them challenged but not frustrated.
+                                                                                </p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer -->
+                                    <tr>
+                                        <td height="40" class="spacer-30" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Feature Highlight Box -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 0 40px;">
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: #F9A8D4; background: linear-gradient(135deg, #F9A8D4 10%, #7DD3FC 100%); border-radius: 12px;">
+                                                <tr>
+                                                    <td align="center" style="padding: 30px;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td align="center">
+                                                                    <h3 style="margin: 0 0 15px 0; font-family: Georgia, serif; font-size: 22px; line-height: 28px; color: #1F2937; font-weight: bold;">
+                                                                        💡 Pro Parent Tip
+                                                                    </h3>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center">
+                                                                    <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #1F2937;">
+                                                                        If your child seems restless, try shorter stories or break longer ones into "chapters" across multiple nights. The goal is to end each session wanting more!
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer -->
+                                    <tr>
+                                        <td height="40" class="spacer-30" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Closing Text -->
+                                    <tr>
+                                        <td align="center" class="content-padding" style="padding: 0 40px;">
+                                            <p class="body-text dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 18px; line-height: 26px; color: #475569;">
+                                                Remember: there's no "perfect" way to read together. The magic happens in the connection, the laughter, and the shared adventure. Every family finds their own rhythm.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Spacer -->
+                                    <tr>
+                                        <td height="45" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <!-- Primary CTA Button -->
+                                    <tr>
+                                        <td align="center" class="button-td" style="padding: 0 40px;">
+                                            <!--[if mso]>
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://storybud.com/stories/tonight?utm_source=email&utm_medium=onboarding&utm_campaign=week2" style="height: 50px; v-text-anchor: middle; width: 250px;" arcsize="50%" strokecolor="#8B5CF6" fillcolor="#8B5CF6">
+                                            <w:anchorlock/>
+                                            <center style="color: #FFFFFF; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold;">✨ Try Tonight's Story</center>
+                                            </v:roundrect>
+                                            <![endif]-->
+                                            <!--[if !mso]><!-->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="border-radius: 50px; background: #8B5CF6; background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);">
+                                                        <a href="https://storybud.com/stories/tonight?utm_source=email&utm_medium=onboarding&utm_campaign=week2" target="_blank" class="button-a" style="background: #8B5CF6; background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%); border: 1px solid #8B5CF6; font-family: Arial, sans-serif; font-size: 18px; line-height: 50px; text-decoration: none; padding: 0 40px; color: #FFFFFF; display: block; border-radius: 50px; font-weight: bold; min-width: 170px;">
+                                                            ✨ Try Tonight's Story
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <!--<![endif]-->
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Secondary Link -->
+                                    <tr>
+                                        <td align="center" style="padding: 20px 40px 50px 40px;">
+                                            <a href="https://storybud.com/settings/reading?utm_source=email&utm_medium=onboarding&utm_campaign=week2" target="_blank" style="color: #7C3AED; text-decoration: none; font-family: Arial, sans-serif; font-size: 16px; font-weight: 600;">
+                                                Explore Reading Settings
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                            </td>
+                        </tr>
                         
-                        <!-- Footer -->
-                        <div class="footer">
-                            <p class="footer-text">
-                                Happy reading, and here's to many more magical nights ahead! 🌟
-                            </p>
-                            
-                            <!-- Footer Links -->
-                            <div class="footer-links">
-                                <a href="https://storybud.com/library">Story Library</a>
-                                <a href="https://storybud.com/blog">Blog</a>
-                                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
-                            </div>
-                            
-                            <!-- Contact Information -->
-                            <div class="contact-info">
-                                <p style="margin: 10px 0; font-family: 'Inter', 'Arial', sans-serif;">
-                                    Questions? Email us at <a href="mailto:support@storybud.com">support@storybud.com</a>
-                                </p>
-                            </div>
-                            
-                            <!-- Legal Footer -->
-                            <div class="footer-legal" style="margin-top: 30px;">
-                                <p style="font-size: 12px; color: #6B7280; margin-bottom: 15px; font-family: 'Inter', 'Arial', sans-serif;">
-                                    You're receiving this email because you signed up for StoryBud.<br>
-                                    <a href="#" style="color: #6366F1; text-decoration: none;">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
-                                </p>
-                                <p style="font-size: 12px; color: #6B7280; margin: 0; font-family: 'Inter', 'Arial', sans-serif;">
-                                    Copyright © 2025 StoryBud All Rights Reserved
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Footer Section -->
+                        <tr>
+                            <td align="center" class="dark-bg-secondary" style="background-color: #F3F4F6; border-top: 1px solid #E5E7EB;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    
+                                    <!-- Footer Content -->
+                                    <tr>
+                                        <td align="center" class="footer-padding" style="padding: 40px;">
+                                            
+                                            <!-- Happy Reading Message -->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="padding-bottom: 20px;">
+                                                        <p class="dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 24px; color: #475569; font-weight: 500;">
+                                                            Happy reading, and here's to many more magical nights ahead! 🌟
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <!-- Footer Links -->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="padding: 20px 0;">
+                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td style="padding: 0 15px;">
+                                                                    <a href="https://storybud.com/library?utm_source=email&utm_medium=footer" target="_blank" style="color: #6366F1; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600;">
+                                                                        Story Library
+                                                                    </a>
+                                                                </td>
+                                                                <td style="padding: 0 15px;">
+                                                                    <a href="https://storybud.com/blog?utm_source=email&utm_medium=footer" target="_blank" style="color: #6366F1; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600;">
+                                                                        Blog
+                                                                    </a>
+                                                                </td>
+                                                                <td style="padding: 0 15px;">
+                                                                    <a href="https://storybud.com/privacy-policy?utm_source=email&utm_medium=footer" target="_blank" style="color: #6366F1; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600;">
+                                                                        Privacy Policy
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <!-- Contact Info -->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                                <tr>
+                                                    <td align="center" style="padding: 20px 0;">
+                                                        <p class="dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; color: #6B7280;">
+                                                            Questions? Email us at <a href="mailto:support@storybud.com" style="color: #6366F1; text-decoration: none;">support@storybud.com</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <!-- Legal Footer -->
+                                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td align="center" style="padding: 30px 20px 0 20px;">
+                                                        <p class="small-text dark-text-secondary" style="margin: 0 0 15px 0; font-family: Arial, sans-serif; font-size: 12px; line-height: 18px; color: #6B7280;">
+                                                            You're receiving this email because you signed up for StoryBud.<br>
+                                                            <a href="%%unsubscribe%%" target="_blank" style="color: #6366F1; text-decoration: none;">Unsubscribe</a> | 
+                                                            <a href="%%preferences%%" target="_blank" style="color: #6366F1; text-decoration: none;">Update Preferences</a><br>
+                                                            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                                        </p>
+                                                        <p class="small-text dark-text-secondary" style="margin: 0; font-family: Arial, sans-serif; font-size: 12px; line-height: 18px; color: #6B7280;">
+                                                            Copyright © 2025 StoryBud. All Rights Reserved.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                    <!-- End Main Container -->
+                    
                 </td>
             </tr>
         </table>
-    </center>
+        <!-- End Email Container -->
+        
+    </div>
 </body>
 </html>
