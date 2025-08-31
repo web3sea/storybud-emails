@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>🕒 Same time tomorrow?</title>
     
     <!--[if mso]>
@@ -70,32 +72,6 @@
             overflow: hidden;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(2px 2px at 20px 30px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 40px 70px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 90px 40px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 130px 80px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 160px 30px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 200px 90px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 250px 50px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 300px 20px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 350px 70px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 400px 40px, #ffffff 50%, transparent 50%),
-                radial-gradient(1px 1px at 450px 85px, #ffffff 60%, transparent 60%),
-                radial-gradient(1px 1px at 500px 25px, #ffffff 50%, transparent 50%),
-                radial-gradient(2px 2px at 550px 65px, #ffffff 50%, transparent 50%);
-            background-repeat: repeat;
-            background-size: 600px 120px;
-            pointer-events: none;
-        }
-        
         .header h1 {
             margin: 0;
             font-family: 'Georgia', serif;
@@ -120,14 +96,14 @@
             padding: 40px 30px;
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #2d3748;
-            background: #ffffff;
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);
         }
         
         .subheader {
             font-size: 20px;
             font-weight: bold;
-            color: #4a5568;
+            color: #93c5fd;
             margin: 0 0 25px 0;
             font-family: 'Georgia', serif;
         }
@@ -135,7 +111,7 @@
         .body-text {
             font-size: 16px;
             margin-bottom: 20px;
-            color: #2d3748;
+            color: #cbd5e0;
         }
         
         .body-text:last-of-type {
@@ -159,12 +135,6 @@
             font-weight: bold;
             text-decoration: none;
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
-            transition: transform 0.2s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
         
         /* Footer */
@@ -193,154 +163,236 @@
             .email-container {
                 width: 100% !important;
                 margin: 0 !important;
-                border-radius: 0 !important;
             }
             
             .header, .content {
-                padding: 25px 20px !important;
+                padding: 30px 20px !important;
             }
             
             .header h1 {
                 font-size: 24px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .header .emoji {
-                font-size: 32px !important;
-                margin-bottom: 8px !important;
             }
             
             .subheader {
                 font-size: 18px !important;
-                line-height: 1.3 !important;
             }
             
             .body-text {
                 font-size: 15px !important;
-                line-height: 1.5 !important;
             }
             
             .cta-button {
-                padding: 16px 32px !important;
+                padding: 16px 30px !important;
                 font-size: 16px !important;
-                min-height: 44px !important;
-                display: block !important;
-                width: 100% !important;
-                max-width: 280px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
-            }
-            
-            .footer {
-                padding: 25px 20px !important;
-            }
-            
-            .footer-text {
-                font-size: 13px !important;
             }
         }
         
-        /* Small mobile devices */
-        @media only screen and (max-width: 480px) {
-            .header, .content {
-                padding: 20px 15px !important;
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0f172a !important;
+                color: #E0E0E0 !important;
             }
             
-            .header h1 {
-                font-size: 22px !important;
+            .email-container {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%) !important;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: 
+                    radial-gradient(2px 2px at 20px 30px, #ffffff 50%, transparent 50%),
+                    radial-gradient(2px 2px at 40px 70px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 90px 40px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 130px 80px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 160px 30px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 200px 90px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 250px 50px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 300px 20px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 350px 70px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 400px 40px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 450px 85px, #ffffff 50%, transparent 50%),
+                    radial-gradient(1px 1px at 500px 25px, #ffffff 50%, transparent 50%),
+                    radial-gradient(2px 2px at 550px 65px, #ffffff 50%, transparent 50%);
+                background-repeat: repeat;
+                background-size: 600px 120px;
+                animation: twinkle 3s ease-in-out infinite alternate;
+            }
+            
+            .content {
+                color: #e2e8f0 !important;
+                background: rgba(15, 23, 42, 0.8) !important;
+            }
+            
+            .body-text {
+                color: #cbd5e0 !important;
             }
             
             .subheader {
-                font-size: 17px !important;
-            }
-            
-            .body-text {
-                font-size: 14px !important;
+                color: #93c5fd !important;
             }
             
             .cta-button {
-                padding: 14px 28px !important;
-                font-size: 15px !important;
+                background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+                color: #1f2937 !important;
+                box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3) !important;
+            }
+            
+            .cta-button:hover {
+                background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4) !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+                border-top-color: #475569 !important;
+            }
+            
+            .footer-text {
+                color: #cbd5e0 !important;
             }
         }
         
-        /* Extra small mobile devices */
-        @media only screen and (max-width: 360px) {
-            .header, .content {
-                padding: 18px 12px !important;
-            }
-            
-            .header h1 {
-                font-size: 20px !important;
-            }
-            
-            .cta-button {
-                padding: 12px 24px !important;
-                font-size: 14px !important;
-            }
+        /* Twinkling stars animation */
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
         }
-        
+
+        .mobile-hide {
+            display: none !important;
+        }
     </style>
 </head>
 
 <body style="margin: 0; padding: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);">
     <center style="width: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);">
-        <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-            Build the reading habit that creates lifelong memories 📚✨
+        <!-- Preheader Text -->
+        <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
+            Day 2 of your magical bedtime story adventure awaits! 🕒📚
         </div>
         
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+        <!-- Email Container Table -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" class="container" style="max-width: 600px; width: 100%; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%); border-radius: 8px;">
+            
+            <!-- Header -->
             <tr>
-                <td style="padding: 20px 0;">
-                    <div class="email-container">
-                        <!-- Header -->
-                        <div class="header stars">
-                            <span class="emoji">🕒</span>
-                            <h1>Make storytime your favorite time.</h1>
-                        </div>
-                        
-                        <!-- Content -->
-                        <div class="content" style="background-color: #ffffff !important;">
-                            <h2 class="subheader" style="color: #4a5568 !important;">Day 2: The Habit Builder</h2>
-                            
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Kids thrive on routine—and when that routine involves a nightly story, something magical happens. Not only do they look forward to bedtime, but they also build confidence in reading and grow a love for books that lasts a lifetime.
-                            </p>
-                            
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Tonight's story is ready to go, and it's the perfect next step in your child's adventure. By reading together each night, you're giving them more than literacy—you're giving them memories they'll carry forever.
-                            </p>
-                            
-                            <p class="body-text" style="color: #2d3748 !important;">
-                                Keep the momentum going. The adventure continues tonight.
-                            </p>
-                            
-                            <!-- CTA Button -->
-                            <div class="cta-container">
-                                <a href="#" class="cta-button">Read Tonight's Story</a>
-                            </div>
-                        </div>
-                        
-                        <!-- Footer -->
-                        <div class="footer">
-                            <p class="footer-text">
-                                Building beautiful bedtime traditions, one story at a time 📚✨
-                            </p>
-
-                            
-                            <div class="footer-legal">
-                                <p class="footer-text">
-                                    You're receiving this email because you signed up for StoryBud.<br>
-                                    <a href="#" style="color: #cbd5e0; text-decoration: none;">Unsubscribe</a> | 1111B South Governors Avenue, STE 37071, Dover, DE 19904
-                                </p>
-                                <p class="footer-text">
-                                    Copyright © 2025 StoryBud All Rights Reserved
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <td class="header" style="background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%); padding: 40px 30px; text-align: center; color: white; border-radius: 8px 8px 0 0;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-size: 36px; margin-bottom: 10px; display: block;">🕒</span>
+                                <h1 style="margin: 0; font-family: Georgia, serif; font-size: 28px; font-weight: bold; line-height: 1.3; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); color: #FFFFFF;">
+                                    Journey Series Day 2: Building the Habit
+                                </h1>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
+            
+            <!-- Content -->
+            <tr>
+                <td class="content" style="padding: 40px 30px; font-family: Arial, sans-serif; line-height: 1.6; color: #e2e8f0; background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #2d3748 100%);">
+                    
+                    <!-- Subheader -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td>
+                                <h2 style="font-size: 20px; font-weight: bold; color: #93c5fd; margin: 0 0 25px 0; font-family: Georgia, serif;" class="subheader">
+                                    Same time tomorrow?
+                                </h2>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!-- Body Text -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td>
+                                <p style="font-size: 16px; margin-bottom: 20px; color: #cbd5e0; font-family: Arial, sans-serif;" class="body-text">
+                                    Last night's story was just the beginning. Today, we're building something even more important than a single magical moment—we're creating a tradition.
+                                </p>
+                                <p style="font-size: 16px; margin-bottom: 20px; color: #cbd5e0; font-family: Arial, sans-serif;" class="body-text">
+                                    Kids thrive on routine—and when that routine involves a nightly story, something magical happens. Not only do they look forward to bedtime, but they also build confidence in reading and grow a love for books that lasts a lifetime.
+                                </p>
+                                <p style="font-size: 16px; margin-bottom: 20px; color: #cbd5e0; font-family: Arial, sans-serif;" class="body-text">
+                                    Tonight's story is ready to go, and it's the perfect next step in your child's adventure. By reading together each night, you're giving them more than literacy—you're giving them memories they'll carry forever.
+                                </p>
+                                <p style="font-size: 16px; margin-bottom: 30px; color: #cbd5e0; font-family: Arial, sans-serif;" class="body-text">
+                                    Keep the momentum going. The adventure continues tonight.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!-- CTA Button -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="text-align: center; padding: 40px 0;">
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                                    <tr>
+                                        <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50px;">
+                                            <a href="https://storybud.com/" style="display: inline-block; color: white; padding: 18px 40px; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 50px;" class="cta-button">
+                                                Read Tonight's Story
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+            
+            <!-- Footer -->
+            <tr>
+                <td class="footer" style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); padding: 30px; text-align: center; border-top: 1px solid #4a5568; border-radius: 0 0 8px 8px;">
+                    
+                    <!-- Footer Message -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="text-align: center; padding-bottom: 20px;">
+                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #a0aec0;" class="footer-text">
+                                    Building beautiful bedtime traditions, one story at a time 📚✨
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!-- Footer Legal -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="text-align: center;">
+                                <p style="margin: 0 0 10px 0; font-family: Arial, sans-serif; font-size: 14px; color: #a0aec0; line-height: 1.5;" class="footer-text">
+                                    You're receiving this email because you signed up for StoryBud.<br>
+                                    <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}" style="color: #cbd5e0; text-decoration: none;">Unsubscribe</a> <span class="mobile-hide">|</span> 1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                </p>
+                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #a0aec0;" class="footer-text">
+                                    Copyright © 2025 StoryBud All Rights Reserved
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+            
         </table>
     </center>
 </body>
