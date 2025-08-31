@@ -1,972 +1,700 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You're Already Making Magic Happen! | StoryBud</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>You're Already Making Magic Happen! - StoryBud</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--<![endif]-->
     
     <style>
-        /* Import brand fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+        /* Reset and base styles */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        table { border-spacing: 0 !important; border-collapse: collapse !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            line-height: 1.6;
-            color: #374151;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100%;
+            background-color: #F3F4F6 !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+        }
+        
+        .main-container {
+            background-color: #ffffff;
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #F3F4F6 0%, #F9FAFB 100%);
         }
         
-        .email-container {
-            background-color: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-            border: 1px solid #E5E7EB;
+        /* Component styles */
+        .green-gradient-bg {
+            background-color: #10B981;
         }
         
-        .header {
-            padding: 40px 30px;
-            text-align: center;
-            background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
-            position: relative;
-            color: white;
+        .celebration-badge-bg {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(2px 2px at 25% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 75% 35%, rgba(252, 211, 77, 0.2) 50%, transparent 50%),
-                radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
-            background-repeat: no-repeat;
-            pointer-events: none;
+        .progress-box {
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-left: 4px solid #6EE7B7;
         }
         
-        .celebration-badge {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 15px;
-            display: inline-block;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .header-title {
-            color: white;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-section {
-            padding: 40px 30px;
-            text-align: center;
-            background: white;
-        }
-        
-        .hero-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: #1F2937;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 18px;
-            color: #475569;
-            margin-bottom: 35px;
-            line-height: 1.4;
-        }
-        
-        .progress-celebration {
-            background: linear-gradient(135deg, rgba(110, 231, 183, 0.08) 0%, rgba(110, 231, 183, 0.15) 100%);
-            border: 1px solid rgba(110, 231, 183, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 35px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .progress-celebration::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #6EE7B7, #10B981, #059669);
-        }
-        
-        .progress-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        
-        .progress-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #065F46;
-            margin-bottom: 10px;
-        }
-        
-        .progress-description {
-            color: #047857;
-            font-size: 16px;
-            line-height: 1.5;
-            font-weight: 500;
-        }
-        
-        .milestones-container {
-            padding: 0 30px;
-        }
-        
-        .section-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: #1F2937;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .milestone {
-            display: flex;
-            align-items: center;
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 15px;
+        .milestone-bg {
+            background-color: #ffffff;
+            border: 1px solid #BBF7D0;
             border-left: 4px solid #10B981;
-            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(110, 231, 183, 0.2);
         }
         
-        .milestone:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+        .encouragement-box {
+            background-color: #F9F5FF;
+            border: 1px solid #E9D5FF;
         }
         
-        .milestone-icon {
-            font-size: 24px;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .milestone-content {
-            flex: 1;
-        }
-        
-        .milestone-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            color: #1F2937;
-            margin-bottom: 5px;
-        }
-        
-        .milestone-description {
-            color: #047857;
-            font-size: 14px;
-        }
-        
-        .milestone-check {
-            color: #10B981;
-            font-size: 20px;
-            margin-left: 15px;
-        }
-        
-        .encouragement-section {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.08) 100%);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            border-radius: 12px;
-            padding: 35px 30px;
-            margin: 30px 0;
-        }
-        
-        .encouragement-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: #7C3AED;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-            margin-bottom: 20px;
+        .testimonial-bg {
+            background-color: #ffffff;
             border: 1px solid #E5E7EB;
         }
         
-        .testimonial-text {
-            font-style: italic;
-            color: #475569;
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: #1F2937;
-            font-size: 14px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .testimonial-role {
-            color: #6B7280;
-            font-size: 12px;
-        }
-        
-        .next-steps {
-            padding: 0 30px 40px;
-        }
-        
-        .next-step-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
+        .next-step-bg {
+            background-color: #ffffff;
             border: 1px solid #E5E7EB;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.05);
+            border-top: 3px solid #8B5CF6;
         }
         
-        .next-step-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #8B5CF6, #A78BFA);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+        .cta-section-bg {
+            background-color: #F9F5FF;
+            border: 1px solid #E9D5FF;
         }
         
-        .next-step-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .next-step-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
-        }
-        
-        .next-step-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .next-step-icon {
-            font-size: 24px;
-            margin-right: 12px;
-        }
-        
-        .next-step-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            color: #1F2937;
-        }
-        
-        .next-step-description {
-            color: #475569;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-        
-        .next-step-cta {
-            display: inline-block;
-            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            transition: all 0.3s ease;
-        }
-        
-        .next-step-cta:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-        
-        .main-cta {
-            text-align: center;
-            margin: 40px 0;
-            padding: 32px 24px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.08) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .cta-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 26px;
-            font-weight: 700;
-            color: #1F2937;
-            margin-bottom: 15px;
-        }
-        
-        .cta-subtitle {
-            font-size: 16px;
-            color: #475569;
-            margin-bottom: 25px;
-            line-height: 1.4;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-            color: white;
-            text-decoration: none;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 700;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
-        .support-section {
-            background: linear-gradient(135deg, rgba(252, 211, 77, 0.08) 0%, rgba(245, 158, 11, 0.12) 100%);
-            border: 1px solid rgba(252, 211, 77, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 28px 0;
+        .support-box {
+            background-color: #FEF3C7;
+            border: 1px solid #FCD34D;
             border-left: 4px solid #FCD34D;
-            text-align: center;
         }
         
-        .support-title {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            color: #7C3AED;
-            margin-bottom: 10px;
-        }
-        
-        .support-text {
-            color: #475569;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        
-        .support-link {
-            color: #7C3AED;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .support-link:hover {
-            text-decoration: underline;
-        }
-        
-        .footer {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 40px 30px;
-            text-align: center;
+        .footer-bg {
+            background-color: #F3F4F6;
             border-top: 1px solid #E5E7EB;
         }
         
-        .footer-logo {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #7C3AED;
-            margin: 0 0 10px 0;
+        /* Button styles */
+        .green-button {
+            background-color: #10B981;
+            color: #ffffff !important;
         }
         
-        .footer-tagline {
-            font-size: 16px;
-            color: #475569;
-            margin: 0 0 25px 0;
-            font-style: italic;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        .purple-button {
+            background-color: #8B5CF6;
+            color: #ffffff !important;
         }
         
-        .footer-greeting {
-            font-size: 18px;
-            color: #7C3AED;
-            font-weight: 600;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            margin-bottom: 10px;
-        }
-        
-        .footer-team {
-            font-size: 16px;
-            color: #475569;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-        
-        .footer-links {
-            margin-bottom: 25px;
-        }
-        
-        .footer-links a {
-            color: #6B7280;
-            text-decoration: none;
-            font-size: 14px;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #7C3AED;
-            text-decoration: underline;
-        }
-        
-        .footer-subscription {
-            font-size: 13px;
-            color: #9CA3AF;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .footer-subscription a {
-            color: #7C3AED;
-            text-decoration: none;
-        }
-        
-        .footer-subscription a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer-copyright {
-            font-size: 13px;
-            color: #9CA3AF;
-        }
-        
-        @media (max-width: 600px) {
-            body {
-                padding: 10px !important;
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-padding { padding: 20px !important; }
+            .mobile-text-center { text-align: center !important; }
+            .hero-title { font-size: 26px !important; }
+            .section-title { font-size: 20px !important; }
+            .body-text { font-size: 15px !important; }
+            .green-button, .purple-button { 
+                display: block !important; 
+                width: 100% !important; 
+                max-width: 280px !important; 
+                margin: 0 auto !important; 
             }
-            
-            .email-container {
-                border-radius: 12px !important;
-            }
-            
-            .header, .hero-section, .footer {
-                padding: 25px 20px !important;
-            }
-            
-            .hero-title {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .hero-subtitle {
-                font-size: 16px !important;
-                line-height: 1.4 !important;
-            }
-            
-            .milestones-container,
-            .next-steps {
-                padding: 0 20px !important;
-            }
-            
-            .milestone {
-                padding: 20px !important;
-                margin: 15px 0 !important;
-            }
-            
-            .milestone-title {
-                font-size: 16px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .milestone-description {
-                font-size: 14px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .progress-celebration {
-                margin: 25px 0 !important;
-                padding: 20px !important;
-            }
-            
-            .progress-title {
-                font-size: 20px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .progress-description {
-                font-size: 16px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .encouragement-section {
-                padding: 25px 20px !important;
-                margin: 25px 0 !important;
-            }
-            
-            .encouragement-title {
-                font-size: 18px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .main-cta {
-                padding: 30px 20px !important;
-                margin: 25px 0 !important;
-            }
-            
-            .cta-button {
-                padding: 16px 32px !important;
-                font-size: 16px !important;
-                min-height: 44px !important;
-                display: block !important;
-                width: 100% !important;
-                max-width: 280px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
-            }
-            
-            .support-section {
-                margin: 25px 0 !important;
-                padding: 20px !important;
-            }
-            
-            .footer {
-                padding: 30px 20px !important;
-            }
-            
-            .footer-logo {
-                font-size: 20px !important;
-            }
-            
-            .footer-tagline {
-                font-size: 14px !important;
-            }
-            
-            .footer-links a {
-                display: block !important;
-                margin: 8px 0 !important;
+            .footer-links a { 
+                display: inline-block !important; 
+                margin: 8px 6px !important; 
             }
         }
         
-        @media (max-width: 480px) {
-            body {
-                padding: 8px !important;
-            }
-            
-            .header, .hero-section, .footer {
-                padding: 20px 15px !important;
-            }
-            
-            .hero-title {
-                font-size: 24px !important;
-            }
-            
-            .milestone {
-                padding: 18px !important;
-            }
-            
-            .progress-celebration {
-                padding: 18px !important;
-            }
-            
-            .encouragement-section {
-                padding: 20px 15px !important;
-            }
-            
-            .main-cta {
-                padding: 25px 15px !important;
-            }
-            
-            .cta-button {
-                padding: 14px 28px !important;
-                font-size: 15px !important;
-                width: calc(100% - 56px) !important;
-            }
-            
-            .support-section {
-                padding: 18px !important;
-            }
+        @media screen and (max-width: 480px) {
+            .mobile-padding { padding: 15px !important; }
+            .hero-title { font-size: 24px !important; }
+            .section-title { font-size: 18px !important; }
         }
         
-        @media (max-width: 360px) {
-            body {
-                padding: 5px !important;
-            }
-            
-            .header, .hero-section, .footer {
-                padding: 18px 12px !important;
-            }
-            
-            .hero-title {
-                font-size: 22px !important;
-            }
-            
-            .milestone {
-                padding: 16px !important;
-            }
-            
-            .progress-celebration {
-                padding: 16px !important;
-            }
-            
-            .encouragement-section {
-                padding: 18px 12px !important;
-            }
-            
-            .main-cta {
-                padding: 20px 12px !important;
-            }
-            
-            .cta-button {
-                padding: 12px 24px !important;
-                font-size: 14px !important;
-                width: calc(100% - 48px) !important;
-            }
-            
-            .support-section {
-                padding: 16px !important;
-            }
-        }
-        
-        /* Dark mode support */
+        /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1F2937 0%, #111827 100%) !important;
-            }
+            body { background-color: #1a1a1a !important; }
+            .main-container { background-color: #1F2937 !important; }
+            .white-bg { background-color: #2d3748 !important; }
+            .footer-bg { background-color: #111827 !important; border-top-color: #374151 !important; }
             
-            .email-container {
-                background-color: #1F2937 !important;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #374151 !important;
-            }
+            h1, h2, h3, h4, p, td { color: #F3F4F6 !important; }
+            .text-purple { color: #A78BFA !important; }
+            .text-gray { color: #D1D5DB !important; }
             
-            .header {
-                background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%) !important;
-            }
+            .green-gradient-bg { background-color: #059669 !important; }
             
-            .hero-section {
-                background-color: #1F2937 !important;
-            }
-            
-            .hero-title,
-            .hero-subtitle {
-                color: #F3F4F6 !important;
-            }
-            
-            .progress-celebration {
-                background: linear-gradient(135deg, rgba(110, 231, 183, 0.12) 0%, rgba(110, 231, 183, 0.2) 100%) !important;
-                border-color: rgba(110, 231, 183, 0.4) !important;
-            }
-            
-            .progress-title {
-                color: #F3F4F6 !important;
-            }
-            
-            .progress-description {
-                color: #F3F4F6 !important;
-            }
-            
-            .section-title {
-                color: #F9FAFB !important;
-            }
-            
-            .milestone {
-                background: #374151 !important;
+            .progress-box { 
+                background-color: rgba(110, 231, 183, 0.1) !important;
                 border-color: rgba(110, 231, 183, 0.3) !important;
             }
             
-            .milestone-title {
-                color: #F3F4F6 !important;
+            .milestone-bg {
+                background-color: #374151 !important;
+                border-color: rgba(110, 231, 183, 0.3) !important;
             }
             
-            .milestone-description {
-                color: #F3F4F6 !important;
+            .encouragement-box {
+                background-color: rgba(139, 92, 246, 0.1) !important;
+                border-color: rgba(139, 92, 246, 0.3) !important;
             }
             
-            .encouragement-section {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(139, 92, 246, 0.12) 100%) !important;
-                border-color: rgba(124, 58, 237, 0.3) !important;
-            }
-            
-            .encouragement-title {
-                color: #A78BFA !important;
-            }
-            
-            .testimonial {
-                background: #374151 !important;
+            .testimonial-bg {
+                background-color: #374151 !important;
                 border-color: #4B5563 !important;
             }
             
-            .testimonial-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .testimonial-author {
-                color: #F9FAFB !important;
-            }
-            
-            .testimonial-role {
-                color: #D1D5DB !important;
-            }
-            
-            .next-step-card {
-                background: #374151 !important;
+            .next-step-bg {
+                background-color: #374151 !important;
                 border-color: #4B5563 !important;
             }
             
-            .next-step-title {
-                color: #F3F4F6 !important;
+            .cta-section-bg {
+                background-color: rgba(139, 92, 246, 0.1) !important;
+                border-color: rgba(139, 92, 246, 0.3) !important;
             }
             
-            .next-step-description {
-                color: #F3F4F6 !important;
+            .support-box {
+                background-color: rgba(252, 211, 77, 0.1) !important;
+                border-color: rgba(252, 211, 77, 0.3) !important;
             }
             
-            .main-cta {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(139, 92, 246, 0.12) 100%) !important;
-                border-color: rgba(124, 58, 237, 0.3) !important;
-            }
-            
-            .cta-title {
-                color: #F3F4F6 !important;
-            }
-            
-            .cta-subtitle {
-                color: #F3F4F6 !important;
-            }
-            
-            .support-section {
-                background: linear-gradient(135deg, rgba(252, 211, 77, 0.12) 0%, rgba(245, 158, 11, 0.18) 100%) !important;
-                border-color: rgba(252, 211, 77, 0.4) !important;
-            }
-            
-            .support-title {
-                color: #A78BFA !important;
-            }
-            
-            .support-text {
-                color: #F3F4F6 !important;
-            }
-            
-            .support-link {
-                color: #A78BFA !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
-                border-top-color: #374151 !important;
-            }
-            
-            .footer-logo {
-                color: #A78BFA !important;
-            }
-            
-            .footer-tagline, .footer-greeting, .footer-team {
-                color: #D1D5DB !important;
-            }
-            
-            .footer-links a {
-                color: #9CA3AF !important;
-            }
-            
-            .footer-links a:hover {
-                color: #A78BFA !important;
-            }
-            
-            .footer-subscription, .footer-copyright {
-                color: #6B7280 !important;
-            }
-            
-            .footer-subscription a {
-                color: #A78BFA !important;
-            }
+            .footer-links a { color: #9CA3AF !important; }
+            .footer-legal { color: #6B7280 !important; }
+            .footer-legal a { color: #A78BFA !important; }
         }
     </style>
 </head>
-<body>
-    <div class="email-container">
-        <div class="header">
-            <div class="celebration-badge">You're doing great!</div>
-            <div class="logo">StoryBud</div>
-            <div class="header-title">Your storytelling journey is taking off!</div>
-        </div>
-        
-        <div class="hero-section">
-            <h1 class="hero-title">Look how far you've come!</h1>
-            <p class="hero-subtitle">Every step you take with StoryBud is building something magical for your child. Let's celebrate your progress and keep the momentum going!</p>
-            
-            <div class="progress-celebration">
-                <div class="progress-icon">🚀</div>
-                <h3 class="progress-title">You're officially a StoryBud storyteller!</h3>
-                <p class="progress-description">You've taken the most important step: choosing to make reading time special for your child.</p>
-            </div>
-        </div>
-        
-        <div class="milestones-container">
-            <h2 class="section-title">What You've Already Accomplished</h2>
-            
-            <div class="milestone">
-                <div class="milestone-icon">✅</div>
-                <div class="milestone-content">
-                    <h4 class="milestone-title">Joined the StoryBud Community</h4>
-                    <p class="milestone-description">You're now part of thousands of families creating magical reading experiences</p>
-                </div>
-                <div class="milestone-check">✓</div>
-            </div>
-            
-            <div class="milestone">
-                <div class="milestone-icon">📚</div>
-                <div class="milestone-content">
-                    <h4 class="milestone-title">Discovered Personalized Storytelling</h4>
-                    <p class="milestone-description">You've learned how AI can create stories where your child is the hero</p>
-                </div>
-                <div class="milestone-check">✓</div>
-            </div>
-            
-            <div class="milestone">
-                <div class="milestone-icon">💡</div>
-                <div class="milestone-content">
-                    <h4 class="milestone-title">Explored the Possibilities</h4>
-                    <p class="milestone-description">You understand the power of adaptive reading levels and custom illustrations</p>
-                </div>
-                <div class="milestone-check">✓</div>
-            </div>
-        </div>
-        
-        <div class="encouragement-section">
-            <h3 class="encouragement-title">You're Not Alone in This Journey</h3>
-            <div class="testimonial">
-                <p class="testimonial-text">"I was hesitant at first, but seeing my daughter's face light up when she saw herself as the princess in her story was absolutely priceless. Now she asks for 'her stories' every night!"</p>
-                <div class="testimonial-author">Sarah M.</div>
-                <div class="testimonial-role">Mom of 4-year-old Emma</div>
-            </div>
-        </div>
-        
-        <div class="next-steps">
-            <h2 class="section-title">Your Next Easy Wins</h2>
-            
-            <div class="next-step-card">
-                <div class="next-step-header">
-                    <div class="next-step-icon">🎨</div>
-                    <h4 class="next-step-title">Create Your First Story</h4>
-                </div>
-                <p class="next-step-description">Ready to see the magic happen? Create a personalized story in just 3 minutes and watch your child become the hero of their own adventure.</p>
-                <a href="{{story_create_link|default:'#'}}" class="next-step-cta">Start Creating →</a>
-            </div>
-            
-            <div class="next-step-card">
-                <div class="next-step-header">
-                    <div class="next-step-icon">📖</div>
-                    <h4 class="next-step-title">Browse the Story Library</h4>
-                </div>
-                <p class="next-step-description">Not sure where to start? Explore stories created by other parents and get inspired by endless possibilities.</p>
-                <a href="{{library_link|default:'#'}}" class="next-step-cta">Explore Stories →</a>
-            </div>
-            
-            <div class="next-step-card">
-                <div class="next-step-header">
-                    <div class="next-step-icon">🎧</div>
-                    <h4 class="next-step-title">Try Narrated Stories</h4>
-                </div>
-                <p class="next-step-description">Experience how professional narration with word highlighting helps your child follow along and improve their reading skills.</p>
-                <a href="{{narration_demo_link|default:'#'}}" class="next-step-cta">Listen to Sample →</a>
-            </div>
-        </div>
-        
-        <div class="main-cta">
-            <h3 class="cta-title">Ready to Make Some Magic?</h3>
-            <p class="cta-subtitle">Your child's personalized adventure is just minutes away. Take the next step and create something truly special together.</p>
-            <a href="{{main_cta_link|default:'#'}}" class="cta-button">Create Your Story Now</a>
-        </div>
-        
-        <div class="support-section">
-            <h4 class="support-title">Questions? We're here to help!</h4>
-            <p class="support-text">Our support team loves helping families create their perfect stories.</p>
-            <a href="mailto:support@storybud.com" class="support-link">Get personalized help →</a>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-logo">StoryBud</div>
-            <p class="footer-tagline">"Every child deserves their own story."</p>
-            
-            <p class="footer-greeting">Happy storytelling!</p>
-            <p class="footer-team">The StoryBud Team</p>
-            
-            <div class="footer-links">
-                <a href="https://storybud.com/contact">Support</a>
-                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
-                <a href="https://storybud.com/terms-of-service">Terms</a>
-            </div>
-            
-            <div class="footer-subscription">
-                You're receiving this email because you signed up for StoryBud.<br>
-                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | StoryBud Inc.<br>
-                1111B South Governors Avenue, STE 37071, Dover, DE 19904
-            </div>
-            <div class="footer-copyright">Copyright © 2025 StoryBud All Rights Reserved</div>
-        </div>
-    </div>
+<body style="margin: 0; padding: 0; width: 100% !important; min-width: 100%; background-color: #F3F4F6;">
+    
+    <!-- Preheader Text -->
+    <span style="display: none; font-size: 1px; color: #F3F4F6; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        You're doing great! See how far you've come with StoryBud and discover your next easy wins. Create magical stories today! 🚀✨
+    </span>
+    
+    <!-- Main Container -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F3F4F6;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+                
+                <!-- Email Container -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="main-container" style="max-width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.07);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="padding: 0;">
+                            <!--[if mso]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:140px;">
+                                <v:fill type="gradient" color="#10B981" color2="#059669" angle="135"/>
+                                <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                            <div class="green-gradient-bg" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); background-color: #10B981; padding: 40px 30px;">
+                                
+                                <!-- Celebration Badge -->
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-bottom: 15px;">
+                                    <tr>
+                                        <td class="celebration-badge-bg" style="background-color: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 8px 16px; border-radius: 20px; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 500;">
+                                            You're doing great!
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Logo -->
+                                <h1 style="margin: 0 0 8px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 28px; font-weight: 700; color: #ffffff;">
+                                    StoryBud
+                                </h1>
+                                
+                                <!-- Tagline -->
+                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #ffffff;">
+                                    Your storytelling journey is taking off!
+                                </p>
+                            </div>
+                            <!--[if mso]>
+                                </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    
+                    <!-- Hero Section -->
+                    <tr>
+                        <td class="white-bg" style="padding: 40px 30px;" class="mobile-padding">
+                            
+                            <!-- Hero Title -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 15px;">
+                                        <h2 class="hero-title" style="margin: 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 32px; font-weight: 700; color: #1F2937; line-height: 1.2;">
+                                            Look how far you've come!
+                                        </h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-bottom: 35px;">
+                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 18px; color: #475569; line-height: 1.4;">
+                                            Every step you take with StoryBud is building something magical for your child. Let's celebrate your progress and keep the momentum going!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Progress Celebration Box -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 35px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="progress-box" style="border-radius: 12px;">
+                                            <tr>
+                                                <td align="center" style="padding: 30px;">
+                                                    <!-- Icon -->
+                                                    <p style="margin: 0 0 15px 0; font-size: 48px;">
+                                                        <span role="img" aria-label="Rocket">🚀</span>
+                                                    </p>
+                                                    <!-- Title -->
+                                                    <h3 style="margin: 0 0 10px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 24px; font-weight: 700; color: #065F46;">
+                                                        You're officially a StoryBud storyteller!
+                                                    </h3>
+                                                    <!-- Description -->
+                                                    <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #047857; line-height: 1.5; font-weight: 500;">
+                                                        You've taken the most important step: choosing to make reading time special for your child.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Milestones Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 25px;">
+                                        <h2 class="section-title" style="margin: 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 22px; font-weight: 700; color: #1F2937; text-align: center;">
+                                            What You've Already Accomplished
+                                        </h2>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Milestone 1 -->
+                                <tr>
+                                    <td style="padding-bottom: 15px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="milestone-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 20px;">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td width="40" valign="top">
+                                                                <span role="img" aria-label="Checkmark" style="font-size: 24px;">✅</span>
+                                                            </td>
+                                                            <td style="padding: 0 15px;">
+                                                                <h4 style="margin: 0 0 5px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 16px; font-weight: 600; color: #1F2937;">
+                                                                    Joined the StoryBud Community
+                                                                </h4>
+                                                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #047857;">
+                                                                    You're now part of thousands of families creating magical reading experiences
+                                                                </p>
+                                                            </td>
+                                                            <td width="30" align="right" valign="middle">
+                                                                <span style="color: #10B981; font-size: 20px;">✓</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Milestone 2 -->
+                                <tr>
+                                    <td style="padding-bottom: 15px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="milestone-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 20px;">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td width="40" valign="top">
+                                                                <span role="img" aria-label="Books" style="font-size: 24px;">📚</span>
+                                                            </td>
+                                                            <td style="padding: 0 15px;">
+                                                                <h4 style="margin: 0 0 5px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 16px; font-weight: 600; color: #1F2937;">
+                                                                    Discovered Personalized Storytelling
+                                                                </h4>
+                                                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #047857;">
+                                                                    You've learned how AI can create stories where your child is the hero
+                                                                </p>
+                                                            </td>
+                                                            <td width="30" align="right" valign="middle">
+                                                                <span style="color: #10B981; font-size: 20px;">✓</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Milestone 3 -->
+                                <tr>
+                                    <td style="padding-bottom: 35px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="milestone-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 20px;">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td width="40" valign="top">
+                                                                <span role="img" aria-label="Light bulb" style="font-size: 24px;">💡</span>
+                                                            </td>
+                                                            <td style="padding: 0 15px;">
+                                                                <h4 style="margin: 0 0 5px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 16px; font-weight: 600; color: #1F2937;">
+                                                                    Explored the Possibilities
+                                                                </h4>
+                                                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #047857;">
+                                                                    You understand the power of adaptive reading levels and custom illustrations
+                                                                </p>
+                                                            </td>
+                                                            <td width="30" align="right" valign="middle">
+                                                                <span style="color: #10B981; font-size: 20px;">✓</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Encouragement Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 35px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="encouragement-box" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 35px 30px;">
+                                                    <h3 style="margin: 0 0 20px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 20px; font-weight: 700; color: #7C3AED; text-align: center;">
+                                                        You're Not Alone in This Journey
+                                                    </h3>
+                                                    
+                                                    <!-- Testimonial -->
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="testimonial-bg" style="border-radius: 12px;">
+                                                        <tr>
+                                                            <td align="center" style="padding: 25px;">
+                                                                <p style="margin: 0 0 15px 0; font-family: 'Inter', Arial, sans-serif; font-style: italic; color: #475569; font-size: 16px; line-height: 1.5;">
+                                                                    "I was hesitant at first, but seeing my daughter's face light up when she saw herself as the princess in her story was absolutely priceless. Now she asks for 'her stories' every night!"
+                                                                </p>
+                                                                <p style="margin: 0 0 2px 0; font-family: 'Quicksand', Arial, sans-serif; font-weight: 600; color: #1F2937; font-size: 14px;">
+                                                                    Sarah M.
+                                                                </p>
+                                                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; color: #6B7280; font-size: 12px;">
+                                                                    Mom of 4-year-old Emma
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Next Steps Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 25px;">
+                                        <h2 class="section-title" style="margin: 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 22px; font-weight: 700; color: #1F2937; text-align: center;">
+                                            Your Next Easy Wins
+                                        </h2>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Next Step 1 -->
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="next-step-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 25px;">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td width="30" valign="top">
+                                                                            <span role="img" aria-label="Art palette" style="font-size: 24px;">🎨</span>
+                                                                        </td>
+                                                                        <td style="padding-left: 12px;">
+                                                                            <h4 style="margin: 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; font-weight: 600; color: #1F2937;">
+                                                                                Create Your First Story
+                                                                            </h4>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 15px 0;">
+                                                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; color: #475569; font-size: 14px; line-height: 1.5;">
+                                                                    Ready to see the magic happen? Create a personalized story in just 3 minutes and watch your child become the hero of their own adventure.
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                                                    <tr>
+                                                                        <td class="purple-button" style="background-color: #8B5CF6; border-radius: 8px;">
+                                                                            <a href="{{story_create_link|default:'#'}}" style="display: inline-block; padding: 10px 20px; font-family: 'Quicksand', Arial, sans-serif; font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none;">
+                                                                                Start Creating →
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Next Step 2 -->
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="next-step-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 25px;">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td width="30" valign="top">
+                                                                            <span role="img" aria-label="Open book" style="font-size: 24px;">📖</span>
+                                                                        </td>
+                                                                        <td style="padding-left: 12px;">
+                                                                            <h4 style="margin: 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; font-weight: 600; color: #1F2937;">
+                                                                                Browse the Story Library
+                                                                            </h4>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 15px 0;">
+                                                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; color: #475569; font-size: 14px; line-height: 1.5;">
+                                                                    Not sure where to start? Explore stories created by other parents and get inspired by endless possibilities.
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                                                    <tr>
+                                                                        <td class="purple-button" style="background-color: #8B5CF6; border-radius: 8px;">
+                                                                            <a href="{{library_link|default:'#'}}" style="display: inline-block; padding: 10px 20px; font-family: 'Quicksand', Arial, sans-serif; font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none;">
+                                                                                Explore Stories →
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Next Step 3 
+                                <tr>
+                                    <td style="padding-bottom: 40px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="next-step-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 25px;">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td width="30" valign="top">
+                                                                            <span role="img" aria-label="Headphones" style="font-size: 24px;">🎧</span>
+                                                                        </td>
+                                                                        <td style="padding-left: 12px;">
+                                                                            <h4 style="margin: 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; font-weight: 600; color: #1F2937;">
+                                                                                Try Narrated Stories
+                                                                            </h4>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                    
+                                                        <tr>
+                                                            <td>
+                                                              
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table> -->
+                            
+                            <!-- Main CTA Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="cta-section-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td align="center" style="padding: 32px 24px;">
+                                                    <h3 style="margin: 0 0 15px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 26px; font-weight: 700; color: #1F2937;">
+                                                        Ready to Make Some Magic?
+                                                    </h3>
+                                                    <p style="margin: 0 0 25px 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #475569; line-height: 1.4;">
+                                                        Your child's personalized adventure is just minutes away. Take the next step and create something truly special together.
+                                                    </p>
+                                                    
+                                                    <!--[if mso]>
+                                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{main_cta_link|default:'#'}}" style="height:52px;v-text-anchor:middle;width:240px;" arcsize="50%" stroke="f" fillcolor="#10B981">
+                                                        <w:anchorlock/>
+                                                        <center>
+                                                    <![endif]-->
+                                                    <a href="{{main_cta_link|default:'#'}}" class="green-button" style="background-color: #10B981; color: #ffffff; display: inline-block; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 52px; text-align: center; text-decoration: none; width: 240px; -webkit-text-size-adjust: none; border-radius: 26px;">
+                                                        Create Your Story Now
+                                                    </a>
+                                                    <!--[if mso]>
+                                                        </center>
+                                                    </v:roundrect>
+                                                    <![endif]-->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Support Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="support-box" style="border-radius: 12px;">
+                                            <tr>
+                                                <td align="center" style="padding: 24px;">
+                                                    <h4 style="margin: 0 0 10px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; font-weight: 600; color: #7C3AED;">
+                                                        Questions? We're here to help!
+                                                    </h4>
+                                                    <p style="margin: 0 0 15px 0; font-family: 'Inter', Arial, sans-serif; color: #475569; font-size: 14px;">
+                                                        Our support team loves helping families create their perfect stories.
+                                                    </p>
+                                                    <a href="mailto:support@storybud.com" style="color: #7C3AED; text-decoration: none; font-weight: 600; font-family: 'Inter', Arial, sans-serif;">
+                                                        Get personalized help →
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer-bg" style="padding: 40px 30px; text-align: center; background-color: #F3F4F6; border-top: 1px solid #E5E7EB;" class="mobile-padding">
+                            
+                            <!-- Logo and Tagline -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0 0 10px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 24px; font-weight: 700; color: #7C3AED;">
+                                            StoryBud
+                                        </p>
+                                        <p style="margin: 0 0 25px 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #475569; font-style: italic;">
+                                            "Every child deserves their own story."
+                                        </p>
+                                        
+                                        <p style="margin: 0 0 10px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; color: #7C3AED; font-weight: 600;">
+                                            Happy storytelling!
+                                        </p>
+                                        <p style="margin: 0 0 30px 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #475569; font-style: italic;">
+                                            The StoryBud Team
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Footer Links -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td class="footer-links" style="padding-bottom: 25px;">
+                                        <a href="https://storybud.com/contact" style="color: #6B7280; text-decoration: none; margin: 0 15px; font-size: 14px;">Support</a>
+                                        <a href="https://storybud.com/privacy-policy" style="color: #6B7280; text-decoration: none; margin: 0 15px; font-size: 14px;">Privacy Policy</a>
+                                        <a href="https://storybud.com/terms-of-service" style="color: #6B7280; text-decoration: none; margin: 0 15px; font-size: 14px;">Terms</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                <tr>
+                                    <td align="center" class="footer-legal">
+                                        <p style="margin: 0 0 15px 0; font-size: 13px; color: #9CA3AF; line-height: 1.5;">
+                                            You're receiving this email because you signed up for StoryBud.<br>
+                                            <a href="https://storybud.com/unsubscribe" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | StoryBud Inc.<br>
+                                            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                        </p>
+                                        <p style="margin: 0; font-size: 13px; color: #9CA3AF;">
+                                            Copyright © 2025 StoryBud All Rights Reserved
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Container -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
 </body>
 </html>

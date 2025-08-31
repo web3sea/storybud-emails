@@ -1,115 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Read a Story!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>Let's Read a Story! - StoryBud</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--<![endif]-->
     
     <style>
-        /* Import brand fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+        /* Reset and base styles */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        table { border-spacing: 0 !important; border-collapse: collapse !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            line-height: 1.6;
-            color: #374151;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100%;
+            background-color: #F3F4F6 !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+        }
+        
+        .main-container {
+            background-color: #ffffff;
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #F3F4F6 0%, #F9FAFB 100%);
         }
         
-        .email-container {
-            background-color: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
-            border: 1px solid #E5E7EB;
+        /* Component styles */
+        .purple-gradient-bg {
+            background-color: #8B5CF6;
         }
         
-        .header {
-            padding: 40px 30px;
-            text-align: center;
-            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6366F1 100%);
-            position: relative;
-            color: white;
+        .story-benefits-box {
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-left: 4px solid #6EE7B7;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(2px 2px at 25% 25%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 75% 35%, rgba(252, 211, 77, 0.2) 50%, transparent 50%),
-                radial-gradient(1.5px 1.5px at 50% 75%, rgba(252, 211, 77, 0.3) 50%, transparent 50%),
-                radial-gradient(1px 1px at 30% 85%, rgba(252, 211, 77, 0.2) 50%, transparent 50%);
-            background-repeat: no-repeat;
-            pointer-events: none;
+        .benefit-item-bg {
+            background-color: #ffffff;
+            border: 1px solid #BBF7D0;
         }
         
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            z-index: 1;
+        .cta-section-bg {
+            background-color: #F9F5FF;
+            border: 1px solid #E9D5FF;
         }
         
-        .welcome-heading {
-            font-size: 32px;
-            color: white;
-            margin: 0 0 8px 0;
-            font-weight: 700;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 2;
+        .tip-box-bg {
+            background-color: #FEF3C7;
+            border: 1px solid #FCD34D;
+            border-left: 4px solid #FCD34D;
         }
         
-        .welcome-subheading {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
-            margin: 0;
-            font-weight: 400;
-            position: relative;
-            z-index: 2;
+        .footer-bg {
+            background-color: #F3F4F6;
+            border-top: 1px solid #E5E7EB;
         }
         
-        .content {
-            padding: 36px 30px;
+        /* Button styles */
+        .green-button {
+            background-color: #10B981;
+            color: #ffffff !important;
         }
         
-        .greeting {
-            margin-bottom: 28px;
-        }
-        
-        .greeting p {
-            margin: 0 0 16px 0;
-            font-size: 16px;
-            color: #475569;
-        }
-        
+        /* Text styles */
         .personalized-name {
             color: #7C3AED;
             font-weight: 600;
-        }
-        
-        .main-message {
-            margin-bottom: 32px;
-        }
-        
-        .main-message p {
-            margin: 0 0 20px 0;
-            font-size: 16px;
-            line-height: 1.7;
-            color: #475569;
         }
         
         .highlight-text {
@@ -117,569 +99,394 @@
             font-weight: 600;
         }
         
-        .story-benefits {
-            background: linear-gradient(135deg, rgba(110, 231, 183, 0.08) 0%, rgba(110, 231, 183, 0.15) 100%);
-            border: 1px solid rgba(110, 231, 183, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 28px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .story-benefits::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #6EE7B7, #10B981, #059669);
-        }
-        
-        .story-benefits h3 {
-            margin: 0 0 16px 0;
-            color: #065F46;
-            font-size: 18px;
-            font-weight: 700;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .benefits-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 12px;
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px 16px;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid rgba(110, 231, 183, 0.2);
-        }
-        
-        .benefit-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-        
-        .benefit-text {
-            font-size: 14px;
-            color: #047857;
-            font-weight: 500;
-        }
-        
-        .cta-section {
-            text-align: center;
-            margin: 40px 0;
-            padding: 32px 24px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(167, 139, 250, 0.08) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .cta-text {
-            font-size: 18px;
-            color: #374151;
-            margin: 0 0 20px 0;
-            font-weight: 500;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-            color: white;
-            padding: 16px 32px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 16px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
-        .tip-box {
-            background: linear-gradient(135deg, rgba(252, 211, 77, 0.08) 0%, rgba(245, 158, 11, 0.12) 100%);
-            border: 1px solid rgba(252, 211, 77, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 28px 0;
-            border-left: 4px solid #FCD34D;
-        }
-        
-        .tip-box p {
-            margin: 0;
-            font-size: 15px;
-            color: #475569;
-            line-height: 1.6;
-        }
-        
         .tip-label {
             font-weight: 700;
             color: #7C3AED;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Quicksand', Arial, sans-serif !important;
         }
         
-        .closing-message {
-            text-align: center;
-            margin: 32px 0;
-            font-size: 16px;
-            color: #475569;
-            font-style: italic;
-        }
-        
-        .footer {
-            background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%);
-            padding: 40px 30px;
-            text-align: center;
-            border-top: 1px solid #E5E7EB;
-        }
-        
-        .footer-logo {
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #7C3AED;
-            margin: 0 0 10px 0;
-        }
-        
-        .footer-tagline {
-            font-size: 16px;
-            color: #475569;
-            margin: 0 0 25px 0;
-            font-style: italic;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .footer-message {
-            margin: 0 0 8px 0;
-            color: #7C3AED;
-            font-weight: 600;
-            font-size: 18px;
-            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        
-        .footer-team {
-            margin: 0 0 24px 0;
-            color: #475569;
-            font-style: italic;
-        }
-        
-        .footer-links {
-            margin: 20px 0;
-        }
-        
-        .footer-links a {
-            color: #6B7280;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 14px;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #7C3AED;
-            text-decoration: underline;
-        }
-        
-        .footer-legal {
-            font-size: 13px;
-            color: #9CA3AF;
-            margin-top: 20px;
-            line-height: 1.5;
-        }
-        
-        .footer-legal a {
-            color: #7C3AED;
-            text-decoration: none;
-        }
-        
-        .footer-legal a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            body {
-                padding: 10px !important;
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-padding { padding: 20px !important; }
+            .mobile-text-center { text-align: center !important; }
+            .hero-title { font-size: 26px !important; }
+            .section-title { font-size: 18px !important; }
+            .body-text { font-size: 15px !important; }
+            .green-button { 
+                display: block !important; 
+                width: 100% !important; 
+                max-width: 280px !important; 
+                margin: 0 auto !important; 
             }
-            
-            .email-container {
-                border-radius: 12px !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 25px 20px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 26px !important;
-                line-height: 1.2 !important;
-            }
-            
-            .greeting p {
-                font-size: 16px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .story-benefits h3 {
-                font-size: 16px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .benefits-list {
-                gap: 15px !important;
-            }
-            
-            .benefit-item {
-                padding: 16px !important;
-                margin: 10px 0 !important;
-            }
-            
-            .benefit-text {
-                font-size: 14px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .tip-box {
-                margin: 25px 0 !important;
-                padding: 20px !important;
-            }
-            
-            .tip-box p {
-                font-size: 14px !important;
-                line-height: 1.5 !important;
-            }
-            
-            .cta-text {
-                font-size: 18px !important;
-                line-height: 1.3 !important;
-            }
-            
-            .cta-button {
-                padding: 16px 32px !important;
-                font-size: 16px !important;
-                min-height: 44px !important;
-                display: block !important;
-                width: 100% !important;
-                max-width: 280px !important;
-                margin: 0 auto !important;
-                box-sizing: border-box !important;
-            }
-            
-            .closing-message {
-                margin: 25px 0 !important;
-                padding: 20px 0 !important;
-            }
-            
-            .footer {
-                padding: 30px 20px !important;
-            }
-            
-            .footer-logo {
-                font-size: 20px !important;
-            }
-            
-            .footer-tagline {
-                font-size: 14px !important;
-            }
-            
-            .footer-links a {
-                display: block !important;
-                margin: 8px 0 !important;
+            .footer-links a { 
+                display: inline-block !important; 
+                margin: 8px 6px !important; 
             }
         }
         
-        @media (max-width: 480px) {
-            body {
-                padding: 8px !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 20px 15px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 24px !important;
-            }
-            
-            .story-benefits h3 {
-                font-size: 16px !important;
-            }
-            
-            .greeting p {
-                font-size: 15px !important;
-            }
-            
-            .benefit-item {
-                padding: 14px !important;
-            }
-            
-            .benefit-text {
-                font-size: 14px !important;
-            }
-            
-            .tip-box {
-                padding: 18px !important;
-            }
-            
-            .cta-button {
-                padding: 14px 28px !important;
-                font-size: 15px !important;
-                width: calc(100% - 56px) !important;
-            }
+        @media screen and (max-width: 480px) {
+            .mobile-padding { padding: 15px !important; }
+            .hero-title { font-size: 24px !important; }
+            .section-title { font-size: 16px !important; }
         }
         
-        @media (max-width: 360px) {
-            body {
-                padding: 5px !important;
-            }
-            
-            .header, .content, .footer {
-                padding: 18px 12px !important;
-            }
-            
-            .welcome-heading {
-                font-size: 22px !important;
-            }
-            
-            .story-benefits h3 {
-                font-size: 15px !important;
-            }
-            
-            .benefit-item {
-                padding: 12px !important;
-            }
-            
-            .tip-box {
-                padding: 16px !important;
-            }
-            
-            .cta-button {
-                padding: 12px 24px !important;
-                font-size: 14px !important;
-                width: calc(100% - 48px) !important;
-            }
-        }
-        
-        /* Dark mode support */
+        /* Dark Mode Support */
         @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1F2937 0%, #111827 100%) !important;
-            }
+            body { background-color: #1a1a1a !important; }
+            .main-container { background-color: #1F2937 !important; }
+            .white-bg { background-color: #2d3748 !important; }
+            .footer-bg { background-color: #111827 !important; border-top-color: #374151 !important; }
             
-            .email-container {
-                background-color: #1F2937 !important;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-                border-color: #374151 !important;
-            }
+            h1, h2, h3, h4, p, td { color: #F3F4F6 !important; }
+            .personalized-name { color: #A78BFA !important; }
+            .highlight-text { color: #6EE7B7 !important; }
+            .tip-label { color: #A78BFA !important; }
             
-            .header {
-                background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6366F1 100%) !important;
-            }
+            .purple-gradient-bg { background-color: #7C3AED !important; }
             
-            .content {
-                background-color: #1F2937 !important;
-            }
-            
-            .greeting p,
-            .main-message p {
-                color: #F3F4F6 !important;
-            }
-            
-            .personalized-name {
-                color: #A78BFA !important;
-            }
-            
-            .highlight-text {
-                color: #6EE7B7 !important;
-            }
-            
-            .story-benefits {
-                background: linear-gradient(135deg, rgba(110, 231, 183, 0.12) 0%, rgba(110, 231, 183, 0.2) 100%) !important;
-                border-color: rgba(110, 231, 183, 0.4) !important;
-            }
-            
-            .story-benefits h3 {
-                color: #F3F4F6 !important;
-            }
-            
-            .benefit-item {
-                background: #374151 !important;
+            .story-benefits-box { 
+                background-color: rgba(110, 231, 183, 0.1) !important;
                 border-color: rgba(110, 231, 183, 0.3) !important;
             }
             
-            .benefit-text {
-                color: #F3F4F6 !important;
+            .benefit-item-bg {
+                background-color: #374151 !important;
+                border-color: rgba(110, 231, 183, 0.3) !important;
             }
             
-            .cta-section {
-                background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(139, 92, 246, 0.12) 100%) !important;
-                border-color: rgba(124, 58, 237, 0.3) !important;
+            .cta-section-bg {
+                background-color: rgba(139, 92, 246, 0.1) !important;
+                border-color: rgba(139, 92, 246, 0.3) !important;
             }
             
-            .cta-text {
-                color: #F3F4F6 !important;
+            .tip-box-bg {
+                background-color: rgba(252, 211, 77, 0.1) !important;
+                border-color: rgba(252, 211, 77, 0.3) !important;
             }
             
-            .tip-box {
-                background: linear-gradient(135deg, rgba(252, 211, 77, 0.12) 0%, rgba(245, 158, 11, 0.18) 100%) !important;
-                border-color: rgba(252, 211, 77, 0.4) !important;
-            }
-            
-            .tip-box p {
-                color: #F3F4F6 !important;
-            }
-            
-            .tip-label {
-                color: #A78BFA !important;
-            }
-            
-            .closing-message {
-                color: #F3F4F6 !important;
-            }
-            
-            .footer {
-                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
-                border-top-color: #374151 !important;
-            }
-            
-            .footer-logo {
-                color: #A78BFA !important;
-            }
-            
-            .footer-tagline, .footer-message, .footer-team {
-                color: #D1D5DB !important;
-            }
-            
-            .footer-links a {
-                color: #9CA3AF !important;
-            }
-            
-            .footer-links a:hover {
-                color: #A78BFA !important;
-            }
-            
-            .footer-legal {
-                color: #6B7280 !important;
-            }
-            
-            .footer-legal a {
-                color: #A78BFA !important;
-            }
+            .footer-links a { color: #9CA3AF !important; }
+            .footer-legal { color: #6B7280 !important; }
+            .footer-legal a { color: #A78BFA !important; }
         }
     </style>
 </head>
-<body>
-    <div class="email-container">
-        <div class="header">
-            <h1 class="welcome-heading">Let's Read a Story!</h1>
-            <p class="welcome-subheading">Where every child becomes the hero.</p>
-        </div>
-        
-        <div class="content">
-            <div class="greeting">
-                <p>Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!</p>
-                <p>Ready for another magical storytelling adventure?</p>
-            </div>
-            
-            <div class="main-message">
-                <p>At StoryBud, we believe storytime is so much more than opening a book. It's about creating shared moments of wonder, sparking imagination, and weaving memories your child will carry with them for years to come.</p>
+<body style="margin: 0; padding: 0; width: 100% !important; min-width: 100%; background-color: #F3F4F6;">
+    
+    <!-- Preheader Text -->
+    <span style="display: none; font-size: 1px; color: #F3F4F6; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        Ready for another magical storytelling adventure? Create shared moments of wonder and weave memories your child will carry for years. 📚✨
+    </span>
+    
+    <!-- Main Container -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F3F4F6;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
                 
-                <p>Each story you read together is an opportunity to laugh, dream, and connect on a deeper level. Every adventure builds more than entertainment—it nurtures <span class="highlight-text">confidence, curiosity, and a lifelong love of learning</span>.</p>
-            </div>
-            
-            <div class="story-benefits">
-                <h3>Why Story Time Matters</h3>
-                <ul class="benefits-list">
-                    <li class="benefit-item">
-                        <span class="benefit-icon">🌟</span>
-                        <span class="benefit-text">Strengthens your bond through shared adventures</span>
-                    </li>
-                    <li class="benefit-item">
-                        <span class="benefit-icon">🧠</span>
-                        <span class="benefit-text">Develops imagination and critical thinking</span>
-                    </li>
-                    <li class="benefit-item">
-                        <span class="benefit-icon">❤️</span>
-                        <span class="benefit-text">Creates cherished memories that last a lifetime</span>
-                    </li>
-                    <li class="benefit-item">
-                        <span class="benefit-icon">📖</span>
-                        <span class="benefit-text">Builds confidence and love for reading</span>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="main-message">
-                <p>Your next personalized StoryBud adventure is waiting. This story has been crafted just for your family, ready to bring joy and inspiration into your home tonight.</p>
-            </div>
-            
-            <div class="cta-section">
-                <p class="cta-text">Ready to create magical memories?</p>
-                <a href="{{story_link|default:'#'}}" class="cta-button">Read My Next Story</a>
-            </div>
-            
-            <div class="tip-box">
-                <p><span class="tip-label">Tip:</span> Make it a ritual! Cozy up in a favorite reading spot, let your child choose a special stuffed animal to "listen in," and turn storytime into a nightly adventure they'll always look forward to.</p>
-            </div>
-            
-            <div class="closing-message">
-                <p>Here's to building magical memories together, one story at a time.</p>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-logo">StoryBud</div>
-            <p class="footer-tagline">"Every child deserves their own story."</p>
-            
-            <p class="footer-message">Happy storytelling!</p>
-            <p class="footer-team">The StoryBud Team</p>
-            
-            <div class="footer-links">
-                <a href="https://storybud.com/contact">Support</a>
-                <a href="https://storybud.com/privacy-policy">Privacy Policy</a>
-                <a href="https://storybud.com/terms-of-service">Terms</a>
-            </div>
-            
-            <div class="footer-legal">
-                <p>You're receiving this email because you signed up for StoryBud.<br>
-                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'brad%40storybud.com'}}">Unsubscribe</a> | StoryBud Inc.<br>
-                1111B South Governors Avenue, STE 37071, Dover, DE 19904</p>
-                <p>Copyright © 2025 StoryBud All Rights Reserved</p>
-            </div>
-        </div>
-    </div>
+                <!-- Email Container -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="main-container" style="max-width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.07);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="padding: 0;">
+                            <!--[if mso]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:120px;">
+                                <v:fill type="gradient" color="#8B5CF6" color2="#6366F1" angle="135"/>
+                                <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                            <div class="purple-gradient-bg" style="background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%); background-color: #8B5CF6; padding: 40px 30px;">
+                                <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 32px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+                                    Let's Read a Story!
+                                </h1>
+                                <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9);">
+                                    Where every child becomes the hero.
+                                </p>
+                            </div>
+                            <!--[if mso]>
+                                </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td class="white-bg" style="padding: 36px 30px;" class="mobile-padding">
+                            
+                            <!-- Greeting -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <p style="margin: 0 0 16px 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #475569;">
+                                            Hi <span class="personalized-name">{{user_name|default:"there"}}</span>!
+                                        </p>
+                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #475569;">
+                                            Ready for another magical storytelling adventure?
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Main Message -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <p style="margin: 0 0 20px 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #475569;">
+                                            At StoryBud, we believe storytime is so much more than opening a book. It's about creating shared moments of wonder, sparking imagination, and weaving memories your child will carry with them for years to come.
+                                        </p>
+                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #475569;">
+                                            Each story you read together is an opportunity to laugh, dream, and connect on a deeper level. Every adventure builds more than entertainment—it nurtures <span class="highlight-text">confidence, curiosity, and a lifelong love of learning</span>.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Story Benefits Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-benefits-box" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 24px;">
+                                                    <h3 style="margin: 0 0 16px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; font-weight: 700; color: #065F46;">
+                                                        Why Story Time Matters
+                                                    </h3>
+                                                    
+                                                    <!-- Benefits List -->
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <!-- Benefit 1 -->
+                                                        <tr>
+                                                            <td style="padding-bottom: 12px;">
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="benefit-item-bg" style="border-radius: 12px;">
+                                                                    <tr>
+                                                                        <td style="padding: 12px 16px;">
+                                                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                                                                <tr>
+                                                                                    <td width="30" valign="top">
+                                                                                        <span role="img" aria-label="Star" style="font-size: 20px;">🌟</span>
+                                                                                    </td>
+                                                                                    <td style="padding-left: 12px;">
+                                                                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #047857; font-weight: 500;">
+                                                                                            Strengthens your bond through shared adventures
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Benefit 2 -->
+                                                        <tr>
+                                                            <td style="padding-bottom: 12px;">
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="benefit-item-bg" style="border-radius: 12px;">
+                                                                    <tr>
+                                                                        <td style="padding: 12px 16px;">
+                                                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                                                                <tr>
+                                                                                    <td width="30" valign="top">
+                                                                                        <span role="img" aria-label="Brain" style="font-size: 20px;">🧠</span>
+                                                                                    </td>
+                                                                                    <td style="padding-left: 12px;">
+                                                                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #047857; font-weight: 500;">
+                                                                                            Develops imagination and critical thinking
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Benefit 3 -->
+                                                        <tr>
+                                                            <td style="padding-bottom: 12px;">
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="benefit-item-bg" style="border-radius: 12px;">
+                                                                    <tr>
+                                                                        <td style="padding: 12px 16px;">
+                                                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                                                                <tr>
+                                                                                    <td width="30" valign="top">
+                                                                                        <span role="img" aria-label="Heart" style="font-size: 20px;">❤️</span>
+                                                                                    </td>
+                                                                                    <td style="padding-left: 12px;">
+                                                                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #047857; font-weight: 500;">
+                                                                                            Creates cherished memories that last a lifetime
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- Benefit 4 -->
+                                                        <tr>
+                                                            <td>
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="benefit-item-bg" style="border-radius: 12px;">
+                                                                    <tr>
+                                                                        <td style="padding: 12px 16px;">
+                                                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                                                                <tr>
+                                                                                    <td width="30" valign="top">
+                                                                                        <span role="img" aria-label="Book" style="font-size: 20px;">📖</span>
+                                                                                    </td>
+                                                                                    <td style="padding-left: 12px;">
+                                                                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 14px; color: #047857; font-weight: 500;">
+                                                                                            Builds confidence and love for reading
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Additional Message -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #475569;">
+                                            Your next personalized StoryBud adventure is waiting. This story has been crafted just for your family, ready to bring joy and inspiration into your home tonight.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- CTA Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="cta-section-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td align="center" style="padding: 32px 24px;">
+                                                    <p style="margin: 0 0 20px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 18px; color: #374151; font-weight: 500;">
+                                                        Ready to create magical memories?
+                                                    </p>
+                                                    
+                                                    <!--[if mso]>
+                                                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{story_link|default:'#'}}" style="height:48px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#10B981">
+                                                        <w:anchorlock/>
+                                                        <center>
+                                                    <![endif]-->
+                                                    <a href="{{story_link|default:'#'}}" class="green-button" style="background-color: #10B981; color: #ffffff; display: inline-block; font-family: 'Quicksand', Arial, sans-serif; font-size: 16px; font-weight: 700; line-height: 48px; text-align: center; text-decoration: none; width: 200px; -webkit-text-size-adjust: none; border-radius: 24px;">
+                                                        Read My Next Story
+                                                    </a>
+                                                    <!--[if mso]>
+                                                        </center>
+                                                    </v:roundrect>
+                                                    <![endif]-->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Tip Box -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="tip-box-bg" style="border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 24px;">
+                                                    <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 15px; color: #475569; line-height: 1.6;">
+                                                        <span class="tip-label">Tip:</span> Make it a ritual! Cozy up in a favorite reading spot, let your child choose a special stuffed animal to "listen in," and turn storytime into a nightly adventure they'll always look forward to.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Closing Message -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #475569; font-style: italic;">
+                                            Here's to building magical memories together, one story at a time.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer-bg" style="padding: 40px 30px; text-align: center; background-color: #F3F4F6; border-top: 1px solid #E5E7EB;" class="mobile-padding">
+                            
+                            <!-- Logo and Tagline -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0 0 10px 0; font-family: 'Quicksand', Arial, sans-serif; font-size: 24px; font-weight: 700; color: #7C3AED;">
+                                            StoryBud
+                                        </p>
+                                        <p style="margin: 0 0 25px 0; font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #475569; font-style: italic;">
+                                            "Every child deserves their own story."
+                                        </p>
+                                        
+                                        <p style="margin: 0 0 8px 0; font-family: 'Quicksand', Arial, sans-serif; color: #7C3AED; font-weight: 600; font-size: 18px;">
+                                            Happy storytelling!
+                                        </p>
+                                        <p style="margin: 0 0 24px 0; font-family: 'Inter', Arial, sans-serif; color: #475569; font-style: italic;">
+                                            The StoryBud Team
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Footer Links -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td class="footer-links" style="padding-bottom: 20px;">
+                                        <a href="https://storybud.com/contact" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px;">Support</a>
+                                        <a href="https://storybud.com/privacy-policy" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px;">Privacy Policy</a>
+                                        <a href="https://storybud.com/terms-of-service" style="color: #6B7280; text-decoration: none; margin: 0 12px; font-size: 14px;">Terms</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                                <tr>
+                                    <td align="center" class="footer-legal">
+                                        <p style="margin: 0 0 8px 0; font-size: 13px; color: #9CA3AF; line-height: 1.5;">
+                                            You're receiving this email because you signed up for StoryBud.<br>
+                                            <a href="https://storybud.com/unsubscribe?email={{user_email|default:'user%40example.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | StoryBud Inc.<br>
+                                            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                        </p>
+                                        <p style="margin: 0; font-size: 13px; color: #9CA3AF;">
+                                            Copyright © 2025 StoryBud All Rights Reserved
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Container -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
 </body>
 </html>
