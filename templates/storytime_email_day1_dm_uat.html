@@ -135,14 +135,6 @@
             font-weight: bold;
             text-decoration: none;
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
         }
         
         /* Footer */
@@ -167,6 +159,46 @@
         
         .footer-text a:hover {
             color: #cbd5e0;
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+            }
+            
+            .email-container {
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%) !important;
+            }
+            
+            .header {
+                background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%) !important;
+            }
+            
+            .content {
+                background: #374151 !important;
+                color: #F3F4F6 !important;
+            }
+            
+            .subheader {
+                color: #D1D5DB !important;
+            }
+            
+            .body-text {
+                color: #E5E7EB !important;
+            }
+            
+            .footer {
+                background: linear-gradient(135deg, #111827 0%, #1F2937 100%) !important;
+            }
+            
+            .footer-text {
+                color: #D1D5DB !important;
+            }
+            
+            .footer-text a {
+                color: #93C5FD !important;
+            }
         }
         
         /* Mobile responsiveness */
@@ -218,6 +250,14 @@
             
             .footer-text {
                 font-size: 13px !important;
+            }
+            
+            .mobile-hide {
+                display: none !important;
+            }
+            
+            .mobile-show {
+                display: block !important;
             }
         }
     </style>
