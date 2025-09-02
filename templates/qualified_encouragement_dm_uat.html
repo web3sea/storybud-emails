@@ -129,6 +129,9 @@
                 display: inline-block !important; 
                 margin: 8px 6px !important; 
             }
+            
+            /* Logo responsive */
+            .logo-img { max-width: 120px !important; width: 120px !important; }
         }
         
         @media screen and (max-width: 480px) {
@@ -470,7 +473,7 @@
                                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                                                     <tr>
                                                                         <td class="purple-button" style="background-color: #8B5CF6; border-radius: 8px;">
-                                                                            <a href="{{story_create_link|default:'#'}}" style="display: inline-block; padding: 10px 20px; font-family: Georgia, serif; font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none;">
+                                                                            <a href="https://storybud.com" style="display: inline-block; padding: 10px 20px; font-family: Georgia, serif; font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none;">
                                                                                 Start Creating →
                                                                             </a>
                                                                         </td>
@@ -520,7 +523,7 @@
                                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                                                     <tr>
                                                                         <td class="purple-button" style="background-color: #8B5CF6; border-radius: 8px;">
-                                                                            <a href="{{library_link|default:'#'}}" style="display: inline-block; padding: 10px 20px; font-family: Georgia, serif; font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none;">
+                                                                            <a href="https://storybud.com/library" style="display: inline-block; padding: 10px 20px; font-family: Georgia, serif; font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none;">
                                                                                 Explore Stories →
                                                                             </a>
                                                                         </td>
@@ -592,7 +595,7 @@
                                                         <center>
                                                     <![endif]-->
                                                     <a href="https://storybud.com/" class="green-button" style="background-color: #10B981; color: #ffffff; display: inline-block; font-family: Georgia, serif; font-size: 18px; font-weight: 700; line-height: 52px; text-align: center; text-decoration: none; width: 240px; -webkit-text-size-adjust: none; border-radius: 26px;">
-                                                        Sign Up For A Plan Today
+                                                        Free 7-Day Trial
                                                     </a>
                                                     <!--[if mso]>
                                                         </center>
@@ -635,19 +638,28 @@
                     <tr>
                         <td class="footer-bg" style="padding: 40px 30px; text-align: center; background-color: #F3F4F6; border-top: 1px solid #E5E7EB;" class="mobile-padding">
                             
-                            <!-- Logo and Tagline -->
+                            <!-- Logo -->
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                                 <tr>
+                                    <td align="center" style="padding-bottom: 30px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td align="center">
+                                                    <!--[if mso]>
+                                                    <img src="{{logo_url|default:'https://i.imgur.com/axU6Y0c.png'}}" alt="StoryBud - Where stories come to life" width="150" style="display:block; border:0;" />
+                                                    <![endif]-->
+                                                    <!--[if !mso]><!-->
+                                                    <img src="https://i.imgur.com/UHKz2jA.png" alt="StoryBud - Where stories come to life" width="150" height="auto" class="logo-img" style="width:150px; height:auto;" />
+                                                    <!--<![endif]-->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td align="center">
-                                        <p style="margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: #7C3AED;">
-                                            StoryBud
-                                        </p>
-                                        <p style="margin: 0 0 25px 0; font-family: Arial, sans-serif; font-size: 16px; color: #334155; font-style: italic;">
-                                            "Every child deserves their own story."
-                                        </p>
-                                        
                                         <p style="margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 18px; color: #7C3AED; font-weight: 600;">
-                                            Happy storytelling!
+                                            "Every child deserves their own story."
                                         </p>
                                         <p style="margin: 0 0 30px 0; font-family: Arial, sans-serif; font-size: 16px; color: #334155; font-style: italic;">
                                             The StoryBud Team
