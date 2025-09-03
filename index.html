@@ -1327,23 +1327,23 @@
                 <h2 class="progress-title">🔗 Email Sequence Timeline</h2>
                 <div class="progress-steps">
                     <div class="progress-line"></div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/1_qualified_lead_welcome.html', 'Day 0-1: Welcome', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_testimonials_dm_uat.html', 'Day 0-1: Welcome', this)" style="cursor: pointer;">
                         <div class="step-number">1</div>
                         <div class="step-label">Day 0-1: Welcome</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/2_ qualified-lead-cta.html', 'Day 2-4: First Activation', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_testimonials_dm_uat.html', 'Day 2-4: First Activation', this)" style="cursor: pointer;">
                         <div class="step-number">2</div>
                         <div class="step-label">Day 2-4: First Activation</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/3_qualified_lead_first_activation.html', 'Day 5-7: Education', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_encouragement_dm_uat.html', 'Day 5-7: Education', this)" style="cursor: pointer;">
                         <div class="step-number">3</div>
                         <div class="step-label">Day 5-7: Education</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/4_qualified_lead_encouragement.html', 'Day 8-10: Engagement', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_encouragement_dm_uat.html', 'Day 8-10: Engagement', this)" style="cursor: pointer;">
                         <div class="step-number">4</div>
                         <div class="step-label">Day 8-10: Engagement</div>
                     </div>
-                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/5_qualified_lead_day10_followup.html', 'Day 11-14: Retention', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showQualifiedLeadPreview('templates/qualified_testimonials_dm_uat.html', 'Day 11-14: Retention', this)" style="cursor: pointer;">
                         <div class="step-number">5</div>
                         <div class="step-label">Day 11-14: Retention</div>
                     </div>
@@ -1361,7 +1361,7 @@
                     </div>
                 </div>
                 <div class="preview-content">
-                    <iframe id="qualifiedLeadPreviewFrame" src="templates/1_qualified_lead_welcome.html" class="email-preview-iframe"></iframe>
+                    <iframe id="qualifiedLeadPreviewFrame" src="templates/qualified_testimonials_dm_uat.html" class="email-preview-iframe"></iframe>
                 </div>
             </div>
         </div> <!-- End Qualified Sequence Container -->
@@ -1410,7 +1410,7 @@
                     <div class="step-number">1</div>
                     <div class="step-label">Day 0-1: Welcome</div>
                 </div>
-                    <div class="progress-step" onclick="showOnboardingPreview('templates/onboarding_first_story_created_dm_uat.html', 'Day 2-4: First Story Created', this)" style="cursor: pointer;">
+                    <div class="progress-step" onclick="showOnboardingPreview('templates/onboarding_firststorycreated.html', 'Day 2-4: First Story Created', this)" style="cursor: pointer;">
                     <div class="step-number">2</div>
                     <div class="step-label">Day 2-4: First Story Created</div>
                 </div>
@@ -1821,7 +1821,7 @@
                 <h2 class="timeline-title">⚡ Email Sequence Timeline</h2>
                 <div class="power-users-timeline-grid">
                     <!-- Email 1: Premium Features -->
-                    <div class="power-user-card active-card" onclick="showPowerUsersPreview('templates/power_user_premium_features_email_dm_uat.html', 'Premium Features', this)" style="cursor: pointer;">
+                    <div class="power-user-card active-card" onclick="showPowerUsersPreview('templates/power_user_pro_tips_md_uat.html', 'Premium Features', this)" style="cursor: pointer;">
                         <div class="card-number">1</div>
                         <div class="card-header">
                             <div class="card-icon">🚀</div>
@@ -1832,7 +1832,7 @@
                     </div>
                     
                     <!-- Email 2: Education -->
-                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/power_user_education_email_dm_uat.html', 'Education', this)" style="cursor: pointer;">
+                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/poweruser-education.html', 'Education', this)" style="cursor: pointer;">
                         <div class="card-number">2</div>
                         <div class="card-header">
                             <div class="card-icon">📚</div>
@@ -1854,7 +1854,7 @@
                     </div>
                     
                     <!-- Email 4: Impact Report -->
-                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/power_user_impact_email_dm_uat.html', 'Impact Report', this)" style="cursor: pointer;">
+                    <div class="power-user-card" onclick="showPowerUsersPreview('templates/impact_email_dm.html', 'Impact Report', this)" style="cursor: pointer;">
                         <div class="card-number">4</div>
                         <div class="card-header">
                             <div class="card-icon">📊</div>
@@ -1891,7 +1891,7 @@
                 </div>
                 
                 <!-- Email Preview iframe -->
-                <iframe id="powerUsersPreviewFrame" src="templates/power_user_premium_features_email_dm_uat.html" class="email-preview-iframe"></iframe>
+                <iframe id="powerUsersPreviewFrame" src="templates/power_user_pro_tips_md_uat.html" class="email-preview-iframe"></iframe>
             </div>
         </div>
         
@@ -2179,8 +2179,8 @@ StoryBud Team`;
                 if (emailUrl.startsWith('http')) {
                     previewFrame.src = emailUrl;
                 } else {
-                    // Local file - construct full path
-                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                    // Local file - use relative path
+                    previewFrame.src = emailUrl;
                 }
             }
             
@@ -2222,8 +2222,8 @@ StoryBud Team`;
                 if (emailUrl.startsWith('http')) {
                     previewFrame.src = emailUrl;
                 } else {
-                    // Local file - construct full path
-                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                    // Local file - use relative path
+                    previewFrame.src = emailUrl;
                 }
             }
             
@@ -2265,8 +2265,8 @@ StoryBud Team`;
                 if (emailUrl.startsWith('http')) {
                     previewFrame.src = emailUrl;
                 } else {
-                    // Local file - construct full path
-                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                    // Local file - use relative path
+                    previewFrame.src = emailUrl;
                 }
             }
             
@@ -2317,8 +2317,8 @@ StoryBud Team`;
                 if (emailUrl.startsWith('http')) {
                     previewFrame.src = emailUrl;
                 } else {
-                    // Local file - construct full path
-                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                    // Local file - use relative path
+                    previewFrame.src = emailUrl;
                 }
             }
             
@@ -2369,8 +2369,8 @@ StoryBud Team`;
                 if (emailUrl.startsWith('http')) {
                     previewFrame.src = emailUrl;
                 } else {
-                    // Local file - construct full path
-                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                    // Local file - use relative path
+                    previewFrame.src = emailUrl;
                 }
             }
             
@@ -2421,8 +2421,8 @@ StoryBud Team`;
                 if (emailUrl.startsWith('http')) {
                     previewFrame.src = emailUrl;
                 } else {
-                    // Local file - construct full path
-                    previewFrame.src = window.location.origin + '/' + emailUrl;
+                    // Local file - use relative path
+                    previewFrame.src = emailUrl;
                 }
             }
             
@@ -2680,14 +2680,12 @@ StoryBud Team`;
                     <label for="testEmailTemplate">Template:</label>
                     <select id="testEmailTemplate" required>
                         <option value="">Select a template</option>
-                        <option value="1_qualified_lead_welcome.html">Qualified - Day 0-1: Welcome</option>
-                        <option value="2_ qualified-lead-cta.html">Qualified - Day 2-4: First Activation</option>
-                        <option value="3_qualified_lead_first_activation.html">Qualified - Day 5-7: Education</option>
-                        <option value="4_qualified_lead_encouragement.html">Qualified - Day 8-10: Engagement</option>
-                        <option value="5_qualified_lead_day10_followup.html">Qualified - Day 11-14: Retention</option>
-                        <option value="01-onboarding-foundation.html">Adoption - Day 0-1: Welcome</option>
-                        <option value="03-first-story-created.html">Adoption - Day 2-4: First Activation</option>
-                        <option value="storybud_education_email.html">Adoption - Day 5-7: Education</option>
+                        <option value="qualified_testimonials_dm_uat.html">Qualified - Testimonials</option>
+                        <option value="qualified_encouragement_dm_uat.html">Qualified - Encouragement</option>
+                        <option value="onboarding_welcome_email_dm_uat.html">Onboarding - Welcome</option>
+                        <option value="onboarding_firststorycreated.html">Onboarding - First Story Created</option>
+                        <option value="onboarding_email_week1_md_uat.html">Onboarding - Week 1</option>
+                        <option value="onboarding_freetrial.html">Onboarding - Free Trial</option>
                         <option value="04-weekly-reading-report.html">Adoption - Day 8-10: Engagement</option>
 
                         <option value="storytime_email_day1_dm_uat.html">Retention - Day 1: Welcome</option>
@@ -2703,11 +2701,10 @@ StoryBud Team`;
 
                         <option value="churn_recovery20_dm_uat.html">Churn Recovery - Day 20: Final Push</option>
                         <option value="dropped_nurture_day21_dm_uat.html">Cold - Day 21: Nurture Check-in</option>
-                        <option value="dropped_nurture_offer_day21_dm_uat.html">Cold - Day 21: Special Offer</option>
-                        <option value="power_user_premium_features_email_dm_uat.html">Power Users - Premium Features</option>
-                        <option value="power_user_education_email_dm_uat.html">Power Users - Education</option>
+                        <option value="dropped_nurtureofferday21.html">Cold - Day 21: Special Offer</option>
+                        <option value="poweruser-education.html">Power Users - Education</option>
                         <option value="power_user_pro_tips_md_uat.html">Power Users - Pro Tips</option>
-                        <option value="power_user_impact_email_dm_uat.html">Power Users - Impact Report</option>
+                        <option value="impact_email_dm.html">Power Users - Impact Report</option>
                         <option value="power_user_credits_running_low_dm_uat.html">Power Users - Credits Running Low</option>
 
                         <option value="retention_email_monthly_md_uat.html">Retention - Monthly Milestone</option>
