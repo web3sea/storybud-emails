@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>How Did You Like "{{last_story_title}}"? - StoryBud</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <style>
+        /* Reset and base styles */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        table { border-spacing: 0 !important; border-collapse: collapse !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+        
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100%;
+            background-color: #F8FAFC !important;
+            font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+        }
+        
+        .main-container {
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Component styles */
+        .story-gradient-bg {
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            background-color: #6366F1;
+        }
+        
+        .story-recap-card {
+            background-color: #FEF7FF;
+            border: 2px solid #DDD6FE;
+            border-radius: 16px;
+        }
+        
+        .discussion-section {
+            background-color: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            border-left: 4px solid #0EA5E9;
+            border-radius: 12px;
+        }
+        
+        .question-card {
+            background-color: #ffffff;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            margin: 8px 0;
+        }
+        
+        .next-stories-grid {
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: 16px;
+        }
+        
+        .story-suggestion-card {
+            background-color: #ffffff;
+            border: 1px solid #D1FAE5;
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+        
+        .feedback-section {
+            background-color: #FFFBEB;
+            border: 1px solid #FEF3C7;
+            border-radius: 12px;
+        }
+        
+        /* Button styles */
+        .primary-button {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.25);
+        }
+        
+        .secondary-button {
+            background-color: #F3F4F6;
+            color: #374151 !important;
+            border: 1px solid #D1D5DB;
+        }
+        
+        .feedback-button {
+            background-color: #F59E0B;
+            color: #ffffff !important;
+        }
+        
+        /* Text styles */
+        .child-name {
+            color: #8B5CF6;
+            font-weight: 700;
+        }
+        
+        .story-title {
+            color: #6366F1;
+            font-weight: 700;
+        }
+        
+        .discussion-prompt {
+            color: #0EA5E9;
+            font-weight: 600;
+        }
+        
+        .lesson-highlight {
+            color: #059669;
+            font-weight: 600;
+        }
+        
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-padding { padding: 20px !important; }
+            .mobile-text-center { text-align: center !important; }
+            .hero-title { font-size: 24px !important; }
+            .story-suggestion-card { margin-bottom: 16px !important; }
+            .primary-button, .secondary-button { 
+                display: block !important; 
+                width: 100% !important; 
+                max-width: 280px !important; 
+                margin: 8px auto !important; 
+            }
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #0F172A !important; }
+            .main-container { background-color: #1E293B !important; }
+            .white-bg { background-color: #334155 !important; }
+            
+            h1, h2, h3, h4, p, td { color: #F1F5F9 !important; }
+            .child-name { color: #C4B5FD !important; }
+            .story-title { color: #A5B4FC !important; }
+            
+            .story-recap-card { 
+                background-color: rgba(196, 181, 253, 0.1) !important;
+                border-color: rgba(196, 181, 253, 0.3) !important;
+            }
+            
+            .discussion-section {
+                background-color: rgba(14, 165, 233, 0.1) !important;
+                border-color: rgba(14, 165, 233, 0.3) !important;
+            }
+            
+            .question-card, .story-suggestion-card {
+                background-color: #475569 !important;
+                border-color: #64748B !important;
+            }
+            
+            .next-stories-grid {
+                background-color: rgba(16, 185, 129, 0.1) !important;
+                border-color: rgba(16, 185, 129, 0.3) !important;
+            }
+            
+            .feedback-section {
+                background-color: rgba(245, 158, 11, 0.1) !important;
+                border-color: rgba(245, 158, 11, 0.3) !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100% !important; min-width: 100%; background-color: #F8FAFC;">
+    
+    <!-- Preheader Text -->
+    <span style="display: none; font-size: 1px; color: #F8FAFC; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        How did you and {{child_name}} enjoy "{{last_story_title}}"? Let's keep the adventure going with perfect next story suggestions! 📖
+    </span>
+    
+    <!-- Main Container -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F8FAFC;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+                
+                <!-- Email Container -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="main-container" style="max-width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.07);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="padding: 0;">
+                            <!--[if mso]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:140px;">
+                                <v:fill type="gradient" color="#6366F1" color2="#8B5CF6" angle="135"/>
+                                <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                            <div class="story-gradient-bg" style="padding: 40px 30px; text-align: center;">
+                                <div style="font-size: 48px; margin-bottom: 12px;">📖</div>
+                                <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+                                    How Was Your Story Adventure?
+                                </h1>
+                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9);">
+                                    Let's keep the magic going with your next perfect story!
+                                </p>
+                            </div>
+                            <!--[if mso]>
+                                </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td class="white-bg" style="padding: 36px 30px;" class="mobile-padding">
+                            
+                            <!-- Greeting -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                            Hi {{user_name|default:"there"}}!
+                                        </p>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                            I hope you and <span class="child-name">{{child_name|default:"your little reader"}}</span> enjoyed reading <span class="story-title">"{{last_story_title|default:"your latest adventure"}}"</span> together! 
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Story Recap -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <div class="story-recap-card" style="padding: 24px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #6366F1;">
+                                                Your Story Recap
+                                            </h3>
+                                            
+                                            <div style="margin-bottom: 16px; padding: 16px; background-color: rgba(255, 255, 255, 0.7); border-radius: 8px;">
+                                                <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; font-style: italic;">
+                                                    "{{story_preview_text|default:"In this magical adventure, your child discovered the power of friendship and courage while solving puzzles in an enchanted forest..."}}"
+                                                </p>
+                                            </div>
+                                            
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td width="50%" style="vertical-align: top; padding-right: 12px;">
+                                                        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 12px; color: #6B7280; font-weight: 600;">THEME</p>
+                                                        <p style="margin: 0 0 12px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">{{story_theme|default:"Friendship & Courage"}}</p>
+                                                    </td>
+                                                    <td width="50%" style="vertical-align: top; padding-left: 12px;">
+                                                        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 12px; color: #6B7280; font-weight: 600;">READING TIME</p>
+                                                        <p style="margin: 0 0 12px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">{{reading_time|default:"8 minutes"}}</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Discussion Questions -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="discussion-section" style="padding: 24px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #0EA5E9;">
+                                                💭 Great Discussion Questions
+                                            </h3>
+                                            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                <span class="discussion-prompt">Deepen your connection</span> with these thoughtful questions about the story:
+                                            </p>
+                                            
+                                            <div class="question-card" style="padding: 12px; margin-bottom: 8px;">
+                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                    <strong>🤔 {{question_1|default:"What was your favorite part of the adventure and why?"}}</strong>
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="question-card" style="padding: 12px; margin-bottom: 8px;">
+                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                    <strong>💪 {{question_2|default:"How did the main character show courage in the story?"}}</strong>
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="question-card" style="padding: 12px;">
+                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                    <strong>🌟 {{question_3|default:"If you were in the story, what would you have done differently?"}}</strong>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Learning Impact -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #374151;">
+                                            <strong style="color: #7C3AED;">Learning Moment:</strong> This story helped {{child_name}} explore <span class="lesson-highlight">{{key_lesson|default:"the importance of helping friends and being brave when facing challenges"}}</span>. These themes build emotional intelligence and social skills!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Next Story Suggestions -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="next-stories-grid" style="padding: 24px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #047857;">
+                                                🚀 Perfect Next Adventures
+                                            </h3>
+                                            <p style="margin: 0 0 20px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                Based on {{child_name}}'s interests in <em>{{child_interests|default:"adventure and friendship stories"}}</em>:
+                                            </p>
+                                            
+                                            <!-- Story Suggestion 1 -->
+                                            <div class="story-suggestion-card" style="padding: 16px; margin-bottom: 12px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="60" style="vertical-align: top;">
+                                                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                                <span style="color: #ffffff; font-size: 20px;">{{story_1_emoji|default:"🏰"}}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td style="padding-left: 12px;">
+                                                            <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                                {{suggested_story_1_title|default:"The Castle of Kind Hearts"}}
+                                                            </h4>
+                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                {{suggested_story_1_desc|default:"Help others and discover the magic of kindness"}}
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            
+                                            <!-- Story Suggestion 2 -->
+                                            <div class="story-suggestion-card" style="padding: 16px; margin-bottom: 12px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="60" style="vertical-align: top;">
+                                                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                                <span style="color: #ffffff; font-size: 20px;">{{story_2_emoji|default:"🌟"}}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td style="padding-left: 12px;">
+                                                            <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                                {{suggested_story_2_title|default:"The Starlight Detective"}}
+                                                            </h4>
+                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                {{suggested_story_2_desc|default:"Solve mysteries while exploring problem-solving skills"}}
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            
+                                            <!-- Story Suggestion 3 -->
+                                            <div class="story-suggestion-card" style="padding: 16px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="60" style="vertical-align: top;">
+                                                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                                <span style="color: #ffffff; font-size: 20px;">{{story_3_emoji|default:"🦋"}}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td style="padding-left: 12px;">
+                                                            <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                                {{suggested_story_3_title|default:"The Butterfly Garden Mystery"}}
+                                                            </h4>
+                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                {{suggested_story_3_desc|default:"Discover nature's wonders and environmental awareness"}}
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- CTA Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 28px;">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{create_next_story_link|default:'#'}}" style="height:52px;v-text-anchor:middle;width:240px;" arcsize="50%" stroke="f" fillcolor="#10B981">
+                                            <w:anchorlock/>
+                                            <center>
+                                        <![endif]-->
+                                        <a href="{{create_next_story_link|default:'#'}}" class="primary-button" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #ffffff; display: inline-block; font-family: Georgia, serif; font-size: 16px; font-weight: 700; line-height: 52px; text-align: center; text-decoration: none; width: 240px; -webkit-text-size-adjust: none; border-radius: 26px; margin-bottom: 12px;">
+                                            Create Next Adventure
+                                        </a>
+                                        <!--[if mso]>
+                                            </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                        
+                                        <br>
+                                        
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{browse_stories_link|default:'#'}}" style="height:44px;v-text-anchor:middle;width:180px;" arcsize="50%" stroke="f" fillcolor="#F3F4F6">
+                                            <w:anchorlock/>
+                                            <center>
+                                        <![endif]-->
+                                        <a href="{{browse_stories_link|default:'#'}}" class="secondary-button" style="background-color: #F3F4F6; color: #374151; display: inline-block; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 44px; text-align: center; text-decoration: none; width: 180px; -webkit-text-size-adjust: none; border-radius: 22px; border: 1px solid #D1D5DB;">
+                                            Browse All Stories
+                                        </a>
+                                        <!--[if mso]>
+                                            </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Feedback Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 24px;">
+                                        <div class="feedback-section" style="padding: 20px; text-align: center;">
+                                            <h4 style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #92400E;">
+                                                How was your reading experience?
+                                            </h4>
+                                            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                Your feedback helps us create better stories for {{child_name}}!
+                                            </p>
+                                            
+                                            <!--[if mso]>
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{feedback_link|default:'#'}}" style="height:40px;v-text-anchor:middle;width:160px;" arcsize="50%" stroke="f" fillcolor="#F59E0B">
+                                                <w:anchorlock/>
+                                                <center>
+                                            <![endif]-->
+                                            <a href="{{feedback_link|default:'#'}}" class="feedback-button" style="background-color: #F59E0B; color: #ffffff; display: inline-block; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 40px; text-align: center; text-decoration: none; width: 160px; -webkit-text-size-adjust: none; border-radius: 20px;">
+                                                Share Feedback
+                                            </a>
+                                            <!--[if mso]>
+                                                </center>
+                                            </v:roundrect>
+                                            <![endif]-->
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Closing -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0; font-family: Georgia, serif; font-size: 16px; color: #6366F1; font-style: italic;">
+                                            Can't wait to see which adventure you choose next!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 40px 30px; text-align: center; background-color: #F9FAFB; border-top: 1px solid #E5E7EB;">
+                            <!-- Logo -->
+                            <img src="{{logo_url|default:'https://i.imgur.com/UHKz2jA.png'}}" alt="StoryBud" width="150" height="auto" style="width:150px; height:auto; margin-bottom: 20px;">
+                            
+                            <p style="margin: 0 0 8px 0; font-family: Georgia, serif; color: #7C3AED; font-weight: 600; font-size: 18px;">
+                                Keep the story magic alive!
+                            </p>
+                            <p style="margin: 0 0 24px 0; font-family: Arial, sans-serif; color: #374151;">
+                                The StoryBud Team
+                            </p>
+                            
+                            <!-- Footer Links -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <a href="https://storybud.com/library" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Story Library</a>
+                                        <a href="https://storybud.com/discussion-guides" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Discussion Guides</a>
+                                        <a href="https://storybud.com/support" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Support</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal -->
+                            <p style="margin: 0; font-size: 13px; color: #4B5563; line-height: 1.5;">
+                                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'user%40example.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | 
+                                1111B South Governors Avenue, STE 37071, Dover, DE 19904<br>
+                                © 2025 StoryBud All Rights Reserved
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Container -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
+</body>
+</html>

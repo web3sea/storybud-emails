@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template Color Audit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .test-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .white-bg {
+            background-color: #ffffff;
+        }
+        .light-gray-bg {
+            background-color: #F3F4F6;
+        }
+        .dark-bg {
+            background-color: #1F2937;
+        }
+        .black-bg {
+            background-color: #000000;
+        }
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .template-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        .issue {
+            background-color: #FEE2E2;
+            border: 1px solid #FCA5A5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .warning {
+            background-color: #FEF3C7;
+            border: 1px solid #FCD34D;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Template Color Audit - Readability Issues</h1>
+        
+        <h2>Critical Issues Found (Light Grey on White)</h2>
+        <div class="test-grid">
+            <!-- Testing problematic colors from templates -->
+            
+            <div class="test-card white-bg">
+                <div class="template-name">Multiple Templates - Footer Text</div>
+                <p style="color: #9CA3AF;">Footer legal text (#9CA3AF on white)</p>
+                <p style="color: #6B7280;">Footer links (#6B7280 on white)</p>
+                <div class="issue">
+                    <strong>Issue:</strong> Very poor contrast ratio (~3.2:1)
+                    <br>Templates affected: impact_email_dm, onboarding_welcome_email_dm_uat, etc.
+                </div>
+            </div>
+
+            <div class="test-card white-bg">
+                <div class="template-name">storytime_email templates</div>
+                <p style="color: #a0aec0;">Footer text (#a0aec0 on white)</p>
+                <p style="color: #cbd5e0;">Link text (#cbd5e0 on white)</p>
+                <div class="issue">
+                    <strong>Issue:</strong> Extremely poor contrast (~2.5:1)
+                    <br>Templates affected: All storytime_email_day[1-7]_dm_uat.html
+                </div>
+            </div>
+
+            <div class="test-card light-gray-bg">
+                <div class="template-name">Various Templates - Secondary Text</div>
+                <p style="color: #9CA3AF;">Secondary text on #F3F4F6 background</p>
+                <p style="color: #D1D5DB;">Light text on light gray background</p>
+                <div class="warning">
+                    <strong>Warning:</strong> Poor contrast (~3:1)
+                    <br>Templates affected: retention_email_monthly, onboarding_welcome
+                </div>
+            </div>
+        </div>
+
+        <h2>Dark Mode Issues (Testing with prefers-color-scheme)</h2>
+        <div class="test-grid">
+            <div class="test-card dark-bg">
+                <div class="template-name">Dark Mode - Fixed Colors</div>
+                <p style="color: #D1D5DB;">Good: Text #D1D5DB on dark</p>
+                <p style="color: #9CA3AF;">Okay: Text #9CA3AF on dark</p>
+                <p style="color: #6B7280;">Poor: Text #6B7280 on dark</p>
+            </div>
+
+            <div class="test-card black-bg">
+                <div class="template-name">Pure Black Background (Outlook Dark)</div>
+                <p style="color: #475569;">Bad: #475569 on black (often unchanged in dark mode)</p>
+                <p style="color: #6B7280;">Bad: #6B7280 on black</p>
+                <p style="color: #9CA3AF;">Okay: #9CA3AF on black</p>
+                <div class="issue">
+                    <strong>Critical:</strong> Colors #475569 and #6B7280 are nearly invisible on black
+                </div>
+            </div>
+        </div>
+
+        <h2>Templates with Most Issues</h2>
+        <div>
+            <div class="issue">
+                <strong>1. impact_email_dm.html</strong>
+                <ul>
+                    <li>Footer uses #9CA3AF for links and legal text (lines 485, 490)</li>
+                    <li>Body text uses #475569 which becomes unreadable in dark mode (lines 217, 220, 231, etc.)</li>
+                    <li>Dark mode CSS doesn't update all text colors properly</li>
+                </ul>
+            </div>
+            
+            <div class="issue">
+                <strong>2. All storytime_email_day[1-7]_dm_uat.html</strong>
+                <ul>
+                    <li>Footer text uses #a0aec0 and #cbd5e0 - very light grays</li>
+                    <li>Footer link color #6b7280 is too light for white backgrounds</li>
+                    <li>These colors are nearly invisible on white</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <strong>3. retention_email_monthly_md_uat.html</strong>
+                <ul>
+                    <li>Uses #9CA3AF for footer text (line 147)</li>
+                    <li>Dark mode overrides may not be comprehensive</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <strong>4. onboarding_welcome_email_dm_uat.html</strong>
+                <ul>
+                    <li>Footer text #9CA3AF on light backgrounds (lines 376, 381)</li>
+                    <li>Poor contrast in footer section</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Recommended Fixes</h2>
+        <div style="background-color: #F0FDF4; border: 1px solid #86EFAC; padding: 20px; border-radius: 8px; margin-top: 20px;">
+            <h3>For Light Mode (White/Light Gray Backgrounds):</h3>
+            <ul>
+                <li>Replace #9CA3AF → #6B7280 (minimum) or #4B5563 (better)</li>
+                <li>Replace #a0aec0 → #6B7280</li>
+                <li>Replace #cbd5e0 → #9CA3AF</li>
+                <li>Replace #6B7280 → #4B5563 (for better contrast)</li>
+                <li>Body text #475569 → #374151 (darker, better contrast)</li>
+            </ul>
+            
+            <h3>For Dark Mode Support:</h3>
+            <ul>
+                <li>Ensure all #475569 text → #D1D5DB or lighter in dark mode</li>
+                <li>Update #6B7280 → #9CA3AF minimum in dark mode</li>
+                <li>Add comprehensive @media (prefers-color-scheme: dark) rules</li>
+                <li>Test with Outlook dark mode ([data-ogsc] selectors)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

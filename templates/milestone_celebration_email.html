@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>{{child_name}} Just Reached an Amazing Milestone! - StoryBud</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <style>
+        /* Reset and base styles */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        table { border-spacing: 0 !important; border-collapse: collapse !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+        
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100%;
+            background-color: #FEF3F2 !important;
+            font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+        }
+        
+        .main-container {
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Celebration gradient */
+        .celebration-gradient-bg {
+            background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+            background-color: #FCD34D;
+        }
+        
+        /* Component styles */
+        .milestone-badge {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: inline-block;
+        }
+        
+        .achievement-card {
+            background-color: #FEF3F2;
+            border: 2px solid #FCA5A5;
+            border-radius: 16px;
+        }
+        
+        .stat-bubble {
+            background-color: #F3F4F6;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 4px;
+        }
+        
+        .reward-box {
+            background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+            border: 2px dashed #3B82F6;
+            border-radius: 16px;
+        }
+        
+        .next-goal-section {
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: 12px;
+        }
+        
+        /* Button styles */
+        .celebrate-button {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.25);
+        }
+        
+        .share-button {
+            background-color: #7C3AED;
+            color: #ffffff !important;
+        }
+        
+        /* Text styles */
+        .child-name {
+            color: #DC2626;
+            font-weight: 700;
+        }
+        
+        .milestone-title {
+            background: linear-gradient(135deg, #DC2626 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #DC2626;
+        }
+        
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-padding { padding: 20px !important; }
+            .mobile-text-center { text-align: center !important; }
+            .hero-title { font-size: 24px !important; }
+            .milestone-badge { width: 100px !important; height: 100px !important; }
+            .stat-bubble { display: block !important; margin: 8px auto !important; }
+            .celebrate-button, .share-button { 
+                display: block !important; 
+                width: 100% !important; 
+                max-width: 280px !important; 
+                margin: 0 auto !important; 
+            }
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #1a1a1a !important; }
+            .main-container { background-color: #1F2937 !important; }
+            .white-bg { background-color: #2d3748 !important; }
+            
+            h1, h2, h3, h4, p, td { color: #F3F4F6 !important; }
+            .child-name { color: #FCA5A5 !important; }
+            
+            .achievement-card { 
+                background-color: rgba(252, 165, 165, 0.1) !important;
+                border-color: rgba(252, 165, 165, 0.3) !important;
+            }
+            
+            .stat-bubble {
+                background-color: #374151 !important;
+                border-color: #4B5563 !important;
+            }
+            
+            .reward-box {
+                background: rgba(59, 130, 246, 0.1) !important;
+                border-color: rgba(59, 130, 246, 0.5) !important;
+            }
+            
+            .next-goal-section {
+                background-color: rgba(110, 231, 183, 0.1) !important;
+                border-color: rgba(110, 231, 183, 0.3) !important;
+            }
+        }
+        
+        /* Confetti animation */
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        .confetti {
+            position: absolute;
+            animation: confetti-fall 3s linear;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100% !important; min-width: 100%; background-color: #FEF3F2;">
+    
+    <!-- Preheader Text -->
+    <span style="display: none; font-size: 1px; color: #FEF3F2; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        {{child_name}} just achieved {{milestone_achieved}}! Time to celebrate this amazing reading journey milestone! 🎉
+    </span>
+    
+    <!-- Main Container -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #FEF3F2;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+                
+                <!-- Email Container -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="main-container" style="max-width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                    
+                    <!-- Celebration Header -->
+                    <tr>
+                        <td align="center" style="padding: 0;">
+                            <!--[if mso]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:200px;">
+                                <v:fill type="gradient" color="#FCD34D" color2="#F59E0B" angle="135"/>
+                                <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                            <div class="celebration-gradient-bg" style="padding: 40px 30px; text-align: center;">
+                                <!-- Milestone Badge -->
+                                <div class="milestone-badge" style="margin: 0 auto 20px;">
+                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+                                        <tr>
+                                            <td align="center" valign="middle" style="color: #ffffff;">
+                                                <div style="font-size: 48px;">{{milestone_emoji|default:"🏆"}}</div>
+                                                <div style="font-size: 14px; font-weight: 700; margin-top: 4px;">{{milestone_type|default:"SUPER READER"}}</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+                                    Amazing News, {{user_name|default:"there"}}!
+                                </h1>
+                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.95); font-weight: 500;">
+                                    <span class="child-name">{{child_name|default:"Your little reader"}}</span> just reached an incredible milestone!
+                                </p>
+                            </div>
+                            <!--[if mso]>
+                                </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td class="white-bg" style="padding: 36px 30px;" class="mobile-padding">
+                            
+                            <!-- Achievement Announcement -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 32px;">
+                                        <h2 class="milestone-title" style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 32px; font-weight: 700; line-height: 1.2;">
+                                            {{milestone_achieved|default:"10 Stories Read!"}}
+                                        </h2>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; color: #4B5563;">
+                                            {{milestone_description|default:"That's 10 magical adventures completed together!"}}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Achievement Stats -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="achievement-card" style="padding: 24px; text-align: center;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #DC2626;">
+                                                {{child_name}}'s Journey So Far
+                                            </h3>
+                                            
+                                            <div style="margin-bottom: 16px;">
+                                                <span class="stat-bubble">
+                                                    <span style="font-size: 20px; font-weight: 700; color: #7C3AED;">{{stories_read_count|default:"10"}}</span>
+                                                    <span style="font-size: 12px; color: #6B7280;">Stories</span>
+                                                </span>
+                                                <span class="stat-bubble">
+                                                    <span style="font-size: 20px; font-weight: 700; color: #10B981;">{{total_reading_time|default:"5.5"}}</span>
+                                                    <span style="font-size: 12px; color: #6B7280;">Hours</span>
+                                                </span>
+                                                <span class="stat-bubble">
+                                                    <span style="font-size: 20px; font-weight: 700; color: #F59E0B;">{{reading_streak|default:"7"}}</span>
+                                                    <span style="font-size: 12px; color: #6B7280;">Day Streak</span>
+                                                </span>
+                                            </div>
+                                            
+                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #4B5563; font-style: italic;">
+                                                "{{achievement_message|default:"Every story read is building confidence, vocabulary, and a lifelong love of reading!"}}"
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Reward Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="reward-box" style="padding: 24px; text-align: center;">
+                                            <div style="font-size: 32px; margin-bottom: 8px;">🎁</div>
+                                            <h3 style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #1E40AF;">
+                                                Milestone Reward Unlocked!
+                                            </h3>
+                                            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                                {{reward_description|default:"You've earned 50 bonus credits for your next story creation!"}}
+                                            </p>
+                                            
+                                            <!--[if mso]>
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{claim_reward_link|default:'#'}}" style="height:48px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#10B981">
+                                                <w:anchorlock/>
+                                                <center>
+                                            <![endif]-->
+                                            <a href="{{claim_reward_link|default:'#'}}" class="celebrate-button" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #ffffff; display: inline-block; font-family: Georgia, serif; font-size: 16px; font-weight: 700; line-height: 48px; text-align: center; text-decoration: none; width: 200px; -webkit-text-size-adjust: none; border-radius: 24px;">
+                                                Claim Reward
+                                            </a>
+                                            <!--[if mso]>
+                                                </center>
+                                            </v:roundrect>
+                                            <![endif]-->
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Parent Message -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #374151;">
+                                            <strong style="color: #7C3AED;">Why this matters:</strong> Research shows that children who read regularly develop stronger vocabulary, better focus, and enhanced creativity. {{child_name}} is building these crucial skills with every StoryBud adventure!
+                                        </p>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #374151;">
+                                            You're doing an amazing job fostering a love of reading. These moments you're creating together will stay with {{child_name}} for a lifetime.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Next Goal Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <div class="next-goal-section" style="padding: 20px;">
+                                            <h3 style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #047857;">
+                                                Next Milestone: {{next_milestone|default:"15 Stories"}}
+                                            </h3>
+                                            <div style="background-color: #E5E7EB; border-radius: 8px; height: 12px; margin-bottom: 8px;">
+                                                <div style="background: linear-gradient(90deg, #10B981 0%, #6EE7B7 100%); height: 12px; border-radius: 8px; width: {{next_milestone_progress|default:"67"}}%;"></div>
+                                            </div>
+                                            <p style="margin: 8px 0 0 0; font-family: Arial, sans-serif; font-size: 14px; color: #047857;">
+                                                Only {{stories_until_next|default:"5"}} more stories to go!
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Share Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 24px;">
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                            Proud of {{child_name}}'s achievement? Share the joy!
+                                        </p>
+                                        
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{share_achievement_link|default:'#'}}" style="height:44px;v-text-anchor:middle;width:160px;" arcsize="50%" stroke="f" fillcolor="#7C3AED">
+                                            <w:anchorlock/>
+                                            <center>
+                                        <![endif]-->
+                                        <a href="{{share_achievement_link|default:'#'}}" class="share-button" style="background-color: #7C3AED; color: #ffffff; display: inline-block; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 44px; text-align: center; text-decoration: none; width: 160px; -webkit-text-size-adjust: none; border-radius: 22px;">
+                                            Share Milestone
+                                        </a>
+                                        <!--[if mso]>
+                                            </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Closing -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0; font-family: Georgia, serif; font-size: 18px; color: #DC2626; font-style: italic; font-weight: 500;">
+                                            Here's to many more magical milestones ahead!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 40px 30px; text-align: center; background-color: #F9FAFB; border-top: 1px solid #E5E7EB;">
+                            <!-- Logo -->
+                            <img src="{{logo_url|default:'https://i.imgur.com/UHKz2jA.png'}}" alt="StoryBud" width="150" height="auto" style="width:150px; height:auto; margin-bottom: 20px;">
+                            
+                            <p style="margin: 0 0 8px 0; font-family: Georgia, serif; color: #7C3AED; font-weight: 600; font-size: 18px;">
+                                Celebrating every reading milestone!
+                            </p>
+                            <p style="margin: 0 0 24px 0; font-family: Arial, sans-serif; color: #374151;">
+                                The StoryBud Team
+                            </p>
+                            
+                            <!-- Footer Links -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <a href="https://storybud.com/milestones" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">View All Milestones</a>
+                                        <a href="https://storybud.com/rewards" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Rewards</a>
+                                        <a href="https://storybud.com/support" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Support</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal -->
+                            <p style="margin: 0; font-size: 13px; color: #4B5563; line-height: 1.5;">
+                                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'user%40example.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | 
+                                1111B South Governors Avenue, STE 37071, Dover, DE 19904<br>
+                                © 2025 StoryBud All Rights Reserved
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Container -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
+</body>
+</html>

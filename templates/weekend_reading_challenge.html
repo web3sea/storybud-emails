@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>{{challenge_theme}} Weekend Reading Challenge! - StoryBud</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <style>
+        /* Reset and base styles */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        table { border-spacing: 0 !important; border-collapse: collapse !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+        
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100%;
+            background-color: #F0F4FF !important;
+            font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+        }
+        
+        .main-container {
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Component styles */
+        .challenge-gradient-bg {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            background-color: #FF6B6B;
+        }
+        
+        .challenge-banner {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .challenge-badge {
+            background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: inline-block;
+            border: 3px solid #ffffff;
+        }
+        
+        .participation-card {
+            background-color: #EFF6FF;
+            border: 2px solid #BFDBFE;
+            border-radius: 16px;
+        }
+        
+        .leaderboard-section {
+            background-color: #FEFCE8;
+            border: 1px solid #FEF08A;
+            border-left: 4px solid #EAB308;
+            border-radius: 12px;
+        }
+        
+        .leaderboard-item {
+            background-color: #ffffff;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            margin: 6px 0;
+        }
+        
+        .prize-showcase {
+            background: linear-gradient(135deg, #D8B4FE 0%, #C4B5FD 100%);
+            border: 2px dashed #8B5CF6;
+            border-radius: 16px;
+        }
+        
+        .story-spotlight {
+            background-color: #F0FDF4;
+            border: 1px solid #BBF7D0;
+            border-radius: 12px;
+        }
+        
+        .urgency-timer {
+            background-color: #FEF2F2;
+            border: 2px solid #FECACA;
+            border-radius: 12px;
+        }
+        
+        /* Button styles */
+        .challenge-button {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 6px rgba(255, 107, 107, 0.25);
+        }
+        
+        .secondary-button {
+            background-color: #6366F1;
+            color: #ffffff !important;
+        }
+        
+        .leaderboard-button {
+            background-color: #EAB308;
+            color: #ffffff !important;
+        }
+        
+        /* Text styles */
+        .child-name {
+            color: #FF6B6B;
+            font-weight: 700;
+        }
+        
+        .challenge-title {
+            background: linear-gradient(135deg, #FF6B6B 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #FF6B6B;
+        }
+        
+        .position-highlight {
+            color: #EAB308;
+            font-weight: 700;
+        }
+        
+        .prize-text {
+            color: #7C3AED;
+            font-weight: 600;
+        }
+        
+        /* Progress bar */
+        .progress-container {
+            background-color: #E5E7EB;
+            border-radius: 8px;
+            height: 16px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #FF6B6B 0%, #FF8E53 100%);
+            height: 100%;
+            border-radius: 8px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-padding { padding: 20px !important; }
+            .mobile-text-center { text-align: center !important; }
+            .hero-title { font-size: 24px !important; }
+            .challenge-badge { width: 60px !important; height: 60px !important; }
+            .challenge-button, .secondary-button { 
+                display: block !important; 
+                width: 100% !important; 
+                max-width: 280px !important; 
+                margin: 8px auto !important; 
+            }
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #0F172A !important; }
+            .main-container { background-color: #1E293B !important; }
+            .white-bg { background-color: #334155 !important; }
+            
+            h1, h2, h3, h4, p, td { color: #F1F5F9 !important; }
+            .child-name { color: #FCA5A5 !important; }
+            
+            .participation-card { 
+                background-color: rgba(59, 130, 246, 0.1) !important;
+                border-color: rgba(59, 130, 246, 0.3) !important;
+            }
+            
+            .leaderboard-section {
+                background-color: rgba(234, 179, 8, 0.1) !important;
+                border-color: rgba(234, 179, 8, 0.3) !important;
+            }
+            
+            .leaderboard-item {
+                background-color: #475569 !important;
+                border-color: #64748B !important;
+            }
+            
+            .story-spotlight {
+                background-color: rgba(16, 185, 129, 0.1) !important;
+                border-color: rgba(16, 185, 129, 0.3) !important;
+            }
+            
+            .urgency-timer {
+                background-color: rgba(239, 68, 68, 0.1) !important;
+                border-color: rgba(239, 68, 68, 0.3) !important;
+            }
+        }
+        
+        /* Animation for challenge elements */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(255, 107, 107, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.8), 0 0 30px rgba(255, 107, 107, 0.4); }
+        }
+        
+        .pulse-animation {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100% !important; min-width: 100%; background-color: #F0F4FF;">
+    
+    <!-- Preheader Text -->
+    <span style="display: none; font-size: 1px; color: #F0F4FF; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        {{challenge_theme}} Weekend Reading Challenge is here! Join {{child_name}} and families worldwide for weekend reading fun! 🏆
+    </span>
+    
+    <!-- Main Container -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F0F4FF;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+                
+                <!-- Email Container -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="main-container" style="max-width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                    
+                    <!-- Challenge Header -->
+                    <tr>
+                        <td align="center" style="padding: 0;">
+                            <!--[if mso]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:180px;">
+                                <v:fill type="gradient" color="#FF6B6B" color2="#FF8E53" angle="135"/>
+                                <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                            <div class="challenge-gradient-bg" style="padding: 40px 30px; text-align: center; position: relative;">
+                                <!-- Challenge Badge -->
+                                <div class="challenge-badge pulse-animation" style="margin: 0 auto 20px;">
+                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+                                        <tr>
+                                            <td align="center" valign="middle" style="color: #ffffff;">
+                                                <div style="font-size: 32px;">{{challenge_emoji|default:"🏆"}}</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                                <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+                                    Weekend Reading Challenge!
+                                </h1>
+                                <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 20px; color: rgba(255, 255, 255, 0.95); font-weight: 600;">
+                                    {{challenge_theme|default:"Superhero Adventures"}}
+                                </p>
+                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9);">
+                                    {{challenge_dates|default:"This Weekend • March 1-2"}}
+                                </p>
+                            </div>
+                            <!--[if mso]>
+                                </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td class="white-bg" style="padding: 36px 30px;" class="mobile-padding">
+                            
+                            <!-- Greeting & Invitation -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                            Hey {{user_name|default:"there"}}!
+                                        </p>
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                            This weekend, we're inviting <span class="child-name">{{child_name|default:"your little reader"}}</span> to join thousands of families worldwide in our special <strong>{{challenge_theme|default:"Superhero Adventures"}}</strong> reading challenge!
+                                        </p>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                            {{participants_count|default:"1,247"}} families have already signed up. Will you be next?
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Challenge Banner -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="challenge-banner" style="padding: 24px; text-align: center; color: #ffffff;">
+                                            <h2 class="challenge-title" style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: #ffffff;">
+                                                The Challenge
+                                            </h2>
+                                            <div style="font-size: 48px; margin-bottom: 16px;">{{challenge_icon|default:"📚⚡"}}</div>
+                                            <p style="margin: 0 0 12px 0; font-size: 18px; font-weight: 600; color: rgba(255, 255, 255, 0.95);">
+                                                {{challenge_goal|default:"Read 3 superhero-themed stories this weekend"}}
+                                            </p>
+                                            <p style="margin: 0; font-size: 14px; color: rgba(255, 255, 255, 0.8);">
+                                                {{challenge_description|default:"Discover your inner superhero through stories of courage, kindness, and adventure!"}}
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Your Progress -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="participation-card" style="padding: 24px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #1E40AF;">
+                                                {{child_name}}'s Progress
+                                            </h3>
+                                            
+                                            <div style="margin-bottom: 12px;">
+                                                <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                    Stories completed: <strong>{{stories_completed|default:"1"}} of {{challenge_target|default:"3"}}</strong>
+                                                </p>
+                                                <div class="progress-container">
+                                                    <div class="progress-bar" style="width: {{progress_percentage|default:"33"}}%;"></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td width="50%" style="vertical-align: top; padding-right: 8px;">
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 12px; color: #6B7280;">Reading time</p>
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; font-weight: 700; color: #1E40AF;">{{weekend_reading_time|default:"12 min"}}</p>
+                                                    </td>
+                                                    <td width="50%" style="vertical-align: top; padding-left: 8px;">
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 12px; color: #6B7280;">Points earned</p>
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; font-weight: 700; color: #EAB308;">{{points_earned|default:"150"}}</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Leaderboard Preview -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="leaderboard-section" style="padding: 20px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #A16207;">
+                                                🏆 Weekend Leaderboard
+                                            </h3>
+                                            
+                                            <div class="leaderboard-item" style="padding: 12px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="40" style="text-align: center;">
+                                                            <span style="font-size: 20px;">🥇</span>
+                                                        </td>
+                                                        <td>
+                                                            <p style="margin: 0; font-size: 14px; color: #374151; font-weight: 600;">SuperReader Emma</p>
+                                                        </td>
+                                                        <td width="60" style="text-align: right;">
+                                                            <span style="font-size: 14px; font-weight: 700; color: #EAB308;">450 pts</span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            
+                                            <div class="leaderboard-item" style="padding: 12px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="40" style="text-align: center;">
+                                                            <span style="font-size: 20px;">🥈</span>
+                                                        </td>
+                                                        <td>
+                                                            <p style="margin: 0; font-size: 14px; color: #374151; font-weight: 600;">Captain Alex</p>
+                                                        </td>
+                                                        <td width="60" style="text-align: right;">
+                                                            <span style="font-size: 14px; font-weight: 700; color: #EAB308;">380 pts</span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            
+                                            <div class="leaderboard-item" style="padding: 12px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="40" style="text-align: center;">
+                                                            <span style="font-size: 20px;">🥉</span>
+                                                        </td>
+                                                        <td>
+                                                            <p style="margin: 0; font-size: 14px; color: #374151; font-weight: 600;">Wonder Maya</p>
+                                                        </td>
+                                                        <td width="60" style="text-align: right;">
+                                                            <span style="font-size: 14px; font-weight: 700; color: #EAB308;">320 pts</span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            
+                                            <p style="margin: 12px 0 0 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; text-align: center;">
+                                                {{child_name}} is currently in <span class="position-highlight">{{current_position|default:"47th"}}</span> place!
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Prize Showcase -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="prize-showcase" style="padding: 24px; text-align: center;">
+                                            <div style="font-size: 40px; margin-bottom: 12px;">{{prize_emoji|default:"🎁"}}</div>
+                                            <h3 style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #ffffff;">
+                                                Amazing Prizes Await!
+                                            </h3>
+                                            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #ffffff;">
+                                                <span class="prize-text" style="color: #ffffff; font-weight: 700;">All participants get:</span> {{participation_reward|default:"50 bonus credits + exclusive superhero badge"}}
+                                            </p>
+                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.9);">
+                                                <strong>Top 10 finishers:</strong> {{top_prize|default:"Exclusive superhero story collection + 200 bonus credits"}}
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Featured Stories -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="story-spotlight" style="padding: 20px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #047857;">
+                                                🌟 Challenge Stories Perfect for {{child_name}}
+                                            </h3>
+                                            
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td style="padding-bottom: 12px; border-bottom: 1px solid #E5E7EB;">
+                                                        <p style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                            {{featured_story_1|default:"Captain Kindness Saves the Day"}}
+                                                        </p>
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                            {{story_1_desc|default:"Learn about helping others and standing up for what's right"}} • {{story_1_time|default:"8 min read"}}
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 12px 0; border-bottom: 1px solid #E5E7EB;">
+                                                        <p style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                            {{featured_story_2|default:"The Invisible Girl's Big Discovery"}}
+                                                        </p>
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                            {{story_2_desc|default:"Discover your unique superpowers and build confidence"}} • {{story_2_time|default:"10 min read"}}
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top: 12px;">
+                                                        <p style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                            {{featured_story_3|default:"Teamwork Heroes Unite"}}
+                                                        </p>
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                            {{story_3_desc|default:"Work together to solve problems and help friends"}} • {{story_3_time|default:"7 min read"}}
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Urgency Timer -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="urgency-timer" style="padding: 20px; text-align: center;">
+                                            <h3 style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #DC2626;">
+                                                ⏰ Challenge Ends Soon!
+                                            </h3>
+                                            <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                                Only <strong>{{time_remaining|default:"18 hours"}}</strong> left to participate!
+                                            </p>
+                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280;">
+                                                Challenge closes {{challenge_end_time|default:"Sunday at 11:59 PM"}}
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- CTA Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 28px;">
+                                        <p style="margin: 0 0 20px 0; font-family: Georgia, serif; font-size: 18px; color: #374151; font-weight: 500;">
+                                            Ready to become a reading superhero?
+                                        </p>
+                                        
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{join_challenge_link|default:'#'}}" style="height:56px;v-text-anchor:middle;width:260px;" arcsize="50%" stroke="f" fillcolor="#FF6B6B">
+                                            <w:anchorlock/>
+                                            <center>
+                                        <![endif]-->
+                                        <a href="{{join_challenge_link|default:'#'}}" class="challenge-button" style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); color: #ffffff; display: inline-block; font-family: Georgia, serif; font-size: 18px; font-weight: 700; line-height: 56px; text-align: center; text-decoration: none; width: 260px; -webkit-text-size-adjust: none; border-radius: 28px; margin-bottom: 12px;">
+                                            Join Challenge Now!
+                                        </a>
+                                        <!--[if mso]>
+                                            </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                        
+                                        <br>
+                                        
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{view_leaderboard_link|default:'#'}}" style="height:44px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#6366F1">
+                                            <w:anchorlock/>
+                                            <center>
+                                        <![endif]-->
+                                        <a href="{{view_leaderboard_link|default:'#'}}" class="secondary-button" style="background-color: #6366F1; color: #ffffff; display: inline-block; font-family: Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 44px; text-align: center; text-decoration: none; width: 200px; -webkit-text-size-adjust: none; border-radius: 22px;">
+                                            View Full Leaderboard
+                                        </a>
+                                        <!--[if mso]>
+                                            </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Closing -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <p style="margin: 0; font-family: Georgia, serif; font-size: 16px; color: #FF6B6B; font-style: italic; font-weight: 500;">
+                                            Every child has superhero potential - let's unlock it together!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 40px 30px; text-align: center; background-color: #F9FAFB; border-top: 1px solid #E5E7EB;">
+                            <!-- Logo -->
+                            <img src="{{logo_url|default:'https://i.imgur.com/UHKz2jA.png'}}" alt="StoryBud" width="150" height="auto" style="width:150px; height:auto; margin-bottom: 20px;">
+                            
+                            <p style="margin: 0 0 8px 0; font-family: Georgia, serif; color: #7C3AED; font-weight: 600; font-size: 18px;">
+                                Making reading an adventure!
+                            </p>
+                            <p style="margin: 0 0 24px 0; font-family: Arial, sans-serif; color: #374151;">
+                                The StoryBud Team
+                            </p>
+                            
+                            <!-- Footer Links -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <a href="https://storybud.com/challenges" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Challenges</a>
+                                        <a href="https://storybud.com/leaderboard" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Leaderboard</a>
+                                        <a href="https://storybud.com/support" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Support</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal -->
+                            <p style="margin: 0; font-size: 13px; color: #4B5563; line-height: 1.5;">
+                                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'user%40example.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | 
+                                1111B South Governors Avenue, STE 37071, Dover, DE 19904<br>
+                                © 2025 StoryBud All Rights Reserved
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Container -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
+</body>
+</html>

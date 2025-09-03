@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
+    <title>Remember When {{child_name}} {{memorable_moment}}? - StoryBud</title>
+    
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    
+    <style>
+        /* Reset and base styles */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        table { border-spacing: 0 !important; border-collapse: collapse !important; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+        
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100%;
+            background-color: #FDF2F8 !important;
+            font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: Georgia, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+        }
+        
+        .main-container {
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Memory theme colors */
+        .memory-gradient-bg {
+            background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+            background-color: #EC4899;
+        }
+        
+        /* Component styles */
+        .memory-showcase {
+            background-color: #FEF7FF;
+            border: 2px solid #DDD6FE;
+            border-radius: 16px;
+            position: relative;
+        }
+        
+        .story-memory-card {
+            background-color: #ffffff;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            margin: 12px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .nostalgia-section {
+            background-color: #FFF7ED;
+            border: 1px solid #FED7AA;
+            border-left: 4px solid #F97316;
+            border-radius: 12px;
+        }
+        
+        .journey-timeline {
+            background-color: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            border-radius: 12px;
+        }
+        
+        .comeback-incentive {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            border-radius: 16px;
+        }
+        
+        .special-offer {
+            background-color: #FEF3C7;
+            border: 2px dashed #F59E0B;
+            border-radius: 12px;
+        }
+        
+        /* Button styles */
+        .memory-button {
+            background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 6px rgba(236, 72, 153, 0.25);
+        }
+        
+        .comeback-button {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.25);
+        }
+        
+        .browse-button {
+            background-color: #8B5CF6;
+            color: #ffffff !important;
+        }
+        
+        /* Text styles */
+        .child-name {
+            color: #EC4899;
+            font-weight: 700;
+        }
+        
+        .story-title {
+            color: #7C3AED;
+            font-weight: 700;
+        }
+        
+        .memory-highlight {
+            color: #DC2626;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .time-indicator {
+            color: #6B7280;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .achievement-stat {
+            color: #059669;
+            font-weight: 700;
+        }
+        
+        /* Timeline elements */
+        .timeline-dot {
+            background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+        }
+        
+        .timeline-line {
+            background: linear-gradient(180deg, #EC4899 0%, #8B5CF6 100%);
+            width: 2px;
+            height: 30px;
+        }
+        
+        /* Mobile Responsive */
+        @media screen and (max-width: 600px) {
+            .mobile-padding { padding: 20px !important; }
+            .mobile-text-center { text-align: center !important; }
+            .hero-title { font-size: 24px !important; }
+            .story-memory-card { margin: 8px 0 !important; }
+            .memory-button, .comeback-button { 
+                display: block !important; 
+                width: 100% !important; 
+                max-width: 280px !important; 
+                margin: 8px auto !important; 
+            }
+        }
+        
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body { background-color: #0F172A !important; }
+            .main-container { background-color: #1E293B !important; }
+            .white-bg { background-color: #334155 !important; }
+            
+            h1, h2, h3, h4, p, td { color: #F1F5F9 !important; }
+            .child-name { color: #F9A8D4 !important; }
+            .story-title { color: #C4B5FD !important; }
+            
+            .memory-showcase { 
+                background-color: rgba(139, 92, 246, 0.1) !important;
+                border-color: rgba(139, 92, 246, 0.3) !important;
+            }
+            
+            .story-memory-card {
+                background-color: #475569 !important;
+                border-color: #64748B !important;
+            }
+            
+            .nostalgia-section {
+                background-color: rgba(249, 115, 22, 0.1) !important;
+                border-color: rgba(249, 115, 22, 0.3) !important;
+            }
+            
+            .journey-timeline {
+                background-color: rgba(14, 165, 233, 0.1) !important;
+                border-color: rgba(14, 165, 233, 0.3) !important;
+            }
+            
+            .special-offer {
+                background-color: rgba(245, 158, 11, 0.1) !important;
+                border-color: rgba(245, 158, 11, 0.5) !important;
+            }
+        }
+        
+        /* Heartwarming animations */
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        
+        @keyframes memory-glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(236, 72, 153, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(236, 72, 153, 0.6), 0 0 25px rgba(139, 92, 246, 0.4); }
+        }
+        
+        .heartwarming-animation {
+            animation: gentle-pulse 3s ease-in-out infinite;
+        }
+        
+        .memory-glow {
+            animation: memory-glow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100% !important; min-width: 100%; background-color: #FDF2F8;">
+    
+    <!-- Preheader Text -->
+    <span style="display: none; font-size: 1px; color: #FDF2F8; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        Remember when {{child_name}} {{memorable_moment|default:"discovered their first magical story"}}? Those precious memories are waiting for new chapters! 💕
+    </span>
+    
+    <!-- Main Container -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #FDF2F8;">
+        <tr>
+            <td align="center" style="padding: 20px 10px;">
+                
+                <!-- Email Container -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" class="main-container" style="max-width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                    
+                    <!-- Memory Header -->
+                    <tr>
+                        <td align="center" style="padding: 0;">
+                            <!--[if mso]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:160px;">
+                                <v:fill type="gradient" color="#EC4899" color2="#8B5CF6" angle="135"/>
+                                <v:textbox inset="0,0,0,0">
+                            <![endif]-->
+                            <div class="memory-gradient-bg" style="padding: 40px 30px; text-align: center; position: relative;">
+                                <!-- Memory icon -->
+                                <div class="heartwarming-animation" style="font-size: 56px; margin-bottom: 16px;">💕</div>
+                                
+                                <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.2;">
+                                    We Miss You!
+                                </h1>
+                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.95); font-weight: 500;">
+                                    Remember the magic you created with <span style="color: #ffffff; font-weight: 700;">{{child_name}}</span>?
+                                </p>
+                            </div>
+                            <!--[if mso]>
+                                </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td class="white-bg" style="padding: 36px 30px;" class="mobile-padding">
+                            
+                            <!-- Nostalgic Greeting -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151;">
+                                            Hi {{user_name|default:"there"}},
+                                        </p>
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #374151;">
+                                            It's been {{days_since_last_visit|default:"3 weeks"}} since you and <span class="child-name">{{child_name}}</span> last shared a StoryBud adventure together. We've been thinking about you both and missing those special reading moments you created!
+                                        </p>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #374151;">
+                                            Do you remember when {{child_name}} <span class="memory-highlight">{{memorable_moment|default:"first discovered they could be the hero of their own story"}}</span>? Those moments of wonder and joy are exactly what we're here to help create again.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Memory Showcase -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <div class="memory-showcase memory-glow" style="padding: 24px;">
+                                            <div style="text-align: center; margin-bottom: 20px;">
+                                                <div style="font-size: 48px; margin-bottom: 12px;">📚✨</div>
+                                                <h2 style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: #7C3AED;">
+                                                    Your StoryBud Journey
+                                                </h2>
+                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; font-style: italic;">
+                                                    The magical memories you've already created together
+                                                </p>
+                                            </div>
+                                            
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td width="33%" style="text-align: center; border-right: 1px solid #E5E7EB;">
+                                                        <p style="margin: 0 0 4px 0; font-size: 24px; font-weight: 700; color: #EC4899;">{{total_stories_created|default:"12"}}</p>
+                                                        <p style="margin: 0; font-size: 12px; color: #6B7280;">Stories Created</p>
+                                                    </td>
+                                                    <td width="33%" style="text-align: center; border-right: 1px solid #E5E7EB;">
+                                                        <p style="margin: 0 0 4px 0; font-size: 24px; font-weight: 700; color: #8B5CF6;">{{total_reading_hours|default:"8.5"}}</p>
+                                                        <p style="margin: 0; font-size: 12px; color: #6B7280;">Hours Together</p>
+                                                    </td>
+                                                    <td width="33%" style="text-align: center;">
+                                                        <p style="margin: 0 0 4px 0; font-size: 24px; font-weight: 700; color: #059669;">{{favorite_themes_count|default:"5"}}</p>
+                                                        <p style="margin: 0; font-size: 12px; color: #6B7280;">Favorite Themes</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Favorite Story Memories -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="nostalgia-section" style="padding: 20px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #EA580C;">
+                                                💫 {{child_name}}'s Favorite Story Adventures
+                                            </h3>
+                                            
+                                            <div class="story-memory-card" style="padding: 16px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="50" style="vertical-align: top;">
+                                                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                                <span style="color: #ffffff; font-size: 16px;">{{story_1_emoji|default:"🏰"}}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td style="padding-left: 12px;">
+                                                            <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                                "{{favorite_story_1_title|default:"The Castle of Brave Hearts"}}"
+                                                            </h4>
+                                                            <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                {{story_1_memory|default:"Where they learned about courage and friendship"}}
+                                                            </p>
+                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 11px; color: #9CA3AF;">
+                                                                <span class="time-indicator">Read {{story_1_date|default:"2 months ago"}}</span>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            
+                                            <div class="story-memory-card" style="padding: 16px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="50" style="vertical-align: top;">
+                                                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                                <span style="color: #ffffff; font-size: 16px;">{{story_2_emoji|default:"🌟"}}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td style="padding-left: 12px;">
+                                                            <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                                "{{favorite_story_2_title|default:"The Star That Wouldn't Shine"}}"
+                                                            </h4>
+                                                            <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                {{story_2_memory|default:"Their favorite bedtime story about believing in yourself"}}
+                                                            </p>
+                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 11px; color: #9CA3AF;">
+                                                                <span class="time-indicator">Read {{story_2_date|default:"6 weeks ago"}}</span>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            
+                                            <div class="story-memory-card" style="padding: 16px;">
+                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="50" style="vertical-align: top;">
+                                                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                                                <span style="color: #ffffff; font-size: 16px;">{{story_3_emoji|default:"🦋"}}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td style="padding-left: 12px;">
+                                                            <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
+                                                                "{{favorite_story_3_title|default:"The Butterfly's First Flight"}}"
+                                                            </h4>
+                                                            <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                {{story_3_memory|default:"The story that made them ask for 'just one more chapter'"}}
+                                                            </p>
+                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 11px; color: #9CA3AF;">
+                                                                <span class="time-indicator">Read {{story_3_date|default:"3 months ago"}}</span>
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Journey Timeline -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <div class="journey-timeline" style="padding: 20px;">
+                                            <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #0284C7;">
+                                                🌈 Your Reading Journey Timeline
+                                            </h3>
+                                            
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td width="20" style="vertical-align: top; padding-right: 12px;">
+                                                        <div class="timeline-dot" style="margin-top: 6px;"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151; font-weight: 600;">
+                                                            First StoryBud Adventure
+                                                        </p>
+                                                        <p style="margin: 0 0 12px 0; font-family: Arial, sans-serif; font-size: 12px; color: #6B7280;">
+                                                            {{first_story_date|default:"4 months ago"}} - {{child_name}} discovered their first personalized story
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <div style="margin-left: 10px;">
+                                                <div class="timeline-line" style="margin-bottom: 8px;"></div>
+                                            </div>
+                                            
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td width="20" style="vertical-align: top; padding-right: 12px;">
+                                                        <div class="timeline-dot" style="margin-top: 6px;"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151; font-weight: 600;">
+                                                            Most Active Period
+                                                        </p>
+                                                        <p style="margin: 0 0 12px 0; font-family: Arial, sans-serif; font-size: 12px; color: #6B7280;">
+                                                            {{active_period|default:"2 months ago"}} - Created {{stories_in_period|default:"6"}} amazing stories together
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <div style="margin-left: 10px;">
+                                                <div class="timeline-line" style="margin-bottom: 8px;"></div>
+                                            </div>
+                                            
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td width="20" style="vertical-align: top; padding-right: 12px;">
+                                                        <div style="background-color: #D1D5DB; border-radius: 50%; width: 12px; height: 12px; margin-top: 6px;"></div>
+                                                    </td>
+                                                    <td>
+                                                        <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; font-weight: 600;">
+                                                            Last Visit
+                                                        </p>
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 12px; color: #9CA3AF;">
+                                                            {{last_visit_date|default:"3 weeks ago"}} - We've missed you since then!
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- What They're Missing -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #374151;">
+                                            <strong style="color: #7C3AED;">Here's what {{child_name}} has been missing:</strong> We've added {{new_stories_count|default:"15"}} new adventures perfect for {{child_age|default:"their age"}}, including stories about {{new_themes|default:"space exploration, friendship, and problem-solving"}}. Plus, we've introduced new interactive features that make story time even more magical!
+                                        </p>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #374151;">
+                                            Remember how {{child_name}}'s face lit up during those special reading moments? Those precious memories are waiting to be created again, and we'd love to help make them even more wonderful.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Welcome Back Incentive -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 28px;">
+                                        <div class="special-offer" style="padding: 24px; text-align: center;">
+                                            <div style="font-size: 40px; margin-bottom: 12px;">🎁</div>
+                                            <h3 style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #92400E;">
+                                                Welcome Back Gift!
+                                            </h3>
+                                            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151; line-height: 1.6;">
+                                                We miss you both so much! Come back within the next {{offer_expiry|default:"7 days"}} and receive: 
+                                            </p>
+                                            <p style="margin: 0 0 16px 0; font-family: Arial, sans-serif; font-size: 16px; color: #374151; font-weight: 700;">
+                                                {{welcome_back_offer|default:"3 free story credits + access to our new interactive features + a personalized welcome back story featuring all of your favorite characters!"}}
+                                            </p>
+                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280;">
+                                                Because the best stories deserve to continue... 💕
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- CTA Section -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 28px;">
+                                        <div class="comeback-incentive" style="padding: 24px; text-align: center; border-radius: 16px;">
+                                            <p style="margin: 0 0 20px 0; font-family: Georgia, serif; font-size: 20px; color: #ffffff; font-weight: 600;">
+                                                Ready to create new magical memories?
+                                            </p>
+                                            
+                                            <!--[if mso]>
+                                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{comeback_story_link|default:'#'}}" style="height:56px;v-text-anchor:middle;width:280px;" arcsize="50%" stroke="f" fillcolor="#EC4899">
+                                                <w:anchorlock/>
+                                                <center>
+                                            <![endif]-->
+                                            <a href="{{comeback_story_link|default:'#'}}" class="memory-button" style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%); color: #ffffff; display: inline-block; font-family: Georgia, serif; font-size: 18px; font-weight: 700; line-height: 56px; text-align: center; text-decoration: none; width: 280px; -webkit-text-size-adjust: none; border-radius: 28px; margin-bottom: 16px;">
+                                                💫 Continue Our Story
+                                            </a>
+                                            <!--[if mso]>
+                                                </center>
+                                            </v:roundrect>
+                                            <![endif]-->
+                                        </div>
+                                        
+                                        <p style="margin: 16px 0 0 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; text-align: center;">
+                                            Or <a href="{{browse_new_stories_link|default:'#'}}" style="color: #8B5CF6; text-decoration: none; font-weight: 600;">browse the new stories we've added</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Emotional Closing -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 24px;">
+                                        <div style="background-color: #FEF7FF; border-radius: 12px; padding: 20px;">
+                                            <p style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 18px; color: #7C3AED; font-style: italic; font-weight: 500;">
+                                                "{{heartfelt_quote|default:"The stories we read to our children become the voice in their head for the rest of their lives."}}"
+                                            </p>
+                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280;">
+                                                Those precious moments with {{child_name}} are waiting for their next chapter.
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 40px 30px; text-align: center; background-color: #F9FAFB; border-top: 1px solid #E5E7EB;">
+                            <!-- Logo -->
+                            <img src="{{logo_url|default:'https://i.imgur.com/UHKz2jA.png'}}" alt="StoryBud" width="150" height="auto" style="width:150px; height:auto; margin-bottom: 20px;">
+                            
+                            <p style="margin: 0 0 8px 0; font-family: Georgia, serif; color: #7C3AED; font-weight: 600; font-size: 18px;">
+                                Your story continues with us 💕
+                            </p>
+                            <p style="margin: 0 0 24px 0; font-family: Arial, sans-serif; color: #374151;">
+                                The StoryBud Team
+                            </p>
+                            
+                            <!-- Footer Links -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <a href="https://storybud.com/library" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Story Library</a>
+                                        <a href="https://storybud.com/memories" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Your Memories</a>
+                                        <a href="https://storybud.com/support" style="color: #4B5563; text-decoration: none; margin: 0 12px; font-size: 14px;">Support</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Legal -->
+                            <p style="margin: 0; font-size: 13px; color: #4B5563; line-height: 1.5;">
+                                <a href="https://storybud.com/unsubscribe?email={{user_email|default:'user%40example.com'}}" style="color: #7C3AED; text-decoration: none;">Unsubscribe</a> | 
+                                1111B South Governors Avenue, STE 37071, Dover, DE 19904<br>
+                                © 2025 StoryBud All Rights Reserved
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <!-- End Email Container -->
+                
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Container -->
+    
+</body>
+</html>
