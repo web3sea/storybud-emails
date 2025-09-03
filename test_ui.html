@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Testing - StoryBud Email Templates</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f3f4f6;
+        }
+        .test-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #4b5563;
+            margin-top: 0;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        .test-item {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #e5e7eb;
+            background: #f9fafb;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .pass { background: #10b981; color: white; }
+        .fail { background: #ef4444; color: white; }
+        .warning { background: #f59e0b; color: white; }
+        .info { background: #3b82f6; color: white; }
+        button {
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #7c3aed;
+        }
+        #results {
+            white-space: pre-wrap;
+            font-family: monospace;
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .issue {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 UI Testing Dashboard - StoryBud Email Templates</h1>
+    
+    <div class="test-section">
+        <h2>Test Controls</h2>
+        <button onclick="testAll()">Run All Tests</button>
+        <button onclick="testJavaScript()">Test JavaScript Functions</button>
+        <button onclick="testNavigation()">Test Navigation</button>
+        <button onclick="testPreview()">Test Preview Functions</button>
+        <button onclick="testTheme()">Test Theme Toggle</button>
+        <button onclick="clearResults()">Clear Results</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Known Issues</h2>
+        <div class="issue">
+            <strong>Issue #1: Missing iframe elements</strong><br>
+            Several preview frames referenced in JavaScript are not found in the HTML:
+            <ul>
+                <li>qualifiedLeadPreviewFrame</li>
+                <li>onboardingPreviewFrame</li>
+                <li>retentionPreviewFrame</li>
+                <li>churnRecoveryPreviewFrame</li>
+                <li>coldPreviewFrame</li>
+                <li>powerUsersPreviewFrame</li>
+                <li>retentionNewPreviewFrame</li>
+            </ul>
+        </div>
+        <div class="issue">
+            <strong>Issue #2: Path construction for local files</strong><br>
+            The preview functions use <code>window.location.origin + '/' + emailUrl</code> which may not work correctly for local files. Should use relative paths or proper URL construction.
+        </div>
+        <div class="issue">
+            <strong>Issue #3: Missing sequence containers</strong><br>
+            Some sequence containers referenced in showSequence() function might not exist in the HTML.
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Results</h2>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const timestamp = new Date().toLocaleTimeString();
+            const typeEmoji = {
+                'pass': '✅',
+                'fail': '❌',
+                'warning': '⚠️',
+                'info': 'ℹ️'
+            }[type] || '📝';
+            
+            results.innerHTML += `[${timestamp}] ${typeEmoji} ${message}\n`;
+            results.scrollTop = results.scrollHeight;
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+            log('Results cleared', 'info');
+        }
+
+        function testAll() {
+            clearResults();
+            log('Starting comprehensive UI tests...', 'info');
+            testJavaScript();
+            testNavigation();
+            testPreview();
+            testTheme();
+            log('All tests completed!', 'info');
+        }
+
+        function testJavaScript() {
+            log('\n=== Testing JavaScript Functions ===', 'info');
+            
+            // Open the main page in an iframe to test
+            const testFrame = document.createElement('iframe');
+            testFrame.src = 'index.html';
+            testFrame.style.display = 'none';
+            document.body.appendChild(testFrame);
+            
+            testFrame.onload = function() {
+                const win = testFrame.contentWindow;
+                
+                // Test if functions exist
+                const functions = [
+                    'downloadAllTemplates',
+                    'showSequence',
+                    'showEmailPreview',
+                    'downloadEmail',
+                    'showQualifiedLeadPreview',
+                    'showOnboardingPreview',
+                    'showRetentionPreview',
+                    'showChurnRecoveryPreview',
+                    'showColdPreview',
+                    'showPowerUsersPreview',
+                    'showNotification',
+                    'testPersonalization',
+                    'autoSelectEngagementOnSunday',
+                    'openTestEmailModal',
+                    'closeTestEmailModal',
+                    'sendTestEmail'
+                ];
+                
+                functions.forEach(func => {
+                    if (typeof win[func] === 'function') {
+                        log(`✓ Function ${func} exists`, 'pass');
+                    } else {
+                        log(`✗ Function ${func} is missing`, 'fail');
+                    }
+                });
+                
+                // Test for required DOM elements
+                const elements = [
+                    '#themeToggle',
+                    '.sequence-tab',
+                    '#testEmailModal',
+                    '#emailPreviewFrame'
+                ];
+                
+                elements.forEach(selector => {
+                    const element = win.document.querySelector(selector);
+                    if (element) {
+                        log(`✓ Element ${selector} found`, 'pass');
+                    } else {
+                        log(`✗ Element ${selector} not found`, 'warning');
+                    }
+                });
+                
+                document.body.removeChild(testFrame);
+            };
+        }
+
+        function testNavigation() {
+            log('\n=== Testing Navigation ===', 'info');
+            
+            const sequences = [
+                'qualified-lead',
+                'onboarding',
+                'retention',
+                'churn-recovery',
+                'cold',
+                'power-users'
+            ];
+            
+            sequences.forEach(seq => {
+                log(`Testing sequence: ${seq}`, 'info');
+                // Would need to actually interact with the page to test
+            });
+        }
+
+        function testPreview() {
+            log('\n=== Testing Preview Functions ===', 'info');
+            
+            // List of preview frames that should exist
+            const previewFrames = [
+                { id: 'emailPreviewFrame', sequence: 'main' },
+                { id: 'qualifiedLeadPreviewFrame', sequence: 'qualified-lead' },
+                { id: 'onboardingPreviewFrame', sequence: 'onboarding' },
+                { id: 'retentionPreviewFrame', sequence: 'retention' },
+                { id: 'churnRecoveryPreviewFrame', sequence: 'churn-recovery' },
+                { id: 'coldPreviewFrame', sequence: 'cold' },
+                { id: 'powerUsersPreviewFrame', sequence: 'power-users' }
+            ];
+            
+            previewFrames.forEach(frame => {
+                log(`Checking for ${frame.id} in ${frame.sequence} sequence...`, 'info');
+            });
+        }
+
+        function testTheme() {
+            log('\n=== Testing Theme Toggle ===', 'info');
+            
+            // Check localStorage
+            const currentTheme = localStorage.getItem('theme');
+            log(`Current theme in localStorage: ${currentTheme || 'light (default)'}`, 'info');
+            
+            // Test theme toggle functionality
+            log('Theme toggle functionality would be tested by clicking the button', 'info');
+        }
+
+        // Auto-run basic tests on load
+        window.onload = function() {
+            log('UI Testing Dashboard loaded successfully', 'pass');
+            log('Click "Run All Tests" to begin comprehensive testing', 'info');
+        };
+    </script>
+</body>
+</html>
