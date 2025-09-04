@@ -7,6 +7,7 @@
     "test:full": "playwright test --config=playwright-full.config.js",
     "test:links": "playwright test --config=playwright-full.config.js tests/link-validation.spec.js",
     "test:basic": "playwright test --config=playwright-ci.config.js tests/basic-validation.spec.js",
+    "test:gmail": "playwright test --config=playwright-ci.config.js tests/gmail-compatibility.spec.js",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui"
   },

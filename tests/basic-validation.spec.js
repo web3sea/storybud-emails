@@ -179,5 +179,65 @@ test.describe('Email Template Basic Validation', () => {
     
     console.log('\\n✅ All critical links are working!');
   });
+
+  // Gmail compatibility - no div elements allowed
+  test('all templates should use table-based layout (no divs for Gmail compatibility)', async ({ page }) => {
+    const templatesWithDivs = [];
+    
+    console.log('\\n=== Gmail Compatibility Check (DIV Detection) ===');
+    
+    for (const templateFile of templateFiles) {
+      const templateName = path.basename(templateFile);
+      
+      try {
+        await page.goto(`file://${templateFile}`);
+        
+        // Check for div elements
+        const divCount = await page.locator('div').count();
+        
+        if (divCount > 0) {
+          templatesWithDivs.push({
+            template: templateName,
+            divCount: divCount
+          });
+          console.log(`❌ ${templateName}: Contains ${divCount} div element(s)`);
+        } else {
+          console.log(`✅ ${templateName}: Table-based layout (Gmail compatible)`);
+        }
+        
+      } catch (error) {
+        templatesWithDivs.push({
+          template: templateName,
+          error: error.message
+        });
+        console.log(`❌ ${templateName}: Error - ${error.message}`);
+      }
+    }
+    
+    if (templatesWithDivs.length > 0) {
+      console.log('\\n❌ Gmail Compatibility Issues Found:');
+      console.log('   📋 Gmail strips styling from <div> elements');
+      console.log('   📋 Use <table role="presentation"> instead of <div>');
+      console.log('   📋 Replace <div> containers with <td> elements');
+      
+      for (const issue of templatesWithDivs) {
+        if (issue.error) {
+          console.log(`   • ${issue.template}: ${issue.error}`);
+        } else {
+          console.log(`   • ${issue.template}: ${issue.divCount} div element(s) found`);
+        }
+      }
+    }
+    
+    // Note: This is informational - we don't fail CI for div elements yet
+    // Run `npm run test:gmail` for detailed Gmail compatibility analysis
+    if (templatesWithDivs.length === 0) {
+      console.log('\\n✅ All templates use Gmail-compatible table-based layouts!');
+    } else {
+      console.log(`\\n⚠️  Gmail Compatibility Notice: ${templatesWithDivs.length}/${templateFiles.length} templates contain div elements`);
+      console.log('   💡 Run "npm run test:gmail" for detailed analysis and recommendations');
+      console.log('   📋 Gmail strips styling from <div> elements - consider using table-based layouts');
+    }
+  });
   
 });

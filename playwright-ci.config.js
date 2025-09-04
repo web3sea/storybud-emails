@@ -6,7 +6,7 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 module.exports = defineConfig({
   testDir: './tests',
-  testMatch: 'basic-validation.spec.js', // Only run basic validation tests in CI
+  testMatch: 'basic-validation.spec.js', // Only run basic validation tests in CI (Gmail compatibility available as separate test)
   fullyParallel: false, // Disable parallel execution for simpler CI logs
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0, // Reduced retries for faster CI
