@@ -127,5 +127,57 @@ test.describe('Email Template Basic Validation', () => {
     
     console.log(`✅ Unsubscribe link validation passed for all ${templateFiles.length} templates`);
   });
+
+  // Basic link validation - check that critical StoryBud links are accessible
+  test('critical StoryBud links should be accessible', async ({ page }) => {
+    const criticalLinks = [
+      'https://storybud.com',
+      'https://storybud.com/contact',
+      'https://storybud.com/privacy-policy',
+      'https://storybud.com/terms-of-service'
+    ];
+    
+    const brokenCriticalLinks = [];
+    
+    console.log('\\n=== Testing Critical Links ===');
+    
+    for (const url of criticalLinks) {
+      try {
+        console.log(`Checking: ${url}`);
+        
+        const response = await page.request.get(url, {
+          timeout: 15000, // 15 second timeout for critical links
+          ignoreHTTPSErrors: true
+        });
+        
+        const status = response.status();
+        const isWorking = status >= 200 && status < 400;
+        
+        if (isWorking) {
+          console.log(`  ✅ ${status} - Working`);
+        } else {
+          console.log(`  ❌ ${status} - Broken`);
+          brokenCriticalLinks.push({ url, status });
+        }
+        
+      } catch (error) {
+        console.log(`  ❌ ERROR - ${error.message}`);
+        brokenCriticalLinks.push({ url, error: error.message });
+      }
+    }
+    
+    if (brokenCriticalLinks.length > 0) {
+      console.log('\\n❌ Broken Critical Links:');
+      for (const link of brokenCriticalLinks) {
+        console.log(`  - ${link.url}: ${link.status || link.error}`);
+      }
+    }
+    
+    expect(brokenCriticalLinks.length, 
+      `Found ${brokenCriticalLinks.length} broken critical links`
+    ).toBe(0);
+    
+    console.log('\\n✅ All critical links are working!');
+  });
   
 });

@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Email templates for StoryBud personalized storytelling platform",
   "scripts": {
-    "test": "playwright test",
+    "test": "playwright test --config=playwright-ci.config.js",
+    "test:full": "playwright test --config=playwright-full.config.js",
+    "test:links": "playwright test --config=playwright-full.config.js tests/link-validation.spec.js",
+    "test:basic": "playwright test --config=playwright-ci.config.js tests/basic-validation.spec.js",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui"
   },
