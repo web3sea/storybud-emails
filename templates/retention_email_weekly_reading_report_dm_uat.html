@@ -295,9 +295,13 @@
 <body style="margin: 0; padding: 0; width: 100% !important; min-width: 100%; background-color: #F3F4F6;">
     
     <!-- Preheader Text -->
-    <div style="display: none; font-size: 1px; color: #F3F4F6; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
-        See your child's weekly reading progress and unlock new adventures together! 📚✨
-    </div>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+            <td style="display: none; font-size: 1px; color: #F3F4F6; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+                See your child's weekly reading progress and unlock new adventures together! 📚✨
+            </td>
+        </tr>
+    </table>
     
     <!-- Main Container -->
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F3F4F6;">
@@ -315,12 +319,16 @@
                                 <v:fill type="gradient" color="#8B5CF6" color2="#6366F1" angle="135"/>
                                 <v:textbox inset="0,0,0,0">
                             <![endif]-->
-                            <div style="background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%); background-color: #8B5CF6; padding: 40px 30px;">
-                                <h1 class="welcome-heading">
-                                    <span role="img" aria-label="Chart">📊</span> Weekly Reading Report
-                                </h1>
-                                <p class="welcome-subheading">Celebrating your reading journey together.</p>
-                            </div>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%); background-color: #8B5CF6;">
+                                <tr>
+                                    <td style="padding: 40px 30px;">
+                                        <h1 class="welcome-heading">
+                                            <span role="img" aria-label="Chart">📊</span> Weekly Reading Report
+                                        </h1>
+                                        <p class="welcome-subheading">Celebrating your reading journey together.</p>
+                                    </td>
+                                </tr>
+                            </table>
                             <!--[if mso]>
                                 </v:textbox>
                             </v:rect>
