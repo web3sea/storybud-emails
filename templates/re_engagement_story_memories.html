@@ -246,17 +246,25 @@
                                 <v:fill type="gradient" color="#EC4899" color2="#8B5CF6" angle="135"/>
                                 <v:textbox inset="0,0,0,0">
                             <![endif]-->
-                            <div class="memory-gradient-bg" style="padding: 40px 30px; text-align: center; position: relative;">
-                                <!-- Memory icon -->
-                                <div class="heartwarming-animation" style="font-size: 56px; margin-bottom: 16px;">💕</div>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="memory-gradient-bg" style="background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%); background-color: #EC4899; position: relative;">
+                                <tr>
+                                    <td style="padding: 40px 30px; text-align: center;">
+                                        <!-- Memory icon -->
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td class="heartwarming-animation" style="font-size: 56px; padding-bottom: 16px;">💕</td>
+                                            </tr>
+                                        </table>
                                 
                                 <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.2;">
                                     We Miss You!
                                 </h1>
-                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.95); font-weight: 500;">
-                                    Remember the magic you created with <span style="color: #ffffff; font-weight: 700;">{{child_name}}</span>?
-                                </p>
-                            </div>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.95); font-weight: 500;">
+                                            Remember the magic you created with <span style="color: #ffffff; font-weight: 700;">{{child_name}}</span>?
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
                             <!--[if mso]>
                                 </v:textbox>
                             </v:rect>
@@ -289,16 +297,26 @@
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="padding-bottom: 32px;">
-                                        <div class="memory-showcase memory-glow" style="padding: 24px;">
-                                            <div style="text-align: center; margin-bottom: 20px;">
-                                                <div style="font-size: 48px; margin-bottom: 12px;">📚✨</div>
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="memory-showcase memory-glow" style="background-color: #F8FAFC; border: 2px solid #E2E8F0; border-radius: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                            <tr>
+                                                <td style="padding: 24px;">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="text-align: center; margin-bottom: 20px;">
+                                                        <tr>
+                                                            <td style="text-align: center; padding-bottom: 20px;">
+                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                    <tr>
+                                                                        <td style="font-size: 48px; padding-bottom: 12px;">📚✨</td>
+                                                                    </tr>
+                                                                </table>
                                                 <h2 style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: #7C3AED;">
                                                     Your StoryBud Journey
                                                 </h2>
                                                 <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; font-style: italic;">
                                                     The magical memories you've already created together
                                                 </p>
-                                            </div>
+                                            </td>
+                                            </tr>
+                                        </table>
                                             
                                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                 <tr>
@@ -316,7 +334,9 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </div>
+                                        </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -325,18 +345,24 @@
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="padding-bottom: 28px;">
-                                        <div class="nostalgia-section" style="padding: 20px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="nostalgia-section" style="background-color: #F8FAFC; border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 20px;">
                                             <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #EA580C;">
                                                 💫 {{child_name}}'s Favorite Story Adventures
                                             </h3>
                                             
-                                            <div class="story-memory-card" style="padding: 16px;">
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-memory-card" style="background-color: #ffffff; border: 1px solid #E5E7EB; border-radius: 8px; margin-bottom: 12px;">
+                                                <tr>
+                                                    <td style="padding: 16px;">
                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                     <tr>
                                                         <td width="50" style="vertical-align: top;">
                                                             <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                                                                 <span style="color: #ffffff; font-size: 16px;">{{story_1_emoji|default:"🏰"}}</span>
-                                                            </div>
+                                                            </td>
+                                            </tr>
+                                        </table>
                                                         </td>
                                                         <td style="padding-left: 12px;">
                                                             <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
@@ -351,15 +377,21 @@
                                                         </td>
                                                     </tr>
                                                 </table>
-                                            </div>
+                                            </td>
+                                            </tr>
+                                        </table>
                                             
-                                            <div class="story-memory-card" style="padding: 16px;">
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-memory-card" style="background-color: #ffffff; border: 1px solid #E5E7EB; border-radius: 8px; margin-bottom: 12px;">
+                                                <tr>
+                                                    <td style="padding: 16px;">
                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                     <tr>
                                                         <td width="50" style="vertical-align: top;">
                                                             <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                                                                 <span style="color: #ffffff; font-size: 16px;">{{story_2_emoji|default:"🌟"}}</span>
-                                                            </div>
+                                                            </td>
+                                            </tr>
+                                        </table>
                                                         </td>
                                                         <td style="padding-left: 12px;">
                                                             <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
@@ -374,15 +406,21 @@
                                                         </td>
                                                     </tr>
                                                 </table>
-                                            </div>
+                                            </td>
+                                            </tr>
+                                        </table>
                                             
-                                            <div class="story-memory-card" style="padding: 16px;">
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-memory-card" style="background-color: #ffffff; border: 1px solid #E5E7EB; border-radius: 8px; margin-bottom: 12px;">
+                                                <tr>
+                                                    <td style="padding: 16px;">
                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                     <tr>
                                                         <td width="50" style="vertical-align: top;">
                                                             <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
                                                                 <span style="color: #ffffff; font-size: 16px;">{{story_3_emoji|default:"🦋"}}</span>
-                                                            </div>
+                                                            </td>
+                                            </tr>
+                                        </table>
                                                         </td>
                                                         <td style="padding-left: 12px;">
                                                             <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
@@ -397,8 +435,12 @@
                                                         </td>
                                                     </tr>
                                                 </table>
-                                            </div>
-                                        </div>
+                                            </td>
+                                            </tr>
+                                        </table>
+                                        </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -415,7 +457,9 @@
                                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                 <tr>
                                                     <td width="20" style="vertical-align: top; padding-right: 12px;">
-                                                        <div class="timeline-dot" style="margin-top: 6px;"></div>
+                                                        <div class="timeline-dot" style="margin-top: 6px;"></td>
+                                            </tr>
+                                        </table>
                                                     </td>
                                                     <td>
                                                         <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151; font-weight: 600;">
@@ -429,13 +473,19 @@
                                             </table>
                                             
                                             <div style="margin-left: 10px;">
-                                                <div class="timeline-line" style="margin-bottom: 8px;"></div>
-                                            </div>
+                                                <div class="timeline-line" style="margin-bottom: 8px;"></td>
+                                            </tr>
+                                        </table>
+                                            </td>
+                                            </tr>
+                                        </table>
                                             
                                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                 <tr>
                                                     <td width="20" style="vertical-align: top; padding-right: 12px;">
-                                                        <div class="timeline-dot" style="margin-top: 6px;"></div>
+                                                        <div class="timeline-dot" style="margin-top: 6px;"></td>
+                                            </tr>
+                                        </table>
                                                     </td>
                                                     <td>
                                                         <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151; font-weight: 600;">
@@ -449,13 +499,19 @@
                                             </table>
                                             
                                             <div style="margin-left: 10px;">
-                                                <div class="timeline-line" style="margin-bottom: 8px;"></div>
-                                            </div>
+                                                <div class="timeline-line" style="margin-bottom: 8px;"></td>
+                                            </tr>
+                                        </table>
+                                            </td>
+                                            </tr>
+                                        </table>
                                             
                                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                 <tr>
                                                     <td width="20" style="vertical-align: top; padding-right: 12px;">
-                                                        <div style="background-color: #D1D5DB; border-radius: 50%; width: 12px; height: 12px; margin-top: 6px;"></div>
+                                                        <div style="background-color: #D1D5DB; border-radius: 50%; width: 12px; height: 12px; margin-top: 6px;"></td>
+                                            </tr>
+                                        </table>
                                                     </td>
                                                     <td>
                                                         <p style="margin: 0 0 4px 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; font-weight: 600;">
@@ -467,7 +523,9 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </div>
+                                        </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -491,7 +549,9 @@
                                 <tr>
                                     <td style="padding-bottom: 28px;">
                                         <div class="special-offer" style="padding: 24px; text-align: center;">
-                                            <div style="font-size: 40px; margin-bottom: 12px;">🎁</div>
+                                            <div style="font-size: 40px; margin-bottom: 12px;">🎁</td>
+                                            </tr>
+                                        </table>
                                             <h3 style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #92400E;">
                                                 Welcome Back Gift!
                                             </h3>
@@ -504,7 +564,9 @@
                                             <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280;">
                                                 Because the best stories deserve to continue... 💕
                                             </p>
-                                        </div>
+                                        </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -530,7 +592,9 @@
                                                 </center>
                                             </v:roundrect>
                                             <![endif]-->
-                                        </div>
+                                        </td>
+                                            </tr>
+                                        </table>
                                         
                                         <p style="margin: 16px 0 0 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; text-align: center;">
                                             Or <a href="{{browse_new_stories_link|default:'#'}}" style="color: #8B5CF6; text-decoration: none; font-weight: 600;">browse the new stories we've added</a>
@@ -550,7 +614,9 @@
                                             <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280;">
                                                 Those precious moments with {{child_name}} are waiting for their next chapter.
                                             </p>
-                                        </div>
+                                        </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
