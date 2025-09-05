@@ -133,6 +133,25 @@ Before deploying any template:
 - **Re-engagement**: Win-back campaigns for inactive users
 - **Premium**: Upgrade messaging highlighting advanced features
 
+## Subscription Plans & Pricing
+
+### Current StoryBud Pricing Structure (Credit-Based System)
+- **Sprout Plan**: $9.99/month = 600 credits/month (~6 stories)
+- **Bloom Plan**: $19.99/month = 1400 credits/month (~14 stories)
+- **Wonder Plan**: $39.99/month = 3200 credits/month (~32 stories) - "Most Popular"
+- **Flourish Plan**: $79.99/month = 7200 credits/month (~72 stories) - "Best Value"
+
+### Trial Structure
+- **Free Trial**: 7 days with limited credits (160 + 120 additional credits)
+- **Post-Trial**: Automatically continues to selected subscription plan
+- **Important**: No "unlimited" story creation during trial - credit-based system applies
+
+### Email Messaging Guidelines for Pricing
+- **Avoid**: "Unlimited stories during trial" or "unlimited creation"
+- **Use**: "Explore premium features with your trial credits"
+- **Focus on**: Quality over quantity, premium features, value proposition
+- **Emphasize**: Professional illustrations, AI voice narration, story saves, personalization
+
 ## Content Management
 
 ### Personalization Tokens
