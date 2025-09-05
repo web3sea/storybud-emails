@@ -204,15 +204,23 @@
                                 <v:fill type="gradient" color="#6366F1" color2="#8B5CF6" angle="135"/>
                                 <v:textbox inset="0,0,0,0">
                             <![endif]-->
-                            <div class="story-gradient-bg" style="padding: 40px 30px; text-align: center;">
-                                <div style="font-size: 48px; margin-bottom: 12px;">📖</div>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-gradient-bg" style="background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); background-color: #6366F1;">
+                                <tr>
+                                    <td style="padding: 40px 30px; text-align: center;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td style="font-size: 48px; margin-bottom: 12px; padding-bottom: 12px;">📖</td>
+                                            </tr>
+                                        </table>
                                 <h1 class="hero-title" style="margin: 0 0 8px 0; font-family: Georgia, serif; font-size: 28px; font-weight: 700; color: #ffffff; line-height: 1.2;">
                                     How Was Your Story Adventure?
                                 </h1>
-                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9);">
-                                    Let's keep the magic going with your next perfect story!
-                                </p>
-                            </div>
+                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.9);">
+                                            Let's keep the magic going with your next perfect story!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
                             <!--[if mso]>
                                 </v:textbox>
                             </v:rect>
@@ -242,16 +250,22 @@
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="padding-bottom: 32px;">
-                                        <div class="story-recap-card" style="padding: 24px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-recap-card" style="background-color: #FEF7FF; border: 2px solid #DDD6FE; border-radius: 16px;">
+                                            <tr>
+                                                <td style="padding: 24px;">
                                             <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #6366F1;">
                                                 Your Story Recap
                                             </h3>
                                             
-                                            <div style="margin-bottom: 16px; padding: 16px; background-color: rgba(255, 255, 255, 0.7); border-radius: 8px;">
-                                                <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; font-style: italic;">
-                                                    "{{story_preview_text|default:"In this magical adventure, your child discovered the power of friendship and courage while solving puzzles in an enchanted forest..."}}"
-                                                </p>
-                                            </div>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 16px; background-color: rgba(255, 255, 255, 0.7); border-radius: 8px;">
+                                                <tr>
+                                                    <td style="padding: 16px;">
+                                                        <p style="margin: 0 0 8px 0; font-family: Arial, sans-serif; font-size: 14px; color: #6B7280; font-style: italic;">
+                                                            "{{story_preview_text|default:"In this magical adventure, your child discovered the power of friendship and courage while solving puzzles in an enchanted forest..."}}"
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                             
                                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                                 <tr>
@@ -265,7 +279,9 @@
                                                     </td>
                                                 </tr>
                                             </table>
-                                        </div>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -274,7 +290,9 @@
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="padding-bottom: 28px;">
-                                        <div class="discussion-section" style="padding: 24px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="discussion-section" style="background-color: #F0F9FF; border: 1px solid #BAE6FD; border-left: 4px solid #0EA5E9; border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 24px;">
                                             <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: #0EA5E9;">
                                                 💭 Great Discussion Questions
                                             </h3>
@@ -282,24 +300,38 @@
                                                 <span class="discussion-prompt">Deepen your connection</span> with these thoughtful questions about the story:
                                             </p>
                                             
-                                            <div class="question-card" style="padding: 12px; margin-bottom: 8px;">
-                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
-                                                    <strong>🤔 {{question_1|default:"What was your favorite part of the adventure and why?"}}</strong>
-                                                </p>
-                                            </div>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="question-card" style="background-color: #ffffff; border: 1px solid #E2E8F0; border-radius: 8px; margin: 8px 0;">
+                                                <tr>
+                                                    <td style="padding: 12px;">
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                            <strong>🤔 {{question_1|default:"What was your favorite part of the adventure and why?"}}</strong>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                             
-                                            <div class="question-card" style="padding: 12px; margin-bottom: 8px;">
-                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
-                                                    <strong>💪 {{question_2|default:"How did the main character show courage in the story?"}}</strong>
-                                                </p>
-                                            </div>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="question-card" style="background-color: #ffffff; border: 1px solid #E2E8F0; border-radius: 8px; margin: 8px 0;">
+                                                <tr>
+                                                    <td style="padding: 12px;">
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                            <strong>💪 {{question_2|default:"How did the main character show courage in the story?"}}</strong>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                             
-                                            <div class="question-card" style="padding: 12px;">
-                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
-                                                    <strong>🌟 {{question_3|default:"If you were in the story, what would you have done differently?"}}</strong>
-                                                </p>
-                                            </div>
-                                        </div>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="question-card" style="background-color: #ffffff; border: 1px solid #E2E8F0; border-radius: 8px; margin: 8px 0;">
+                                                <tr>
+                                                    <td style="padding: 12px;">
+                                                        <p style="margin: 0; font-family: Arial, sans-serif; font-size: 14px; color: #374151;">
+                                                            <strong>🌟 {{question_3|default:"If you were in the story, what would you have done differently?"}}</strong>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -319,7 +351,9 @@
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="padding-bottom: 28px;">
-                                        <div class="next-stories-grid" style="padding: 24px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="next-stories-grid" style="background-color: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 16px;">
+                                            <tr>
+                                                <td style="padding: 24px;">
                                             <h3 style="margin: 0 0 16px 0; font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: #047857;">
                                                 🚀 Perfect Next Adventures
                                             </h3>
@@ -328,68 +362,88 @@
                                             </p>
                                             
                                             <!-- Story Suggestion 1 -->
-                                            <div class="story-suggestion-card" style="padding: 16px; margin-bottom: 12px;">
-                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                    <tr>
-                                                        <td width="60" style="vertical-align: top;">
-                                                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                                <span style="color: #ffffff; font-size: 20px;">{{story_1_emoji|default:"🏰"}}</span>
-                                                            </div>
-                                                        </td>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-suggestion-card" style="background-color: #ffffff; border: 1px solid #D1FAE5; border-radius: 12px; margin-bottom: 12px;">
+                                                <tr>
+                                                    <td style="padding: 16px;">
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="60" style="vertical-align: top;">
+                                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="50" height="50" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); border-radius: 8px;">
+                                                                        <tr>
+                                                                            <td align="center" valign="middle" style="color: #ffffff; font-size: 20px; text-align: center; vertical-align: middle; height: 50px;">{{story_1_emoji|default:"🏰"}}</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
                                                         <td style="padding-left: 12px;">
                                                             <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
                                                                 {{suggested_story_1_title|default:"The Castle of Kind Hearts"}}
                                                             </h4>
-                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
-                                                                {{suggested_story_1_desc|default:"Help others and discover the magic of kindness"}}
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
+                                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                    {{suggested_story_1_desc|default:"Help others and discover the magic of kindness"}}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
                                             
                                             <!-- Story Suggestion 2 -->
-                                            <div class="story-suggestion-card" style="padding: 16px; margin-bottom: 12px;">
-                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                    <tr>
-                                                        <td width="60" style="vertical-align: top;">
-                                                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                                <span style="color: #ffffff; font-size: 20px;">{{story_2_emoji|default:"🌟"}}</span>
-                                                            </div>
-                                                        </td>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-suggestion-card" style="background-color: #ffffff; border: 1px solid #D1FAE5; border-radius: 12px; margin-bottom: 12px;">
+                                                <tr>
+                                                    <td style="padding: 16px;">
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="60" style="vertical-align: top;">
+                                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="50" height="50" style="background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); border-radius: 8px;">
+                                                                        <tr>
+                                                                            <td align="center" valign="middle" style="color: #ffffff; font-size: 20px; text-align: center; vertical-align: middle; height: 50px;">{{story_2_emoji|default:"🌟"}}</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
                                                         <td style="padding-left: 12px;">
                                                             <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
                                                                 {{suggested_story_2_title|default:"The Starlight Detective"}}
                                                             </h4>
-                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
-                                                                {{suggested_story_2_desc|default:"Solve mysteries while exploring problem-solving skills"}}
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
+                                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                    {{suggested_story_2_desc|default:"Solve mysteries while exploring problem-solving skills"}}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
                                             
                                             <!-- Story Suggestion 3 -->
-                                            <div class="story-suggestion-card" style="padding: 16px;">
-                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                    <tr>
-                                                        <td width="60" style="vertical-align: top;">
-                                                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                                <span style="color: #ffffff; font-size: 20px;">{{story_3_emoji|default:"🦋"}}</span>
-                                                            </div>
-                                                        </td>
+                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="story-suggestion-card" style="background-color: #ffffff; border: 1px solid #D1FAE5; border-radius: 12px;">
+                                                <tr>
+                                                    <td style="padding: 16px;">
+                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                            <tr>
+                                                                <td width="60" style="vertical-align: top;">
+                                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="50" height="50" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 8px;">
+                                                                        <tr>
+                                                                            <td align="center" valign="middle" style="color: #ffffff; font-size: 20px; text-align: center; vertical-align: middle; height: 50px;">{{story_3_emoji|default:"🦋"}}</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
                                                         <td style="padding-left: 12px;">
                                                             <h4 style="margin: 0 0 4px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #374151;">
                                                                 {{suggested_story_3_title|default:"The Butterfly Garden Mystery"}}
                                                             </h4>
-                                                            <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
-                                                                {{suggested_story_3_desc|default:"Discover nature's wonders and environmental awareness"}}
-                                                            </p>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
+                                                                <p style="margin: 0; font-family: Arial, sans-serif; font-size: 13px; color: #6B7280;">
+                                                                    {{suggested_story_3_desc|default:"Discover nature's wonders and environmental awareness"}}
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
@@ -433,7 +487,9 @@
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="padding-bottom: 24px;">
-                                        <div class="feedback-section" style="padding: 20px; text-align: center;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="feedback-section" style="background-color: #FFFBEB; border: 1px solid #FEF3C7; border-radius: 12px;">
+                                            <tr>
+                                                <td style="padding: 20px; text-align: center;">
                                             <h4 style="margin: 0 0 12px 0; font-family: Georgia, serif; font-size: 16px; font-weight: 700; color: #92400E;">
                                                 How was your reading experience?
                                             </h4>
@@ -453,7 +509,9 @@
                                                 </center>
                                             </v:roundrect>
                                             <![endif]-->
-                                        </div>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
