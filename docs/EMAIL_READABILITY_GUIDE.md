@@ -54,6 +54,13 @@ Always include these fallbacks:
 - **Slate on light**: `#475569` on `#F3F4F6` (8.1:1)
 - **Charcoal on light purple**: `#1F2937` on `#F3F4F6` (14.2:1)
 
+### **REQUIRED: White Background Text Rule**
+**Always use `#1F2937` for body text on white (`#FFFFFF`) backgrounds.**
+- **Contrast ratio**: 15.8:1 (far exceeds WCAG AA standards)
+- **Replaces**: The insufficient `#475569` (3.5:1 contrast)
+- **Brand compliant**: Uses approved charcoal from brand palette
+- **Application**: All body text, descriptions, and paragraph content on white backgrounds
+
 #### Avoid These Combinations ❌
 - Light purple on white (insufficient contrast)
 - Yellow text on white backgrounds

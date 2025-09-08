@@ -92,11 +92,14 @@ Templates follow the pattern: `[campaign_type]_[specific_purpose]_[audience]_[en
 
 ### Testing Process  
 1. **Validation**: HTML syntax validation
-2. **Preview**: Open templates in web browsers
-3. **Email testing**: Use email testing services (Litmus, Email on Acid)
-4. **Client testing**: Send test emails to target email clients
-5. **Mobile testing**: Verify responsive behavior on actual devices
-6. **Accessibility testing**: Screen reader and keyboard navigation testing
+2. **Browser preview**: Open .html template files directly in web browsers to test visual changes
+3. **Visual verification**: Confirm text contrast, layout, and styling render correctly
+4. **Email testing**: Use email testing services (Litmus, Email on Acid)
+5. **Client testing**: Send test emails to target email clients
+6. **Mobile testing**: Verify responsive behavior on actual devices
+7. **Accessibility testing**: Screen reader and keyboard navigation testing
+
+**REQUIRED**: Always open template .html files in a browser before committing changes to verify visual appearance and readability.
 
 ### Quality Checklist
 Before deploying any template:
