@@ -641,27 +641,31 @@
                     
                     <!-- Footer -->
                     <tr>
-                        <td class="footer-bg" style="padding: 40px 30px; text-align: center; background-color: #F3F4F6; border-top: 1px solid #E5E7EB;" class="mobile-padding">
+                        <td align="center" style="background-color:#F3F4F6; padding:35px 20px; border-top:1px solid #E5E7EB;">
                             
-                            <!-- Logo -->
-                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                            <!-- Footer Logo -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
-                                    <td align="center" style="padding-bottom: 30px;">
-                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                                            <tr>
-                                                <td align="center">
-                                                                                                        <img src="https://i.imgur.com/UHKz2jA.png" alt="StoryBud - Where stories come to life" width="150" height="auto" class="logo-img" style="width:150px; height:auto;" />
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <td align="center" style="padding-bottom:25px;">
+                                        <img src="https://i.imgur.com/UHKz2jA.png" alt="StoryBud - Where stories come to life" width="150" height="auto" style="width:150px; height:auto; max-width:150px;" />
                                     </td>
                                 </tr>
+                            </table>
+                            
+                            <!-- Footer Content -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td align="center">
-                                        <p style="margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 18px; color: #7C3AED; font-weight: 600;">
+                                        <!-- Tagline -->
+                                        <p style="margin:0 0 25px 0; color:#1F2937; font-family:Arial, sans-serif; font-size:16px; font-style:italic;">
                                             "Every child deserves their own story."
                                         </p>
-                                        <p style="margin: 0 0 30px 0; font-family: Arial, sans-serif; font-size: 16px; color: #334155; font-style: italic;">
+                                        
+                                        <!-- Sign-off -->
+                                        <p style="margin:0 0 8px 0; color:#7C3AED; font-family:Georgia, serif; font-size:18px; font-weight:bold;">
+                                            Happy storytelling!
+                                        </p>
+                                        <p style="margin:0 0 25px 0; color:#1F2937; font-family:Arial, sans-serif; font-size:14px; font-style:italic;">
                                             The StoryBud Team
                                         </p>
                                     </td>
@@ -669,26 +673,30 @@
                             </table>
                             
                             <!-- Footer Links -->
-                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <table cellpadding="0" cellspacing="0" border="0" align="center">
                                 <tr>
-                                    <td class="footer-links" style="padding-bottom: 25px;">
-                                        <a href="https://storybud.com/contact" style="color: #7C3AED; text-decoration: underline; margin: 0 15px; font-size: 14px;">Support</a>
-                                        <a href="https://storybud.com/privacy-policy" style="color: #7C3AED; text-decoration: underline; margin: 0 15px; font-size: 14px;">Privacy Policy</a>
-                                        <a href="https://storybud.com/terms-of-service" style="color: #7C3AED; text-decoration: underline; margin: 0 15px; font-size: 14px;">Terms</a>
+                                    <td style="padding:0 12px;">
+                                        <a href="{{contactUsLink}}" style="color:#7C3AED; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Support</a>
+                                    </td>
+                                    <td style="padding:0 12px;">
+                                        <a href="{{privacyPolicyLink}}" style="color:#7C3AED; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Privacy Policy</a>
+                                    </td>
+                                    <td style="padding:0 12px;">
+                                        <a href="{{termsOfServiceLink}}" style="color:#7C3AED; font-family:Arial, sans-serif; font-size:14px; text-decoration:none;">Terms</a>
                                     </td>
                                 </tr>
                             </table>
                             
-                            <!-- Legal -->
-                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                            <!-- Legal Footer -->
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
-                                    <td align="center" class="footer-legal">
-                                        <p style="margin: 0 0 15px 0; font-size: 13px; color: #6B7280; line-height: 1.5;">
+                                    <td align="center" style="padding-top:20px;">
+                                        <p style="margin:0 0 10px 0; color:#4B5563; font-family:Arial, sans-serif; font-size:12px; line-height:18px;">
                                             You're receiving this email because you signed up for StoryBud.<br>
-                                            <a href="{{unsubscribeLink}}" style="color: #7C3AED; text-decoration: underline;">Unsubscribe</a> <span class="mobile-hide">|</span> <span class="mobile-show"><br></span>StoryBud Inc.<br>
-                                            1111B South Governors Avenue, STE 37071, Dover, DE 19904
+                                            <a href="{{unsubscribeLink}}" style="color:#7C3AED; text-decoration:none;">Unsubscribe</a> | StoryBud Inc.<br>
+                                            {{companyAddress}}
                                         </p>
-                                        <p style="margin: 0; font-size: 13px; color: #6B7280;">
+                                        <p style="margin:0; color:#4B5563; font-family:Arial, sans-serif; font-size:12px;">
                                             Copyright © 2025 StoryBud All Rights Reserved
                                         </p>
                                     </td>
