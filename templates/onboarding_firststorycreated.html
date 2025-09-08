@@ -86,10 +86,6 @@
                 color: #E5E7EB !important; 
             }
             
-            p[style*="color: #1F2937"] { 
-                color: #F3F4F6 !important; 
-            }
-            
             /* Purple/brand text - keep for contrast */
             span[style*="color: #7C3AED"] { 
                 color: #A78BFA !important; 
@@ -142,15 +138,6 @@
 </head>
 <body style="margin: 0; padding: 0; background-color: #F3F4F6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;">
     
-    <!-- Preheader Text -->
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr>
-            <td style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">
-                🎉 Congratulations! Your first personalized StoryBud adventure is ready to share with your child.
-            </td>
-        </tr>
-    </table>
-    
     <!-- Main Container -->
     <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F3F4F6;">
         <tr>
@@ -199,7 +186,7 @@
                                 <!-- Greeting -->
                                 <tr>
                                     <td style="padding-bottom: 28px;">
-                                        <p style="margin: 0 0 16px 0; font-size: 16px; color: #1F2937;">Hi <span style="color: #7C3AED; font-weight: 600;">{{user_name}}</span>!</p>
+                                        <p style="margin: 0 0 16px 0; font-size: 16px; color: #1F2937;">Hi {{user_name}},</p>
                                         <p style="margin: 0; font-size: 16px; color: #1F2937;">Congratulations! Your child's very first StoryBud adventure is complete and ready to share.</p>
                                     </td>
                                 </tr>
@@ -218,112 +205,13 @@
                                     </td>
                                 </tr>
                                 
-                                <!-- Story Showcase -->
-                                <tr>
-                                    <td style="padding-bottom: 28px;">
-                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #FEF3C7; border: 2px solid #F59E0B; border-radius: 12px;">
-                                            <tr>
-                                                <td align="center" style="padding: 32px 20px;">
-                                                    <!-- Celebration Header -->
-                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                                                        <tr>
-                                                            <td align="center" style="padding-bottom: 24px;">
-                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="background-color: #FFFFFF; border-radius: 25px; margin: 0 auto;">
-                                                                    <tr>
-                                                                        <td style="padding: 12px 24px;">
-                                                                            <p style="margin: 0; font-size: 18px; font-weight: 700; color: #92400E; font-family: Georgia, serif; text-align: center;">✨ Your First Story is Ready! ✨</p>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    
-                                                    <!-- Story Book Design -->
-                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                                                        <tr>
-                                                            <td align="center">
-                                                                <!-- Main Book Container -->
-                                                                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="background-color: #FFFFFF; border: 3px solid #E2E8F0; border-radius: 12px; margin: 0 auto;">
-                                                                    <tr>
-                                                                        <td style="width: 240px; height: 300px; padding: 24px;" align="center" valign="middle">
-                                                                            <!-- Story Illustration Area -->
-                                                                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                                <tr>
-                                                                                    <td align="center" style="background-color: #EDE9FE; border: 2px solid #C4B5FD; border-radius: 8px; padding: 20px;">
-                                                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                                                                                            <tr>
-                                                                                                <td align="center" style="font-size: 60px; line-height: 1; padding-bottom: 8px;">📚</td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td align="center">
-                                                                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                                                                                                        <tr>
-                                                                                                            <td style="font-size: 24px; padding: 0 4px;">⭐</td>
-                                                                                                            <td style="font-size: 32px; padding: 0 4px;">✨</td>
-                                                                                                            <td style="font-size: 24px; padding: 0 4px;">🌟</td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="center" style="padding-top: 16px;">
-                                                                                        <!-- Story Title Placeholder -->
-                                                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="background-color: #F5F3FF; border: 1px dashed #7C3AED; border-radius: 8px; margin: 0 auto;">
-                                                                                            <tr>
-                                                                                                <td style="padding: 12px;">
-                                                                                                    <p style="margin: 0; font-size: 14px; font-weight: 600; color: #7C3AED; font-family: Georgia, serif; text-align: center;">Your child's magical adventure</p>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td align="center" style="padding-top: 12px;">
-                                                                                        <!-- Reading Indicator -->
-                                                                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="background-color: #10B981; border-radius: 15px; margin: 0 auto;">
-                                                                                            <tr>
-                                                                                                <td style="padding: 6px 12px;">
-                                                                                                    <p style="margin: 0; font-size: 12px; font-weight: 600; color: #FFFFFF; font-family: Arial, sans-serif; text-align: center;">📖 Ready to Read!</p>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    
-                                                    <!-- Bottom Message -->
-                                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                        <tr>
-                                                            <td align="center" style="padding-top: 20px;">
-                                                                <p style="margin: 0; font-size: 16px; color: #78350F; font-weight: 500; font-family: Georgia, serif; font-style: italic; text-align: center;">
-                                                                    🎉 A personalized story crafted with love, just for {{child_name}}
-                                                                </p>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                
                                 <!-- CTA Section -->
                                 <tr>
                                     <td style="padding-bottom: 28px;">
                                         <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F5F3FF; border: 1px solid #DDD6FE; border-radius: 12px;">
                                             <tr>
                                                 <td align="center" style="padding: 32px 24px;">
-                                                    <p style="margin: 0 0 20px 0; font-size: 18px; color: #374151; font-weight: 500; font-family: Georgia, serif;">Ready to experience the magic?</p>
+                                                    <p style="margin: 0 0 20px 0; font-size: 18px; color: #1F2937; font-weight: 500; font-family: Georgia, serif;">Ready to experience the magic?</p>
                                                     
                                                     <!-- CTA Button -->
                                                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="cta-button">
@@ -564,12 +452,12 @@
                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                     <td align="center" style="padding-top:20px;">
-                                        <p style="margin:0 0 10px 0; color:#4B5563; font-family:Arial, sans-serif; font-size:12px; line-height:18px;">
+                                        <p style="margin:0 0 10px 0; color:#1F2937; font-family:Arial, sans-serif; font-size:12px; line-height:18px;">
                                             You're receiving this email because you signed up for StoryBud.<br>
                                             <a href="{{unsubscribeLink}}" style="color:#7C3AED; text-decoration:none;">Unsubscribe</a> | StoryBud Inc.<br>
                                             {{companyAddress}}
                                         </p>
-                                        <p style="margin:0; color:#4B5563; font-family:Arial, sans-serif; font-size:12px;">
+                                        <p style="margin:0; color:#1F2937; font-family:Arial, sans-serif; font-size:12px;">
                                             Copyright © 2025 StoryBud All Rights Reserved
                                         </p>
                                     </td>
