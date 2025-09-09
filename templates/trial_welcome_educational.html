@@ -31,7 +31,7 @@
         /* Mobile Styles */
         @media only screen and (max-width: 600px) {
             .main-container { width: 100% !important; }
-            .mobile-padding { padding: 10px !important; }
+            .mobile-padding { padding: 5px !important; }
             .mobile-center { text-align: center !important; }
             .mobile-hide { display: none !important; }
             .mobile-show { display: block !important; }
@@ -49,6 +49,11 @@
             /* Footer improvements */
             .footer-links { display: block !important; text-align: center !important; }
             .footer-links td { display: block !important; text-align: center !important; padding: 5px 0 !important; }
+            
+            /* Content padding reductions */
+            .content-mobile { padding: 15px 5px !important; }
+            .card-mobile { padding: 10px 5px !important; }
+            .activity-mobile { padding: 15px 8px !important; }
         }
         
         /* Dark Mode Support */
@@ -72,14 +77,14 @@
     <!-- Main Container -->
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3f4f6;">
         <tr>
-            <td align="center" style="padding:20px;">
+            <td align="center" style="padding:10px;">
                 
                 <!-- Email Content -->
                 <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; max-width:600px;" class="main-container">
                     
                     <!-- Header with gradient -->
                     <tr>
-                        <td style="background: linear-gradient(135deg, #DBEAFE 0%, #93C5FD 50%, #60A5FA 100%); padding:40px 20px; text-align:center;">
+                        <td style="background: linear-gradient(135deg, #DBEAFE 0%, #93C5FD 50%, #60A5FA 100%); padding:30px 15px; text-align:center;" class="mobile-padding">
                             <!-- Trial Badge -->
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-bottom:20px;">
                                 <tr>
@@ -104,14 +109,14 @@
                     
                     <!-- Main Content -->
                     <tr>
-                        <td style="padding:40px 20px;">
+                        <td style="padding:30px 15px;" class="mobile-padding">
                             
                             <!-- Greeting -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                     <td style="padding-bottom:30px;">
                                         <p style="margin:0 0 15px 0; color:#475569; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
-                                            Hello <span style="color:#7C3AED; font-weight:bold;">{{user_name|default:"Learning Champion"}}</span>,
+                                            Hello <span style="color:#7C3AED; font-weight:bold;">{{user_name"}}</span>,
                                         </p>
                                         <p style="margin:0 0 20px 0; color:#475569; font-family:Arial, sans-serif; font-size:16px; line-height:24px;">
                                             Welcome to StoryBud! You're about to discover how personalized stories can transform your child's learning journey while keeping them engaged and excited.
@@ -184,7 +189,7 @@
                             <!-- Learning Themes Section -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F0F9FF; border:2px solid #BAE6FD; margin-bottom:35px;">
                                 <tr>
-                                    <td style="padding:25px;">
+                                    <td style="padding:20px 10px;" class="mobile-padding">
                                         <h2 style="margin:0 0 20px 0; color:#7C3AED; font-family:Georgia, serif; font-size:22px; text-align:center;">
                                             Educational Themes Available
                                         </h2>
@@ -192,7 +197,7 @@
                                         <!-- Early Learning -->
                                         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB; margin-bottom:15px;" class="theme-card">
                                             <tr>
-                                                <td style="padding:15px;">
+                                                <td style="padding:15px;" class="card-mobile">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                         <tr>
                                                             <td width="50" valign="top">
@@ -217,7 +222,7 @@
                                         <!-- Life Skills -->
                                         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB; margin-bottom:15px;" class="theme-card">
                                             <tr>
-                                                <td style="padding:15px;">
+                                                <td style="padding:15px;" class="card-mobile">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                         <tr>
                                                             <td width="50" valign="top">
@@ -242,7 +247,7 @@
                                         <!-- STEM -->
                                         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB; margin-bottom:15px;" class="theme-card">
                                             <tr>
-                                                <td style="padding:15px;">
+                                                <td style="padding:15px;" class="card-mobile">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                         <tr>
                                                             <td width="50" valign="top">
@@ -267,7 +272,7 @@
                                         <!-- Cultural -->
                                         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff; border:1px solid #E5E7EB;" class="theme-card">
                                             <tr>
-                                                <td style="padding:15px;">
+                                                <td style="padding:15px;" class="card-mobile">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                                         <tr>
                                                             <td width="50" valign="top">
@@ -295,7 +300,7 @@
                             <!-- Parent Teaching Tips -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F8F4FF; border:2px solid #E0E7FF; margin-bottom:35px;">
                                 <tr>
-                                    <td style="padding:25px;">
+                                    <td style="padding:20px 10px;" class="mobile-padding">
                                         <h2 style="margin:0 0 20px 0; color:#7C3AED; font-family:Georgia, serif; font-size:22px; text-align:center;">
                                             Turn Stories Into Learning Moments
                                         </h2>
@@ -389,7 +394,7 @@
                                                 <td width="48%" valign="top">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); margin-bottom:15px; height:180px;">
                                                         <tr>
-                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;">
+                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;" class="activity-mobile">
                                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 10px auto;">
                                                                     <tr>
                                                                         <td style="width:60px; height:60px; background-color:#ffffff; border-radius:50%; text-align:center; line-height:60px; font-size:30px;">🎨</td>
@@ -408,7 +413,7 @@
                                                 <td width="48%" valign="top">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%); border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); margin-bottom:15px; height:180px;">
                                                         <tr>
-                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;">
+                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;" class="activity-mobile">
                                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 10px auto;">
                                                                     <tr>
                                                                         <td style="width:60px; height:60px; background-color:#ffffff; border-radius:50%; text-align:center; line-height:60px; font-size:30px;">🎭</td>
@@ -428,7 +433,7 @@
                                                 <td width="48%" valign="top">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #FCE7F3 0%, #FBCFE8 100%); border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); height:180px;">
                                                         <tr>
-                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;">
+                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;" class="activity-mobile">
                                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 10px auto;">
                                                                     <tr>
                                                                         <td style="width:60px; height:60px; background-color:#ffffff; border-radius:50%; text-align:center; line-height:60px; font-size:30px;">📝</td>
@@ -447,7 +452,7 @@
                                                 <td width="48%" valign="top">
                                                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #DCFCE7 0%, #BBF7D0 100%); border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); height:180px;">
                                                         <tr>
-                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;">
+                                                            <td style="padding:20px; text-align:center; height:180px; vertical-align:middle;" class="activity-mobile">
                                                                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 10px auto;">
                                                                     <tr>
                                                                         <td style="width:60px; height:60px; background-color:#ffffff; border-radius:50%; text-align:center; line-height:60px; font-size:30px;">🏆</td>
@@ -470,7 +475,7 @@
                             <!-- Teacher Quote -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#E0F2FE; border-left:4px solid #0EA5E9; margin-bottom:35px;">
                                 <tr>
-                                    <td style="padding:20px;">
+                                    <td style="padding:15px 10px;" class="mobile-padding">
                                         <p style="margin:0 0 10px 0; color:#1F2937; font-family:Arial, sans-serif; font-size:14px; line-height:22px; font-style:italic;">
                                             "I've been teaching for 15 years, and I've never seen kids so excited about reading. When they're the hero of the story, they want to read it again and again. My students who use StoryBud at home are reading at a higher level and have better comprehension."
                                         </p>
@@ -484,7 +489,7 @@
                             <!-- CTA Section -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:30px;">
                                 <tr>
-                                    <td align="center" style="background-color:#F0F9FF; border:2px solid #BAE6FD; padding:30px 20px;">
+                                    <td align="center" style="background-color:#F0F9FF; border:2px solid #BAE6FD; padding:25px 10px;" class="mobile-padding">
                                         <h2 style="margin:0 0 15px 0; color:#374151; font-family:Georgia, serif; font-size:22px;">
                                             Start Your Educational Adventure
                                         </h2>
@@ -521,7 +526,7 @@
                     
                     <!-- Footer -->
                     <tr>
-                        <td align="center" style="background-color:#F3F4F6; padding:35px 20px; border-top:1px solid #E5E7EB;">
+                        <td align="center" style="background-color:#F3F4F6; padding:25px 10px; border-top:1px solid #E5E7EB;" class="mobile-padding">
                             
                             <!-- Footer Logo -->
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0">
