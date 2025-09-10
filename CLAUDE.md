@@ -157,12 +157,24 @@ Before deploying any template:
 
 ## Content Management
 
+### Standardized Footer System
+All email templates use a standardized footer with dynamic variables:
+- **Tagline**: "Every child deserves their own story." (consistent across all templates)
+- **Sign-off**: "Happy storytelling!" and "The StoryBud Team" (standardized)
+- **Dynamic Links**: `{{contactUsLink}}`, `{{privacyPolicyLink}}`, `{{termsOfServiceLink}}`, `{{unsubscribeLink}}`, `{{companyAddress}}`
+- **Template File**: `/footer-standard.html` contains the master footer structure
+
 ### Personalization Tokens
 Templates support dynamic content insertion:
 - `{{child_name}}` - Child's name with fallbacks
 - `{{parent_name}}` - Parent/guardian name
 - `{{stories_created}}` - Number of stories created
 - `{{reading_streak}}` - Days of consecutive reading
+- `{{contactUsLink}}` - Support/contact page URL
+- `{{privacyPolicyLink}}` - Privacy policy page URL
+- `{{termsOfServiceLink}}` - Terms of service page URL  
+- `{{unsubscribeLink}}` - Unsubscribe URL
+- `{{companyAddress}}` - Company mailing address
 
 ### Image Strategy
 - Illustrations preferred over photographs
